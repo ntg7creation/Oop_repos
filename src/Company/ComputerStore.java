@@ -6,6 +6,7 @@ import other.Customer;
 
 public class ComputerStore {
 
+    private String name = "Yossi";
     private Importer importer;
     private QAPerson qaperson;
     private ComputerTechnician computertechnichian;
@@ -32,10 +33,12 @@ public class ComputerStore {
 
     public void resiveOrder(Customer customer, Order order) {
 
+	this.customer = customer;
+
 	Computer pc = importer.importComputer(order);
 	computertechnichian.assembleComputer(pc);
 	qaperson.checkComputer(pc, order);
-	
+	deliveryperson.deliverComputer(this.customer, pc);
     }
 
 }

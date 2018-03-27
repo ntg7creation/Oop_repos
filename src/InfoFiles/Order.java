@@ -1,23 +1,28 @@
 package InfoFiles;
 
 public class Order {
+
     private Computer computer;
     private String orderStatus;
 
-    public Order(String parts){
-        orderStatus = "New Order";
-        computer = new Computer(parts);
+    public Order() {
+
+    }
+
+    public Order(String parts) {
+	orderStatus = "New Order";
+	computer = new Computer(parts);
     }
 
     public Computer getComputer() {
-        return computer;
+	return computer;
     }
 
     public String getOrderStatus() {
-        return orderStatus;
+	return orderStatus;
     }
 
     public void setOrderStatus(String orderStatus) {
-        this.orderStatus = orderStatus;
+	this.orderStatus = orderStatus;
     }
 }
