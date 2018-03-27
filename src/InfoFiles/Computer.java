@@ -1,4 +1,4 @@
-package Company;
+package InfoFiles;
 
 public class Computer {
     private boolean assmbled;

@@ -1,4 +1,4 @@
-package Company;
+package InfoFiles;
 
 public class Order {
     private Computer computer;
