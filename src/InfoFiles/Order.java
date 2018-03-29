@@ -2,27 +2,44 @@ package InfoFiles;
 
 public class Order {
 
-    private Computer computer;
-    private String orderStatus;
+    private String CPU;
+    private String Motherboard;
+    private String Peripherals;
+    private String Screen;
 
     public Order() {
-
     }
 
-    public Order(String parts) {
-	orderStatus = "New Order";
-	computer = new Computer(parts);
+    public String getCPU() {
+	return CPU;
     }
 
-    public Computer getComputer() {
-	return computer;
+    public String getMotherboard() {
+	return Motherboard;
     }
 
-    public String getOrderStatus() {
-	return orderStatus;
+    public String getPeripherals() {
+	return Peripherals;
     }
 
-    public void setOrderStatus(String orderStatus) {
-	this.orderStatus = orderStatus;
+    public String getScreen() {
+	return Screen;
     }
+
+    public void setCPU(String cPU) {
+	CPU = cPU;
+    }
+
+    public void setMotherboard(String motherboard) {
+	Motherboard = motherboard;
+    }
+
+    public void setPeripherals(String peripherals) {
+	Peripherals = peripherals;
+    }
+
+    public void setScreen(String screen) {
+	Screen = screen;
+    }
+
 }
