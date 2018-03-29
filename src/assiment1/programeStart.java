@@ -7,7 +7,7 @@ import Company.Importer;
 import Company.QAPerson;
 import other.Customer;
 
-public class testing
+public class programeStart
 {
 	public static void main(String[] args)
 	{
