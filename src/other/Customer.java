@@ -9,17 +9,19 @@ public class Customer {
     private Computer pc;
 
     public Customer(String name) {
-        this.name = name;
-        this.pc = null;
+	this.name = name;
+	this.pc = null;
     }
 
     public void createNewOrder(ComputerStore store, Order order) {
-        System.out.println("Client Rina orders computer from Yossi-Computer: I7 Processor,Asus,Microsoft,LG.");
-        store.receiveOrder(this, order);
+	System.out.println("Client " + name + " orders computer from Yossi-Computer: I7 Processor,Asus,Microsoft,LG.");
+	order.setCustomer(this);
+	store.receiveOrder(order);
     }
 
     public void receiveComputer(Computer pc) {
-        System.out.println("Client Rina receive: " + pc.toString());
-        this.pc = pc;
+	
+	System.out.println("Client " + name + " receive: " + pc.toString());
+	this.pc = pc;
     }
 }

@@ -1,24 +1,36 @@
 package InfoFiles;
 
+import other.Customer;
+
 public class Order {
 
     private String cpu;
     private String motherboard;
     private String peripherals;
     private String screen;
+    private other.Customer customer;
 
     public Order() {
     }
 
-    public Order(String cpu, String motherboard, String peripherals, String screen){
-        this.cpu = cpu;
-        this.motherboard = motherboard;
-        this.peripherals = peripherals;
-        this.screen = screen;
+    public Order(String cpu, String motherboard, String peripherals, String screen, Customer customer) {
+	this.cpu = cpu;
+	this.motherboard = motherboard;
+	this.peripherals = peripherals;
+	this.screen = screen;
+	this.customer = customer;
     }
 
     public String getCpu() {
 	return cpu;
+    }
+
+    public other.Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(other.Customer customer) {
+        this.customer = customer;
     }
 
     public String getMotherboard() {
