@@ -1,53 +1,58 @@
 package InfoFiles;
 
 public class Computer {
+    private boolean assembled;
+    private boolean tested;
+    private String cpu;
+    private String motherboard;
+    private String peripherals;
+    private String screen;
 
-    private boolean assmbled;
-    private String CPU;
-    private String Motherboard;
-    private String Peripherals;
-    private String Screen;
-
-    public Computer() {
+    public Computer(String cpu, String motherboard, String peripherals, String screen){
+        this.cpu = cpu;
+        this.motherboard = motherboard;
+        this.peripherals = peripherals;
+        this.screen = screen;
+        assembled = false;
+        tested = false;
     }
 
-    public String getCPU() {
-	return CPU;
+    public boolean isAssembled() {
+        return assembled;
+    }
+
+    public boolean isTested() {
+        return tested;
+    }
+
+    public void setAssembled(boolean assembled) {
+        this.assembled = assembled;
+    }
+
+    public void setTested(boolean tested) {
+        this.tested = tested;
+    }
+
+    public String getCpu() {
+        return cpu;
     }
 
     public String getMotherboard() {
-	return Motherboard;
+        return motherboard;
     }
 
     public String getPeripherals() {
-	return Peripherals;
+        return peripherals;
     }
 
     public String getScreen() {
-	return Screen;
+        return screen;
     }
 
-    public void setCPU(String cPU) {
-	CPU = cPU;
-    }
-
-    public void setMotherboard(String motherboard) {
-	Motherboard = motherboard;
-    }
-
-    public void setPeripherals(String peripherals) {
-	Peripherals = peripherals;
-    }
-
-    public void setScreen(String screen) {
-	Screen = screen;
-    }
-
-    public boolean isAssmbled() {
-	return assmbled;
-    }
-
-    public void setAssmbled(boolean assmbled) {
-	this.assmbled = assmbled;
+    @Override
+    public String toString() {
+        String format = "Computer: [%s,%s,%s,%s], assembled=%s, tested=%s";
+        String output = String.format(format, cpu, motherboard, peripherals, screen, assembled, tested);
+        return output;
     }
 }

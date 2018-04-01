@@ -9,8 +9,8 @@ public class DeliveryPerson {
     }
 
     public void deliverComputer(Customer customer, Computer pc) {
-	System.out.println("Delivery Person delivers the computer to Rina.");
-	customer.resiveComputer(pc);
+        System.out.println("Delivery Person delivers the computer to Rina.");
+        customer.receiveComputer(pc);
     }
 
 }

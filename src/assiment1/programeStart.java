@@ -1,28 +1,24 @@
 package assiment1;
 
-import Company.ComputerStore;
-import Company.ComputerTechnician;
-import Company.DeliveryPerson;
-import Company.Importer;
-import Company.QAPerson;
+import Company.*;
+import InfoFiles.Order;
 import other.Customer;
 
-public class programeStart
-{
-	public static void main(String[] args)
-	{
-		
-		ComputerTechnician tec = new ComputerTechnician();
-		DeliveryPerson dp = new DeliveryPerson();
-		Importer im = new Importer();
-		QAPerson qa = new QAPerson();
-		
-		ComputerStore yossi = new ComputerStore(im, qa, tec, dp);
-		
-		Customer rina = new Customer("Rina");
-		
-		rina.creatNewOrder(yossi);
+public class programeStart {
+    public static void main(String[] args) {
 
-	}
+        ComputerTechnician tec = new ComputerTechnician();
+        DeliveryPerson dp = new DeliveryPerson();
+        Importer im = new Importer();
+        QAPerson qa = new QAPerson();
+
+        ComputerStore yossi = new ComputerStore("Yossi-Computer", im, qa, tec, dp);
+
+        Customer rina = new Customer("Rina");
+
+        Order order = new Order("I7 Processor", "Asus", "Microsoft", "LG");
+        rina.createNewOrder(yossi, order);
+
+    }
 
 }

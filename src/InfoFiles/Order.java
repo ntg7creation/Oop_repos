@@ -2,44 +2,51 @@ package InfoFiles;
 
 public class Order {
 
-    private String CPU;
-    private String Motherboard;
-    private String Peripherals;
-    private String Screen;
+    private String cpu;
+    private String motherboard;
+    private String peripherals;
+    private String screen;
 
     public Order() {
     }
 
-    public String getCPU() {
-	return CPU;
+    public Order(String cpu, String motherboard, String peripherals, String screen){
+        this.cpu = cpu;
+        this.motherboard = motherboard;
+        this.peripherals = peripherals;
+        this.screen = screen;
+    }
+
+    public String getCpu() {
+	return cpu;
     }
 
     public String getMotherboard() {
-	return Motherboard;
+	return motherboard;
     }
 
     public String getPeripherals() {
-	return Peripherals;
+	return peripherals;
     }
 
     public String getScreen() {
-	return Screen;
+	return screen;
     }
 
-    public void setCPU(String cPU) {
-	CPU = cPU;
+    public void setCpu(String cPU) {
+	cpu = cPU;
     }
 
     public void setMotherboard(String motherboard) {
-	Motherboard = motherboard;
+	this.motherboard = motherboard;
     }
 
     public void setPeripherals(String peripherals) {
-	Peripherals = peripherals;
+	this.peripherals = peripherals;
     }
 
     public void setScreen(String screen) {
-	Screen = screen;
+	this.screen = screen;
     }
 
 }
