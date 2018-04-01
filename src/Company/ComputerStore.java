@@ -15,37 +15,37 @@ public class ComputerStore {
 
     public ComputerStore() {
 
-        this.importer = null;
-        this.qaPerson = null;
-        this.computerTechnician = null;
-        this.deliveryperson = null;
-        customer = null;
+	this.importer = null;
+	this.qaPerson = null;
+	this.computerTechnician = null;
+	this.deliveryperson = null;
+	customer = null;
     }
 
     public ComputerStore(String name, Importer importer, QAPerson qaPerson, ComputerTechnician computerTechnician,
-                         DeliveryPerson deliveryPerson) {
-        this.name = name;
-        this.importer = importer;
-        this.qaPerson = qaPerson;
-        this.computerTechnician = computerTechnician;
-        this.deliveryperson = deliveryPerson;
-        customer = null;
+	    DeliveryPerson deliveryPerson) {
+	this.name = name;
+	this.importer = importer;
+	this.qaPerson = qaPerson;
+	this.computerTechnician = computerTechnician;
+	this.deliveryperson = deliveryPerson;
+	customer = null;
     }
 
-    public void receiveOrder(Customer customer, Order order) {
+    public void receiveOrder(Order order) {
 
-        this.customer = customer;
-        System.out.println("Yossi-Computer forwards order to Importer.");
-        Computer pc = importer.importComputer(order);
+	this.customer = order.getCustomer();
+	System.out.println(this.name + "-Computer forwards order to Importer.");
+	Computer pc = importer.importComputer(order);
 
-        System.out.println("Yossi-Computer requests a computer assembling to the Computer Technician.");
-        pc = computerTechnician.assembleComputer(pc);
+	System.out.println(this.name + "-Computer requests a computer assembling to the Computer Technician.");
+	pc = computerTechnician.assembleComputer(pc);
 
-        System.out.println("Yossi-Computer requests a quality check from QA.");
-        qaPerson.checkComputer(pc, order);
+	System.out.println(this.name+"-Computer requests a quality check from QA.");
+	qaPerson.checkComputer(pc, order);
 
-        System.out.println("Yossi-Computer forwards the computer to Delivery Person.");
-        deliveryperson.deliverComputer(this.customer, pc);
+	System.out.println(this.name+"-Computer forwards the computer to Delivery Person.");
+	deliveryperson.deliverComputer(this.customer, pc);
     }
 
 }

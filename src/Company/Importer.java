@@ -5,12 +5,13 @@ import InfoFiles.Order;
 
 public class Importer {
 
-    public Importer(){
+    
+    public Importer() {
 
     }
 
     public Computer importComputer(Order order) {
-        Supplier supplier = new Supplier();
-        return supplier.prepareComputer(order);
+	Supplier supplier = new Supplier();
+	return supplier.prepareComputer(order);
     }
 }

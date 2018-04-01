@@ -16,7 +16,7 @@ public class programeStart {
 
         Customer rina = new Customer("Rina");
 
-        Order order = new Order("I7 Processor", "Asus", "Microsoft", "LG");
+        Order order = new Order("I7 Processor", "Asus", "Microsoft", "LG", null);
         rina.createNewOrder(yossi, order);
 
     }
