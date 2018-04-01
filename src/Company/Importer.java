@@ -10,7 +10,10 @@ public class Importer {
     }
 
     public Computer importComputer(Order order) {
+        System.out.println("Importer forwards request to Supplier.");
         Supplier supplier = new Supplier();
-        return supplier.prepareComputer(order);
+        Computer pc =  supplier.prepareComputer(order);
+        System.out.println("Importer returns the computer to Yossi-Computer.");
+        return pc;
     }
 }
