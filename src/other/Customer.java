@@ -9,19 +9,23 @@ public class Customer {
     private Computer pc;
 
     public Customer(String name) {
-	this.name = name;
-	this.pc = null;
+        this.name = name;
+        this.pc = null;
     }
 
-    public void createNewOrder(ComputerStore store, Order order) {
-	System.out.println("Client " + name + " orders computer from Yossi-Computer: I7 Processor,Asus,Microsoft,LG.");
-	order.setCustomer(this);
-	store.receiveOrder(order);
+    public String getName() {
+        return name;
+    }
+
+    public void createNewOrder(ComputerStore store, String cpu, String motherboard, String peripherals, String screen) {
+        String format = "Client %s orders computer from %s: %s,%s,%s,%s.";
+        System.out.println(String.format(format, getName(), store.getName(), cpu, motherboard, peripherals, screen));
+        Order order = new Order(cpu, motherboard, peripherals, screen, this);
+        store.receiveOrder(order);
     }
 
     public void receiveComputer(Computer pc) {
-	
-	System.out.println("Client " + name + " receive: " + pc.toString());
-	this.pc = pc;
+        System.out.println("Client " + name + " receive: " + pc.toString());
+        this.pc = pc;
     }
 }

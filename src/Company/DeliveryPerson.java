@@ -3,16 +3,14 @@ package Company;
 import InfoFiles.Computer;
 import other.Customer;
 
-public class DeliveryPerson {
+public class DeliveryPerson extends Employee{
 
-    private String name = "Delivery Person";
-
-    public DeliveryPerson() {
+    public DeliveryPerson(String name, String employer) {
+        super(name, employer);
     }
 
     public void deliverComputer(Customer customer, Computer pc) {
-	System.out.println(name + " delivers the computer to Rina.");
-	customer.receiveComputer(pc);
+        System.out.println(getName() + " delivers the computer to " + customer.getName() + ".");
+        customer.receiveComputer(pc);
     }
-
 }

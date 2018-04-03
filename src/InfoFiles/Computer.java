@@ -8,7 +8,7 @@ public class Computer {
     private String peripherals;
     private String screen;
 
-    public Computer(String cpu, String motherboard, String peripherals, String screen){
+    public Computer(String cpu, String motherboard, String peripherals, String screen) {
         this.cpu = cpu;
         this.motherboard = motherboard;
         this.peripherals = peripherals;
@@ -21,12 +21,12 @@ public class Computer {
         return assembled;
     }
 
-    public boolean isTested() {
-        return tested;
-    }
-
     public void setAssembled(boolean assembled) {
         this.assembled = assembled;
+    }
+
+    public boolean isTested() {
+        return tested;
     }
 
     public void setTested(boolean tested) {
