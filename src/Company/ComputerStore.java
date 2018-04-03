@@ -10,6 +10,7 @@ public class ComputerStore {
     private QAPerson qaPerson;
     private ComputerTechnician computerTechnician;
     private DeliveryPerson deliveryperson;
+    private Order order;
 
     public ComputerStore(String name, Importer importer, QAPerson qaPerson, ComputerTechnician computerTechnician,
                          DeliveryPerson deliveryPerson) {
@@ -25,6 +26,8 @@ public class ComputerStore {
     }
 
     public void receiveOrder(Order order) {
+	this.order = order;
+	
         System.out.println(getName() + " forwards order to " + importer.getName() + ".");
         Computer pc = importer.importComputer(order);
 
