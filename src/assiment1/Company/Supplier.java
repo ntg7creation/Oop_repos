@@ -1,7 +1,7 @@
-package Company;
+package assiment1.Company;
 
-import InfoFiles.Computer;
-import InfoFiles.Order;
+import assiment1.InfoFiles.Computer;
+import assiment1.InfoFiles.Order;
 
 public class Supplier extends Employee{
 

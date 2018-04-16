@@ -1,6 +1,6 @@
-package Company;
+package assiment1.Company;
 
-import InfoFiles.Computer;
+import assiment1.InfoFiles.Computer;
 
 public class ComputerTechnician extends Employee{
 

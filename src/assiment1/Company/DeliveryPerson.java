@@ -1,7 +1,7 @@
-package Company;
+package assiment1.Company;
 
-import InfoFiles.Computer;
-import other.Customer;
+import assiment1.InfoFiles.Computer;
+import assiment1.other.Customer;
 
 public class DeliveryPerson extends Employee{
 

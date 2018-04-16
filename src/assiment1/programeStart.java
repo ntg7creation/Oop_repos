@@ -1,7 +1,7 @@
 package assiment1;
 
-import Company.*;
-import other.Customer;
+import assiment1.Company.*;
+import assiment1.other.Customer;
 
 public class programeStart {
 

@@ -1,6 +1,6 @@
-package InfoFiles;
+package assiment1.InfoFiles;
 
-import other.Customer;
+import assiment1.other.Customer;
 
 public class Order {
 
@@ -26,11 +26,11 @@ public class Order {
         cpu = cPU;
     }
 
-    public other.Customer getCustomer() {
+    public assiment1.other.Customer getCustomer() {
         return customer;
     }
 
-    public void setCustomer(other.Customer customer) {
+    public void setCustomer(assiment1.other.Customer customer) {
         this.customer = customer;
     }
 

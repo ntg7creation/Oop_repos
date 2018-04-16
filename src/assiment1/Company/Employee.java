@@ -1,4 +1,4 @@
-package Company;
+package assiment1.Company;
 
 public abstract class Employee {
     private String name;

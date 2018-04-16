@@ -1,4 +1,4 @@
-package InfoFiles;
+package assiment1.InfoFiles;
 
 public class Computer {
     private boolean assembled;

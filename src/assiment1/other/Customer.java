@@ -1,8 +1,8 @@
-package other;
+package assiment1.other;
 
-import Company.ComputerStore;
-import InfoFiles.Computer;
-import InfoFiles.Order;
+import assiment1.Company.ComputerStore;
+import assiment1.InfoFiles.Computer;
+import assiment1.InfoFiles.Order;
 
 public class Customer {
     private String name;
