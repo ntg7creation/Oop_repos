@@ -1,6 +1,8 @@
 
 public interface Scalar {
 
+    public Object getValue();
+    
     public Scalar add(Scalar s);
 
     public Scalar mul(Scalar s);
