@@ -74,6 +74,10 @@ public class RationalScalar implements Scalar {
     }
 
     public boolean equals(Scalar s) {
+        if (!(s instanceof RationalScalar)) {
+            return false;
+        }
+
         RationalScalar rs = (RationalScalar)s;
         if (this.getSign() != rs.getSign()) {
             return false;
