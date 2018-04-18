@@ -1,8 +1,6 @@
 package math;
 
 public interface Scalar {
-
-    public Object getValue();
     
     public Scalar add(Scalar s);
 
