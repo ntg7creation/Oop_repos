@@ -131,4 +131,19 @@ public class Polynomial {
 		if (equation.getFirst().getCoefficient().equals(0))
 			equation.removeFirst();
 	}
+
+	public char getScalarField() {
+		return scalarField;
+	}
+
+
+	public LinkedList<PolyTerm> getEquation() {
+		return equation;
+	}
+
+	public Scalar getZeroScalar() {
+		return zeroScalar;
+	}
+	
+	
 }
