@@ -6,6 +6,7 @@ public class Polynomial {
 
 	private char scalarField;
 	private LinkedList<PolyTerm> equation;
+	private Scalar zeroScalar;
 
 	public Polynomial(String equation, char scalarField) {
 		this.scalarField = scalarField;
@@ -18,6 +19,7 @@ public class Polynomial {
 			}
 		}
 		addTerm(new PolyTerm(equation.substring(pre), scalarField));
+		removeZero();
 	}
 
 	public Polynomial(LinkedList<PolyTerm> equation, char scalarField) {
@@ -67,7 +69,7 @@ public class Polynomial {
 	}
 
 	public Polynomial mul(PolyTerm term) {
-		Polynomial output = new Polynomial("", scalarField);
+		Polynomial output = new Polynomial(new LinkedList<PolyTerm>(), scalarField);
 		for (PolyTerm polyTerm : equation) {
 			output.addTerm(polyTerm.mul(term));
 		}
@@ -75,10 +77,20 @@ public class Polynomial {
 	}
 
 	public Scalar evaluate(Scalar scalar) {
-		return null;
+		Scalar output;
+		if(scalarField == 'q'| scalarField == 'Q')
+			output = new RationalScalar("0");
+		else  //(scalarField == 'r'| scalarField == 'R' )
+			output = new RealScalar(0);
+		for (PolyTerm polyTerm : equation) {
+			output.add(polyTerm.evaluate(scalar));
+		}
+		return output;
 	}
 
 	public Polynomial derivate() {
+		Polynomial output = new Polynomial(new LinkedList<PolyTerm>(), scalarField);
+		
 		return null;
 	}
 
@@ -93,5 +105,11 @@ public class Polynomial {
 
 	public LinkedList<PolyTerm> getequation() {
 		return equation;
+	}
+	
+	private void removeZero()
+	{
+		if(equation.getFirst().getCoefficient().equals(0))
+			equation.removeFirst();
 	}
 }

@@ -66,4 +66,5 @@ public class RealScalar implements Scalar {
 
 	}
 
+
 }
