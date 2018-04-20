@@ -11,17 +11,13 @@ public class tester {
     	//String a = "-32575.32523";
     	//double b = Double.parseDouble(a);
     	 //System.out.println(b);
-    	
-    	double d = 2342.12874;
-    	System.out.println(format(d));
-    	
+    	String toSplit = "a+b-c*d/e=f";
+    	String[] splitted = toSplit.split("[-+*/=]");
+    	for (String split: splitted) {
+    	    System.out.println(split);
+    	}
     }
     
     
-	private static double format(double d) {
-		
-		DecimalFormat df = new DecimalFormat("#.###");
-		return Double.parseDouble(df.format(d));
-		
-	}
+
 }
