@@ -128,14 +128,13 @@ public class Polynomial {
 	}
 
 	private void removeZero() {
-		if (equation.getFirst().getCoefficient().equals(0))
+		if (equation.getFirst().getCoefficient().equals(zeroScalar))
 			equation.removeFirst();
 	}
 
 	public char getScalarField() {
 		return scalarField;
 	}
-
 
 	public LinkedList<PolyTerm> getEquation() {
 		return equation;
