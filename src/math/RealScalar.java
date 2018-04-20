@@ -9,7 +9,6 @@ public class RealScalar implements Scalar {
 	public RealScalar(double scalar)
 	{
 		this.scalar = scalar;
-		Format(scalar);
 	}
 	
 	public RealScalar(String scalar) {
@@ -55,7 +54,7 @@ public class RealScalar implements Scalar {
 	@Override
 	public String toString()
 	{
-		return Double.toString(scalar);
+		return Double.toString(Format(scalar));
 	}
 	
 
