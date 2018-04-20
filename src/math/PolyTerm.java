@@ -8,6 +8,7 @@ public class PolyTerm implements Comparable<PolyTerm> {
     private int exponent;
     private ScalarField field;
 
+    //scalar field gets r/q
     public PolyTerm(String polyterm, char scalarField) {
         // Find where to split
         int xIndex = polyterm.indexOf('x');

@@ -6,6 +6,12 @@ public class RealScalar implements Scalar {
 
 	private double scalar;
 
+	public RealScalar(double scalar)
+	{
+		this.scalar = scalar;
+		Format(scalar);
+	}
+	
 	public RealScalar(String scalar) {
 		this.scalar = Double.parseDouble(scalar);
 	}
@@ -13,31 +19,28 @@ public class RealScalar implements Scalar {
 	@Override
 	public Scalar add(Scalar s) {
 		RealScalar rs = (RealScalar) s;
-		scalar += rs.getValue();
-		scalar = Format(scalar);
-		return this;
+		RealScalar output = new RealScalar(scalar + rs.getValue());
+		return output;
 
 	}
 
 	@Override
 	public Scalar mul(Scalar s) {
 		RealScalar rs = (RealScalar) s;
-		scalar *= rs.getValue();
-		scalar = Format(scalar);
-		return this;
+		RealScalar output = new RealScalar (scalar * rs.getValue());
+		return output;
 	}
 
 	@Override
 	public Scalar neg() {
-		scalar *= -1;
-		return this;
+		RealScalar output = new RealScalar (scalar * -1);
+		return output;
 	}
 
 	@Override
 	public Scalar inv() {
-		scalar = 1 / scalar;
-		scalar = Format(scalar);
-		return this;
+		RealScalar output = new RealScalar (1 / scalar);
+		return output;
 	}
 
 	@Override
