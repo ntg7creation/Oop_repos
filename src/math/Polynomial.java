@@ -78,9 +78,9 @@ public class Polynomial {
 
 	public Scalar evaluate(Scalar scalar) {
 		Scalar output;
-		if(scalarField == 'q'| scalarField == 'Q')
+		if (scalarField == 'q' | scalarField == 'Q')
 			output = new RationalScalar("0");
-		else  //(scalarField == 'r'| scalarField == 'R' )
+		else // (scalarField == 'r'| scalarField == 'R' )
 			output = new RealScalar(0);
 		for (PolyTerm polyTerm : equation) {
 			output.add(polyTerm.evaluate(scalar));
@@ -90,26 +90,45 @@ public class Polynomial {
 
 	public Polynomial derivate() {
 		Polynomial output = new Polynomial(new LinkedList<PolyTerm>(), scalarField);
-		
-		return null;
+		for (PolyTerm polyTerm : equation) {
+			output.addTerm(polyTerm.derivate());
+		}
+		output.removeZero();
+		return output;
 	}
 
 	@Override
 	public String toString() {
-		return null;
+		String output = "";
+		for (PolyTerm polyTerm : equation) {
+			String scalar = polyTerm.getCoefficient().toString();
+			int exp = polyTerm.getExponent();
+			if (scalar.charAt(0) != '-' || !output.isEmpty())
+				output += "+";
+			output += scalar;
+			if (exp != 0)
+				output += "x^" + Integer.toString(exp);
+		}
+		return output;
 	}
 
 	public boolean equals(Polynomial poly) {
+		if (poly == null || poly.getequation().size() != equation.size())
+			return false;
+
+		for (int i = 0; i < equation.size(); i++)
+			if(!equation.get(i).equals(poly.getequation().get(i)))
+				return false;
+		
 		return true;
 	}
 
 	public LinkedList<PolyTerm> getequation() {
 		return equation;
 	}
-	
-	private void removeZero()
-	{
-		if(equation.getFirst().getCoefficient().equals(0))
+
+	private void removeZero() {
+		if (equation.getFirst().getCoefficient().equals(0))
 			equation.removeFirst();
 	}
 }

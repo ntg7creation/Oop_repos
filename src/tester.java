@@ -11,11 +11,12 @@ public class tester {
     	//String a = "-32575.32523";
     	//double b = Double.parseDouble(a);
     	 //System.out.println(b);
-    	String toSplit = "a+b-c*d/e=f";
-    	String[] splitted = toSplit.split("[-+*/=]");
-    	for (String split: splitted) {
-    	    System.out.println(split);
-    	}
+    	
+    	int a = 1243;
+    	String b = "";
+    	System.out.println(a);
+    	System.out.println(b.isEmpty());
+    
     }
     
     
