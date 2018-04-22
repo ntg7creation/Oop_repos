@@ -30,7 +30,7 @@ public class Polynomial {
 	public Polynomial add(Polynomial poly) {
 
 		Polynomial output = new Polynomial(equation, scalarField);
-		for (PolyTerm term : poly.getequation()) {
+		for (PolyTerm term : poly.getEquation()) {
 			output.addTerm(term);
 		}
 		return output;
@@ -62,7 +62,7 @@ public class Polynomial {
 
 		Polynomial output = new Polynomial(equation, scalarField);
 
-		for (PolyTerm polyTerm : poly.getequation()) {
+		for (PolyTerm polyTerm : poly.getEquation()) {
 			output.add(this.mul(polyTerm));
 		}
 		return output;
@@ -101,31 +101,27 @@ public class Polynomial {
 	public String toString() {
 		String output = "";
 		for (PolyTerm polyTerm : equation) {
-			String scalar = polyTerm.getCoefficient().toString();
-			int exp = polyTerm.getExponent();
-			if (scalar.charAt(0) != '-' || !output.isEmpty())
-				output += "+";
-			output += scalar;
-			if (exp != 0)
-				output += "x^" + Integer.toString(exp);
+			output += polyTerm.toString();
 		}
+
+		if (output.charAt(0) == '+') {
+			output = output.substring(1);
+		}
+
 		return output;
 	}
 
 	public boolean equals(Polynomial poly) {
-		if (poly == null || poly.getequation().size() != equation.size())
+		if (poly == null || poly.getEquation().size() != equation.size())
 			return false;
 
 		for (int i = 0; i < equation.size(); i++)
-			if(!equation.get(i).equals(poly.getequation().get(i)))
+			if(!equation.get(i).equals(poly.getEquation().get(i)))
 				return false;
 		
 		return true;
 	}
 
-	public LinkedList<PolyTerm> getequation() {
-		return equation;
-	}
 
 	private void removeZero() {
 		if (equation.getFirst().getCoefficient().equals(zeroScalar))

@@ -128,6 +128,16 @@ public class PolyTerm implements Comparable<PolyTerm> {
     }
 
     @Override
+    public String toString() {
+        String ans = this.coefficient.toString();
+        if (getExponent() != 0) {
+            ans += "x^" + getExponent();
+        }
+
+        return ans;
+    }
+
+    @Override
     public int compareTo(PolyTerm other) {
         return other.getExponent() - this.getExponent();
     }

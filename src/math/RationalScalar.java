@@ -6,6 +6,9 @@ public class RationalScalar implements Scalar {
     private int sign;
 
     public  RationalScalar(String scalar) {
+        if (scalar.isEmpty()) {
+            scalar = "+";
+        }
         // find the sign
         switch (scalar.charAt(0)) {
             case '-':
@@ -20,12 +23,17 @@ public class RationalScalar implements Scalar {
                 this.sign = 1;
         }
 
-        String[] number = scalar.split("/");
-        this.nomer = Integer.parseInt(number[0]);
-        if (number.length == 2) {
-            this.denom = Integer.parseInt(number[1]);
-        } else {
+        if (scalar.isEmpty()) {
+            this.nomer = 1;
             this.denom = 1;
+        } else {
+            String[] number = scalar.split("/");
+            this.nomer = Integer.parseInt(number[0]);
+            if (number.length == 2) {
+                this.denom = Integer.parseInt(number[1]);
+            } else {
+                this.denom = 1;
+            }
         }
     }
 

@@ -1,5 +1,6 @@
 import java.text.DecimalFormat;
 
+import math.Polynomial;
 import math.RationalScalar;
 
 public class tester {
@@ -15,7 +16,7 @@ public class tester {
     	int a = 1243;
     	String b = "";
     	System.out.println(a);
-    	System.out.println(b.isEmpty());
+    	System.out.println(new Polynomial("x^2", 'Q'));
     
     }
     
