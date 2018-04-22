@@ -16,7 +16,7 @@ public class tester {
     	int a = 1243;
     	String b = "";
     	System.out.println(a);
-    	System.out.println(new Polynomial("-x^2", 'Q'));
+    	System.out.println(new Polynomial("-x^5+12x^4", 'Q'));
     
     }
     

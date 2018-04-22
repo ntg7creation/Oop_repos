@@ -60,7 +60,12 @@ public class RealScalar implements Scalar {
 	@Override
 	public String toString()
 	{
-		return Double.toString(Format(scalar));
+	    String ans = "";
+	    if (this.scalar > 0) {
+	        ans += "+";
+        }
+
+		return ans + Double.toString(Format(scalar));
 	}
 	
 

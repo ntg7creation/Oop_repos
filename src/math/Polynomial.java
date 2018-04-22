@@ -14,12 +14,12 @@ public class Polynomial {
 		int pre = 0;
 		for (int i = 1; i < equation.length(); i++) {
 			if (equation.charAt(i) == '+' | equation.charAt(i) == '-') {
-				addTerm(new PolyTerm(equation.substring(pre, i), scalarField)); // this sorts the torm
+				addTerm(new PolyTerm(equation.substring(pre, i), scalarField)); // this extracts the terms
 				pre = i;
 			}
 		}
 		addTerm(new PolyTerm(equation.substring(pre), scalarField));
-		removeZero();
+//		removeZero();
 	}
 
 	public Polynomial(LinkedList<PolyTerm> equation, char scalarField) {
