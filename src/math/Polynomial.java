@@ -12,7 +12,7 @@ public class Polynomial {
 		this.scalarField = scalarField;
 		this.equation = new LinkedList<>();
 		int pre = 0;
-		for (int i = 0; i < equation.length(); i++) {
+		for (int i = 1; i < equation.length(); i++) {
 			if (equation.charAt(i) == '+' | equation.charAt(i) == '-') {
 				addTerm(new PolyTerm(equation.substring(pre, i), scalarField)); // this sorts the torm
 				pre = i;
