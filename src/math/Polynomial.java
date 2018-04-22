@@ -18,13 +18,26 @@ public class Polynomial {
 				pre = i;
 			}
 		}
-		addTerm(new PolyTerm(equation.substring(pre), scalarField));
-//		removeZero();
+		addTerm(new PolyTerm(equation.substring(pre), scalarField)); // the last term
+		intZeroScalar();
+		
+		
+		removeZero();
 	}
 
 	public Polynomial(LinkedList<PolyTerm> equation, char scalarField) {
+		this.scalarField = scalarField;
+		intZeroScalar();
 		this.equation = new LinkedList<>();
 		this.equation.addAll(equation);
+	}
+	
+	private void intZeroScalar()
+	{
+		if (scalarField == 'q' | scalarField == 'Q')
+			zeroScalar = new RationalScalar("0");
+		else // (scalarField == 'r'| scalarField == 'R' )
+			zeroScalar = new RealScalar(0);
 	}
 
 	public Polynomial add(Polynomial poly) {
@@ -82,6 +95,8 @@ public class Polynomial {
 			output = new RationalScalar("0");
 		else // (scalarField == 'r'| scalarField == 'R' )
 			output = new RealScalar(0);
+		
+		
 		for (PolyTerm polyTerm : equation) {
 			output.add(polyTerm.evaluate(scalar));
 		}
