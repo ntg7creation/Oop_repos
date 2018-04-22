@@ -12,8 +12,14 @@ public class RealScalar implements Scalar {
 	}
 	
 	public RealScalar(String scalar) {
-		this.scalar = Double.parseDouble(scalar);
-	}
+        if (scalar.isEmpty() | scalar.equals("+")) {
+            this.scalar = 1;
+        } else if (scalar.equals("-")) {
+            this.scalar = -1;
+        } else {
+            this.scalar = Double.parseDouble(scalar);
+        }
+    }
 
 	@Override
 	public Scalar add(Scalar s) {
