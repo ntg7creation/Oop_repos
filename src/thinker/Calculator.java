@@ -62,7 +62,8 @@ public class Calculator {
         System.out.println("Please insert the second polynomial");
         Polynomial secondPoly = new Polynomial(scanner.next(), scalarField);
         System.out.println("The solution is:");
-        System.out.println(firstPoly.add(secondPoly));
+        Polynomial output = firstPoly.add(secondPoly);
+        System.out.println(output);
     }
 
     private static void Multiplication() {
@@ -80,7 +81,7 @@ public class Calculator {
         System.out.println("Please insert the scalar");
         String strScalar = scanner.next();
         Scalar scalar;
-        if (scalarField == 'R') {
+        if (scalarField == 'R' | scalarField == 'r'  ) {
             scalar = new RealScalar(strScalar);
         } else {
             scalar = new RationalScalar(strScalar);

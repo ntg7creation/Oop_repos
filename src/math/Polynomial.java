@@ -12,16 +12,17 @@ public class Polynomial {
 		this.scalarField = scalarField;
 		this.equation = new LinkedList<>();
 		int pre = 0;
-		for (int i = 1; i < equation.length(); i++) {
-			if (equation.charAt(i) == '+' | equation.charAt(i) == '-') {
-				addTerm(new PolyTerm(equation.substring(pre, i), scalarField)); // this extracts the terms
-				pre = i;
+		if (!equation.isEmpty()) {
+			for (int i = 1; i < equation.length(); i++) {
+				if (equation.charAt(i) == '+' | equation.charAt(i) == '-') {
+					addTerm(new PolyTerm(equation.substring(pre, i), scalarField)); // this extracts the terms
+					pre = i;
+				}
 			}
+			addTerm(new PolyTerm(equation.substring(pre), scalarField)); // the last term
 		}
-		addTerm(new PolyTerm(equation.substring(pre), scalarField)); // the last term
 		intZeroScalar();
-		
-		
+
 		removeZero();
 	}
 
@@ -31,9 +32,8 @@ public class Polynomial {
 		this.equation = new LinkedList<>();
 		this.equation.addAll(equation);
 	}
-	
-	private void intZeroScalar()
-	{
+
+	private void intZeroScalar() {
 		if (scalarField == 'q' | scalarField == 'Q')
 			zeroScalar = new RationalScalar("0");
 		else // (scalarField == 'r'| scalarField == 'R' )
@@ -49,7 +49,7 @@ public class Polynomial {
 		return output;
 	}
 
-	public void addTerm(PolyTerm term) {
+	private void addTerm(PolyTerm term) {
 
 		int index = 0;
 
@@ -58,7 +58,7 @@ public class Polynomial {
 			PolyTerm data = equation.get(index);
 
 			if (term.getExponent() == data.getExponent()) {
-				data.add(term);
+				equation.set(index, data.add(term));
 				break;
 			}
 			if (term.getExponent() < data.getExponent()) {
@@ -73,10 +73,9 @@ public class Polynomial {
 
 	public Polynomial mul(Polynomial poly) {
 
-		Polynomial output = new Polynomial(equation, scalarField);
-
+		Polynomial output = new Polynomial(new LinkedList<PolyTerm>(), scalarField);
 		for (PolyTerm polyTerm : poly.getEquation()) {
-			output.add(this.mul(polyTerm));
+			output = output.add(this.mul(polyTerm));
 		}
 		return output;
 	}
@@ -95,10 +94,9 @@ public class Polynomial {
 			output = new RationalScalar("0");
 		else // (scalarField == 'r'| scalarField == 'R' )
 			output = new RealScalar(0);
-		
-		
+
 		for (PolyTerm polyTerm : equation) {
-			output.add(polyTerm.evaluate(scalar));
+			output = output.add(polyTerm.evaluate(scalar));
 		}
 		return output;
 	}
@@ -131,12 +129,11 @@ public class Polynomial {
 			return false;
 
 		for (int i = 0; i < equation.size(); i++)
-			if(!equation.get(i).equals(poly.getEquation().get(i)))
+			if (!equation.get(i).equals(poly.getEquation().get(i)))
 				return false;
-		
+
 		return true;
 	}
-
 
 	private void removeZero() {
 		if (equation.getFirst().getCoefficient().equals(zeroScalar))
@@ -154,6 +151,5 @@ public class Polynomial {
 	public Scalar getZeroScalar() {
 		return zeroScalar;
 	}
-	
-	
+
 }
