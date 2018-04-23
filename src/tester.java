@@ -1,7 +1,7 @@
 import java.text.DecimalFormat;
 
-import math.Polynomial;
-import math.RationalScalar;
+import expresion.Polynomial;
+import number.RationalScalar;
 
 public class tester {
     public static void main(String[] args) {

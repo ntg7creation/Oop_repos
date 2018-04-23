@@ -1,6 +1,10 @@
-package math;
+package expresion;
 
 import java.util.LinkedList;
+
+import number.RationalScalar;
+import number.RealScalar;
+import number.Scalar;
 
 public class Polynomial {
 

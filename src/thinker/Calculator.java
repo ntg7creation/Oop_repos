@@ -1,8 +1,11 @@
 package thinker;
 
-import math.*;
-
 import java.util.Scanner;
+
+import expresion.*;
+import number.RationalScalar;
+import number.RealScalar;
+import number.Scalar;
 
 public class Calculator {
     private static Scanner scanner;
@@ -95,8 +98,4 @@ public class Calculator {
         System.out.println(poly.derivate());
     }
 
-    private static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
 }
