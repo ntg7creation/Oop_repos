@@ -85,7 +85,7 @@ public class Calculator {
         }
 
         System.out.println("The solution is:");
-        System.out.println(poly.evaluate(scalar));
+        System.out.println((poly.evaluate(scalar)).toString().replace("+",""));
     }
 
     private static void Derivate(){
