@@ -1,9 +1,6 @@
 package thinker;
 
-import math.Polynomial;
-import math.RationalScalar;
-import math.RealScalar;
-import math.Scalar;
+import math.*;
 
 import java.util.Scanner;
 

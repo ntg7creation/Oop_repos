@@ -57,7 +57,7 @@ public class RationalScalar implements Scalar {
 
     public Scalar add(Scalar s) {
         RationalScalar rs = (RationalScalar)s;
-        int newNomer = (this.getNomer() * rs.getDenom()) + (rs.getSign() * rs.getNomer() * this.getDenom());
+        int newNomer = (this.sign * this.getNomer() * rs.getDenom()) + (rs.getSign() * rs.getNomer() * this.getDenom());
         int newDenom = this.getDenom() * rs.getDenom();
         int newSign = (int)Math.signum(newNomer);
 
