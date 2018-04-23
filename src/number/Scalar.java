@@ -1,4 +1,4 @@
-package math;
+package number;
 
 public interface Scalar {
 

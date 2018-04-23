@@ -1,5 +1,8 @@
-package math;
+package expresion;
 
+import number.RationalScalar;
+import number.RealScalar;
+import number.Scalar;
 
 public class PolyTerm implements Comparable<PolyTerm> {
     private Scalar coefficient;

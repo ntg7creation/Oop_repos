@@ -1,4 +1,4 @@
-package math;
+package number;
 
 public class RationalScalar implements Scalar {
     private int nomer;

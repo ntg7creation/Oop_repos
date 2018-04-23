@@ -1,8 +1,11 @@
 package thinker;
 
-import math.*;
-
 import java.util.Scanner;
+
+import expresion.*;
+import number.RationalScalar;
+import number.RealScalar;
+import number.Scalar;
 
 public class Calculator {
     private static Scanner scanner;
