@@ -17,8 +17,7 @@ public class Calculator {
     }
 
     private static void showMenu() {
-//        clearScreen();
-        System.out.println("Please select an operation:\n" +
+        System.out.println("\nPlease select an operation:\n" +
                 "1. Addition\n" +
                 "2. Multiplication\n" +
                 "3. Evaluation\n" +
@@ -95,8 +94,4 @@ public class Calculator {
         System.out.println(poly.derivate());
     }
 
-    private static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
 }

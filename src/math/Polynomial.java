@@ -50,11 +50,11 @@ public class Polynomial {
 
 			PolyTerm data = equation.get(index);
 
-			if (term.getExponent() == data.getExponent()) {
+			if (term.compareTo(data) == 0) {
 				equation.set(index, data.add(term));
 				break;
 			}
-			if (term.getExponent() < data.getExponent()) {
+			if (term.compareTo(data) > 0) {
 				equation.add(index, term);
 				break;
 			}

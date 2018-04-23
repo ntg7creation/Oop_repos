@@ -2,13 +2,11 @@ package math;
 
 
 public class PolyTerm implements Comparable<PolyTerm> {
-    public enum ScalarField{Q,R};
-
     private Scalar coefficient;
     private int exponent;
-    private ScalarField field;
+    private char scalarField;
 
-    //scalar field gets r/q
+    //scalar scalarField gets r/q
     public PolyTerm(String polyterm, char scalarField) {
         // Find where to split
         int xIndex = polyterm.indexOf('x');
@@ -39,13 +37,13 @@ public class PolyTerm implements Comparable<PolyTerm> {
         switch (scalarField) {
             case 'q':
             case 'Q':
-                this.field = ScalarField.Q;
+                this.scalarField = 'Q';
                 this.coefficient = new RationalScalar(scalar);
                 break;
             case 'r':
             case 'R':
 
-                this.field = ScalarField.R;
+                this.scalarField = 'R';
                 this.coefficient = new RealScalar(scalar);
                 break;
         }
@@ -101,11 +99,11 @@ public class PolyTerm implements Comparable<PolyTerm> {
             outScalar = getCoefficient().add(getCoefficient().neg());
         } else {
             Scalar expo = null;
-            switch (this.field) {
-                case Q:
+            switch (this.scalarField) {
+                case 'Q':
                     expo = new RationalScalar("" + outExpo);
                     break;
-                case R:
+                case 'R':
                     expo = new RealScalar("" + outExpo);
                     break;
             }
