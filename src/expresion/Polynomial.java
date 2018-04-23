@@ -44,6 +44,7 @@ public class Polynomial {
 		return output;
 	}
 
+	//addes 1 term to the current polynom this also makes the list in order by the exponent 
 	private void addTerm(PolyTerm term) {
 
 		if (term == null) // check
@@ -68,6 +69,7 @@ public class Polynomial {
 			equation.addLast(term);
 	}
 
+	//for each term in this polynom multiply it by a term in the other poly and return the result 
 	public Polynomial mul(Polynomial poly) {
 
 		Polynomial output = new Polynomial(new LinkedList<PolyTerm>(), scalarField);
@@ -77,6 +79,7 @@ public class Polynomial {
 		return output;
 	}
 
+	//Multiply 1 term and this polynomial and return the result
 	public Polynomial mul(PolyTerm term) {
 		Polynomial output = new Polynomial(new LinkedList<PolyTerm>(), scalarField);
 		for (PolyTerm polyTerm : equation) {
@@ -136,6 +139,7 @@ public class Polynomial {
 		return true;
 	}
 
+	//check if we have a zero * x as 1 of the term and removes it
 	private void removeZero() {
 
 		for (int i = 0; i < equation.size(); i++) {
