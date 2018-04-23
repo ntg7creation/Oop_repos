@@ -11,6 +11,8 @@ public interface Scalar {
 	public Scalar inv();
 
 	public boolean equals(Scalar s);
+	
+	public boolean isZero();
 
 	public String toString();
 }

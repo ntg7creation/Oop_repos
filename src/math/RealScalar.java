@@ -68,6 +68,10 @@ public class RealScalar implements Scalar {
 		return ans + Double.toString(Format(scalar));
 	}
 	
+	@Override
+	public boolean isZero() {
+		return scalar == 0;
+	}
 
 	private static double Format(double d) {
 

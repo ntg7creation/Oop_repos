@@ -51,6 +51,8 @@ public class Polynomial {
 
 	private void addTerm(PolyTerm term) {
 
+		if (term == null) // check
+			return;
 		int index = 0;
 
 		for (; index < equation.size(); index++) {
@@ -121,6 +123,8 @@ public class Polynomial {
 			output = output.substring(1);
 		}
 
+		if (output.isEmpty())
+			output = "0";
 		return output;
 	}
 
