@@ -6,7 +6,6 @@ public class Polynomial {
 
 	private char scalarField;
 	private LinkedList<PolyTerm> equation;
-	private Scalar zeroScalar;
 
 	public Polynomial(String equation, char scalarField) {
 		this.scalarField = scalarField;
@@ -21,23 +20,14 @@ public class Polynomial {
 			}
 			addTerm(new PolyTerm(equation.substring(pre), scalarField)); // the last term
 		}
-		intZeroScalar();
 
 		removeZero();
 	}
 
 	public Polynomial(LinkedList<PolyTerm> equation, char scalarField) {
 		this.scalarField = scalarField;
-		intZeroScalar();
 		this.equation = new LinkedList<>();
 		this.equation.addAll(equation);
-	}
-
-	private void intZeroScalar() {
-		if (scalarField == 'q' | scalarField == 'Q')
-			zeroScalar = new RationalScalar("0");
-		else // (scalarField == 'r'| scalarField == 'R' )
-			zeroScalar = new RealScalar(0);
 	}
 
 	public Polynomial add(Polynomial poly) {
@@ -46,6 +36,7 @@ public class Polynomial {
 		for (PolyTerm term : poly.getEquation()) {
 			output.addTerm(term);
 		}
+		output.removeZero();
 		return output;
 	}
 
@@ -115,6 +106,10 @@ public class Polynomial {
 	@Override
 	public String toString() {
 		String output = "";
+		
+		if (equation.isEmpty())
+			output = "0";
+		
 		for (PolyTerm polyTerm : equation) {
 			output += polyTerm.toString();
 		}
@@ -123,8 +118,6 @@ public class Polynomial {
 			output = output.substring(1);
 		}
 
-		if (output.isEmpty())
-			output = "0";
 		return output;
 	}
 
@@ -140,8 +133,14 @@ public class Polynomial {
 	}
 
 	private void removeZero() {
-		if (equation.getFirst().getCoefficient().equals(zeroScalar))
-			equation.removeFirst();
+
+		for (int i = 0; i < equation.size(); i++) {
+			if(equation.get(i).isZero())
+				equation.remove(i);
+		}
+
+		// if (equation.getFirst().getCoefficient().equals(zeroScalar))
+		// equation.removeFirst();
 	}
 
 	public char getScalarField() {
@@ -150,10 +149,6 @@ public class Polynomial {
 
 	public LinkedList<PolyTerm> getEquation() {
 		return equation;
-	}
-
-	public Scalar getZeroScalar() {
-		return zeroScalar;
 	}
 
 }

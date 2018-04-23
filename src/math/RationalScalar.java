@@ -94,6 +94,8 @@ public class RationalScalar implements Scalar {
         return (double)getNomer()/rs.getNomer() == (double)getDenom()/rs.getDenom();
     }
 
+    
+    
     @Override
     public String toString() {
         String ans;
@@ -110,4 +112,10 @@ public class RationalScalar implements Scalar {
 
         return ans;
     }
+
+	@Override
+	public boolean isZero() {
+		
+		return nomer == 0;
+	}
 }

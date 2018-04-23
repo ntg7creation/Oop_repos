@@ -136,7 +136,12 @@ public class PolyTerm implements Comparable<PolyTerm> {
 
         return ans;
     }
-
+    
+    public boolean isZero()
+    {
+    	return coefficient.isZero();
+    }
+    
     @Override
     public int compareTo(PolyTerm other) {
         return other.getExponent() - this.getExponent();
