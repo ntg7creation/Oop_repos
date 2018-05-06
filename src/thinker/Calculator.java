@@ -7,6 +7,11 @@ import number.RationalScalar;
 import number.RealScalar;
 import number.Scalar;
 
+/*
+* This class handle the user interface
+* Gets the user input and forward them to process
+* and show the results
+* */
 public class Calculator {
     private static Scanner scanner;
     private static char scalarField;
@@ -19,6 +24,7 @@ public class Calculator {
         showMenu();
     }
 
+    // Show the user menu, and execute the function of the user's choice
     private static void showMenu() {
         System.out.println("\nPlease select an operation:\n" +
                 "1. Addition\n" +
@@ -55,6 +61,7 @@ public class Calculator {
         }
     }
 
+    // Handle Addition process
     private static void Addition() {
         System.out.println("Please insert the first polynomial");
         Polynomial firstPoly = new Polynomial(scanner.next(), scalarField);
@@ -65,6 +72,7 @@ public class Calculator {
         System.out.println(output);
     }
 
+    // Handle Multiplication process
     private static void Multiplication() {
         System.out.println("Please insert the first polynomial");
         Polynomial firstPoly = new Polynomial(scanner.next(), scalarField);
@@ -74,6 +82,7 @@ public class Calculator {
         System.out.println(firstPoly.mul(secondPoly));
     }
 
+    // Handle Evaluation process
     private static void Evaluation() {
         System.out.println("Please insert the polynomial");
         Polynomial poly = new Polynomial(scanner.next(), scalarField);
@@ -90,6 +99,7 @@ public class Calculator {
         System.out.println((poly.evaluate(scalar)).toString().replace("+",""));
     }
 
+    // Handle Derivate process
     private static void Derivate(){
         System.out.println("Please insert the polynomial");
         Polynomial poly = new Polynomial(scanner.next(), scalarField);

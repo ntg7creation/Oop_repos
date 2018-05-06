@@ -6,6 +6,9 @@ import number.RationalScalar;
 import number.RealScalar;
 import number.Scalar;
 
+/*
+* Handle a Polynomial expression by holding a PolyTerm Collection
+* */
 public class Polynomial {
 
 	private char scalarField;
@@ -35,7 +38,6 @@ public class Polynomial {
 	}
 
 	public Polynomial add(Polynomial poly) {
-
 		Polynomial output = new Polynomial(equation, scalarField);
 		for (PolyTerm term : poly.getEquation()) {
 			output.addTerm(term);
@@ -141,14 +143,10 @@ public class Polynomial {
 
 	//check if we have a zero * x as 1 of the term and removes it
 	private void removeZero() {
-
 		for (int i = 0; i < equation.size(); i++) {
 			if(equation.get(i).isZero())
 				equation.remove(i);
 		}
-
-		// if (equation.getFirst().getCoefficient().equals(zeroScalar))
-		// equation.removeFirst();
 	}
 
 	public char getScalarField() {

@@ -1,14 +1,19 @@
 package number;
 
+/*
+ * Handle a scalar of the Real Field
+ * */
 public class RationalScalar implements Scalar {
-    private int nomer;
+    private int numer;
     private int denom;
     private int sign;
 
+    // Constructors...
     public  RationalScalar(String scalar) {
         if (scalar.isEmpty()) {
             scalar = "+";
         }
+
         // find the sign
         switch (scalar.charAt(0)) {
             case '-':
@@ -23,12 +28,12 @@ public class RationalScalar implements Scalar {
                 this.sign = 1;
         }
 
-        if (scalar.isEmpty()) {
-            this.nomer = 1;
+        if (scalar.isEmpty()) { // The scalar input was + or - (1)
+            this.numer = 1;
             this.denom = 1;
-        } else {
+        } else { // Extracting the numerator and denominator
             String[] number = scalar.split("/");
-            this.nomer = Integer.parseInt(number[0]);
+            this.numer = Integer.parseInt(number[0]);
             if (number.length == 2) {
                 this.denom = Integer.parseInt(number[1]);
             } else {
@@ -37,14 +42,14 @@ public class RationalScalar implements Scalar {
         }
     }
 
-    public RationalScalar(int nomer, int denom, int sign) {
-        this.nomer = nomer;
+    public RationalScalar(int numer, int denom, int sign) {
+        this.numer = numer;
         this.denom = denom;
         this.sign = sign;
     }
 
-    public int getNomer() {
-        return nomer;
+    public int getNumer() {
+        return numer;
     }
 
     public int getDenom() {
@@ -55,9 +60,11 @@ public class RationalScalar implements Scalar {
         return sign;
     }
 
+    // Implementing the interface...
+
     public Scalar add(Scalar s) {
         RationalScalar rs = (RationalScalar)s;
-        int newNomer = (this.sign * this.getNomer() * rs.getDenom()) + (rs.getSign() * rs.getNomer() * this.getDenom());
+        int newNomer = (this.sign * this.getNumer() * rs.getDenom()) + (rs.getSign() * rs.getNumer() * this.getDenom());
         int newDenom = this.getDenom() * rs.getDenom();
         int newSign = (int)Math.signum(newNomer);
 
@@ -66,7 +73,7 @@ public class RationalScalar implements Scalar {
 
     public Scalar mul(Scalar s) {
         RationalScalar rs = (RationalScalar)s;
-        int newNomer = this.getNomer() * rs.getNomer();
+        int newNomer = this.getNumer() * rs.getNumer();
         int newDenom = this.getDenom() * rs.getDenom();
         int newSign = this.getSign() * rs.getSign();
 
@@ -74,11 +81,11 @@ public class RationalScalar implements Scalar {
     }
 
     public Scalar neg() {
-        return new RationalScalar(getNomer(), getDenom(), getSign() * -1);
+        return new RationalScalar(getNumer(), getDenom(), getSign() * -1);
     }
 
     public Scalar inv() {
-        return new RationalScalar(getDenom(), getNomer(), getSign());
+        return new RationalScalar(getDenom(), getNumer(), getSign());
     }
 
     public boolean equals(Scalar s) {
@@ -91,7 +98,7 @@ public class RationalScalar implements Scalar {
             return false;
         }
 
-        return (double)getNomer()/rs.getNomer() == (double)getDenom()/rs.getDenom();
+        return (double) getNumer()/rs.getNumer() == (double)getDenom()/rs.getDenom();
     }
 
     
@@ -105,7 +112,7 @@ public class RationalScalar implements Scalar {
             ans = "-";
         }
 
-        ans += this.nomer;
+        ans += this.numer;
         if (this.denom != 1) {
             ans += "/" + this.denom;
         }
@@ -116,6 +123,6 @@ public class RationalScalar implements Scalar {
 	@Override
 	public boolean isZero() {
 		
-		return nomer == 0;
+		return numer == 0;
 	}
 }

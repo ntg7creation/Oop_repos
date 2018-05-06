@@ -2,10 +2,14 @@ package number;
 
 import java.text.DecimalFormat;
 
+/*
+* Handle a scalar of the Real Field
+* */
 public class RealScalar implements Scalar {
 
 	private double scalar;
 
+	// Constructors...
 	public RealScalar(double scalar)
 	{
 		this.scalar = scalar;
@@ -20,6 +24,8 @@ public class RealScalar implements Scalar {
             this.scalar = Double.parseDouble(scalar);
         }
     }
+
+    // Implementing the interface...
 
 	@Override
 	public Scalar add(Scalar s) {
@@ -73,6 +79,7 @@ public class RealScalar implements Scalar {
 		return scalar == 0;
 	}
 
+	// Formatting a double value to have 3 digits after dot
 	private static double Format(double d) {
 
 		DecimalFormat df = new DecimalFormat("#.###");
