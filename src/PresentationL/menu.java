@@ -1,6 +1,13 @@
 package PresentationL;
 
-public class menu {
+import javax.swing.JFrame;
+
+public class menu extends JFrame {
+	
+	public menu() {
+		super("Menu");
+		
+	}
 
 	
 	
