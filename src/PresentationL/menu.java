@@ -1,14 +1,12 @@
 package PresentationL;
 
-import java.awt.Button;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.Panel;
+import java.awt.FlowLayout;
 import java.awt.Point;
+import java.awt.TextField;
 import java.awt.Toolkit;
 
-import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -23,11 +21,11 @@ public class menu extends JFrame {
 		super("Menu");
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+		
 		getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 
 		setIntSize();
-		// creat_Panel();
+		creat_Panel();
 		addButtons();
 
 		setResizable(false);
@@ -52,13 +50,15 @@ public class menu extends JFrame {
 		startPostion.x = _width / 4;
 		startPostion.y = _height / 4;
 		this.setLocation(startPostion);
-		setLayout(null);
+		//setLayout(null);
 	}
 
 	private void creat_Panel() {
 		Panel = new JPanel();
 		Panel.setBackground(Color.BLUE);
 		this.add(Panel);
+		Panel.setLayout(null);
+		Panel.setVisible(true);
 
 	}
 
@@ -66,18 +66,26 @@ public class menu extends JFrame {
 		// button start
 		JButton Start = new JButton("Click to Start");
 
-		Start.resize(_width / 8, _height / 16);
-		setButtonPostion(Start, _width / 2, _height * 3 / 4);
+		Start.setSize(_width / 8, _height / 16);
+		setComponentPostion(Start, _width / 2, _height * 3 / 4);
 		// Start.setBounds(this.WIDTH / 2 - Start.WIDTH / 2, this.HEIGHT * 3 / 4, 300,
 		// 300);
-		this.add(Start);
+		Panel.add(Start);
+		// Panel.add(Start);
+
+		TextField textbox = new TextField("hi",5);
+		textbox.setSize(_width / 8, _height / 16);
+		textbox.setBackground(Color.WHITE);
+		textbox.setText("text here");
+		setComponentPostion(textbox, _width / 8, _height * 3 / 4);
+		textbox.setVisible(true);
+		Panel.add(textbox);
+		
 
 	}
 
-	private void setButtonPostion(JButton button, int X, int Y) {
-
-		button.setLocation(X - button.getWidth()/2, Y - button.getHeight()/2 );
-
+	private void setComponentPostion(java.awt.Component com, int X, int Y) {
+		com.setLocation(X - com.getWidth() / 2, Y - com.getHeight() / 2);
 	}
 
 	public static void main(String[] args) {
