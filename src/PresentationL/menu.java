@@ -93,10 +93,10 @@ public class menu extends JFrame {
 		Creat_Button_at(Start, "Click to Start", 4, 12);
 		JButton Catpic = new JButton();
 		Creat_Button_at(Catpic, "Cat pic", 2, 4);
-		JButton hackpic = new JButton();
-		Creat_Button_at(hackpic, "hack pic", 2, 6);
-		JButton flowerpic = new JButton();
-		Creat_Button_at(flowerpic, "flower pic", 2, 8);
+		JButton cyberpic = new JButton();
+		Creat_Button_at(cyberpic, "Cyber pic", 2, 6);
+		JButton sushipic = new JButton();
+		Creat_Button_at(sushipic, "Sushi pic", 2, 8);
 
 		Start.addActionListener(new ActionListener() {
 
@@ -110,12 +110,26 @@ public class menu extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-
 					Panel.changeImage(my_images.get_Cat(0, 0));
-
 			}
 		});
-
+		cyberpic.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Panel.changeImage(my_images.get_cyber(0, 0));
+				
+			}
+		});
+		sushipic.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Panel.changeImage(my_images.get_sushi(0, 0));
+				
+			}
+		});
+		
 	}
 
 	private void Creat_Button_at(JButton button, String Buttontxt, int X, int Y) {
