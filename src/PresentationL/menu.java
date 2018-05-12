@@ -2,20 +2,23 @@ package PresentationL;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Point;
 import java.awt.TextField;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class menu extends JFrame {
-	JPanel Panel;
+	Image_Panel Panel;
 	int _width;
 	int _height;
 	int[] locationsX;
@@ -66,7 +69,7 @@ public class menu extends JFrame {
 	}
 
 	private void creat_Panel() {
-		Panel = new JPanel();
+		Panel = new Image_Panel(_width,_height);
 		Panel.setBackground(Color.BLUE);
 		this.add(Panel);
 		Panel.setLayout(null);
@@ -83,7 +86,7 @@ public class menu extends JFrame {
 		textbox.setText("size of board here");
 		setComponentPostion(textbox, locationsX[7], locationsY[9]);
 		Panel.add(textbox);
-		
+
 		JButton Start = new JButton("Click to Start");
 		Creat_Button_at(Start, "Click to Start", 4, 12);
 		JButton Catpic = new JButton();
@@ -92,25 +95,29 @@ public class menu extends JFrame {
 		Creat_Button_at(hackpic, "hack pic", 2, 6);
 		JButton flowerpic = new JButton();
 		Creat_Button_at(flowerpic, "flower pic", 2, 8);
-		
+
 		Start.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("test");
-				
-				
+
 			}
 		});
 		Catpic.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("test2");
-				
+				BufferedImage img = null;
+				try {
+					img = ImageIO.read(new File("sample_pictures/cat/cat.jpeg"));
+					System.out.println("img uploaded");
+					Panel.changeImage(img);
+				} catch (IOException e) {
+				}
+
 			}
 		});
-		
 
 	}
 
@@ -134,7 +141,5 @@ public class menu extends JFrame {
 		new menu();
 
 	}
-
-	
 
 }
