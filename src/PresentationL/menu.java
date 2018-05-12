@@ -6,6 +6,8 @@ import java.awt.FlowLayout;
 import java.awt.Point;
 import java.awt.TextField;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -16,12 +18,14 @@ public class menu extends JFrame {
 	JPanel Panel;
 	int _width;
 	int _height;
+	int[] locationsX;
+	int[] locationsY;
 
 	public menu() {
 		super("Menu");
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 
 		setIntSize();
@@ -50,7 +54,15 @@ public class menu extends JFrame {
 		startPostion.x = _width / 4;
 		startPostion.y = _height / 4;
 		this.setLocation(startPostion);
-		//setLayout(null);
+		// setLayout(null);
+		locationsX = new int[8];
+		locationsY = new int[16];
+
+		for (int x = 0; x < locationsX.length; x++)
+			locationsX[x] = _width * x / locationsX.length;
+		for (int y = 0; y < locationsY.length; y++)
+			locationsY[y] = _height * y / locationsY.length;
+
 	}
 
 	private void creat_Panel() {
@@ -63,29 +75,58 @@ public class menu extends JFrame {
 	}
 
 	private void addButtons() {
-		// button start
-		JButton Start = new JButton("Click to Start");
 
-		Start.setSize(_width / 8, _height / 16);
-		setComponentPostion(Start, _width / 2, _height * 3 / 4);
-		// Start.setBounds(this.WIDTH / 2 - Start.WIDTH / 2, this.HEIGHT * 3 / 4, 300,
-		// 300);
-		Panel.add(Start);
-		// Panel.add(Start);
-
-		TextField textbox = new TextField("hi",5);
-		textbox.setSize(_width / 8, _height / 16);
+		TextField textbox = new TextField("hi", 5);
+		setComponentSize(textbox);
+		// textbox.setSize(_width / 8, _height / 16);
 		textbox.setBackground(Color.WHITE);
-		textbox.setText("text here");
-		setComponentPostion(textbox, _width / 8, _height * 3 / 4);
-		textbox.setVisible(true);
+		textbox.setText("size of board here");
+		setComponentPostion(textbox, locationsX[7], locationsY[9]);
 		Panel.add(textbox);
+		
+		JButton Start = new JButton("Click to Start");
+		Creat_Button_at(Start, "Click to Start", 4, 12);
+		JButton Catpic = new JButton();
+		Creat_Button_at(Catpic, "Cat pic", 2, 4);
+		JButton hackpic = new JButton();
+		Creat_Button_at(hackpic, "hack pic", 2, 6);
+		JButton flowerpic = new JButton();
+		Creat_Button_at(flowerpic, "flower pic", 2, 8);
+		
+		Start.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("test");
+				
+				
+			}
+		});
+		Catpic.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("test2");
+				
+			}
+		});
 		
 
 	}
 
+	private void Creat_Button_at(JButton button, String Buttontxt, int X, int Y) {
+		button.setText(Buttontxt);
+		setComponentSize(button);
+		setComponentPostion(button, locationsX[X], locationsY[Y]);
+		Panel.add(button);
+	}
+
 	private void setComponentPostion(java.awt.Component com, int X, int Y) {
 		com.setLocation(X - com.getWidth() / 2, Y - com.getHeight() / 2);
+	}
+
+	private void setComponentSize(java.awt.Component com) {
+		com.setSize(locationsX[1], locationsY[1]);
 	}
 
 	public static void main(String[] args) {
@@ -93,5 +134,7 @@ public class menu extends JFrame {
 		new menu();
 
 	}
+
+	
 
 }
