@@ -23,10 +23,12 @@ public class menu extends JFrame {
 	int _height;
 	int[] locationsX;
 	int[] locationsY;
+	BufferedImage img;
 
 	public menu() {
 		super("Menu");
-
+		img = null;
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
@@ -38,7 +40,7 @@ public class menu extends JFrame {
 		setResizable(false);
 		setVisible(true);
 		pack();
-
+		
 	}
 
 	private void setIntSize() {
@@ -108,12 +110,13 @@ public class menu extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				BufferedImage img = null;
+
 				try {
 					img = ImageIO.read(new File("sample_pictures/cat/cat.jpeg"));
 					System.out.println("img uploaded");
 					Panel.changeImage(img);
 				} catch (IOException e) {
+					
 				}
 
 			}
