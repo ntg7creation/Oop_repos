@@ -20,10 +20,8 @@ public class image_Loader {
 		load_Sushi();
 
 	}
-	
-	
-	private void load_Cat()
-	{
+
+	private void load_Cat() {
 		BufferedImage temp;
 		cat = new BufferedImage[4][];
 		cat[0] = new BufferedImage[1];
@@ -52,9 +50,8 @@ public class image_Loader {
 			}
 		}
 	}
-	
-	private void load_Cyber()
-	{
+
+	private void load_Cyber() {
 		BufferedImage temp;
 		cyber = new BufferedImage[4][];
 		cyber[0] = new BufferedImage[1];
@@ -70,8 +67,8 @@ public class image_Loader {
 		for (int size = 3; size <= 5; size++) {
 			cyber[size - 2] = new BufferedImage[size * size];
 			for (int i = 1; i <= size * size; i++) {
-				String path = "sample_pictures/cyber/cyber_" + Integer.toString(size) + "x" + Integer.toString(size) + "/"
-						+ Integer.toString(i) + ".jpeg";
+				String path = "sample_pictures/cyber/cyber_" + Integer.toString(size) + "x" + Integer.toString(size)
+						+ "/" + Integer.toString(i) + ".jpeg";
 
 				try {
 					System.out.println("trying to load : " + path);
@@ -83,9 +80,8 @@ public class image_Loader {
 			}
 		}
 	}
-	
-	private void load_Sushi()
-	{
+
+	private void load_Sushi() {
 		BufferedImage temp;
 		sushi = new BufferedImage[4][];
 		sushi[0] = new BufferedImage[1];
@@ -102,8 +98,8 @@ public class image_Loader {
 		for (int size = 3; size <= 5; size++) {
 			sushi[size - 2] = new BufferedImage[size * size];
 			for (int i = 1; i <= size * size; i++) {
-				String path = "sample_pictures/sushi/sushi_" + Integer.toString(size) + "x" + Integer.toString(size) + "/"
-						+ Integer.toString(i) + ".jpeg";
+				String path = "sample_pictures/sushi/sushi_" + Integer.toString(size) + "x" + Integer.toString(size)
+						+ "/" + Integer.toString(i) + ".jpeg";
 
 				try {
 					System.out.println("trying to load : " + path);
@@ -114,6 +110,27 @@ public class image_Loader {
 				}
 			}
 		}
+	}
+
+	public BufferedImage get_Cat(int size, int n) {
+		if (size > 3 | size < 0 | n >= size * size | n < 0)
+			throw new ArrayIndexOutOfBoundsException();
+
+		return cat[size][n];
+	}
+
+	public BufferedImage get_cyber(int size, int n) {
+		if (size > 3 | size < 0 | n >= size * size | n < 0)
+			throw new ArrayIndexOutOfBoundsException();
+
+		return cyber[size][n];
+	}
+
+	public BufferedImage get_sushi(int size, int n) {
+		if (size > 3 | size < 0 | n >= size * size | n < 0)
+			throw new ArrayIndexOutOfBoundsException();
+
+		return sushi[size][n];
 	}
 
 	public static void main(String[] args) {
