@@ -113,24 +113,33 @@ public class image_Loader {
 	}
 
 	public BufferedImage get_Cat(int size, int n) {
-		if (size > 3 | size < 0 | n >= size * size | n < 0)
+		if (size == 0)
+			return cat[0][0];
+		
+		if (size > 5 | size < 3 | n > size * size | n < 1)
 			throw new ArrayIndexOutOfBoundsException();
 
-		return cat[size][n];
+		return cat[size - 2][n - 1];
 	}
 
 	public BufferedImage get_cyber(int size, int n) {
-		if (size > 3 | size < 0 | n >= size * size | n < 0)
+		if (size == 0)
+			return cyber[0][0];
+		
+		if (size > 5 | size < 3 | n > size * size | n < 1)
 			throw new ArrayIndexOutOfBoundsException();
 
-		return cyber[size][n];
+		return cyber[size - 2][n - 1];
 	}
 
 	public BufferedImage get_sushi(int size, int n) {
-		if (size > 3 | size < 0 | n >= size * size | n < 0)
+		if (size == 0)
+			return sushi[0][0];
+		
+		if (size > 5 | size < 3 | n > size * size | n < 1)
 			throw new ArrayIndexOutOfBoundsException();
 
-		return sushi[size][n];
+		return sushi[size - 2][n - 1];
 	}
 
 	public static void main(String[] args) {

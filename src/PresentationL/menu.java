@@ -7,7 +7,6 @@ import java.awt.TextField;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -15,7 +14,8 @@ import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+
+import StorageL.image_Loader;
 
 public class menu extends JFrame {
 	Image_Panel Panel;
@@ -23,11 +23,11 @@ public class menu extends JFrame {
 	int _height;
 	int[] locationsX;
 	int[] locationsY;
-	BufferedImage img;
-
+	image_Loader my_images;
+	
 	public menu() {
 		super("Menu");
-		img = null;
+		my_images = new image_Loader();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -111,13 +111,7 @@ public class menu extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 
-				try {
-					img = ImageIO.read(new File("sample_pictures/cat/cat.jpeg"));
-					System.out.println("img uploaded");
-					Panel.changeImage(img);
-				} catch (IOException e) {
-					
-				}
+					Panel.changeImage(my_images.get_Cat(0, 0));
 
 			}
 		});
