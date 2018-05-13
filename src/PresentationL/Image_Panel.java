@@ -23,7 +23,7 @@ public class Image_Panel extends JPanel {
 		Hight = hight;
 		try {
 			// defult path
-			image = ImageIO.read(new File("sample_pictures/cyber/cyber.jpeg"));
+			image = ImageIO.read(new File("Resources/Images/cyber/cyber.jpeg"));
 
 		} catch (IOException ex) {
 			System.out.println("error");

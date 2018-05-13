@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class csv_Reader {
 
 	public static void main(String[] args) {
-		String fileName = "boards.csv";
+		String fileName = "Resources/boards.csv";
 		File file = new File(fileName);
 
 		// this gives you a 2-dimensional array of strings
