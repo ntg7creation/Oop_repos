@@ -23,6 +23,12 @@ public class Costom_Frame extends JFrame {
 	int[] locationsX;
 	int[] locationsY;
 
+	/**
+	 *
+	 * Contractor
+	 * @param  width of the window
+	 * @param  height of the window
+	 */
 	public Costom_Frame(int width, int height) {
 		super();
 
@@ -39,7 +45,10 @@ public class Costom_Frame extends JFrame {
 		pack();
 
 	}
-
+	/**
+	 *
+	 * Initializing window
+	 */
 	private void setIntSize() {
 
 		this.setPreferredSize(new Dimension(_width, _height));
@@ -58,7 +67,10 @@ public class Costom_Frame extends JFrame {
 			locationsY[y] = _height * y / locationsY.length;
 
 	}
-
+	/**
+	 *
+	 * Adding main Panel
+	 */
 	private void creat_Panel() {
 		Panel = new Image_Panel(_width, _height);
 		Panel.setBackground(Color.BLUE);
@@ -67,7 +79,9 @@ public class Costom_Frame extends JFrame {
 		Panel.setVisible(true);
 
 	}
-
+	/**
+	 * Creates a Button at the spot x y
+	 */
 	public void Creat_Button_at(JButton button, String Buttontxt, int X, int Y) {
 		if (X >= Xblocks)
 			X = 0;
@@ -79,7 +93,9 @@ public class Costom_Frame extends JFrame {
 		setComponentPostion(button, locationsX[X], locationsY[Y]);
 		Panel.add(button);
 	}
-
+	/**
+	 * Creates a Label at the position
+	 */
 	public void Creat_Label_at(JLabel label, String Labetxt, int X, int Y) {
 		if (X >= Xblocks)
 			X = 0;
@@ -97,10 +113,16 @@ public class Costom_Frame extends JFrame {
 		Panel.add(label);
 	}
 
+	/**
+	 * sets the Component position to at x y to center it 
+	 */
 	public void setComponentPostion(java.awt.Component com, int X, int Y) {
 		com.setLocation(X - com.getWidth() / 2, Y - com.getHeight() / 2);
 	}
 
+	/**
+	 * sets the Size to be 1 slot
+	 */
 	public void setComponentSize(java.awt.Component com) {
 		com.setSize(locationsX[1], locationsY[1]);
 	}

@@ -14,7 +14,9 @@ public class Game_Menu extends Costom_Frame {
 	int currentSize;
 	image_Loader my_images;
 	JLabel boradSize;
-
+	/**
+	 * Contractor 
+	 */
 	public Game_Menu() {
 		super(Toolkit.getDefaultToolkit().getScreenSize().width * 2 / 3,
 				Toolkit.getDefaultToolkit().getScreenSize().height * 2 / 3);
@@ -23,7 +25,7 @@ public class Game_Menu extends Costom_Frame {
 		currentSize = 3; // Defult
 
 		addButtons();
-		addLabbels();
+		addLabels();
 		
 		setResizable(false);
 		setVisible(true);
@@ -31,6 +33,9 @@ public class Game_Menu extends Costom_Frame {
 
 	}
 
+	/**
+	 * creates all buttons
+	 */
 	private void addButtons() {
 
 		JButton Start = new JButton("Click to Start");
@@ -64,7 +69,7 @@ public class Game_Menu extends Costom_Frame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Panel.changeImage(my_images.get_cyber(0, 0));
+				Panel.changeImage(my_images.get_Cyber(0, 0));
 
 			}
 		});
@@ -72,7 +77,7 @@ public class Game_Menu extends Costom_Frame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Panel.changeImage(my_images.get_sushi(0, 0));
+				Panel.changeImage(my_images.get_Sushi(0, 0));
 
 			}
 		});
@@ -113,7 +118,10 @@ public class Game_Menu extends Costom_Frame {
 
 	}
 
-	private void addLabbels() {
+	/**
+	 * creates all labels
+	 */
+	private void addLabels() {
 		String size = Integer.toString(currentSize);
 		boradSize = new JLabel();
 		Creat_Label_at(boradSize, "pleas chose board size", 6, 2);

@@ -1,0 +1,50 @@
+package StorageL;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
+public class csv_Reader {
+
+	public static void main(String[] args) {
+		String fileName = "boards.csv";
+		File file = new File(fileName);
+
+		// this gives you a 2-dimensional array of strings
+		List<String[]> txt = new ArrayList<>();
+		Scanner inputStream;
+
+		try {
+			inputStream = new Scanner(file);
+
+			while (inputStream.hasNext()) {
+				String line = inputStream.next();
+				String[] values = line.split(",");
+				// this adds the currently parsed line to the 2-dimensional string array
+				txt.add(values);
+			}
+
+			inputStream.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		// the following code lets you iterate through the 2-dimensional array
+		int lineNo = 1;
+		for (String[] line : txt) {
+			// int columnNo = 1;
+			System.out.println("Line " + lineNo);
+			for (String value : line) {
+				System.out.print(value + " ");
+				// columnNo++;
+			}
+			System.out.println();
+			System.out.println();
+			lineNo++;
+		}
+	}
+
+}

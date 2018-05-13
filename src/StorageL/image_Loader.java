@@ -122,7 +122,7 @@ public class image_Loader {
 		return cat[size - 2][n - 1];
 	}
 
-	public BufferedImage get_cyber(int size, int n) {
+	public BufferedImage get_Cyber(int size, int n) {
 		if (size == 0)
 			return cyber[0][0];
 		
@@ -132,7 +132,7 @@ public class image_Loader {
 		return cyber[size - 2][n - 1];
 	}
 
-	public BufferedImage get_sushi(int size, int n) {
+	public BufferedImage get_Sushi(int size, int n) {
 		if (size == 0)
 			return sushi[0][0];
 		

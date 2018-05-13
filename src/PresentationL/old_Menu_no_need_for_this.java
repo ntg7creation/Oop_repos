@@ -109,7 +109,7 @@ public class old_Menu_no_need_for_this extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Panel.changeImage(my_images.get_cyber(0, 0));
+				Panel.changeImage(my_images.get_Cyber(0, 0));
 
 			}
 		});
@@ -117,7 +117,7 @@ public class old_Menu_no_need_for_this extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Panel.changeImage(my_images.get_sushi(0, 0));
+				Panel.changeImage(my_images.get_Sushi(0, 0));
 
 			}
 		});
