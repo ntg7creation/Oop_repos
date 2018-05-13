@@ -5,10 +5,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
-public class gui_Game_Window extends JFrame implements ActionListener {
+public class gui_Game_Window extends Costom_Frame implements ActionListener {
 	
 	public gui_Game_Window() {
-		super("Game");
+		super(600,600);
 	}
 
 	@Override

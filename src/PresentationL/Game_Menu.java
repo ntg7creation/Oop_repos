@@ -11,7 +11,7 @@ import StorageL.image_Loader;
 
 public class Game_Menu extends Costom_Frame {
 
-	 int currentSize;
+	int currentSize;
 	image_Loader my_images;
 	JLabel boradSize;
 
@@ -47,6 +47,8 @@ public class Game_Menu extends Costom_Frame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("test");
+				new gui_Game_Window();
+				dispose();
 
 			}
 		});
