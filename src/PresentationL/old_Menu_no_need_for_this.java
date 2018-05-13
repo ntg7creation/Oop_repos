@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 
 import StorageL.image_Loader;
 
-public class menu extends JFrame {
+public class old_Menu_no_need_for_this extends JFrame {
 	Image_Panel Panel;
 	private int _width;
 	private int _height;
@@ -26,7 +26,7 @@ public class menu extends JFrame {
 	private image_Loader my_images;
 	JLabel boradSize;
 
-	public menu() {
+	public old_Menu_no_need_for_this() {
 		//super("Menu");
 		this.setTitle("menu");
 		my_images = new image_Loader();
@@ -209,7 +209,7 @@ public class menu extends JFrame {
 
 	public static void main(String[] args) {
 
-		new menu();
+		new old_Menu_no_need_for_this();
 
 	}
 
