@@ -8,32 +8,38 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
+import LogicL.logic_Board;
 import StorageL.Boards;
 import StorageL.image_Loader;
 
 public class Game_Menu extends Costom_Frame {
 
 	int currentSize;
-	image_Loader my_images;
+	image_Loader my_images[];
 	Boards my_Boards;
 	List<int[][]>[] allBoards;
 	JLabel boradSize;
+	int currentImage = 0;
+
 	/**
-	 * Contractor 
+	 * Contractor
 	 */
 	public Game_Menu() {
-		
+
 		super(Toolkit.getDefaultToolkit().getScreenSize().width * 2 / 3,
-				Toolkit.getDefaultToolkit().getScreenSize().height * 2 / 3,8,16);
+				Toolkit.getDefaultToolkit().getScreenSize().height * 2 / 3, 8, 16);
 		this.setTitle("Game Menu");
-		my_images = new image_Loader();
+		my_images = new image_Loader[3];
+		my_images[0] = new image_Loader("cat"); // cat images
+		my_images[1] = new image_Loader("cyber"); // cyber images
+		my_images[2] = new image_Loader("sushi"); // sushi images
 		my_Boards = new Boards();
-		
+
 		currentSize = 3; // Defult
 
 		addButtons();
 		addLabels();
-		
+
 		setResizable(false);
 		setVisible(true);
 		pack();
@@ -58,8 +64,9 @@ public class Game_Menu extends Costom_Frame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("test");
-				new gui_Game_Window(currentSize);
+				System.out.println("Starting game");
+				logic_Board logic = new logic_Board(currentSize, my_Boards.get_Random_Board_of_Size(currentSize));
+				new gui_Game_Window(currentSize, logic, my_images[currentImage]);
 				dispose();
 
 			}
@@ -69,14 +76,16 @@ public class Game_Menu extends Costom_Frame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Panel.changeImage(my_images.get_Cat(0, 0));
+				currentImage = 0;
+				Panel.changeImage(my_images[0].get_Images(0, 0));
 			}
 		});
 		cyberpic.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Panel.changeImage(my_images.get_Cyber(0, 0));
+				currentImage = 1;
+				Panel.changeImage(my_images[1].get_Images(0, 0));
 
 			}
 		});
@@ -84,7 +93,8 @@ public class Game_Menu extends Costom_Frame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Panel.changeImage(my_images.get_Sushi(0, 0));
+				currentImage =2;
+				Panel.changeImage(my_images[2].get_Images(0, 0));
 
 			}
 		});

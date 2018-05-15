@@ -9,21 +9,19 @@ import java.util.Scanner;
 
 public class Boards {
 
-	List<int[][]>[] allBoards;
-	String path = "Resources/boards.csv";
-	public Boards()
-	{
+	private List<int[][]>[] allBoards;
+	private String path = "Resources/boards.csv";
+
+	public Boards() {
 		allBoards = readCSV(path);
 	}
-	
-	
-	public int[][] get_Random_Board_of_Size(int size)
-	{
+
+	public int[][] get_Random_Board_of_Size(int size) {
 		Random r = new Random();
-		int boardnum = r.nextInt(allBoards[size-3].size());
-		return allBoards[size-3].get(boardnum);
+		int boardnum = r.nextInt(allBoards[size - 3].size());
+		return allBoards[size - 3].get(boardnum);
 	}
-	
+
 	public List<int[][]>[] readCSV(String path) {
 		String fileName = path;
 		File file = new File(fileName);
@@ -38,8 +36,7 @@ public class Boards {
 
 		try {
 			inputStream = new Scanner(file);
-		}
-		catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			return null;
 		}
@@ -64,7 +61,7 @@ public class Boards {
 			}
 
 			inputStream.close();
-		} catch(Exception e)  {
+		} catch (Exception e) {
 			System.out.println("rong input in csv");
 		}
 		return allBoards;
