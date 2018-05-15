@@ -14,12 +14,12 @@ import StorageL.image_Loader;
 
 public class Game_Menu extends Costom_Frame {
 
-	int currentSize;
-	image_Loader my_images[];
-	Boards my_Boards;
-	List<int[][]>[] allBoards;
-	JLabel boradSize;
-	int currentImage = 0;
+	private int currentSize;
+	private image_Loader my_images[];
+	private Boards my_Boards;
+	private List<int[][]>[] allBoards;
+	private JLabel boradSize;
+	private int currentImage = 0;
 
 	/**
 	 * Contractor
@@ -76,16 +76,14 @@ public class Game_Menu extends Costom_Frame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				currentImage = 0;
-				Panel.changeImage(my_images[0].get_Images(0, 0));
+				change_image(0);
 			}
 		});
 		cyberpic.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				currentImage = 1;
-				Panel.changeImage(my_images[1].get_Images(0, 0));
+				change_image(1);
 
 			}
 		});
@@ -93,8 +91,7 @@ public class Game_Menu extends Costom_Frame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				currentImage =2;
-				Panel.changeImage(my_images[2].get_Images(0, 0));
+				change_image(2);
 
 			}
 		});
@@ -110,16 +107,14 @@ public class Game_Menu extends Costom_Frame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				currentSize = 3;
-				updateLabel();
+				change_size(3);
 			}
 		});
 		Size4.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				currentSize = 4;
-				updateLabel();
+				change_size(4);
 
 			}
 		});
@@ -127,12 +122,21 @@ public class Game_Menu extends Costom_Frame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				currentSize = 5;
-				updateLabel();
+				change_size(5);
 
 			}
 		});
 
+	}
+
+	public void change_size(int size) {
+		currentSize = size;
+		updateLabel();
+	}
+
+	public void change_image(int image) {
+		currentImage = image;
+		Panel.changeImage(my_images[currentImage].get_Images(0, 0));
 	}
 
 	/**

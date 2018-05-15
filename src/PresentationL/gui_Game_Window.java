@@ -21,9 +21,18 @@ public class gui_Game_Window extends Costom_Frame implements ActionListener {
 		this.images = images;
 	}
 
+	public void creat_buttons() {
+		
+	}
+	
+	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
+		
+	}
+	
+	public void action_button_click() {
 		
 	}
 
