@@ -26,7 +26,7 @@ public class image_Loader {
 		cat = new BufferedImage[4][];
 		cat[0] = new BufferedImage[1];
 		try {
-			String path = "sample_pictures/cat/cat.jpeg";
+			String path = "Resources/Images/cat/cat.jpeg";
 			System.out.println("trying to load : " + path);
 			temp = ImageIO.read(new File(path));
 			cat[0][0] = temp;
@@ -37,7 +37,7 @@ public class image_Loader {
 		for (int size = 3; size <= 5; size++) {
 			cat[size - 2] = new BufferedImage[size * size];
 			for (int i = 1; i <= size * size; i++) {
-				String path = "sample_pictures/cat/cat_" + Integer.toString(size) + "x" + Integer.toString(size) + "/"
+				String path = "Resources/Images/cat/cat_" + Integer.toString(size) + "x" + Integer.toString(size) + "/"
 						+ Integer.toString(i) + ".jpeg";
 
 				try {
@@ -56,7 +56,7 @@ public class image_Loader {
 		cyber = new BufferedImage[4][];
 		cyber[0] = new BufferedImage[1];
 		try {
-			String path = "sample_pictures/cyber/cyber.jpeg";
+			String path = "Resources/Images/cyber/cyber.jpeg";
 			System.out.println("trying to load : " + path);
 			temp = ImageIO.read(new File(path));
 			cyber[0][0] = temp;
@@ -67,7 +67,7 @@ public class image_Loader {
 		for (int size = 3; size <= 5; size++) {
 			cyber[size - 2] = new BufferedImage[size * size];
 			for (int i = 1; i <= size * size; i++) {
-				String path = "sample_pictures/cyber/cyber_" + Integer.toString(size) + "x" + Integer.toString(size)
+				String path = "Resources/Images/cyber/cyber_" + Integer.toString(size) + "x" + Integer.toString(size)
 						+ "/" + Integer.toString(i) + ".jpeg";
 
 				try {
@@ -87,7 +87,7 @@ public class image_Loader {
 		sushi[0] = new BufferedImage[1];
 		try {
 			// y did you make this one jpg
-			String path = "sample_pictures/sushi/sushi.jpg";
+			String path = "Resources/Images/sushi/sushi.jpg";
 			System.out.println("trying to load : " + path);
 			temp = ImageIO.read(new File(path));
 			sushi[0][0] = temp;
@@ -98,7 +98,7 @@ public class image_Loader {
 		for (int size = 3; size <= 5; size++) {
 			sushi[size - 2] = new BufferedImage[size * size];
 			for (int i = 1; i <= size * size; i++) {
-				String path = "sample_pictures/sushi/sushi_" + Integer.toString(size) + "x" + Integer.toString(size)
+				String path = "Resources/Images/sushi/sushi_" + Integer.toString(size) + "x" + Integer.toString(size)
 						+ "/" + Integer.toString(i) + ".jpeg";
 
 				try {

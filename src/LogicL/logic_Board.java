@@ -1,56 +1,39 @@
 package LogicL;
 
-import java.util.Vector;
+import java.util.Stack;
 
 public class logic_Board {
-    private PuzzlePiece[][] board;
+    private int[][] board;
     private int boardSize;
+    private Stack<Move> history;
 
-    public logic_Board(int boardSize, int[][] map, Vector<PuzzlePiece> pieces) {
+    public logic_Board(int boardSize, int[][] map) {
         this.boardSize = boardSize;
-        this.board = new PuzzlePiece[boardSize][boardSize];
-        for (int i = 0; i < boardSize; i++) {
-            for (int j = 0; j < boardSize; j++) {
-                int index = map[i][j];
-                if (index != 0) {
-                    for (PuzzlePiece piece : pieces) {
-                        if (piece.getIndex() == index) {
-                            this.board[i][j] = piece;
-                            break;
-                        }
-                    }
-                }
-            }
-        }
+        this.board = map;
+        Move.setBoardSize(boardSize);
+        this.history = new Stack<>();
     }
 
-    public PuzzlePiece[][] getBoard() {
+    public int[][] getBoard() {
         return board;
     }
 
     // Move a piece located at (x,y) in a given direction
-    public boolean movePiece(int x, int y, Direction dir) {
+    public boolean movePiece(Move move) {
         // Invalid input
-        if (!inRange(x) | !inRange(y)) {
+        if (!move.isValid()) {
             return false;
         }
-        
-        int newX = x + dir.getDx();
-        int newY = y + dir.getDy();
-        
-        // Invalid direction
-        if (!inRange(newX) | !inRange(newY)) {
-            return false;
-        }
-        
+
         // New location is occupied
-        if (this.board[newX][newY] != null) {
+        if (this.board[move.destX()][move.destY()] != 0) {
             return false;
         }
         
         // Move piece
-        this.board[newX][newY] = this.board[x][y];
-        this.board[x][y] = null;
+        this.board[move.destX()][move.destY()] = this.board[move.getX()][move.getY()];
+        this.board[move.getX()][move.getY()] = 0;
+        this.history.push(move);
         return true;
     }
 
@@ -61,7 +44,7 @@ public class logic_Board {
         boolean found = false;
         for (int i = 0; i < this.boardSize & !found; i++) {
             for (int j = 0; j < this.boardSize & !found; j++) {
-                if (this.board[i][j] == null) {
+                if (this.board[i][j] == 0) {
                     openX = i;
                     openY = j;
                 }
@@ -70,33 +53,33 @@ public class logic_Board {
 
         int xToMove = openX + dir.getOpposite().getDx();
         int yToMove = openY + dir.getOpposite().getDy();
-        return movePiece(xToMove, yToMove,dir);
+        return movePiece(new Move(xToMove, yToMove,dir));
+    }
+
+    public boolean undo(){
+        if (this.history.isEmpty()) {
+            return false;
+        }
+
+        Move undoMove = this.history.pop();
+        return movePiece(undoMove.oppositeMove());
     }
     
     // Check if board is solved
     public boolean isSolved() {
         // Empty spot not in place
-        if (this.board[boardSize-1][boardSize-1] != null) {
+        if (this.board[boardSize-1][boardSize-1] != 0) {
             return false;
         }
 
         for (int i = 1; i < this.boardSize*this.boardSize; i++) {
             int x = (i - 1) % this.boardSize;
             int y = (i - 1) / this.boardSize;
-            if (this.board[x][y].getIndex() != i) {
+            if (this.board[x][y] != i) {
                 return false;
             }
         }
 
-        return true;
-    }
-    
-    // Check if given index is in range of the board
-    private boolean inRange(int i) {
-        if (i < 0 | i >= boardSize) {
-            return false;
-        }
-        
         return true;
     }
 }
