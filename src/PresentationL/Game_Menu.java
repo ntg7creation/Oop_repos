@@ -8,12 +8,14 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
+import StorageL.Boards;
 import StorageL.image_Loader;
 
 public class Game_Menu extends Costom_Frame {
 
 	int currentSize;
 	image_Loader my_images;
+	Boards my_Boards;
 	List<int[][]>[] allBoards;
 	JLabel boradSize;
 	/**
@@ -22,9 +24,11 @@ public class Game_Menu extends Costom_Frame {
 	public Game_Menu() {
 		
 		super(Toolkit.getDefaultToolkit().getScreenSize().width * 2 / 3,
-				Toolkit.getDefaultToolkit().getScreenSize().height * 2 / 3);
+				Toolkit.getDefaultToolkit().getScreenSize().height * 2 / 3,8,16);
 		this.setTitle("Game Menu");
 		my_images = new image_Loader();
+		my_Boards = new Boards();
+		
 		currentSize = 3; // Defult
 
 		addButtons();
@@ -55,7 +59,7 @@ public class Game_Menu extends Costom_Frame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("test");
-				new gui_Game_Window();
+				new gui_Game_Window(currentSize);
 				dispose();
 
 			}

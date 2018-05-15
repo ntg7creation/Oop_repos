@@ -27,7 +27,7 @@ public class image_Loader {
 		cat[0] = new BufferedImage[1];
 		try {
 			String path = "Resources/Images/cat/cat.jpeg";
-			System.out.println("trying to load : " + path);
+			//System.out.println("trying to load : " + path);
 			temp = ImageIO.read(new File(path));
 			cat[0][0] = temp;
 		} catch (IOException e) {
@@ -41,7 +41,7 @@ public class image_Loader {
 						+ Integer.toString(i) + ".jpeg";
 
 				try {
-					System.out.println("trying to load : " + path);
+					//System.out.println("trying to load : " + path);
 					temp = ImageIO.read(new File(path));
 					cat[size - 2][i - 1] = temp;
 				} catch (IOException e) {
@@ -57,7 +57,7 @@ public class image_Loader {
 		cyber[0] = new BufferedImage[1];
 		try {
 			String path = "Resources/Images/cyber/cyber.jpeg";
-			System.out.println("trying to load : " + path);
+			//System.out.println("trying to load : " + path);
 			temp = ImageIO.read(new File(path));
 			cyber[0][0] = temp;
 		} catch (IOException e) {
@@ -71,7 +71,7 @@ public class image_Loader {
 						+ "/" + Integer.toString(i) + ".jpeg";
 
 				try {
-					System.out.println("trying to load : " + path);
+				//	System.out.println("trying to load : " + path);
 					temp = ImageIO.read(new File(path));
 					cyber[size - 2][i - 1] = temp;
 				} catch (IOException e) {
@@ -88,7 +88,7 @@ public class image_Loader {
 		try {
 			// y did you make this one jpg
 			String path = "Resources/Images/sushi/sushi.jpg";
-			System.out.println("trying to load : " + path);
+			//System.out.println("trying to load : " + path);
 			temp = ImageIO.read(new File(path));
 			sushi[0][0] = temp;
 		} catch (IOException e) {
@@ -102,7 +102,7 @@ public class image_Loader {
 						+ "/" + Integer.toString(i) + ".jpeg";
 
 				try {
-					System.out.println("trying to load : " + path);
+					//System.out.println("trying to load : " + path);
 					temp = ImageIO.read(new File(path));
 					sushi[size - 2][i - 1] = temp;
 				} catch (IOException e) {

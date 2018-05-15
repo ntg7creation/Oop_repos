@@ -20,8 +20,8 @@ public class Boards {
 	public int[][] get_Random_Board_of_Size(int size)
 	{
 		Random r = new Random();
-		int boardnum = r.nextInt(allBoards[size].size());
-		return allBoards[size].get(boardnum);
+		int boardnum = r.nextInt(allBoards[size-3].size());
+		return allBoards[size-3].get(boardnum);
 	}
 	
 	public List<int[][]>[] readCSV(String path) {

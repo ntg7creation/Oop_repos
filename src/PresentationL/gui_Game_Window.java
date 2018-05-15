@@ -7,8 +7,8 @@ import javax.swing.JFrame;
 
 public class gui_Game_Window extends Costom_Frame implements ActionListener {
 	
-	public gui_Game_Window() {
-		super(600,600);
+	public gui_Game_Window(int size) {
+		super(600,600,size,size+2);
 	}
 
 	@Override
