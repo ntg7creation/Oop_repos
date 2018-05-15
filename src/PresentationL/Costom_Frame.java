@@ -123,10 +123,12 @@ public class Costom_Frame extends JFrame {
 	}
 
 	/**
-	 * sets the Component position to at x y to center it
+	 * sets the Component position to at x y and center it
 	 */
 	public void setComponentPostion(java.awt.Component com, int X, int Y) {
 		com.setLocation(X - com.getWidth() / 2, Y - com.getHeight() / 2);
+		//com.setLocation(X, Y );
+	
 	}
 
 	/**
