@@ -3,8 +3,6 @@ package PresentationL;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
@@ -17,7 +15,6 @@ public class Game_Menu extends Costom_Frame {
 	private int currentSize;
 	private image_Loader my_images[];
 	private Boards my_Boards;
-	private List<int[][]>[] allBoards;
 	private JLabel boradSize;
 	private int currentImage = 0;
 
@@ -66,7 +63,7 @@ public class Game_Menu extends Costom_Frame {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Starting game");
 				logic_Board logic = new logic_Board(currentSize, my_Boards.get_Random_Board_of_Size(currentSize));
-				new gui_Game_Window(currentSize, logic, my_images[currentImage]);
+				//new gui_Game_Window(currentSize, logic, my_images[currentImage]);
 				dispose();
 
 			}
@@ -154,7 +151,6 @@ public class Game_Menu extends Costom_Frame {
 	}
 
 	public static void main(String[] args) {
-
 		new Game_Menu();
 
 	}

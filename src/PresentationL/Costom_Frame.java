@@ -1,18 +1,14 @@
 package PresentationL;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Point;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
-import StorageL.image_Loader;
 
 public class Costom_Frame extends JFrame {
 	Image_Panel Panel;
@@ -125,7 +121,7 @@ public class Costom_Frame extends JFrame {
 	/**
 	 * sets the Component position to at x y and center it
 	 */
-	public void setComponentPostion(java.awt.Component com, int X, int Y) {
+	public void setComponentPostion(Component com, int X, int Y) {
 		com.setLocation(X - com.getWidth() / 2, Y - com.getHeight() / 2);
 		//com.setLocation(X, Y );
 	
@@ -134,7 +130,7 @@ public class Costom_Frame extends JFrame {
 	/**
 	 * sets the Size to be 1 slot
 	 */
-	public void setComponentSize(java.awt.Component com) {
+	public void setComponentSize(Component com) {
 		com.setSize(locationsX[1], locationsY[1]);
 	}
 
