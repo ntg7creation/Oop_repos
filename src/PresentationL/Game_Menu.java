@@ -3,6 +3,7 @@ package PresentationL;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
@@ -18,9 +19,6 @@ public class Game_Menu extends Costom_Frame {
 	private JLabel boradSize;
 	private int currentImage = 0;
 
-	/**
-	 * Contractor
-	 */
 	public Game_Menu() {
 
 		super(Toolkit.getDefaultToolkit().getScreenSize().width * 2 / 3,
@@ -43,9 +41,6 @@ public class Game_Menu extends Costom_Frame {
 
 	}
 
-	/**
-	 * creates all buttons
-	 */
 	private void addButtons() {
 
 		JButton Start = new JButton("Click to Start");
@@ -63,7 +58,7 @@ public class Game_Menu extends Costom_Frame {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Starting game");
 				logic_Board logic = new logic_Board(currentSize, my_Boards.get_Random_Board_of_Size(currentSize));
-				//new gui_Game_Window(currentSize, logic, my_images[currentImage]);
+				new gui_Game_Window(currentSize, logic, my_images[currentImage]);
 				dispose();
 
 			}
@@ -136,9 +131,6 @@ public class Game_Menu extends Costom_Frame {
 		Panel.changeImage(my_images[currentImage].get_Images(0, 0));
 	}
 
-	/**
-	 * creates all labels
-	 */
 	private void addLabels() {
 		String size = Integer.toString(currentSize);
 		boradSize = new JLabel();
@@ -151,6 +143,7 @@ public class Game_Menu extends Costom_Frame {
 	}
 
 	public static void main(String[] args) {
+		System.out.println("test");
 		new Game_Menu();
 
 	}

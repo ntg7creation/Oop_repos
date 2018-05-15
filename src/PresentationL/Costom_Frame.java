@@ -123,8 +123,8 @@ public class Costom_Frame extends JFrame {
 	 */
 	public void setComponentPostion(Component com, int X, int Y) {
 		com.setLocation(X - com.getWidth() / 2, Y - com.getHeight() / 2);
-		//com.setLocation(X, Y );
-	
+		// com.setLocation(X, Y );
+
 	}
 
 	/**
@@ -132,6 +132,14 @@ public class Costom_Frame extends JFrame {
 	 */
 	public void setComponentSize(Component com) {
 		com.setSize(locationsX[1], locationsY[1]);
+	}
+
+	public int get_x_size() {
+		return locationsX[1];
+	}
+
+	public int get_y_size() {
+		return locationsY[1];
 	}
 
 }
