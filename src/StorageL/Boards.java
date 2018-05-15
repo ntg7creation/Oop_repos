@@ -4,11 +4,27 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
-public class csv_Reader {
+public class Boards {
 
-	public List<int[][]>[] read2(String path) {
+	List<int[][]>[] allBoards;
+	String path = "Resources/boards.csv";
+	public Boards()
+	{
+		allBoards = readCSV(path);
+	}
+	
+	
+	public int[][] get_Random_Board_of_Size(int size)
+	{
+		Random r = new Random();
+		int boardnum = r.nextInt(allBoards[size].size());
+		return allBoards[size].get(boardnum);
+	}
+	
+	public List<int[][]>[] readCSV(String path) {
 		String fileName = path;
 		File file = new File(fileName);
 		int row = 0;
@@ -51,15 +67,11 @@ public class csv_Reader {
 		} catch(Exception e)  {
 			System.out.println("rong input in csv");
 		}
-
-		
-		print2(allBoards);
-
 		return allBoards;
 	}
 
-	public void print2(List<int[][]>[] boards) {
-		for (List<int[][]> list : boards) {
+	public void print() {
+		for (List<int[][]> list : allBoards) {
 			for (int[][] board : list) {
 				for (int[] line : board) {
 					for (int i : line) {
@@ -73,9 +85,8 @@ public class csv_Reader {
 	}
 
 	public static void main(String[] args) {
-		csv_Reader r = new csv_Reader();
-		List<String[][]> txt = new ArrayList<>();
-		r.read2("boards.csv");
-		// r.print(txt);
+		Boards r = new Boards();
+		r.readCSV("Resources/boards.csv");
+		r.print();
 	}
 }

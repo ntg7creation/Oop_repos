@@ -3,6 +3,7 @@ package PresentationL;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -13,11 +14,13 @@ public class Game_Menu extends Costom_Frame {
 
 	int currentSize;
 	image_Loader my_images;
+	List<int[][]>[] allBoards;
 	JLabel boradSize;
 	/**
 	 * Contractor 
 	 */
 	public Game_Menu() {
+		
 		super(Toolkit.getDefaultToolkit().getScreenSize().width * 2 / 3,
 				Toolkit.getDefaultToolkit().getScreenSize().height * 2 / 3);
 		this.setTitle("Game Menu");
