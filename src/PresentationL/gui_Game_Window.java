@@ -19,6 +19,7 @@ import StorageL.image_Loader;
 
 public class gui_Game_Window extends Costom_Frame implements KeyListener, ActionListener {
 
+	private Boolean win = false;
 	private int time_past;
 	private Timer timer;
 	private final int delay = 1000;
@@ -82,6 +83,8 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				if (win)
+					return;
 				if (logic.undo()) {
 					move_num--;
 					num_of_moves.setText("you have done " + move_num + " moves");
@@ -101,8 +104,12 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 	}
 
 	public void action_Button_Click(int name) {
-		System.out.println("you just click button num:" + name);
-		if (logic.movePiece(name)) {
+		if (win)
+			return;
+		Boolean test = logic.movePiece(name);
+		System.out.println("you just click button num:" + name + "   " + test);
+
+		if (test) {
 			move_num++;
 			num_of_moves.setText("you have done " + move_num + " moves");
 		}
@@ -118,9 +125,14 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 				int button_num = board[y][x];
 				set_Component_Postion(buttons[button_num], locationsX[x], locationsY[y]);
 			}
-		if (logic.isSolved())
-			JOptionPane.showMessageDialog(null, "You Win", "", JOptionPane.INFORMATION_MESSAGE);
+		if (logic.isSolved()) {
+			win = true;
+			buttons[0].setVisible(true);
+			JOptionPane.showMessageDialog(null,
+					"You Win\n your time was:" + time_past + "\n number of moves: " + move_num, "",
+					JOptionPane.INFORMATION_MESSAGE);
 
+		}
 	}
 
 	@Override
@@ -130,6 +142,8 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 
 	@Override
 	public void keyReleased(KeyEvent e) {
+		if (win)
+			return;
 		int keyCode = e.getKeyCode();
 		Direction direc = null;
 
@@ -171,8 +185,6 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		int keyCode = e.getKeyCode();
-		System.out.println("test");
 
 	}
 
@@ -182,8 +194,12 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		time_past++;
-		time.setText("you have played for " + time_past + " sec");
+		if (win)
+			timer.stop();
+		else {
+			time_past++;
+			time.setText("you have played for " + time_past + " sec");
+		}
 	}
 
 }
