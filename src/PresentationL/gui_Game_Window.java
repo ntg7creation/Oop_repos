@@ -76,7 +76,9 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener {
 
 	public void action_Button_Click(int name) {
 		System.out.println("you just click button num:" + name);
+		prin(logic.getBoard());
 		logic.movePiece(name);
+		prin(logic.getBoard());
 		fix_Board();
 
 	}
@@ -105,36 +107,36 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener {
 		Direction direc = null;
 
 		switch (keyCode) {
-		case KeyEvent.VK_UP:
-			direc = Direction.Up;
-			break;
-		case KeyEvent.VK_DOWN:
-			direc = Direction.Down;
-			break;
-		case KeyEvent.VK_LEFT:
-			direc = Direction.Left;
-			break;
-		case KeyEvent.VK_RIGHT:
-			direc = Direction.Right;
-			break;
+			case KeyEvent.VK_UP:
+				direc = Direction.Up;
+				break;
+			case KeyEvent.VK_DOWN:
+				direc = Direction.Down;
+				break;
+			case KeyEvent.VK_LEFT:
+				direc = Direction.Left;
+				break;
+			case KeyEvent.VK_RIGHT:
+				direc = Direction.Right;
+				break;
 		}
-		// prin(logic.getBoard());
+		prin(logic.getBoard());
 		logic.movePiece(direc);
-		// prin(logic.getBoard());
+		prin(logic.getBoard());
 		fix_Board();
 	}
 
-	// public void prin(int[][] array)
-	// {
-	// for (int[] is : array) {
-	// for (int i : is) {
-	// System.out.print(i+",");
-	// }
-	// System.out.println();
-	// }
-	// System.out.println();
-	// System.out.println();
-	// }
+	 public void prin(int[][] array)
+	 {
+	 for (int[] is : array) {
+	 for (int i : is) {
+	 System.out.print(i+",");
+	 }
+	 System.out.println();
+	 }
+	 System.out.println();
+	 System.out.println();
+	 }
 
 	@Override
 	public void keyTyped(KeyEvent e) {

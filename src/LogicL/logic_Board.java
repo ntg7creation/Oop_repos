@@ -27,13 +27,13 @@ public class logic_Board {
 
 		// New location is occupied
         Coordinate destCoord = move.getDetination();
-		if (this.board[destCoord.getX()][destCoord.getY()] != 0) {
+		if (this.board[destCoord.getY()][destCoord.getX()] != 0) {
 			return false;
 		}
 
 		// Move piece
-		this.board[destCoord.getX()][destCoord.getY()] = this.board[move.getCoord().getX()][move.getCoord().getY()];
-		this.board[move.getCoord().getX()][move.getCoord().getY()] = 0;
+		this.board[destCoord.getY()][destCoord.getX()] = this.board[move.getCoord().getY()][move.getCoord().getX()];
+		this.board[move.getCoord().getY()][move.getCoord().getX()] = 0;
 		this.history.push(move);
 		return true;
 	}
@@ -56,9 +56,9 @@ public class logic_Board {
         boolean found = false;
         for (int i = 0; i < this.boardSize & !found; i++) {
             for (int j = 0; j < this.boardSize & !found; j++) {
-                if (this.board[i][j] == 0) {
-                    x = i;
-                    y = j;
+                if (this.board[i][j] == index) {
+                    y = i;
+                    x = j;
                     found = true;
                 }
             }
