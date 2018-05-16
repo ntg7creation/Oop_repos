@@ -11,13 +11,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class Costom_Frame extends JFrame {
-	Image_Panel Panel;
-	int _width;
-	int _height;
-	int Xblocks = 2;
-	int Yblocks = 2;
-	int[] locationsX;
-	int[] locationsY;
+	protected Image_Panel Panel;
+	private int _width;
+	private int _height;
+	private int Xblocks = 2;
+	private int Yblocks = 2;
+	protected int[] locationsX;
+	protected int[] locationsY;
 
 	/**
 	 *
@@ -94,7 +94,7 @@ public class Costom_Frame extends JFrame {
 
 		button.setText(Buttontxt);
 		setComponentSize(button);
-		setComponentPostion(button, locationsX[X], locationsY[Y]);
+		set_Component_Postion(button, locationsX[X], locationsY[Y]);
 		Panel.add(button);
 	}
 
@@ -114,32 +114,25 @@ public class Costom_Frame extends JFrame {
 		label.setBackground(Color.red);
 		label.setHorizontalAlignment(label.CENTER);
 		// label.setBorder(BorderFactory.createLineBorder(Color.black));
-		setComponentPostion(label, locationsX[X], locationsY[Y]);
+		set_Component_Postion(label, locationsX[X], locationsY[Y]);
 		Panel.add(label);
 	}
 
 	/**
 	 * sets the Component position to at x y and center it
 	 */
-	public void setComponentPostion(Component com, int X, int Y) {
+	public void set_Component_Postion(Component com, int X, int Y) {
 		com.setLocation(X - com.getWidth() / 2, Y - com.getHeight() / 2);
 		// com.setLocation(X, Y );
 
 	}
+
 
 	/**
 	 * sets the Size to be 1 slot
 	 */
 	public void setComponentSize(Component com) {
 		com.setSize(locationsX[1], locationsY[1]);
-	}
-
-	public int get_x_size() {
-		return locationsX[1];
-	}
-
-	public int get_y_size() {
-		return locationsY[1];
 	}
 
 }

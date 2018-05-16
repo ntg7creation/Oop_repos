@@ -1,10 +1,10 @@
 package PresentationL;
 
 import java.awt.Component;
-import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
 import javax.swing.ImageIcon;
@@ -13,7 +13,7 @@ import javax.swing.JButton;
 import LogicL.logic_Board;
 import StorageL.image_Loader;
 
-public class gui_Game_Window extends Costom_Frame implements ActionListener {
+public class gui_Game_Window extends Costom_Frame implements KeyListener {
 
 	private JButton[] buttons;
 	private logic_Board logic;
@@ -25,53 +25,90 @@ public class gui_Game_Window extends Costom_Frame implements ActionListener {
 		board_size = size;
 		this.logic = logic;
 		this.images = images;
-		creat_buttons();
+		creat_Buttons();
+		fix_Board();
+		pack();
+		
 	}
 
-	public void creat_buttons() {
-		buttons = new JButton[board_size * board_size - 1];
+	public void creat_Buttons() {
+		buttons = new JButton[board_size * board_size];
 		JButton temp = null;
 		for (int y = 0; y < board_size; y++)
 			for (int x = 0; x < board_size; x++) {
 				int button_num = x + y * board_size;
-				if (button_num != board_size * board_size - 1) {
 
-					BufferedImage buttonIcon = image_Loader.resize(images.get_Images(board_size, button_num + 1),
-							get_x_size(), get_y_size());
-					temp = new JButton(new ImageIcon(buttonIcon));
+				BufferedImage tempbuttonIcon = image_Loader.resize(images.get_Images(board_size, button_num + 1),
+						locationsX[1], locationsY[1]);
+				temp = new JButton(new ImageIcon(tempbuttonIcon));
+				buttons[button_num] = temp;
+				temp.setName(Integer.toString(button_num));
+				Creat_Button_at(temp, "", x, y);
+				temp.addActionListener(new ActionListener() {
 
-					buttons[button_num] = temp;
-					temp.setName(Integer.toString(button_num));
-					Creat_Button_at(temp, "", x, y);
-					temp.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						action_Button_Click(button_num);
+					}
+				});
 
-						@Override
-						public void actionPerformed(ActionEvent arg0) {
-							action_button_click(button_num + 1);
-						}
-					});
+			}
+		buttons[buttons.length - 1].setVisible(false);
+	}
 
-					// temp.setIcon((Icon) images.get_Images(board_size, button_num));
+	public void action_Button_Click(int name) {
+		System.out.println("you just click button num:" + name);
+		fix_Board();
+	}
 
-				}
+
+
+
+	public void fix_Board() {
+		int[][] board = logic.getBoard();
+		for (int y = 0; y < board.length; y++)
+			for (int x = 0; x < board[y].length; x++) {
+				int button_num = board[y][x];
+				set_Component_Postion(buttons[button_num], locationsX[x], locationsY[y]);
 			}
 	}
 
-	public void action_button_click(int name) {
-		System.out.println("you just click button num:" + name);
-	}
-
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void setComponentPostion(Component com, int X, int Y) {
-		// com.setLocation(X - com.getWidth() / 2, Y - com.getHeight() / 2);
+	public void set_Component_Postion(Component com, int X, int Y) {
 		com.setLocation(X, Y);
-
 	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		int keyCode = e.getKeyCode();
+		System.out.println(keyCode);
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		int keyCode = e.getKeyCode();
+		System.out.println(keyCode);
+//		switch (keyCode) {
+//		case KeyEvent.VK_UP:
+//			System.out.println("up");
+//			break;
+//		case KeyEvent.VK_DOWN:
+//			// handle down
+//			break;
+//		case KeyEvent.VK_LEFT:
+//			// handle left
+//			break;
+//		case KeyEvent.VK_RIGHT:
+//			// handle right
+//			break;
+//		}
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		int keyCode = e.getKeyCode();
+		System.out.println(keyCode);
+	}
+	
 
 }
