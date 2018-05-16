@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 import LogicL.Direction;
 import LogicL.logic_Board;
@@ -29,7 +30,6 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener {
 		creat_Buttons();
 
 		this.setFocusable(true);
-
 
 		fix_Board();
 		pack();
@@ -59,16 +59,16 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener {
 				temp.setFocusable(false);
 			}
 		buttons[buttons.length - 1].setVisible(false);
-		
+
 		JButton goback = new JButton();
 		Creat_Button_at(goback, "click to go back", 0, board_size);
 		goback.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				logic.undo();
 				fix_Board();
-				
+
 			}
 		});
 		goback.setFocusable(false);
@@ -81,6 +81,7 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener {
 
 	}
 
+	// set the buttons to match the logic board
 	public void fix_Board() {
 		int[][] board = logic.getBoard();
 		for (int y = 0; y < board.length; y++)
@@ -88,6 +89,9 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener {
 				int button_num = board[y][x];
 				set_Component_Postion(buttons[button_num], locationsX[x], locationsY[y]);
 			}
+		if (logic.isSolved())
+			JOptionPane.showMessageDialog(null, "You Win", "", JOptionPane.INFORMATION_MESSAGE);
+
 	}
 
 	@Override
@@ -114,24 +118,24 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener {
 			direc = Direction.Right;
 			break;
 		}
-		//prin(logic.getBoard());
+		// prin(logic.getBoard());
 		logic.movePiece(direc);
-		//prin(logic.getBoard());
+		// prin(logic.getBoard());
 		fix_Board();
 	}
 
-//	public void prin(int[][] array)
-//	{
-//		for (int[] is : array) {
-//			for (int i : is) {
-//				System.out.print(i+",");
-//			}
-//			System.out.println();
-//		}
-//		System.out.println();
-//		System.out.println();
-//	}
-	
+	// public void prin(int[][] array)
+	// {
+	// for (int[] is : array) {
+	// for (int i : is) {
+	// System.out.print(i+",");
+	// }
+	// System.out.println();
+	// }
+	// System.out.println();
+	// System.out.println();
+	// }
+
 	@Override
 	public void keyTyped(KeyEvent e) {
 		int keyCode = e.getKeyCode();
