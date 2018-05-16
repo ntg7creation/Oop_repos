@@ -37,6 +37,24 @@ public class logic_Board {
         return true;
     }
 
+    public boolean movePiece(int index) {
+        int pieceX = -1, pieceY = -1;
+        boolean found = false;
+        for (int i = 0; i < this.boardSize & !found; i++) {
+            for (int j = 0; j < this.boardSize & !found; j++) {
+                if (this.board[i][j] == index) {
+                    pieceX = i;
+                    pieceY = j;
+                }
+            }
+        }
+        Direction.getDirection(0,0);
+    }
+
+
+
+
+
     // Move to open space
     public boolean moveToOpen(Direction dir) {
         // Locate open space

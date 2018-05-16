@@ -23,6 +23,17 @@ public enum Direction {
         this.dy = dy;
     }
 
+    public static Direction getDirection(int dx, int dy) {
+        for (Direction dir : Direction.values())
+        {
+            if (dir.getDx() == dx && dir.getDy() == dy) {
+                return dir;
+            }
+        }
+        return null;
+    }
+
+
     public int getDx() {
         return dx;
     }
