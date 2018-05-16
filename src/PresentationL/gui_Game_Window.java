@@ -125,6 +125,7 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 				int button_num = board[y][x];
 				set_Component_Postion(buttons[button_num], locationsX[x], locationsY[y]);
 			}
+		prin(board);
 		if (logic.isSolved()) {
 			win = true;
 			buttons[0].setVisible(true);
@@ -148,20 +149,20 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 		Direction direc = null;
 
 		switch (keyCode) {
-			case KeyEvent.VK_UP:
-				direc = Direction.Up;
-				break;
-			case KeyEvent.VK_DOWN:
-				direc = Direction.Down;
-				break;
-			case KeyEvent.VK_LEFT:
-				direc = Direction.Left;
-				break;
-			case KeyEvent.VK_RIGHT:
-				direc = Direction.Right;
-				break;
+		case KeyEvent.VK_UP:
+			direc = Direction.Up;
+			break;
+		case KeyEvent.VK_DOWN:
+			direc = Direction.Down;
+			break;
+		case KeyEvent.VK_LEFT:
+			direc = Direction.Left;
+			break;
+		case KeyEvent.VK_RIGHT:
+			direc = Direction.Right;
+			break;
 		}
-		prin(logic.getBoard());
+		//prin(logic.getBoard());
 		if (logic.movePiece(direc)) {
 			move_num++;
 			num_of_moves.setText("you have done " + move_num + " moves");
@@ -170,17 +171,16 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 		fix_Board();
 	}
 
-	 public void prin(int[][] array)
-	 {
-	 for (int[] is : array) {
-	 for (int i : is) {
-	 System.out.print(i+",");
-	 }
-	 System.out.println();
-	 }
-	 System.out.println();
-	 System.out.println();
-	 }
+	public void prin(int[][] array) {
+		for (int[] is : array) {
+			for (int i : is) {
+				System.out.print(i + ",");
+			}
+			System.out.println();
+		}
+		System.out.println();
+		System.out.println();
+	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {

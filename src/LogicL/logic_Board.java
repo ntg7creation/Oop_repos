@@ -106,7 +106,7 @@ public class logic_Board {
 		for (int i = 1; i < this.boardSize * this.boardSize; i++) {
 			int x = (i - 1) % this.boardSize;
 			int y = (i - 1) / this.boardSize;
-			if (this.board[x][y] != i) {
+			if (this.board[y][x] != i) {
 				return false;
 			}
 		}
