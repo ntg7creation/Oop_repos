@@ -3,6 +3,7 @@ package PresentationL;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -45,6 +46,8 @@ public class Game_Menu extends Costom_Frame {
 
 		JButton Start = new JButton("Click to Start");
 		Creat_Button_at(Start, "Click to Start", 4, 12);
+		JButton Randompic =new JButton();
+		Creat_Button_at(Randompic, "Random pic", 2, 2);
 		JButton Catpic = new JButton();
 		Creat_Button_at(Catpic, "Cat pic", 2, 4);
 		JButton cyberpic = new JButton();
@@ -62,6 +65,15 @@ public class Game_Menu extends Costom_Frame {
 				game.addKeyListener(game);
 				dispose();
 
+			}
+		});
+		
+		Randompic.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Random r = new Random();
+				change_image(r.nextInt(3));
 			}
 		});
 
@@ -133,7 +145,6 @@ public class Game_Menu extends Costom_Frame {
 	}
 
 	private void addLabels() {
-		String size = Integer.toString(currentSize);
 		boradSize = new JLabel();
 		Creat_Label_at(boradSize, "pleas chose board size", 6, 2);
 

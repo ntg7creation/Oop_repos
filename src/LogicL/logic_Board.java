@@ -18,8 +18,9 @@ public class logic_Board {
 		return board;
 	}
 
-	public void movePiece(int numberofpiece)
+	public Boolean movePiece(int numberofpiece)
 	{
+		return false;
 		//need to move piece "numberofpiece" to the empty space
 	}
 	
