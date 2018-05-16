@@ -16,8 +16,6 @@ import StorageL.image_Loader;
 
 public class gui_Game_Window extends Costom_Frame implements KeyListener {
 
-	private int[][] preboard;
-	private int[][] nowboard;
 	private JButton[] buttons;
 	private logic_Board logic;
 	private image_Loader images;
@@ -122,17 +120,17 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener {
 		fix_Board();
 	}
 
-	public void prin(int[][] array)
-	{
-		for (int[] is : array) {
-			for (int i : is) {
-				System.out.print(i+",");
-			}
-			System.out.println();
-		}
-		System.out.println();
-		System.out.println();
-	}
+//	public void prin(int[][] array)
+//	{
+//		for (int[] is : array) {
+//			for (int i : is) {
+//				System.out.print(i+",");
+//			}
+//			System.out.println();
+//		}
+//		System.out.println();
+//		System.out.println();
+//	}
 	
 	@Override
 	public void keyTyped(KeyEvent e) {
