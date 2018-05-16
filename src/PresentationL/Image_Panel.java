@@ -1,7 +1,7 @@
 package PresentationL;
 
+import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -21,13 +21,14 @@ public class Image_Panel extends JPanel {
 		super();
 		Width = width;
 		Hight = hight;
-		try {
-			// defult path
-			image = ImageIO.read(new File("Resources/Images/cyber/cyber.jpeg"));
-
-		} catch (IOException ex) {
-			System.out.println("error");
-		}
+		image = null;
+		// try {
+		// // defult path
+		// image = ImageIO.read(new File("Resources/Images/cyber/cyber.jpeg"));
+		//
+		// } catch (IOException ex) {
+		// System.out.println("error");
+		// }
 	}
 
 	public void changeImage(BufferedImage image) {
@@ -38,8 +39,10 @@ public class Image_Panel extends JPanel {
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		Nimage = image.getScaledInstance(Width, Hight, image.SCALE_DEFAULT);
-		g.drawImage(Nimage, 0, 0, this); // see javadoc for more info on the parameters
+		if (image != null) {
+			Nimage = image.getScaledInstance(Width, Hight, image.SCALE_DEFAULT);
+			g.drawImage(Nimage, 0, 0, this); // see javadoc for more info on the parameters
+		}
 	}
 
 }

@@ -23,6 +23,7 @@ public enum Direction {
         this.dy = dy;
     }
 
+
     public static Direction getDirection(int dx, int dy) {
         for (Direction dir : Direction.values())
         {

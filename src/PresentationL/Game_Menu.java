@@ -7,35 +7,40 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
+import LogicL.logic_Board;
+import StorageL.Boards;
 import StorageL.image_Loader;
 
 public class Game_Menu extends Costom_Frame {
 
-	int currentSize;
-	image_Loader my_images;
-	JLabel boradSize;
-	/**
-	 * Contractor 
-	 */
+	private int currentSize;
+	private image_Loader my_images[];
+	private Boards my_Boards;
+	private JLabel boradSize;
+	private int currentImage = 0;
+
 	public Game_Menu() {
+
 		super(Toolkit.getDefaultToolkit().getScreenSize().width * 2 / 3,
-				Toolkit.getDefaultToolkit().getScreenSize().height * 2 / 3);
+				Toolkit.getDefaultToolkit().getScreenSize().height * 2 / 3, 8, 16);
 		this.setTitle("Game Menu");
-		my_images = new image_Loader();
+		my_images = new image_Loader[3];
+		my_images[0] = new image_Loader("cat"); // cat images
+		my_images[1] = new image_Loader("cyber"); // cyber images
+		my_images[2] = new image_Loader("sushi"); // sushi images
+		my_Boards = new Boards();
+
 		currentSize = 3; // Defult
 
 		addButtons();
 		addLabels();
-		
+
 		setResizable(false);
 		setVisible(true);
 		pack();
 
 	}
 
-	/**
-	 * creates all buttons
-	 */
 	private void addButtons() {
 
 		JButton Start = new JButton("Click to Start");
@@ -51,8 +56,10 @@ public class Game_Menu extends Costom_Frame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("test");
-				new gui_Game_Window();
+				System.out.println("Starting game");
+				logic_Board logic = new logic_Board(currentSize, my_Boards.get_Random_Board_of_Size(currentSize));
+				gui_Game_Window game = new gui_Game_Window(currentSize, logic, my_images[currentImage]);
+				game.addKeyListener(game);
 				dispose();
 
 			}
@@ -62,14 +69,14 @@ public class Game_Menu extends Costom_Frame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Panel.changeImage(my_images.get_Cat(0, 0));
+				change_image(0);
 			}
 		});
 		cyberpic.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Panel.changeImage(my_images.get_Cyber(0, 0));
+				change_image(1);
 
 			}
 		});
@@ -77,7 +84,7 @@ public class Game_Menu extends Costom_Frame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Panel.changeImage(my_images.get_Sushi(0, 0));
+				change_image(2);
 
 			}
 		});
@@ -93,16 +100,14 @@ public class Game_Menu extends Costom_Frame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				currentSize = 3;
-				updateLabel();
+				change_size(3);
 			}
 		});
 		Size4.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				currentSize = 4;
-				updateLabel();
+				change_size(4);
 
 			}
 		});
@@ -110,17 +115,23 @@ public class Game_Menu extends Costom_Frame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				currentSize = 5;
-				updateLabel();
+				change_size(5);
 
 			}
 		});
 
 	}
 
-	/**
-	 * creates all labels
-	 */
+	public void change_size(int size) {
+		currentSize = size;
+		updateLabel();
+	}
+
+	public void change_image(int image) {
+		currentImage = image;
+		Panel.changeImage(my_images[currentImage].get_Images(0, 0));
+	}
+
 	private void addLabels() {
 		String size = Integer.toString(currentSize);
 		boradSize = new JLabel();
@@ -133,7 +144,7 @@ public class Game_Menu extends Costom_Frame {
 	}
 
 	public static void main(String[] args) {
-
+		System.out.println("test");
 		new Game_Menu();
 
 	}
