@@ -10,7 +10,7 @@ public class logic_Board {
 	public logic_Board(int boardSize, int[][] map) {
 		this.boardSize = boardSize;
 		this.board = map;
-		Move.setBoardSize(boardSize);
+		Coordinate.setBoardSize(boardSize);
 		this.history = new Stack<>();
 	}
 
@@ -18,12 +18,6 @@ public class logic_Board {
 		return board;
 	}
 
-	public Boolean movePiece(int numberofpiece)
-	{
-		return false;
-		//need to move piece "numberofpiece" to the empty space
-	}
-	
 	// Move a piece located at (x,y) in a given direction
 	public boolean movePiece(Move move) {
 		// Invalid input
@@ -32,34 +26,60 @@ public class logic_Board {
 		}
 
 		// New location is occupied
-		if (this.board[move.destX()][move.destY()] != 0) {
+        Coordinate destCoord = move.getDetination();
+		if (this.board[destCoord.getX()][destCoord.getY()] != 0) {
 			return false;
 		}
 
 		// Move piece
-		this.board[move.destX()][move.destY()] = this.board[move.getX()][move.getY()];
-		this.board[move.getX()][move.getY()] = 0;
+		this.board[destCoord.getX()][destCoord.getY()] = this.board[move.getCoord().getX()][move.getCoord().getY()];
+		this.board[move.getCoord().getX()][move.getCoord().getY()] = 0;
 		this.history.push(move);
 		return true;
 	}
 
-	// Move to open space
-	public boolean movePiece(Direction dir) {
-		// Locate open space
-		int openX = -1, openY = -1;
-		boolean found = false;
-		for (int i = 0; i < this.boardSize & !found; i++) {
-			for (int j = 0; j < this.boardSize & !found; j++) {
-				if (this.board[i][j] == 0) {
-					openX = i;
-					openY = j;
-				}
-			}
+    public boolean movePiece(int numberOfPiece) {
+        Coordinate coord = findCoordByIndex(numberOfPiece);
+        Coordinate emptyCoord = findCoordByIndex(0);
+        Direction dir = coord.getDirectionTo(emptyCoord);
+
+		if (dir == null) { // Cant move to empty space
+			return false;
 		}
 
-		int xToMove = openX + dir.getOpposite().getDx();
-		int yToMove = openY + dir.getOpposite().getDy();
-		return movePiece(new Move(xToMove, yToMove, dir));
+		Move move = new Move(coord, dir);
+		return movePiece(move);
+    }
+
+	private Coordinate findCoordByIndex(int index) {
+        int x = -1, y = -1;
+        boolean found = false;
+        for (int i = 0; i < this.boardSize & !found; i++) {
+            for (int j = 0; j < this.boardSize & !found; j++) {
+                if (this.board[i][j] == 0) {
+                    x = i;
+                    y = j;
+                    found = true;
+                }
+            }
+        }
+
+        return new Coordinate(x, y);
+    }
+
+
+
+	// Move to empty space
+	public boolean movePiece(Direction dir) {
+		// Locate empty space
+		Coordinate emptyCoord = findCoordByIndex(0);
+		Coordinate coord = emptyCoord.getDestination(dir.getOpposite());
+
+        if (coord == null) {
+            return false;
+        }
+
+		return movePiece(new Move(coord, dir));
 	}
 
 	public boolean undo() {
@@ -68,7 +88,12 @@ public class logic_Board {
 		}
 
 		Move undoMove = this.history.pop();
-		return movePiece(undoMove.oppositeMove());
+		boolean undone = movePiece(undoMove.getOppositeMove());
+		if (undone) {
+		    this.history.pop();
+        }
+
+        return undone;
 	}
 
 	// Check if board is solved

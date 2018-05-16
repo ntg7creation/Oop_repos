@@ -1,7 +1,5 @@
 package LogicL;
 
-import java.awt.event.KeyEvent;
-
 // This class define what is a direction and dx and y
 public enum Direction {
     Right(1,0),
@@ -23,6 +21,17 @@ public enum Direction {
     Direction(int dx, int dy) {
         this.dx = dx;
         this.dy = dy;
+    }
+
+
+    public static Direction getDirection(int dx, int dy) {
+        for (Direction dir : Direction.values())
+        {
+            if (dir.getDx() == dx && dir.getDy() == dy) {
+                return dir;
+            }
+        }
+        return null;
     }
 
 
