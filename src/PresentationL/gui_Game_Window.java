@@ -39,26 +39,29 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener {
 	public void creat_Buttons() {
 		buttons = new JButton[board_size * board_size];
 		JButton temp = null;
-		for (int y = 0; y < board_size; y++)
-			for (int x = 0; x < board_size; x++) {
-				int button_num = x + y * board_size;
+		int button_num = 0;
+		for (button_num = 1; button_num < board_size * board_size; button_num++) {
+			BufferedImage tempbuttonIcon = image_Loader.resize(images.get_Images(board_size, button_num),
+					locationsX[1], locationsY[1]);
+			temp = new JButton(new ImageIcon(tempbuttonIcon));
+			buttons[button_num] = temp;
+			temp.setName(Integer.toString(button_num));
+			// Creat_Button_at(temp, "", x, y);
+			setComponentSize(temp);
+			Panel.add(temp);
+			int name = button_num;
+			temp.addActionListener(new ActionListener() {
 
-				BufferedImage tempbuttonIcon = image_Loader.resize(images.get_Images(board_size, button_num + 1),
-						locationsX[1], locationsY[1]);
-				temp = new JButton(new ImageIcon(tempbuttonIcon));
-				buttons[button_num] = temp;
-				temp.setName(Integer.toString(button_num));
-				Creat_Button_at(temp, "", x, y);
-				temp.addActionListener(new ActionListener() {
-
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						action_Button_Click(button_num);
-					}
-				});
-				temp.setFocusable(false);
-			}
-		buttons[buttons.length - 1].setVisible(false);
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					action_Button_Click(name);
+				}
+			});
+			temp.setFocusable(false);
+		}
+		
+		buttons[0] = new JButton();
+		buttons[0].setVisible(false);
 
 		JButton goback = new JButton();
 		Creat_Button_at(goback, "click to go back", 0, board_size);
