@@ -36,7 +36,8 @@ public class Costom_Frame extends JFrame {
 		_width = width;
 		_height = height;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
+		// getContentPane().setLayout(new BoxLayout(getContentPane(),
+		// BoxLayout.Y_AXIS));
 
 		setIntSize();
 		creat_Panel();
@@ -53,7 +54,7 @@ public class Costom_Frame extends JFrame {
 	 */
 	private void setIntSize() {
 
-		this.setPreferredSize(new Dimension(_width, _height));
+		this.setPreferredSize(new Dimension(_width, _height + 35));
 
 		Point startPostion = new Point();
 		startPostion.x = _width / 4;
@@ -64,9 +65,9 @@ public class Costom_Frame extends JFrame {
 		locationsY = new int[Yblocks];
 
 		for (int x = 0; x < locationsX.length; x++)
-			locationsX[x] = _width * x / locationsX.length;
+			locationsX[x] = (_width * x) / locationsX.length;
 		for (int y = 0; y < locationsY.length; y++)
-			locationsY[y] = _height * y / locationsY.length;
+			locationsY[y] = (_height * y) / locationsY.length;
 
 	}
 
@@ -126,7 +127,6 @@ public class Costom_Frame extends JFrame {
 		// com.setLocation(X, Y );
 
 	}
-
 
 	/**
 	 * sets the Size to be 1 slot

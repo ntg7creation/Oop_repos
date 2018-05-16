@@ -10,11 +10,14 @@ import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import LogicL.Direction;
 import LogicL.logic_Board;
 import StorageL.image_Loader;
 
 public class gui_Game_Window extends Costom_Frame implements KeyListener {
 
+	private int[][] preboard;
+	private int[][] nowboard;
 	private JButton[] buttons;
 	private logic_Board logic;
 	private image_Loader images;
@@ -26,9 +29,13 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener {
 		this.logic = logic;
 		this.images = images;
 		creat_Buttons();
+
+		this.setFocusable(true);
+
+
 		fix_Board();
 		pack();
-		
+
 	}
 
 	public void creat_Buttons() {
@@ -51,18 +58,30 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener {
 						action_Button_Click(button_num);
 					}
 				});
-
+				temp.setFocusable(false);
 			}
 		buttons[buttons.length - 1].setVisible(false);
+		
+		JButton goback = new JButton();
+		Creat_Button_at(goback, "click to go back", 0, board_size);
+		goback.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				logic.undo();
+				fix_Board();
+				
+			}
+		});
+		goback.setFocusable(false);
 	}
 
 	public void action_Button_Click(int name) {
 		System.out.println("you just click button num:" + name);
+		logic.movePiece(name);
 		fix_Board();
+
 	}
-
-
-
 
 	public void fix_Board() {
 		int[][] board = logic.getBoard();
@@ -81,34 +100,49 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener {
 	@Override
 	public void keyReleased(KeyEvent e) {
 		int keyCode = e.getKeyCode();
-		System.out.println(keyCode);
+		Direction direc = null;
+
+		switch (keyCode) {
+		case KeyEvent.VK_UP:
+			direc = Direction.Up;
+			break;
+		case KeyEvent.VK_DOWN:
+			direc = Direction.Down;
+			break;
+		case KeyEvent.VK_LEFT:
+			direc = Direction.Left;
+			break;
+		case KeyEvent.VK_RIGHT:
+			direc = Direction.Right;
+			break;
+		}
+		//prin(logic.getBoard());
+		logic.movePiece(direc);
+		//prin(logic.getBoard());
+		fix_Board();
 	}
 
+	public void prin(int[][] array)
+	{
+		for (int[] is : array) {
+			for (int i : is) {
+				System.out.print(i+",");
+			}
+			System.out.println();
+		}
+		System.out.println();
+		System.out.println();
+	}
+	
 	@Override
 	public void keyTyped(KeyEvent e) {
 		int keyCode = e.getKeyCode();
-		System.out.println(keyCode);
-//		switch (keyCode) {
-//		case KeyEvent.VK_UP:
-//			System.out.println("up");
-//			break;
-//		case KeyEvent.VK_DOWN:
-//			// handle down
-//			break;
-//		case KeyEvent.VK_LEFT:
-//			// handle left
-//			break;
-//		case KeyEvent.VK_RIGHT:
-//			// handle right
-//			break;
-//		}
+		System.out.println("test");
+
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		int keyCode = e.getKeyCode();
-		System.out.println(keyCode);
 	}
-	
 
 }

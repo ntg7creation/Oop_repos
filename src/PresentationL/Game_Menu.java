@@ -58,7 +58,8 @@ public class Game_Menu extends Costom_Frame {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Starting game");
 				logic_Board logic = new logic_Board(currentSize, my_Boards.get_Random_Board_of_Size(currentSize));
-				new gui_Game_Window(currentSize, logic, my_images[currentImage]);
+				gui_Game_Window game = new gui_Game_Window(currentSize, logic, my_images[currentImage]);
+				game.addKeyListener(game);
 				dispose();
 
 			}
