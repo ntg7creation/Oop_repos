@@ -81,7 +81,7 @@ public class logic_Board {
 
 		return movePiece(new Move(coord, dir));
 	}
-//test
+
 	public boolean undo() {
 		if (this.history.isEmpty()) {
 			return false;
