@@ -17,7 +17,7 @@ public class logic_Board {
 	public int[][] getBoard() {
 		return board;
 	}
-	
+
 	// Move a piece located at (x,y) in a given direction
 	public boolean movePiece(Move move) {
 		// Invalid input
@@ -26,7 +26,7 @@ public class logic_Board {
 		}
 
 		// New location is occupied
-        Coordinate destCoord = move.getDetination();
+		Coordinate destCoord = move.getDetination();
 		if (this.board[destCoord.getY()][destCoord.getX()] != 0) {
 			return false;
 		}
@@ -38,10 +38,10 @@ public class logic_Board {
 		return true;
 	}
 
-    public boolean movePiece(int numberOfPiece) {
-        Coordinate coord = findCoordByIndex(numberOfPiece);
-        Coordinate emptyCoord = findCoordByIndex(0);
-        Direction dir = coord.getDirectionTo(emptyCoord);
+	public boolean movePiece(int numberOfPiece) {
+		Coordinate coord = findCoordByIndex(numberOfPiece);
+		Coordinate emptyCoord = findCoordByIndex(0);
+		Direction dir = coord.getDirectionTo(emptyCoord);
 
 		if (dir == null) { // Cant move to empty space
 			return false;
@@ -49,35 +49,35 @@ public class logic_Board {
 
 		Move move = new Move(coord, dir);
 		return movePiece(move);
-    }
+	}
 
 	private Coordinate findCoordByIndex(int index) {
-        int x = -1, y = -1;
-        boolean found = false;
-        for (int i = 0; i < this.boardSize & !found; i++) {
-            for (int j = 0; j < this.boardSize & !found; j++) {
+		int x = -1, y = -1;
+		boolean found = false;
+		for (int i = 0; i < this.boardSize & !found; i++) {
+			for (int j = 0; j < this.boardSize & !found; j++) {
                 if (this.board[i][j] == index) {
                     y = i;
                     x = j;
-                    found = true;
-                }
-            }
-        }
+					found = true;
+				}
+			}
+		}
 
-        return new Coordinate(x, y);
-    }
-
-
+		return new Coordinate(x, y);
+	}
 
 	// Move to empty space
 	public boolean movePiece(Direction dir) {
 		// Locate empty space
+		if (dir == null)
+			return false;
 		Coordinate emptyCoord = findCoordByIndex(0);
 		Coordinate coord = emptyCoord.getDestination(dir.getOpposite());
 
-        if (coord == null) {
-            return false;
-        }
+		if (coord == null) {
+			return false;
+		}
 
 		return movePiece(new Move(coord, dir));
 	}
@@ -90,10 +90,10 @@ public class logic_Board {
 		Move undoMove = this.history.pop();
 		boolean undone = movePiece(undoMove.getOppositeMove());
 		if (undone) {
-		    this.history.pop();
-        }
+			this.history.pop();
+		}
 
-        return undone;
+		return undone;
 	}
 
 	// Check if board is solved

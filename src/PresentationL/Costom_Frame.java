@@ -58,7 +58,7 @@ public class Costom_Frame extends JFrame {
 
 		Point startPostion = new Point();
 		startPostion.x = _width / 4;
-		startPostion.y = _height / 4;
+		startPostion.y = _height / 14;
 		this.setLocation(startPostion);
 		// setLayout(null); no need cus we are using a panel
 		locationsX = new int[Xblocks];
