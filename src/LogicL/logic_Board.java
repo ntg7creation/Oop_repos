@@ -19,14 +19,14 @@ public class logic_Board {
 	}
 
 	// Move a piece located at (x,y) in a given direction
-	public boolean movePiece(Move move) {
+	private boolean movePiece(Move move) {
 		// Invalid input
 		if (!move.isValid()) {
 			return false;
 		}
 
 		// New location is occupied
-		Coordinate destCoord = move.getDetination();
+		Coordinate destCoord = move.getDestination();
 		if (this.board[destCoord.getY()][destCoord.getX()] != 0) {
 			return false;
 		}
@@ -51,6 +51,21 @@ public class logic_Board {
 		return movePiece(move);
 	}
 
+	// Move to empty space
+	public boolean movePiece(Direction dir) {
+		// Locate empty space
+		if (dir == null)
+			return false;
+		Coordinate emptyCoord = findCoordByIndex(0);
+		Coordinate coord = emptyCoord.getDestination(dir.getOpposite());
+
+		if (coord == null) {
+			return false;
+		}
+
+		return movePiece(new Move(coord, dir));
+	}
+
 	private Coordinate findCoordByIndex(int index) {
 		int x = -1, y = -1;
 		boolean found = false;
@@ -65,21 +80,6 @@ public class logic_Board {
 		}
 
 		return new Coordinate(x, y);
-	}
-
-	// Move to empty space
-	public boolean movePiece(Direction dir) {
-		// Locate empty space
-		if (dir == null)
-			return false;
-		Coordinate emptyCoord = findCoordByIndex(0);
-		Coordinate coord = emptyCoord.getDestination(dir.getOpposite());
-
-		if (coord == null) {
-			return false;
-		}
-
-		return movePiece(new Move(coord, dir));
 	}
 
 	public boolean undo() {

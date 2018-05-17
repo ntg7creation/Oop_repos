@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import LogicL.logic_Board;
 import StorageL.Boards;
 import StorageL.image_Loader;
+import javafx.scene.paint.Color;
 
 public class Game_Menu extends Costom_Frame {
 
@@ -154,10 +155,6 @@ public class Game_Menu extends Costom_Frame {
 		boradSize.setText("the current board size : " + currentSize + "x" + currentSize);
 	}
 
-	public static void main(String[] args) {
-		System.out.println("test");
-		new Game_Menu();
 
-	}
 
 }

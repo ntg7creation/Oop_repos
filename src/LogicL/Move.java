@@ -9,13 +9,13 @@ public class Move {
         this.direction = direction;
     }
 
-    public Coordinate getCoord() {
-        return coord;
-    }
-
     public Move(Coordinate coord, Direction direction) {
         this.coord = coord;
         this.direction = direction;
+    }
+
+    public Coordinate getCoord() {
+        return coord;
     }
 
     public boolean isValid() {
@@ -30,7 +30,7 @@ public class Move {
         return new Move(coord.getDestination(this.direction), this.direction.getOpposite());
     }
 
-    public Coordinate getDetination() {
+    public Coordinate getDestination() {
         return coord.getDestination(this.direction);
     }
 }
