@@ -112,7 +112,7 @@ public class Costom_Frame extends JFrame {
 		label.setBounds(1, 1, lgth, 20);
 		label.setForeground(Color.black);
 		label.setOpaque(true);
-		label.setBackground(Color.red);
+		label.setBackground(Color.white);
 		label.setHorizontalAlignment(label.CENTER);
 		// label.setBorder(BorderFactory.createLineBorder(Color.black));
 		set_Component_Postion(label, locationsX[X], locationsY[Y]);
