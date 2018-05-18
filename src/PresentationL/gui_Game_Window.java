@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
 import javax.swing.Timer;
 
 import LogicL.Direction;
@@ -30,13 +31,17 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 	private logic_Board logic;
 	private image_Loader images;
 	private int board_size;
+	private Game_Menu menu;
+	private JButton playAgine;
+	private JButton exit;
 
-	public gui_Game_Window(int size, logic_Board logic, image_Loader images) {
+	public gui_Game_Window(int size, logic_Board logic, image_Loader images, Game_Menu menu) {
 		super(700, 700, size, size + 1);
 		board_size = size;
 		this.logic = logic;
 		this.images = images;
 		time_past = 0;
+		this.menu = menu;
 		creat_Buttons();
 		creat_Labels();
 
@@ -85,15 +90,38 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 			public void actionPerformed(ActionEvent arg0) {
 				if (win)
 					return;
-				if (logic.undo()) {
-					move_num--;
-					num_of_moves.setText("you have done " + move_num + " moves");
-				}
+				logic.undo();
 				fix_Board();
 
 			}
 		});
 		goback.setFocusable(false);
+
+		playAgine = new JButton();
+		Creat_Button_at(playAgine, "play agine", 1, board_size);
+		playAgine.setVisible(false);
+		playAgine.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				menu.setVisible(true);
+				dispose();
+
+			}
+		});
+		exit = new JButton();
+		Creat_Button_at(exit, "exit", 2, board_size);
+		exit.setVisible(false);
+		exit.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// new main menu();
+				dispose();
+
+			}
+		});
+
 	}
 
 	public void creat_Labels() {
@@ -132,6 +160,11 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 			JOptionPane.showMessageDialog(null,
 					"You Win\n your time was:" + time_past + "\n number of moves: " + move_num, "",
 					JOptionPane.INFORMATION_MESSAGE);
+			exit.setVisible(true);
+			playAgine.setVisible(true);
+//			Image_Panel image = new Image_Panel(700, 700 - locationsY[1]);
+//			image.setLocation(0, 0);
+//			Panel.add(image);
 
 		}
 	}
@@ -162,7 +195,7 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 			direc = Direction.Right;
 			break;
 		}
-		//prin(logic.getBoard());
+		// prin(logic.getBoard());
 		if (logic.movePiece(direc)) {
 			move_num++;
 			num_of_moves.setText("you have done " + move_num + " moves");

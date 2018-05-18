@@ -77,7 +77,7 @@ public class Costom_Frame extends JFrame {
 	 */
 	private void creat_Panel() {
 		Panel = new Image_Panel(_width, _height);
-		Panel.setBackground(Color.BLUE);
+		Panel.setBackground(Color.WHITE);
 		this.add(Panel);
 		Panel.setLayout(null);
 		Panel.setVisible(true);
