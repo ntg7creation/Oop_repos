@@ -13,7 +13,7 @@ public class Main_Menu extends  Costom_Frame{
 	private static final long serialVersionUID = 1L;
 
 	public Main_Menu() {
-        super(500,500,5,10);
+        super(500,500,4,10);
 
         JLabel title = new JLabel("Sliding Puzzle");
         Font font = new Font("Ariel", Font.BOLD, 50);
@@ -41,10 +41,7 @@ public class Main_Menu extends  Costom_Frame{
         });
         Creat_Button_at(exitBtn, "Exit", 3,7);
     }
-	@Override
-	public void set_Component_Postion(Component com, int X, int Y) {
-		com.setLocation(X, Y);
-	}
+	
 
     public static void main(String[] args) {
         new Main_Menu();
