@@ -15,7 +15,7 @@ import javax.imageio.ImageIO;
 public class image_Loader {
 
 	private BufferedImage[][] images;
-	private String path = "src/Resources/";
+	private String path = "images/";
 	private Boolean allLoaded = false;
 	private BufferedImage[] costomeSplitImages; // layz fix
 	private boolean costomeimg = false;
@@ -79,7 +79,7 @@ public class image_Loader {
 			String path = this.path + name + "/" + name + ".jpeg";
 			// System.out.println("trying to load : " + path);
 
-			temp = ImageIO.read(new File(path));
+			temp = ImageIO.read(ResourceLoader.load(path));
 			images[0][0] = temp;
 		} catch (IOException e) {
 			System.out.println("fail to load img");
@@ -94,7 +94,7 @@ public class image_Loader {
 
 				try {
 					// System.out.println("trying to load : " + path);
-					temp = ImageIO.read(new File(path));
+					temp = ImageIO.read(ResourceLoader.load(path));
 					images[size - 2][i - 1] = temp;
 				} catch (IOException e) {
 					System.out.println("fail to load img");
