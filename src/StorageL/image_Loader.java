@@ -10,14 +10,15 @@ import javax.imageio.ImageIO;
 
 public class image_Loader {
 
-	
-	
 	private BufferedImage[][] images;
 	private String path = "src/Resources/";
 	private Boolean allLoaded = false;
 
-	public image_Loader(String name) {
-		load_Images(name);
+	public image_Loader(String name, boolean costome) {
+		if (!costome)
+			load_Images(name);
+		else
+			uploadImage(name);
 	}
 
 	public Boolean isLoaded() {
@@ -38,19 +39,21 @@ public class image_Loader {
 			return false;
 		}
 	}
+
 	public void splitImage(BufferedImage image, int size) {
 		int chunkWidth = image.getWidth() / size;
 		int chunkHeight = image.getHeight() / size;
 		int count = 0;
-		BufferedImage imgs[] = new BufferedImage[size * size]; //Image array to hold image chunks
+		BufferedImage imgs[] = new BufferedImage[size * size]; // Image array to hold image chunks
 		for (int x = 0; x < size; x++) {
 			for (int y = 0; y < size; y++) {
-				//Initialize the image array with image chunks
+				// Initialize the image array with image chunks
 				imgs[count] = new BufferedImage(chunkWidth, chunkHeight, image.getType());
 
 				// draws the image chunk
 				Graphics2D gr = imgs[count++].createGraphics();
-				gr.drawImage(image, 0, 0, chunkWidth, chunkHeight, chunkWidth * y, chunkHeight * x, chunkWidth * y + chunkWidth, chunkHeight * x + chunkHeight, null);
+				gr.drawImage(image, 0, 0, chunkWidth, chunkHeight, chunkWidth * y, chunkHeight * x,
+						chunkWidth * y + chunkWidth, chunkHeight * x + chunkHeight, null);
 				gr.dispose();
 			}
 
@@ -67,7 +70,7 @@ public class image_Loader {
 		try {
 			String path = this.path + name + "/" + name + ".jpeg";
 			// System.out.println("trying to load : " + path);
-			
+
 			temp = ImageIO.read(new File(path));
 			images[0][0] = temp;
 		} catch (IOException e) {
@@ -75,7 +78,6 @@ public class image_Loader {
 			allLoaded = false;
 		}
 
-		
 		for (int size = 3; size <= 5; size++) {
 			images[size - 2] = new BufferedImage[size * size];
 			for (int i = 1; i <= size * size; i++) {
@@ -114,7 +116,5 @@ public class image_Loader {
 
 		return dimg;
 	}
-
-
 
 }
