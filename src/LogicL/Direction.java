@@ -1,6 +1,6 @@
 package LogicL;
 
-// This class define what is a direction and dx and y
+// This class define what is a direction and dx and dy
 public enum Direction {
     Right(1,0),
     Left(-1,0),

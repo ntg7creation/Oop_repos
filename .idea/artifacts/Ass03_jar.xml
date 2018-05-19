@@ -3,9 +3,8 @@
     <output-path>$PROJECT_DIR$/classes/artifacts/Ass03_jar</output-path>
     <root id="archive" name="Oop_repos.jar">
       <element id="module-output" name="Oop_repos" />
-      <element id="dir-copy" path="$PROJECT_DIR$/src" />
-      <element id="directory" name="Resources">
-        <element id="dir-copy" path="$PROJECT_DIR$/Resources" />
+      <element id="directory" name="src">
+        <element id="dir-copy" path="$PROJECT_DIR$/src" />
       </element>
     </root>
   </artifact>

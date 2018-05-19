@@ -12,7 +12,7 @@ import javax.swing.SwingConstants;
 
 public class Custom_Frame extends JFrame {
 	/**
-	 * 
+	 * A frame with built in grid
 	 */
 	private static final long serialVersionUID = 1L;
 	protected Image_Panel Panel;

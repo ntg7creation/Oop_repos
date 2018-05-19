@@ -3,6 +3,9 @@ package LogicL;
 import java.util.Random;
 import java.util.Stack;
 
+/*
+* Responsible for movements in the board
+**/
 public class logic_Board {
 	private int[][] board;
 	private int boardSize;
@@ -115,10 +118,10 @@ public class logic_Board {
 		return true;
 	}
 
+	// Return a random board 'csv'
 	public void Random_Board() {
 		Random r = new Random();
-		print(board);
-		for (int i = 0; i < 50000; i++) {
+		for (int i = 0; i < 100; i++) {
 			int move = r.nextInt(4);
 			switch (move) {
 			case 0:
@@ -136,19 +139,6 @@ public class logic_Board {
 			}
 		}
 		this.history = new Stack<>();
-		print(board);
-	}
-	
-	public static void print(int[][] board)
-	{
-		System.out.println();
-		System.out.println();
-		for (int[] is : board) {
-			for (int i : is) {
-				System.out.print(i+",");
-			}
-			System.out.println();
-		}
 	}
 
 }

@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+/*
+* Responsible for loading the csv
+* */
+
 public class Boards {
 
 	private List<int[][]>[] allBoards;

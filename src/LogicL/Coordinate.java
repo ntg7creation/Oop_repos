@@ -1,5 +1,9 @@
 package LogicL;
 
+/*
+* a coordinate of a piece location in board
+* */
+
 public class Coordinate {
     private int x;
     private int y;

@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/*
+* The winning frame
+*
+* */
 public class WinnigFrame extends Custom_Frame {
 
     public WinnigFrame(gui_Game_Window boardGame, Game_Menu menu, int numMoves, int timePassed) {

@@ -1,5 +1,8 @@
 package LogicL;
 
+/*
+* determinate a move in board
+* */
 public class Move {
     private Coordinate coord;
     private Direction direction;

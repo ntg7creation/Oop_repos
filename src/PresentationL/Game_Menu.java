@@ -6,14 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JSpinner;
-import javax.swing.JTextArea;
-import javax.swing.SpinnerNumberModel;
+import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import LogicL.logic_Board;
 import StorageL.Boards;
@@ -22,7 +18,7 @@ import StorageL.image_Loader;
 public class Game_Menu extends Custom_Frame {
 
 	/**
-	 * 
+	 *  Responsible for game menu, choosing image and board size
 	 */
 	private static final long serialVersionUID = 1L;
 	private int currentSize;
@@ -32,7 +28,6 @@ public class Game_Menu extends Custom_Frame {
 	private JLabel boardSize;
 	private JSpinner Size_Spinner;
 	private Game_Menu me;
-	private JTextArea costomePath;
 
 	public Game_Menu() {
 
@@ -47,7 +42,6 @@ public class Game_Menu extends Custom_Frame {
 		me = this;
 		currentSize = 3; // Default
 
-		addTextBox();
 		addButtons();
 		addLabels();
 		creat_Spinner();
@@ -80,16 +74,6 @@ public class Game_Menu extends Custom_Frame {
 
 	}
 
-	private void addTextBox() {
-		costomePath = new JTextArea();
-		costomePath.setEditable(true);
-		setComponentSize(costomePath);
-		set_Component_Postion(costomePath, locationsX[6], locationsY[6]);
-		costomePath.setText("enter path to costome pic here");
-		costomePath.setBackground(Color.red);
-		Panel.add(costomePath);
-	}
-
 	private void addButtons() {
 
 		JButton Start = new JButton();
@@ -103,7 +87,7 @@ public class Game_Menu extends Custom_Frame {
 		JButton sushipic = new JButton();
 		Creat_Button_at(sushipic, "Sushi pic", 2, 8);
 		JButton costoppic = new JButton();
-		Creat_Button_at(costoppic, "up load pic", 6, 8);
+		Creat_Button_at(costoppic, "upload pic", 6, 8);
 
 		Start.addActionListener(new ActionListener() {
 
@@ -174,13 +158,20 @@ public class Game_Menu extends Custom_Frame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				String path = costomePath.getText();
-				my_images[3] = new image_Loader(path, true);
-				if (my_images[3].isLoaded())
-					change_image(3);
-				else
-					JOptionPane.showMessageDialog(null, "fail to load costome image", "",
-							JOptionPane.INFORMATION_MESSAGE);
+				JFileChooser chooser = new JFileChooser();
+				FileNameExtensionFilter filter = new FileNameExtensionFilter(
+						"JPEG Images", "jpg", "jpeg");
+				chooser.setFileFilter(filter);
+				int returnVal = chooser.showOpenDialog(me);
+				if(returnVal == JFileChooser.APPROVE_OPTION) {
+					String path = chooser.getSelectedFile().getPath();
+					my_images[3] = new image_Loader(path, true);
+					if (my_images[3].isLoaded())
+						change_image(3);
+					else
+						JOptionPane.showMessageDialog(null, "fail to load custom image", "",
+								JOptionPane.INFORMATION_MESSAGE);
+				}
 			}
 		});
 

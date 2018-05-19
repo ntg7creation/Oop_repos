@@ -20,7 +20,7 @@ import StorageL.image_Loader;
 public class gui_Game_Window extends Custom_Frame implements KeyListener, ActionListener {
 
 	/**
-	 * 
+	 * The board game
 	 */
 	private static final long serialVersionUID = 1L;
 

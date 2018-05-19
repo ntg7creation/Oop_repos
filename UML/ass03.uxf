@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>6</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>342</x>
-      <y>474</y>
-      <w>144</w>
-      <h>108</h>
+      <x>540</x>
+      <y>711</y>
+      <w>216</w>
+      <h>162</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Direction&gt;&gt;
 Package::LogicL
@@ -28,10 +28,10 @@ Package::LogicL
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>324</x>
-      <y>618</y>
-      <w>156</w>
-      <h>132</h>
+      <x>513</x>
+      <y>927</y>
+      <w>234</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Coordinate&gt;&gt;
 Package::LogicL
@@ -54,10 +54,10 @@ Package::LogicL
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>96</x>
-      <y>450</y>
-      <w>138</w>
-      <h>126</h>
+      <x>171</x>
+      <y>675</y>
+      <w>207</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>&lt;&lt;logic_Board&gt;&gt;
 Package::LogicL
@@ -72,16 +72,17 @@ Package::LogicL
 + movePiece(Direction) : boolean
 - findCoordByIndex(int) : Coordinate
 + undo() : boolean
-+ isSolved() : boolean</panel_attributes>
++ isSolved() : boolean
++ Random_Board() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>648</y>
-      <w>120</w>
-      <h>90</h>
+      <x>207</x>
+      <y>972</y>
+      <w>180</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Move&gt;&gt;
 Package::LogicL
@@ -99,10 +100,10 @@ Package::LogicL
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>72</x>
-      <y>492</y>
-      <w>60</w>
-      <h>180</h>
+      <x>135</x>
+      <y>738</y>
+      <w>90</w>
+      <h>270</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>40.0;10.0;10.0;10.0;10.0;280.0;80.0;280.0</additional_attributes>
@@ -110,10 +111,10 @@ Package::LogicL
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>234</x>
-      <y>648</y>
-      <w>102</w>
-      <h>18</h>
+      <x>378</x>
+      <y>972</y>
+      <w>153</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
@@ -121,10 +122,10 @@ Package::LogicL
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>456</x>
-      <y>420</y>
-      <w>108</w>
-      <h>90</h>
+      <x>711</x>
+      <y>630</y>
+      <w>162</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;10.0;160.0;10.0;160.0;130.0;50.0;130.0</additional_attributes>
@@ -132,10 +133,10 @@ Package::LogicL
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>6</x>
-      <y>408</y>
-      <w>600</w>
-      <h>342</h>
+      <x>36</x>
+      <y>612</y>
+      <w>900</w>
+      <h>513</h>
     </coordinates>
     <panel_attributes>LogicL
 --
@@ -145,10 +146,10 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>18</y>
-      <w>126</w>
-      <h>114</h>
+      <x>657</x>
+      <y>27</y>
+      <w>189</w>
+      <h>171</h>
     </coordinates>
     <panel_attributes>object:Game_Menu
 Package::PresentationL
@@ -168,13 +169,13 @@ size and image</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>204</y>
-      <w>282</w>
-      <h>120</h>
+      <x>36</x>
+      <y>306</y>
+      <w>423</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>&lt;&lt;jFrame&gt;&gt;
-object: Costom_Frame
+object: Custom_Frame
 --
 # int[] locationsX;
 # int[] locationsY;
@@ -191,10 +192,10 @@ Responsibilities
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>372</x>
-      <y>180</y>
-      <w>192</w>
-      <h>156</h>
+      <x>585</x>
+      <y>270</y>
+      <w>288</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Costom_Frame&gt;&gt;
 object:gui_Game_Window
@@ -219,32 +220,32 @@ buttons</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>276</x>
-      <y>108</y>
-      <w>156</w>
-      <h>114</h>
+      <x>450</x>
+      <y>162</y>
+      <w>225</w>
+      <h>171</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;170.0;240.0;10.0</additional_attributes>
+    <additional_attributes>10.0;170.0;230.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>276</x>
-      <y>180</y>
-      <w>108</w>
-      <h>60</h>
+      <x>450</x>
+      <y>270</y>
+      <w>153</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;80.0;160.0;10.0</additional_attributes>
+    <additional_attributes>10.0;80.0;150.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>216</x>
-      <y>78</y>
-      <w>126</w>
-      <h>54</h>
+      <x>405</x>
+      <y>126</y>
+      <w>189</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Costom_Frame&gt;&gt;
 object:Main_Menu
@@ -256,10 +257,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>174</x>
-      <y>330</y>
-      <w>216</w>
-      <h>132</h>
+      <x>288</x>
+      <y>495</y>
+      <w>324</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>340.0;10.0;10.0;200.0</additional_attributes>
@@ -267,21 +268,21 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>234</x>
-      <y>126</y>
-      <w>48</w>
-      <h>90</h>
+      <x>387</x>
+      <y>198</y>
+      <w>117</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;130.0;60.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;110.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>18</x>
-      <y>72</y>
-      <w>174</w>
-      <h>60</h>
+      <x>45</x>
+      <y>126</y>
+      <w>261</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;JPanel&gt;&gt;
 object:Image_Panel
@@ -294,21 +295,21 @@ object:Image_Panel
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>84</x>
-      <y>126</y>
-      <w>18</w>
-      <h>90</h>
+      <x>144</x>
+      <y>207</y>
+      <w>45</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+    <additional_attributes>30.0;110.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>0</x>
+      <x>27</x>
       <y>0</y>
-      <w>606</w>
-      <h>384</h>
+      <w>909</w>
+      <h>576</h>
     </coordinates>
     <panel_attributes>PresentationL
 --
@@ -318,13 +319,12 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>648</x>
-      <y>48</y>
-      <w>174</w>
-      <h>96</h>
+      <x>999</x>
+      <y>72</y>
+      <w>261</w>
+      <h>144</h>
     </coordinates>
-    <panel_attributes>Package::FatClass
---
+    <panel_attributes>&lt;&lt;Boards&gt;&gt;
 - List&lt;int[][]&gt;[] allBoards
 - String path  = "Resources/boards.csv";
 --
@@ -339,12 +339,12 @@ the boards</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>648</x>
-      <y>192</y>
-      <w>264</w>
-      <h>102</h>
+      <x>999</x>
+      <y>288</y>
+      <w>396</w>
+      <h>153</h>
     </coordinates>
-    <panel_attributes>object:image_Loader
+    <panel_attributes>&lt;&lt;image_Loader&gt;&gt;
 --
 - BufferedImage[][] images
 - String path = "Resources/Images/"
@@ -361,10 +361,10 @@ like "cat"</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>90</y>
-      <w>126</w>
-      <h>120</h>
+      <x>837</x>
+      <y>135</y>
+      <w>189</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m2=0..3</panel_attributes>
@@ -373,10 +373,10 @@ m2=0..3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>558</x>
-      <y>222</y>
-      <w>102</w>
-      <h>30</h>
+      <x>864</x>
+      <y>333</y>
+      <w>153</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;150.0;30.0</additional_attributes>
@@ -384,10 +384,10 @@ m2=0..3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>486</x>
-      <y>126</y>
-      <w>18</w>
-      <h>66</h>
+      <x>756</x>
+      <y>189</y>
+      <w>27</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
@@ -395,10 +395,10 @@ m2=0..3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>48</y>
-      <w>120</w>
-      <h>48</h>
+      <x>837</x>
+      <y>72</y>
+      <w>180</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 </panel_attributes>
@@ -407,10 +407,10 @@ m2=0..3</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>606</x>
+      <x>936</x>
       <y>0</y>
-      <w>372</w>
-      <h>384</h>
+      <w>558</w>
+      <h>576</h>
     </coordinates>
     <panel_attributes>StorageL
 --
@@ -420,10 +420,10 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>330</y>
-      <w>54</w>
-      <h>156</h>
+      <x>648</x>
+      <y>495</y>
+      <w>81</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;240.0</additional_attributes>
@@ -431,12 +431,38 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>228</x>
-      <y>498</y>
-      <w>126</w>
-      <h>18</h>
+      <x>369</x>
+      <y>747</y>
+      <w>189</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>252</x>
+      <y>27</y>
+      <w>216</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Costom_Frame&gt;&gt;
+object:WinninFrame
+--
+Responsibilities
+-- open the wining frame at game end</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>99</y>
+      <w>54</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;230.0;40.0;10.0</additional_attributes>
   </element>
 </diagram>
