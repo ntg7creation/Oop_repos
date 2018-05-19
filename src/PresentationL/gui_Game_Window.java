@@ -79,11 +79,13 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 				}
 			});
 			buttons[button_num].setFocusable(false);
+			buttons[button_num].setBorderPainted(false);
 		}
 		BufferedImage tempbuttonIcon = image_Loader.resize(images.get_Image(board_size, button_num), locationsX[1],
 				locationsY[1]);
 		buttons[0] = new JButton(new ImageIcon(tempbuttonIcon));
 		buttons[0].setVisible(false);
+		buttons[0].setBorderPainted(false);
 		setComponentSize(buttons[0]);
 		Panel.add(buttons[0]);
 
@@ -100,7 +102,7 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 		goback.setFocusable(false);
 
 		playAgine = new JButton();
-		Creat_Button_at(playAgine, "play agine", 1, board_size);
+		Creat_Button_at(playAgine, "play again", 1, board_size);
 		playAgine.setVisible(false);
 		playAgine.addActionListener(new ActionListener() {
 

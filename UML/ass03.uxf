@@ -137,7 +137,7 @@ Package::LogicL
       <w>600</w>
       <h>342</h>
     </coordinates>
-    <panel_attributes>StorageL
+    <panel_attributes>LogicL
 --
 bg=orange</panel_attributes>
     <additional_attributes/>
@@ -361,18 +361,6 @@ like "cat"</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>318</x>
-      <y>0</y>
-      <w>114</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=0..n</panel_attributes>
-    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
       <x>540</x>
       <y>90</y>
       <w>126</w>
@@ -403,18 +391,6 @@ m2=0..3</panel_attributes>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>300</x>
-      <y>12</y>
-      <w>114</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=0..n</panel_attributes>
-    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
