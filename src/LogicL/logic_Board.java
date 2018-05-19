@@ -1,10 +1,7 @@
 package LogicL;
 
-import java.awt.event.KeyEvent;
 import java.util.Random;
 import java.util.Stack;
-
-import jdk.dynalink.beans.StaticClass;
 
 public class logic_Board {
 	private int[][] board;
