@@ -20,12 +20,12 @@ import javafx.scene.paint.Color;
 
 public class Game_Menu extends Costom_Frame {
 
-	private JSpinner Size_Spinner;
 	private int currentSize;
+	private int currentImage = 0;
 	private image_Loader my_images[];
 	private Boards my_Boards;
 	private JLabel boradSize;
-	private int currentImage = 0;
+	private JSpinner Size_Spinner;
 	private Game_Menu me;
 
 	public Game_Menu() {
@@ -130,48 +130,12 @@ public class Game_Menu extends Costom_Frame {
 
 			}
 		});
-		//
-		// JButton Size3 = new JButton();
-		// Creat_Button_at(Size3, "3x3", 6, 4);
-		// JButton Size4 = new JButton();
-		// Creat_Button_at(Size4, "4x4", 6, 6);
-		// JButton Size5 = new JButton();
-		// Creat_Button_at(Size5, "5x5", 6, 8);
-		//
-		// Size3.addActionListener(new ActionListener() {
-		//
-		// @Override
-		// public void actionPerformed(ActionEvent arg0) {
-		// change_size(3);
-		// }
-		// });
-		// Size4.addActionListener(new ActionListener() {
-		//
-		// @Override
-		// public void actionPerformed(ActionEvent arg0) {
-		// change_size(4);
-		//
-		// }
-		// });
-		// Size5.addActionListener(new ActionListener() {
-		//
-		// @Override
-		// public void actionPerformed(ActionEvent arg0) {
-		// change_size(5);
-		//
-		// }
-		// });
 
 	}
 
-	public void change_size(int size) {
-		currentSize = size;
-		updateLabel();
-	}
-
-	public void change_image(int image) {
+	private void change_image(int image) {
 		currentImage = image;
-		Panel.changeImage(my_images[currentImage].get_Images(0, 0));
+		Panel.changeImage(my_images[currentImage].get_Image(0, 0));
 	}
 
 	private void addLabels() {

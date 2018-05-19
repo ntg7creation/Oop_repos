@@ -94,10 +94,4 @@ public class Boards {
 			}
 		}
 	}
-
-	public static void main(String[] args) {
-		Boards r = new Boards();
-		r.readCSV("Resources/boards.csv");
-		r.print();
-	}
 }

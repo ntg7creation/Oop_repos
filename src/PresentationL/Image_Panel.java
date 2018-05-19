@@ -22,13 +22,6 @@ public class Image_Panel extends JPanel {
 		Width = width;
 		Hight = hight;
 		image = null;
-		// try {
-		// // defult path
-		// image = ImageIO.read(new File("Resources/Images/cyber/cyber.jpeg"));
-		//
-		// } catch (IOException ex) {
-		// System.out.println("error");
-		// }
 	}
 
 	public void changeImage(BufferedImage image) {
