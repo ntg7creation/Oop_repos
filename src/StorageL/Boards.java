@@ -10,9 +10,10 @@ import java.util.Scanner;
 public class Boards {
 
 	private List<int[][]>[] allBoards;
-	private String path = "Resources/boards.csv";
+	private String path = "src/Resources/boards.csv";
 
 	public Boards() {
+		allBoards = new List[3];
 		allBoards = readCSV(path);
 	}
 

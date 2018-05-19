@@ -43,7 +43,6 @@ public class Main_Menu extends  Costom_Frame{
     }
 
     public static void main(String[] args) {
-        System.out.println("test");
         new Main_Menu();
 
     }
