@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 public class Boards {
 
-	private List[] g;
 	private List<int[][]>[] allBoards;
 	private String path = "Resources/boards.csv";
 
