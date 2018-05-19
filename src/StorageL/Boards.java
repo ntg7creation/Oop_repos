@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Boards {
 
 	private List<int[][]>[] allBoards;
-	private String path = "src/Resources/boards.csv";
+	private String path = "boards.csv";
 
 	public Boards() {
 		allBoards = new List[3];
@@ -53,8 +53,8 @@ public class Boards {
 		int boardsize = 0;
 
 		try {
-			inputStream = new Scanner(file);
-		} catch (FileNotFoundException e) {
+			inputStream = new Scanner(ResourceLoader.load(fileName));
+		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
