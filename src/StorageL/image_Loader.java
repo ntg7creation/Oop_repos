@@ -24,6 +24,38 @@ public class image_Loader {
 
 	}
 
+	public void customImage(String path, int size) {
+        try {
+            this.images = new BufferedImage[2][];
+            BufferedImage image = ImageIO.read(new File(path));
+            image = resize(image, 422, 422);
+            this.images[0] = new BufferedImage[1];
+            this.images[0][0] = image;
+
+
+            int chunkWidth = image.getWidth() / size;
+            int chunkHeight = image.getHeight() / size;
+            int count = 0;
+            BufferedImage imgs[] = new BufferedImage[size*size]; //Image array to hold image chunks
+            for (int x = 0; x < size; x++) {
+                for (int y = 0; y < size; y++) {
+                    //Initialize the image array with image chunks
+                    imgs[count] = new BufferedImage(chunkWidth, chunkHeight, image.getType());
+
+                    // draws the image chunk
+                    Graphics2D gr = imgs[count++].createGraphics();
+                    gr.drawImage(image, 0, 0, chunkWidth, chunkHeight, chunkWidth * y, chunkHeight * x, chunkWidth * y + chunkWidth, chunkHeight * x + chunkHeight, null);
+                    gr.dispose();
+                }
+            }
+
+            this.images[1] = imgs;
+            System.out.println("Splitting done");
+        } catch (IOException e) {
+            System.out.println("fail to load img");
+        }
+    }
+
 	private void load_Images(String name) {
 		BufferedImage temp;
 		images = new BufferedImage[4][];
@@ -74,6 +106,8 @@ public class image_Loader {
 
 		return dimg;
 	}
+
+
 
 	/*
 	 * private void load_Cat() { BufferedImage temp; cat = new BufferedImage[4][];
