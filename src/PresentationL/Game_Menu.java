@@ -127,10 +127,14 @@ public class Game_Menu extends Costom_Frame {
 					logic.Random_Board();
 				} else {
 					logic = new logic_Board(currentSize, board);
-					gui_Game_Window game = new gui_Game_Window(currentSize, logic, my_images[currentImage], me);
-					game.addKeyListener(game);
-					me.setVisible(false);
 				}
+				if (currentImage == 3 | currentSize > 5 | currentSize < 3)
+				{
+					my_images[currentImage].splitImage(currentSize);
+				}
+				gui_Game_Window game = new gui_Game_Window(currentSize, logic, my_images[currentImage], me);
+				game.addKeyListener(game);
+				me.setVisible(false);
 			}
 		});
 
@@ -172,7 +176,11 @@ public class Game_Menu extends Costom_Frame {
 			public void actionPerformed(ActionEvent arg0) {
 				String path = costomePath.getText();
 				my_images[3] = new image_Loader(path, true);
-				change_image(3);
+				if (my_images[3].isLoaded())
+					change_image(3);
+				else
+					JOptionPane.showMessageDialog(null, "fail to load costome image", "",
+							JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 

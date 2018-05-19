@@ -13,6 +13,8 @@ public class image_Loader {
 	private BufferedImage[][] images;
 	private String path = "src/Resources/";
 	private Boolean allLoaded = false;
+	private BufferedImage[] costomeSplitImages; // layz fix
+	private boolean costomeimg = false;
 
 	public image_Loader(String name, boolean costome) {
 		if (!costome)
@@ -32,7 +34,7 @@ public class image_Loader {
 			image = resize(image, 422, 422);
 			this.images[0] = new BufferedImage[1];
 			this.images[0][0] = image;
-
+			allLoaded = true;
 			return true;
 		} catch (IOException e) {
 			System.out.println("fail to load img");
@@ -40,7 +42,8 @@ public class image_Loader {
 		}
 	}
 
-	public void splitImage(BufferedImage image, int size) {
+	public void splitImage(int size) {
+		BufferedImage image = images[0][0];
 		int chunkWidth = image.getWidth() / size;
 		int chunkHeight = image.getHeight() / size;
 		int count = 0;
@@ -57,7 +60,8 @@ public class image_Loader {
 				gr.dispose();
 			}
 
-			this.images[1] = imgs;
+			costomeimg = true;
+			costomeSplitImages = imgs;
 			System.out.println("Splitting done");
 		}
 	}
@@ -100,8 +104,15 @@ public class image_Loader {
 		if (size == 0)
 			return images[0][0];
 
-		if (size > 5 | size < 3 | n > size * size | n < 1)
+		if (n > size * size | n < 1)
 			throw new ArrayIndexOutOfBoundsException();
+		
+		
+		if (costomeimg)
+			return costomeSplitImages[n - 1];
+		
+
+
 
 		return images[size - 2][n - 1];
 	}
