@@ -41,6 +41,10 @@ public class Main_Menu extends  Costom_Frame{
         });
         Creat_Button_at(exitBtn, "Exit", 3,7);
     }
+	@Override
+	public void set_Component_Postion(Component com, int X, int Y) {
+		com.setLocation(X, Y);
+	}
 
     public static void main(String[] args) {
         new Main_Menu();
