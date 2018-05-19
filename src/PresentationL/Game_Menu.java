@@ -19,7 +19,6 @@ import StorageL.image_Loader;
 
 public class Game_Menu extends Costom_Frame {
 
-
 	/**
 	 * 
 	 */
@@ -48,6 +47,12 @@ public class Game_Menu extends Costom_Frame {
 		addButtons();
 		addLabels();
 		creat_Spinner();
+		Boolean load = true;
+		for (image_Loader im : my_images)
+			if (!im.isLoaded())
+				load = false;
+		if (!load)
+			JOptionPane.showMessageDialog(null, "fail to load 1 or more images", "", JOptionPane.INFORMATION_MESSAGE);
 
 		setResizable(false);
 		setVisible(true);
@@ -151,7 +156,5 @@ public class Game_Menu extends Costom_Frame {
 	private void updateLabel() {
 		boradSize.setText("the current board size : " + currentSize + "x" + currentSize);
 	}
-
-
 
 }

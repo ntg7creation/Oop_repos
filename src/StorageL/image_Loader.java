@@ -7,20 +7,27 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 
 public class image_Loader {
 
 	private BufferedImage[][] images;
-	private String path = "Resources/Images/";
+	private String path = "Resources/";
+	private Boolean allLoaded = false;
 
 	public image_Loader(String name) {
 		load_Images(name);
+	}
+
+	public Boolean isLoaded() {
+		return allLoaded;
 	}
 
 	private void load_Images(String name) {
 		BufferedImage temp;
 		images = new BufferedImage[4][];
 		images[0] = new BufferedImage[1];
+		allLoaded = true;
 		try {
 			String path = this.path + name + "/" + name + ".jpeg";
 			// System.out.println("trying to load : " + path);
@@ -28,8 +35,10 @@ public class image_Loader {
 			images[0][0] = temp;
 		} catch (IOException e) {
 			System.out.println("fail to load img");
+			allLoaded = false;
 		}
 
+		
 		for (int size = 3; size <= 5; size++) {
 			images[size - 2] = new BufferedImage[size * size];
 			for (int i = 1; i <= size * size; i++) {
@@ -42,6 +51,7 @@ public class image_Loader {
 					images[size - 2][i - 1] = temp;
 				} catch (IOException e) {
 					System.out.println("fail to load img");
+					allLoaded = false;
 				}
 			}
 		}
@@ -67,6 +77,5 @@ public class image_Loader {
 
 		return dimg;
 	}
-
 
 }
