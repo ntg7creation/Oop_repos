@@ -18,6 +18,9 @@ public class Boards {
 	}
 
 	public int[][] get_Random_Board_of_Size(int size) {
+		if(size<3 || size>5)
+			return null;
+		
 		if(allBoards[size-3].size() == 0) {
 			return null;
 		}

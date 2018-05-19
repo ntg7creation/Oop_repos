@@ -28,6 +28,7 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 
 	private Timer timer;
 	private final int delay = 1000;
+	
 	private int move_num;
 	private int board_size;
 	private int time_past;

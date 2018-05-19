@@ -61,7 +61,7 @@ public class Game_Menu extends Costom_Frame {
 	}
 
 	public void creat_Spinner() {
-		Size_Spinner = new JSpinner(new SpinnerNumberModel(3, 3, 5, 1));
+		Size_Spinner = new JSpinner(new SpinnerNumberModel(3, 3, 100, 1));
 		setComponentSize(Size_Spinner);
 
 		set_Component_Postion(Size_Spinner, locationsX[6], locationsY[5]);
@@ -95,11 +95,22 @@ public class Game_Menu extends Costom_Frame {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Starting game");
 				int[][] board = my_Boards.get_Random_Board_of_Size(currentSize);
-				if (board == null)
-					JOptionPane.showMessageDialog(null, "no Board of size " + currentSize, "",
-							JOptionPane.INFORMATION_MESSAGE);
-				else {
-					logic_Board logic = new logic_Board(currentSize, board);
+				logic_Board logic;
+				if (board == null) {
+					// JOptionPane.showMessageDialog(null, "no Board of size " + currentSize, "",
+					// JOptionPane.INFORMATION_MESSAGE);
+					board = new int[currentSize][];
+					for (int i = 0; i < currentSize; i++) {
+						board[i] = new int[currentSize];
+						for (int j = 0; j < currentSize; j++) {
+							board[i][j] = i + j * currentSize+1;
+						}
+					}
+					board[currentSize-1][currentSize-1] = 0;
+					logic = new logic_Board(currentSize, board);
+					logic.Random_Board();
+				} else {
+					logic = new logic_Board(currentSize, board);
 					gui_Game_Window game = new gui_Game_Window(currentSize, logic, my_images[currentImage], me);
 					game.addKeyListener(game);
 					me.setVisible(false);

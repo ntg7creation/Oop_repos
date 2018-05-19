@@ -1,6 +1,10 @@
 package LogicL;
 
+import java.awt.event.KeyEvent;
+import java.util.Random;
 import java.util.Stack;
+
+import jdk.dynalink.beans.StaticClass;
 
 public class logic_Board {
 	private int[][] board;
@@ -71,9 +75,9 @@ public class logic_Board {
 		boolean found = false;
 		for (int i = 0; i < this.boardSize & !found; i++) {
 			for (int j = 0; j < this.boardSize & !found; j++) {
-                if (this.board[i][j] == index) {
-                    y = i;
-                    x = j;
+				if (this.board[i][j] == index) {
+					y = i;
+					x = j;
 					found = true;
 				}
 			}
@@ -113,4 +117,41 @@ public class logic_Board {
 
 		return true;
 	}
+
+	public void Random_Board() {
+		Random r = new Random();
+		print(board);
+		for (int i = 0; i < 50000; i++) {
+			int move = r.nextInt(4);
+			switch (move) {
+			case 0:
+				movePiece(Direction.Up);
+				break;
+			case 1:
+				movePiece(Direction.Down);
+				break;
+			case 2:
+				movePiece(Direction.Left);
+				break;
+			case 3:
+				movePiece(Direction.Right);
+				break;
+			}
+		}
+		this.history = new Stack<>();
+		print(board);
+	}
+	
+	public static void print(int[][] board)
+	{
+		System.out.println();
+		System.out.println();
+		for (int[] is : board) {
+			for (int i : is) {
+				System.out.print(i+",");
+			}
+			System.out.println();
+		}
+	}
+
 }
