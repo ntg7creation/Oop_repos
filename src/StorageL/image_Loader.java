@@ -22,7 +22,7 @@ public class image_Loader {
 		else
 			uploadImage(name);
 	}
-//last
+
 	public Boolean isLoaded() {
 		return allLoaded;
 	}
