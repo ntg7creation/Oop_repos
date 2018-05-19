@@ -19,24 +19,35 @@ import StorageL.image_Loader;
 
 public class gui_Game_Window extends Costom_Frame implements KeyListener, ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private Boolean win = false;
-	private int time_past;
+
 	private Timer timer;
 	private final int delay = 1000;
 	private int move_num;
+	private int board_size;
+	private int time_past;
 	private JLabel time;
 	private JLabel num_of_moves;
 	private JButton[] buttons;
+	private JButton playAgine;
+	private JButton exit;
 	private logic_Board logic;
 	private image_Loader images;
-	private int board_size;
+	private Game_Menu menu;
 
-	public gui_Game_Window(int size, logic_Board logic, image_Loader images) {
+
+	public gui_Game_Window(int size, logic_Board logic, image_Loader images, Game_Menu menu) {
 		super(700, 700, size, size + 1);
 		board_size = size;
 		this.logic = logic;
 		this.images = images;
 		time_past = 0;
+		this.menu = menu;
 		creat_Buttons();
 		creat_Labels();
 
@@ -49,11 +60,11 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 
 	}
 
-	public void creat_Buttons() {
+	private void creat_Buttons() {
 		buttons = new JButton[board_size * board_size];
 		int button_num = 0;
 		for (button_num = 1; button_num < board_size * board_size; button_num++) {
-			BufferedImage tempbuttonIcon = image_Loader.resize(images.get_Images(board_size, button_num), locationsX[1],
+			BufferedImage tempbuttonIcon = image_Loader.resize(images.get_Image(board_size, button_num), locationsX[1],
 					locationsY[1]);
 			buttons[button_num] = new JButton(new ImageIcon(tempbuttonIcon));
 			buttons[button_num].setName(Integer.toString(button_num));
@@ -70,7 +81,7 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 			});
 			buttons[button_num].setFocusable(false);
 		}
-		BufferedImage tempbuttonIcon = image_Loader.resize(images.get_Images(board_size, button_num), locationsX[1],
+		BufferedImage tempbuttonIcon = image_Loader.resize(images.get_Image(board_size, button_num), locationsX[1],
 				locationsY[1]);
 		buttons[0] = new JButton(new ImageIcon(tempbuttonIcon));
 		buttons[0].setVisible(false);
@@ -85,25 +96,49 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 			public void actionPerformed(ActionEvent arg0) {
 				if (win)
 					return;
-				if (logic.undo()) {
-					move_num--;
-					num_of_moves.setText("you have done " + move_num + " moves");
-				}
+				logic.undo();
 				fix_Board();
 
 			}
 		});
 		goback.setFocusable(false);
+
+		playAgine = new JButton();
+		Creat_Button_at(playAgine, "play agine", 1, board_size);
+		playAgine.setVisible(false);
+		playAgine.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				menu.setVisible(true);
+				dispose();
+
+			}
+		});
+		exit = new JButton();
+		Creat_Button_at(exit, "exit", 2, board_size);
+		exit.setVisible(false);
+		exit.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				new Main_Menu();
+				menu.dispose();
+				dispose();
+
+			}
+		});
+
 	}
 
-	public void creat_Labels() {
+	private void creat_Labels() {
 		num_of_moves = new JLabel();
 		Creat_Label_at(num_of_moves, "you have done 0 moves", 1, board_size);
 		time = new JLabel();
 		Creat_Label_at(time, "you have played for 0 sec", 2, board_size);
 	}
 
-	public void action_Button_Click(int name) {
+	private void action_Button_Click(int name) {
 		if (win)
 			return;
 		Boolean test = logic.movePiece(name);
@@ -118,21 +153,24 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 	}
 
 	// set the buttons to match the logic board
-	public void fix_Board() {
+	private void fix_Board() {
 		int[][] board = logic.getBoard();
 		for (int y = 0; y < board.length; y++)
 			for (int x = 0; x < board[y].length; x++) {
 				int button_num = board[y][x];
 				set_Component_Postion(buttons[button_num], locationsX[x], locationsY[y]);
 			}
-		prin(board);
 		if (logic.isSolved()) {
 			win = true;
 			buttons[0].setVisible(true);
 			JOptionPane.showMessageDialog(null,
 					"You Win\n your time was:" + time_past + "\n number of moves: " + move_num, "",
 					JOptionPane.INFORMATION_MESSAGE);
-
+			exit.setVisible(true);
+			playAgine.setVisible(true);
+//			Image_Panel image = new Image_Panel(700, 700 - locationsY[1]);
+//			image.setLocation(0, 0);
+//			Panel.add(image);
 		}
 	}
 
@@ -162,24 +200,13 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 			direc = Direction.Right;
 			break;
 		}
-		//prin(logic.getBoard());
+		// prin(logic.getBoard());
 		if (logic.movePiece(direc)) {
 			move_num++;
 			num_of_moves.setText("you have done " + move_num + " moves");
 
 		}
 		fix_Board();
-	}
-
-	public void prin(int[][] array) {
-		for (int[] is : array) {
-			for (int i : is) {
-				System.out.print(i + ",");
-			}
-			System.out.println();
-		}
-		System.out.println();
-		System.out.println();
 	}
 
 	@Override

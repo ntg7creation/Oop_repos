@@ -17,9 +17,23 @@ public class Boards {
 	}
 
 	public int[][] get_Random_Board_of_Size(int size) {
+		if(allBoards[size-3].size() == 0) {
+			return null;
+		}
+		
 		Random r = new Random();
 		int boardnum = r.nextInt(allBoards[size - 3].size());
-		return allBoards[size - 3].get(boardnum);
+		// return allBoards[size - 3].get(boardnum);
+
+		int[][] copy = new int[size][];
+		
+		int[][] board = allBoards[size - 3].get(boardnum);
+		for (int i = 0; i < size; i++) {
+			copy[i]= new int[size];
+			for (int j = 0; j < size; j++)
+				copy[i][j] = board[i][j];
+		}
+		return copy;
 	}
 
 	public List<int[][]>[] readCSV(String path) {
@@ -79,11 +93,5 @@ public class Boards {
 				System.out.println();
 			}
 		}
-	}
-
-	public static void main(String[] args) {
-		Boards r = new Boards();
-		r.readCSV("Resources/boards.csv");
-		r.print();
 	}
 }
