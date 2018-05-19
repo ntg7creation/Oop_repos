@@ -68,9 +68,5 @@ public class image_Loader {
 		return dimg;
 	}
 
-	public static void main(String[] args) {
 
-		new image_Loader("cat");
-
-	}
 }

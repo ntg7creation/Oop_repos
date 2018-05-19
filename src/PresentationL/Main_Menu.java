@@ -7,7 +7,12 @@ import java.awt.event.ActionListener;
 
 public class Main_Menu extends  Costom_Frame{
 
-    public Main_Menu() {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public Main_Menu() {
         super(500,500,5,10);
 
         JLabel title = new JLabel("Sliding Puzzle");

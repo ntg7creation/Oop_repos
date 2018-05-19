@@ -16,10 +16,14 @@ import javax.swing.event.ChangeListener;
 import LogicL.logic_Board;
 import StorageL.Boards;
 import StorageL.image_Loader;
-import javafx.scene.paint.Color;
 
 public class Game_Menu extends Costom_Frame {
 
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int currentSize;
 	private int currentImage = 0;
 	private image_Loader my_images[];

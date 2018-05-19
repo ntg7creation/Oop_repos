@@ -19,6 +19,11 @@ import StorageL.image_Loader;
 
 public class gui_Game_Window extends Costom_Frame implements KeyListener, ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private Boolean win = false;
 
 	private Timer timer;

@@ -5,12 +5,16 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Point;
 
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class Costom_Frame extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected Image_Panel Panel;
 	private int _width;
 	private int _height;
@@ -113,7 +117,7 @@ public class Costom_Frame extends JFrame {
 		label.setForeground(Color.black);
 		label.setOpaque(true);
 		label.setBackground(Color.white);
-		label.setHorizontalAlignment(label.CENTER);
+		label.setHorizontalAlignment(SwingConstants.CENTER);
 		// label.setBorder(BorderFactory.createLineBorder(Color.black));
 		set_Component_Postion(label, locationsX[X], locationsY[Y]);
 		Panel.add(label);
