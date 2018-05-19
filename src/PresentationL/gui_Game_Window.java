@@ -40,7 +40,6 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 	private image_Loader images;
 	private Game_Menu menu;
 
-
 	public gui_Game_Window(int size, logic_Board logic, image_Loader images, Game_Menu menu) {
 		super(700, 700, size, size + 1);
 		board_size = size;
@@ -96,10 +95,7 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if (win)
-					return;
-				logic.undo();
-				fix_Board();
+				Undo();
 
 			}
 		});
@@ -170,9 +166,9 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 					JOptionPane.INFORMATION_MESSAGE);
 			exit.setVisible(true);
 			playAgine.setVisible(true);
-//			Image_Panel image = new Image_Panel(700, 700 - locationsY[1]);
-//			image.setLocation(0, 0);
-//			Panel.add(image);
+			// Image_Panel image = new Image_Panel(700, 700 - locationsY[1]);
+			// image.setLocation(0, 0);
+			// Panel.add(image);
 		}
 	}
 
@@ -218,6 +214,16 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 
 	@Override
 	public void keyPressed(KeyEvent e) {
+		if ((e.getKeyCode() == KeyEvent.VK_Z) && ((e.getModifiers() & KeyEvent.CTRL_MASK) != 0))
+			Undo();
+
+	}
+
+	private void Undo() {
+		if (win)
+			return;
+		logic.undo();
+		fix_Board();
 	}
 
 	@Override

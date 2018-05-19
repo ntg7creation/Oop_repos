@@ -10,8 +10,9 @@ import javax.imageio.ImageIO;
 
 public class image_Loader {
 
+	
 	private BufferedImage[][] images;
-	private String path = "Resources/";
+	private String path = "src/Resources/";
 	private Boolean allLoaded = false;
 
 	public image_Loader(String name) {
@@ -65,6 +66,7 @@ public class image_Loader {
 		try {
 			String path = this.path + name + "/" + name + ".jpeg";
 			// System.out.println("trying to load : " + path);
+			
 			temp = ImageIO.read(new File(path));
 			images[0][0] = temp;
 		} catch (IOException e) {
