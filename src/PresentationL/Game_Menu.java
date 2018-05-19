@@ -19,7 +19,7 @@ import LogicL.logic_Board;
 import StorageL.Boards;
 import StorageL.image_Loader;
 
-public class Game_Menu extends Costom_Frame {
+public class Game_Menu extends Custom_Frame {
 
 	/**
 	 * 
@@ -29,7 +29,7 @@ public class Game_Menu extends Costom_Frame {
 	private int currentImage = 0;
 	private image_Loader my_images[];
 	private Boards my_Boards;
-	private JLabel boradSize;
+	private JLabel boardSize;
 	private JSpinner Size_Spinner;
 	private Game_Menu me;
 	private JTextArea costomePath;
@@ -192,13 +192,13 @@ public class Game_Menu extends Costom_Frame {
 	}
 
 	private void addLabels() {
-		boradSize = new JLabel();
-		Creat_Label_at(boradSize, "pleas chose board size", 6, 2);
+		boardSize = new JLabel();
+		Creat_Label_at(boardSize, "pleas chose board size", 6, 2);
 		updateLabel();
 	}
 
 	private void updateLabel() {
-		boradSize.setText("the current board size : " + currentSize + "x" + currentSize);
+		boardSize.setText("the current board size : " + currentSize + "x" + currentSize);
 	}
 
 }

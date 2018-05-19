@@ -17,7 +17,7 @@ import LogicL.Direction;
 import LogicL.logic_Board;
 import StorageL.image_Loader;
 
-public class gui_Game_Window extends Costom_Frame implements KeyListener, ActionListener {
+public class gui_Game_Window extends Custom_Frame implements KeyListener, ActionListener {
 
 	/**
 	 * 
@@ -101,33 +101,6 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 			}
 		});
 		goback.setFocusable(false);
-
-		playAgine = new JButton();
-		Creat_Button_at(playAgine, "play again", 1, board_size);
-		playAgine.setVisible(false);
-		playAgine.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				menu.setVisible(true);
-				dispose();
-
-			}
-		});
-		exit = new JButton();
-		Creat_Button_at(exit, "exit", 2, board_size);
-		exit.setVisible(false);
-		exit.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				new Main_Menu();
-				menu.dispose();
-				dispose();
-
-			}
-		});
-
 	}
 
 	private void creat_Labels() {
@@ -162,14 +135,12 @@ public class gui_Game_Window extends Costom_Frame implements KeyListener, Action
 		if (logic.isSolved()) {
 			win = true;
 			buttons[0].setVisible(true);
-			JOptionPane.showMessageDialog(null,
-					"You Win\n your time was:" + time_past + "\n number of moves: " + move_num, "",
-					JOptionPane.INFORMATION_MESSAGE);
-			exit.setVisible(true);
-			playAgine.setVisible(true);
-			// Image_Panel image = new Image_Panel(700, 700 - locationsY[1]);
-			// image.setLocation(0, 0);
-			// Panel.add(image);
+			new WinnigFrame(this, menu, time_past, move_num);
+//			JOptionPane.showMessageDialog(null,
+//					"You Win\n your time was:" + time_past + "\n number of moves: " + move_num, "",
+//					JOptionPane.INFORMATION_MESSAGE);
+//			exit.setVisible(true);
+//			playAgine.setVisible(true);
 		}
 	}
 

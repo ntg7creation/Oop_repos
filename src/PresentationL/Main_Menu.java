@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Main_Menu extends  Costom_Frame{
+public class Main_Menu extends Custom_Frame {
 
     /**
 	 * 
@@ -31,6 +31,7 @@ public class Main_Menu extends  Costom_Frame{
             }
         });
         Creat_Button_at(startBtn, "Start", 1,7);
+        startBtn.setVisible(true);
 
         JButton exitBtn = new JButton();
         exitBtn.addActionListener(new ActionListener() {
@@ -40,12 +41,12 @@ public class Main_Menu extends  Costom_Frame{
             }
         });
         Creat_Button_at(exitBtn, "Exit", 3,7);
+        exitBtn.setVisible(true);
     }
 	
 
     public static void main(String[] args) {
         new Main_Menu();
-
     }
 
 }
