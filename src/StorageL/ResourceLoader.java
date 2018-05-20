@@ -2,6 +2,10 @@ package StorageL;
 
 import java.io.InputStream;
 
+/*
+* Loading resources
+* */
+
 final public class ResourceLoader {
 
 	public static InputStream load(String path) {
