@@ -21,6 +21,7 @@ import StorageL.image_Loader;
 
 public class Game_Menu extends Custom_Frame {
 
+	//---
 	/**
 	 *  Responsible for game menu, choosing image and board size
 	 */
