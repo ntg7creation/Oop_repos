@@ -10,13 +10,13 @@ import java.util.Scanner;
 /*
 * Responsible for loading the csv
 * */
-//merge
 public class Boards {
 
 	private List<int[][]>[] allBoards;
 	private String path = "boards.csv";
 
 	public Boards() {
+		List<String>[] temp = new List[3];
 		allBoards = new List[3];
 		allBoards = readCSV(path);
 	}

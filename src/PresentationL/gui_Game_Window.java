@@ -10,7 +10,6 @@ import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 import LogicL.Direction;
@@ -35,8 +34,6 @@ public class gui_Game_Window extends Custom_Frame implements KeyListener, Action
 	private JLabel time;
 	private JLabel num_of_moves;
 	private JButton[] buttons;
-	private JButton playAgine;
-	private JButton exit;
 	private logic_Board logic;
 	private image_Loader images;
 	private Game_Menu menu;
@@ -184,6 +181,7 @@ public class gui_Game_Window extends Custom_Frame implements KeyListener, Action
 
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if ((e.getKeyCode() == KeyEvent.VK_Z) && ((e.getModifiers() & KeyEvent.CTRL_MASK) != 0))
