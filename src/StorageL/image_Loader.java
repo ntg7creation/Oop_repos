@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 /*
 * Responsible for loading the images
 * */
-
+//
 public class image_Loader {
 
 	private BufferedImage[][] images;
