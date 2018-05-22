@@ -1,12 +1,16 @@
 package PresentationL;
 
-import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -17,6 +21,7 @@ import StorageL.image_Loader;
 
 public class Game_Menu extends Custom_Frame {
 
+	//---
 	/**
 	 *  Responsible for game menu, choosing image and board size
 	 */

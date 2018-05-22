@@ -1,8 +1,10 @@
 package PresentationL;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
 
 /*
 * The winning frame
@@ -10,7 +12,12 @@ import java.awt.event.ActionListener;
 * */
 public class WinnigFrame extends Custom_Frame {
 
-    public WinnigFrame(gui_Game_Window boardGame, Game_Menu menu, int numMoves, int timePassed) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -2932370921386261213L;
+
+	public WinnigFrame(gui_Game_Window boardGame, Game_Menu menu, int numMoves, int timePassed) {
         super(500,500,4,10);
 
         JLabel moves = new JLabel();
