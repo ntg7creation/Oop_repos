@@ -1,4 +1,4 @@
-package LogicL;
+package assiment3.LogicL;
 
 /*
 * a coordinate of a piece location in board

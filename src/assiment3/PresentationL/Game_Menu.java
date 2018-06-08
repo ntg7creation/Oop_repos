@@ -1,4 +1,4 @@
-package PresentationL;
+package assiment3.PresentationL;
 
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -15,9 +15,9 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import LogicL.logic_Board;
-import StorageL.Boards;
-import StorageL.image_Loader;
+import assiment3.LogicL.logic_Board;
+import assiment3.StorageL.Boards;
+import assiment3.StorageL.image_Loader;
 
 public class Game_Menu extends Custom_Frame {
 

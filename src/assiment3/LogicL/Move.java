@@ -1,4 +1,4 @@
-package LogicL;
+package assiment3.LogicL;
 
 /*
 * determinate a move in board

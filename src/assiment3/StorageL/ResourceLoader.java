@@ -1,4 +1,4 @@
-package StorageL;
+package assiment3.StorageL;
 
 import java.io.InputStream;
 

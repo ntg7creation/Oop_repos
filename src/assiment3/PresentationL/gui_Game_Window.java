@@ -1,4 +1,4 @@
-package PresentationL;
+package assiment3.PresentationL;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -12,9 +12,9 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 
-import LogicL.Direction;
-import LogicL.logic_Board;
-import StorageL.image_Loader;
+import assiment3.LogicL.Direction;
+import assiment3.LogicL.logic_Board;
+import assiment3.StorageL.image_Loader;
 
 public class gui_Game_Window extends Custom_Frame implements KeyListener, ActionListener {
 

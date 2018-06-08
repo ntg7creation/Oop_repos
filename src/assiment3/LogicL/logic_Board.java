@@ -1,4 +1,4 @@
-package LogicL;
+package assiment3.LogicL;
 
 import java.util.Random;
 import java.util.Stack;

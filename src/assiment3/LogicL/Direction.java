@@ -1,4 +1,4 @@
-package LogicL;
+package assiment3.LogicL;
 
 // This class define what is a direction and dx and dy
 public enum Direction {
