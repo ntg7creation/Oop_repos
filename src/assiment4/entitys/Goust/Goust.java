@@ -1,7 +1,7 @@
 package assiment4.entitys.Goust;
 
-import assiment4.entitys.Entity;
+import assiment4.entitys.MyEntity;
 
-public abstract class Goust extends Entity {
+public abstract class Goust extends MyEntity {
 
 }

@@ -5,7 +5,7 @@ import java.awt.Image;
 
 import assiment4.logic.Timer_Listener;
 
-public abstract class Entity implements Timer_Listener {
+public abstract class MyEntity implements Timer_Listener {
 
 	private int X;
 	private int Y;
