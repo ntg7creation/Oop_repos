@@ -7,25 +7,49 @@ import assiment4.logic.Timer_Listener;
 
 public abstract class MyEntity implements Timer_Listener {
 
-	private int X;
-	private int Y;
-	private int offsetX;
-	private int offsetY;
+	private int TPS;
+	protected int X;
+	protected int Y;
+	protected int offsetX;
+	protected int offsetY;
 	private Image[] sprites;
-	
-	public void draw(Graphics g)
-	{
-		
+
+	@Override
+	public void set_TPS(int TPS) {
+
+		this.TPS = TPS;
 	}
-	
-	public int get_X()
-	{
+
+	@Override
+	public int get_TPS() {
+		return TPS;
+	}
+
+	public void draw(Graphics g) {
+
+	}
+
+	public int get_X() {
 		return X;
 	}
-	
-	public int get_Y()
-	{
+
+	public int get_Y() {
 		return Y;
 	}
-	
+
+	public int getOffsetX() {
+		return offsetX;
+	}
+
+	public void setOffsetX(int offsetX) {
+		this.offsetX = offsetX;
+	}
+
+	public int getOffsetY() {
+		return offsetY;
+	}
+
+	public void setOffsetY(int offsetY) {
+		this.offsetY = offsetY;
+	}
 }

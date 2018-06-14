@@ -1,5 +1,7 @@
 package assiment4.entitys.Pac_mans;
 
+import java.awt.event.KeyEvent;
+
 import assiment4.logic.Visitor;
 
 public class Pac_Man_Yellow extends Pac_Man {
@@ -17,5 +19,7 @@ public class Pac_Man_Yellow extends Pac_Man {
 		// TODO Auto-generated method stub
 		
 	}
+
+
 
 }
