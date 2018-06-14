@@ -9,16 +9,15 @@ import assiment4.logic.Visitor;
 
 public abstract class Goust extends MyEntity implements Visitor {
 
-	Moving_Direction direc = null;
+	protected Moving_Direction direc = null;
 
-	Stack<Moving_Direction> path;
-	
+	protected Stack<Moving_Direction> path;
+
 	static public Stack<Moving_Direction> DSF_to(int X, int Y, Board board) {
 		return null;
 	}
 
-	protected void move()
-	{
+	protected void move() {
 		if (offsetX == 0 & offsetY == 0)
 			direc = path.pop();
 
@@ -62,5 +61,5 @@ public abstract class Goust extends MyEntity implements Visitor {
 			break;
 		}
 	}
-	
+
 }

@@ -44,4 +44,49 @@ public abstract class Pac_Man extends MyEntity implements Visited, KeyListener {
 		// TODO Auto-generated method stub
 		
 	}
+
+	protected void move() {
+
+		if (direc == null) {
+		}
+
+		switch (direc) {
+		case Right:
+			offsetX++;
+			break;
+		case Left:
+			offsetX--;
+			break;
+		case Up:
+			offsetY--;
+			break;
+		case Down:
+			offsetY++;
+			break;
+		}
+
+		switch (offsetX) {
+		case 13:
+			offsetX = -12;
+			X++;
+			break;
+		case -13:
+			offsetX = 12;
+			X--;
+			break;
+		}
+
+		switch (offsetY) {
+		case 13:
+			offsetY = -12;
+			Y++;
+			break;
+		case -13:
+			offsetY = 12;
+			Y--;
+			break;
+		}
+	}
+
+	
 }
