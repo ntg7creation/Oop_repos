@@ -1,4 +1,4 @@
-package assiment4.logic;
+package assiment4.Logic;
 
 // This class define what is a direction and dx and dy
 public enum Moving_Direction {

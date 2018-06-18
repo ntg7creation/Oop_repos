@@ -1,0 +1,28 @@
+package assiment4.Entitys.Pacmans;
+
+import assiment4.Logic.Visitor;
+
+public class Pacman_Red extends Pacman {
+
+	private final String redPath = "Red/";
+	private final String[] imagesPath = {redPath + "1.png", redPath + "2.png"};
+
+	public Pacman_Red() {
+		if (!loadSprite(imagesPath)) {
+			System.out.println("Error while loading pacman-red sprite");
+		}
+	}
+
+	@Override
+	public void action() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void accept(Visitor V) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

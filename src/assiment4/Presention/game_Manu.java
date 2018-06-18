@@ -3,8 +3,8 @@ package assiment4.Presention;
 import java.awt.Graphics;
 import java.awt.Image;
 
-import assiment4.logic.Board;
-import assiment4.logic.Timer_Listener;
+import assiment4.Logic.Board;
+import assiment4.Logic.Timer_Listener;
 
 public class game_Manu extends Custom_Frame implements Timer_Listener {
 

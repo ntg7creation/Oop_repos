@@ -1,4 +1,4 @@
-package assiment4.logic;
+package assiment4.Logic;
 
 public interface Visited {
 

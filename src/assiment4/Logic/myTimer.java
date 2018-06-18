@@ -1,4 +1,4 @@
-package assiment4.logic;
+package assiment4.Logic;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

@@ -1,17 +1,17 @@
-package assiment4.logic;
+package assiment4.Logic;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 
-import assiment4.entitys.Food.Food;
-import assiment4.entitys.Food.Yello_Palet;
-import assiment4.entitys.Goust.Goust_Green;
-import assiment4.entitys.Goust.Goust_Red;
-import assiment4.entitys.Goust.Goust_Yellow;
-import assiment4.entitys.Pac_mans.Pac_Man;
-import assiment4.entitys.Pac_mans.Pac_Man_Yellow;
+import assiment4.Entitys.Food.Food;
+import assiment4.Entitys.Food.Yello_Palet;
+import assiment4.Entitys.Ghosts.Ghost_Green;
+import assiment4.Entitys.Ghosts.Ghost_Red;
+import assiment4.Entitys.Ghosts.Ghost_Yellow;
+import assiment4.Entitys.Pacmans.Pacman;
+import assiment4.Entitys.Pacmans.Pacman_Yellow;
 
 //this shold not implements timer Listener but its easyer to do it like this
 public class Board implements Timer_Listener {
@@ -28,10 +28,10 @@ public class Board implements Timer_Listener {
 
 	private int yello_Palets_Count;
 
-	private Pac_Man pacMan;
-	private Goust_Green Inky;
-	private Goust_Red Blinky;
-	private Goust_Yellow Clyde;
+	private Pacman pacMan;
+	private Ghost_Green Inky;
+	private Ghost_Red Blinky;
+	private Ghost_Yellow Clyde;
 	private Food[] food;
 
 	private int[][] board;
@@ -68,19 +68,19 @@ public class Board implements Timer_Listener {
 					yello_Palets[y][x].set_start(x, y);
 					break;
 				case 4:
-					pacMan = new Pac_Man_Yellow();
+					pacMan = new Pacman_Yellow();
 					pacMan.set_start(x, y);
 					break;
 				case 8:
-					Inky = new Goust_Green();
+					Inky = new Ghost_Green();
 					Inky.set_start(x, y);
 					break;
 				case 16:
-					Clyde = new Goust_Yellow();
+					Clyde = new Ghost_Yellow();
 					Clyde.set_start(x, y);
 					break;
 				case 32:
-					Blinky = new Goust_Red();
+					Blinky = new Ghost_Red();
 					Blinky.set_start(x, y);
 					break;
 				case 512:

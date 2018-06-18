@@ -1,13 +1,12 @@
-package assiment4.entitys.Food;
+package assiment4.Entitys.Food;
 
-import assiment4.entitys.Pac_mans.Pac_Man_Blue;
-import assiment4.entitys.Pac_mans.Pac_Man_Red;
-import assiment4.entitys.Pac_mans.Pac_Man_Yellow;
+import assiment4.Entitys.Pacmans.Pacman_Blue;
+import assiment4.Entitys.Pacmans.Pacman_Red;
+import assiment4.Entitys.Pacmans.Pacman_Yellow;
 
 public class Apple extends Food{
 
-	private final String path = "res/Pickups/";
-	private final String[] imagesPath = {path + "Apple.png"};
+	private final String[] imagesPath = {foodPath + "Apple.png"};
 
 	public Apple() {
 		if (!loadSprite(imagesPath)) {
@@ -22,19 +21,19 @@ public class Apple extends Food{
 	}
 
 	@Override
-	public void Visit(Pac_Man_Blue p) {
+	public void Visit(Pacman_Blue p) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void Visit(Pac_Man_Yellow p) {
+	public void Visit(Pacman_Yellow p) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void Visit(Pac_Man_Red p) {
+	public void Visit(Pacman_Red p) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -1,16 +1,17 @@
-package assiment4.entitys;
+package assiment4.Entitys;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-import assiment4.logic.Timer_Listener;
+import assiment4.Logic.Timer_Listener;
 
 import javax.imageio.ImageIO;
 
 public abstract class MyEntity implements Timer_Listener {
 
+    protected final String path = "res/Images/";
     private final int pixelOfCell = 25;
     final protected int TPS = 25;
     protected int X;

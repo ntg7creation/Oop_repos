@@ -1,6 +1,6 @@
-package assiment4.logic;
+package assiment4.Logic;
 
-import assiment4.entitys.Pac_mans.Pac_Man;
+import assiment4.Entitys.Pacmans.Pacman;
 
 public class Logic {
 
@@ -14,7 +14,7 @@ public class Logic {
 	private int score;
 	private int lifes;
 	
-	private Pac_Man[] pac_mans;
+	private Pacman[] pacmans;
 	
 	public Logic()
 	{

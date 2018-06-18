@@ -121,7 +121,7 @@ public class gui_Game_Window extends Custom_Frame implements KeyListener, Action
 
 	}
 
-	// set the buttons to match the logic board
+	// set the buttons to match the Logic board
 	private void fix_Board() {
 		int[][] board = logic.getBoard();
 		for (int y = 0; y < board.length; y++)
@@ -167,7 +167,7 @@ public class gui_Game_Window extends Custom_Frame implements KeyListener, Action
 			direc = Direction.Right;
 			break;
 		}
-		// prin(logic.getBoard());
+		// prin(Logic.getBoard());
 		if (logic.movePiece(direc)) {
 			move_num++;
 			num_of_moves.setText("you have done " + move_num + " moves");
