@@ -6,6 +6,11 @@ import assiment4.entitys.Pac_mans.Pac_Man_Yellow;
 
 public class Yello_Palet extends Food {
 
+	public Yello_Palet() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 	@Override
 	public void action() {
 		// TODO Auto-generated method stub

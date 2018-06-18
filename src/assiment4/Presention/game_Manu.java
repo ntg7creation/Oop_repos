@@ -13,7 +13,21 @@ public class game_Manu extends Custom_Frame implements Timer_Listener {
 
 	public game_Manu() {
 		super(800, 800, 1, 1);
-		gameBoard= new Board(new int[5][] ); // will change with csv
+		int[][] tempcsv = new int[][] {
+			{2,2,2,2,2,2,2,2,2,2,2,2},
+			{2,2,2,2,2,2,1,2,2,2,2,1},
+			{2,2,2,2,2,2,2,2,2,2,2,1},
+			{2,2,4,2,2,2,2,2,2,2,2,1},
+			{2,2,2,2,2,2,2,8,2,2,2,1},
+			{2,2,2,2,2,2,2,2,2,2,2,2},
+			{2,2,2,2,2,2,2,2,2,2,2,1},
+			{2,2,2,2,2,2,2,2,1,2,2,1},
+			{2,2,2,2,2,2,2,1,2,2,2,1},
+			{2,2,2,2,2,2,2,2,2,2,2,1},
+			{2,2,2,2,2,2,2,2,2,2,2,1},
+			{2,2,2,2,2,2,2,2,2,2,2,1},
+		};
+		gameBoard= new Board(tempcsv); // will change with csv
 		repaint();
 
 	}

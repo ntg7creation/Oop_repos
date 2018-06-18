@@ -6,7 +6,9 @@ import assiment4.logic.Visitor;
 
 public class Pac_Man_Yellow extends Pac_Man {
 
-	
+	public Pac_Man_Yellow() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	@Override
 	public void action() {

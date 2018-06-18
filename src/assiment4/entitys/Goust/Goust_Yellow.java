@@ -9,6 +9,10 @@ public class Goust_Yellow extends Goust {
 
 	private int timecount;
 
+	public Goust_Yellow() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Override
 	public void action() {
 		timecount++;

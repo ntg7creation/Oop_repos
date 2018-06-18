@@ -11,6 +11,10 @@ public class Goust_Red extends Goust  {
 		move();
 	}
 
+	public Goust_Red() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Override
 	public void Visit(Pac_Man_Blue p) {
 		// TODO Auto-generated method stub
