@@ -10,6 +10,7 @@ import assiment4.Logic.Visited;
 public abstract class Pacman extends MyEntity implements Visited, KeyListener {
 
 	protected final String pacmanPath = path + "Pacman/";
+
 	Moving_Direction direc = Moving_Direction.Left;
 	
 	@Override

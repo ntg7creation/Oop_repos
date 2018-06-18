@@ -6,9 +6,14 @@ import assiment4.Entitys.Pacmans.Pacman_Yellow;
  
 public class Ghost_Green extends Ghost {
 
+	private final String[] imagesPath = {ghostPath + "GhostGreen.png"};
+
 	public Ghost_Green() {
-		// TODO Auto-generated constructor stub
+		if (!loadSprite(imagesPath)) {
+			System.out.println("Error while loading ghost_green sprite");
+		}
 	}
+
 	
 	@Override
 	public void action() {

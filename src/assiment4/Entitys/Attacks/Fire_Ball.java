@@ -6,6 +6,14 @@ import assiment4.Entitys.Pacmans.Pacman_Yellow;
 
 public class Fire_Ball extends Attack {
 
+	private final String[] imagesPath = {attacksPath + "Fireball.png"};
+
+	public Fire_Ball() {
+		if (!loadSprite(imagesPath)) {
+			System.out.println("Error while loading fireball sprite");
+		}
+	}
+
 	@Override
 	public void action() {
 		// TODO Auto-generated method stub

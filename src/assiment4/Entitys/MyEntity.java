@@ -8,6 +8,7 @@ import java.io.IOException;
 import assiment4.Logic.Timer_Listener;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 
 public abstract class MyEntity implements Timer_Listener {
 
@@ -18,16 +19,20 @@ public abstract class MyEntity implements Timer_Listener {
     protected int Y;
     protected int offsetX;
     protected int offsetY;
-    protected BufferedImage[] sprites;
+    private ImageIcon[] sprites;
+    private int spriteIdx;
 
+    public MyEntity() {
+        spriteIdx = 0;
+    }
 
     public void set_start(int x, int y) {
         X = x;
         Y = y;
     }
 
-    public void draw(Graphics g) {
-
+    public void draw(Component com, Graphics g) {
+        getCurrentSprite().paintIcon(com, g, X, Y);
     }
 
     public int get_X() {
@@ -55,18 +60,17 @@ public abstract class MyEntity implements Timer_Listener {
     }
 
     protected boolean loadSprite(String[] imagesPath) {
-        try {
-            this.sprites = new BufferedImage[imagesPath.length];
 
-            for (int i = 0; i < imagesPath.length; i++) {
-                BufferedImage src = ImageIO.read(new File(imagesPath[i]));
-                this.sprites[i] = resize(src, pixelOfCell, pixelOfCell);
-            }
+        this.sprites = new ImageIcon[imagesPath.length];
 
-            return true;
-        } catch (IOException e) {
-            return false;
+        for (int i = 0; i < imagesPath.length; i++) {
+            ImageIcon src = new ImageIcon(imagesPath[i]);
+
+//                this.sprites[i] = resize(src, pixelOfCell, pixelOfCell);
         }
+
+        return true;
+
     }
 
     private BufferedImage resize(BufferedImage img, int newW, int newH) {
@@ -78,5 +82,15 @@ public abstract class MyEntity implements Timer_Listener {
         g2d.dispose();
 
         return dimg;
+    }
+
+    private ImageIcon getCurrentSprite() {
+        if (sprites == null) {
+            return null;
+        } else {
+            ImageIcon cur = sprites[spriteIdx];
+            spriteIdx = (spriteIdx + 1) % sprites.length;
+            return cur;
+        }
     }
 }

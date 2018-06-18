@@ -6,6 +6,14 @@ import assiment4.Entitys.Pacmans.Pacman_Yellow;
 
 public class Water_Splash extends Attack {
 
+	private final String[] imagesPath = {attacksPath + "WaterSplash.png"};
+
+	public Water_Splash() {
+		if (!loadSprite(imagesPath)) {
+			System.out.println("Error while loading water-splash sprite");
+		}
+	}
+
 	@Override
 	public void action() {
 		// TODO Auto-generated method stub

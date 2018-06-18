@@ -6,11 +6,16 @@ import assiment4.Entitys.Pacmans.Pacman_Yellow;
 
 public class Ghost_Yellow extends Ghost {
 
-	private int timecount;
+	private final String[] imagesPath = {ghostPath + "GhostYellow.png"};
 
 	public Ghost_Yellow() {
-		// TODO Auto-generated constructor stub
+		if (!loadSprite(imagesPath)) {
+			System.out.println("Error while loading ghost_yellow sprite");
+		}
 	}
+
+	private int timecount;
+
 	
 	@Override
 	public void action() {
