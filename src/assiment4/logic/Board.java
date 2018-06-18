@@ -143,7 +143,7 @@ public class Board implements Timer_Listener {
 				if (yello_Palets[y][x] != null)
 					offGr.fillOval(x * block_size + 6, y * block_size + 6, 12, 12);
 	}
-	
+
 	public int items_at(int x, int y) {
 		return 0;
 	}
@@ -159,8 +159,7 @@ public class Board implements Timer_Listener {
 		return 0;
 	}
 
-	public void start(myTimer timer)
-	{
+	public void start(myTimer timer) {
 		timer.addTimerListener(pacMan);
 		timer.addTimerListener(Blinky);
 		timer.addTimerListener(Clyde);
@@ -171,24 +170,23 @@ public class Board implements Timer_Listener {
 			}
 		}
 		timer.start();
-		
+
 	}
 
-	public Boolean is_wall_at() {
-		return false;
+	public Boolean is_wall_at(int x, int y) {
+		return (board[y][x] & 1) == 1;
 	}
 
 	public Image get_Board_image() {
 		return final_Board;
 	}
 
-
-	
-
 	@Override
 	public void action() {
-		// TODO Auto-generated method stub
-		
+		draw_yello_Plaets();
+		draw_entitys();
+		draw_my_self();
+
 	}
 
 }
