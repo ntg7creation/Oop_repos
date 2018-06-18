@@ -6,6 +6,15 @@ import assiment4.entitys.Pac_mans.Pac_Man_Yellow;
 
 public class PineApple extends Food {
 
+	private final String path = "res/Pickups/";
+	private final String[] imagesPath = {path + "Pineapple.png"};
+
+	public PineApple() {
+		if (!loadSprite(imagesPath)) {
+			throw new IllegalArgumentException("Error while loading pineapple sprite");
+		}
+	}
+
 	@Override
 	public void action() {
 		// TODO Auto-generated method stub

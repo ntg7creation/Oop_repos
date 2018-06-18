@@ -7,7 +7,7 @@ import assiment4.entitys.Pac_mans.Pac_Man_Yellow;
 public class Yello_Palet extends Food {
 
 	private final String path = "res/Pickups/";
-	private final String[] imagesPath = {path + "NormalPills.png"};
+	private final String[] imagesPath = {path + "NormalPill.png"};
 
 	public Yello_Palet() {
 		if (!loadSprite(imagesPath)) {

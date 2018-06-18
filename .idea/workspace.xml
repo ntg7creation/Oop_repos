@@ -7,15 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bddf4f17-5d6d-48ed-8cce-3e4ce35a9f1e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Food/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Food/Apple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Food/Energe_Palet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Food/Energe_Palet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Food/PineApple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Food/PineApple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Food/Strawberry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Food/Strawberry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Food/Yello_Palet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Food/Yello_Palet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Blue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Blue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Red.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Red.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Yellow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Yellow.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,71 +25,26 @@
       <file leaf-file-name="image_Loader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assiment3/StorageL/image_Loader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
+            <state relative-caret-position="371">
               <caret line="123" selection-start-line="123" selection-end-line="132" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="65" column="25" lean-forward="true" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pac_Man_Blue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Blue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pac_Man_Red.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Red.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pac_Man_Yellow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Yellow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Apple.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Apple.java">
+      <file leaf-file-name="PineApple.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/PineApple.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="8" selection-start-line="8" selection-end-line="15" selection-end-column="5" />
+              <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Energe_Palet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Energe_Palet.java">
+      <file leaf-file-name="Strawberry.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Strawberry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Yello_Palet.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Yello_Palet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="13" column="88" selection-start-line="13" selection-start-column="88" selection-end-line="13" selection-end-column="88" />
+            <state relative-caret-position="204">
+              <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -158,13 +108,15 @@
         <option value="$PROJECT_DIR$/src/StorageL/ResourceLoader.java" />
         <option value="$PROJECT_DIR$/src/StorageL/image_Loader.java" />
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man.java" />
-        <option value="$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java" />
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Food/Apple.java" />
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Yellow.java" />
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Red.java" />
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Blue.java" />
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Food/Energe_Palet.java" />
+        <option value="$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java" />
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Food/Yello_Palet.java" />
+        <option value="$PROJECT_DIR$/src/assiment4/entitys/Food/PineApple.java" />
+        <option value="$PROJECT_DIR$/src/assiment4/entitys/Food/Strawberry.java" />
       </list>
     </option>
   </component>
@@ -188,6 +140,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -244,14 +198,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="assiment4" type="462c0819:PsiDirectoryNode" />
               <item name="entitys" type="462c0819:PsiDirectoryNode" />
-              <item name="Food" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ass01" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assiment4" type="462c0819:PsiDirectoryNode" />
-              <item name="entitys" type="462c0819:PsiDirectoryNode" />
               <item name="Pac_mans" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -259,8 +205,6 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -406,15 +350,15 @@
       <workItem from="1529320125393" duration="490000" />
       <workItem from="1529323605603" duration="771000" />
       <workItem from="1529326404258" duration="1160000" />
+      <workItem from="1529330926234" duration="267000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50927000" />
+    <option name="totallyTimeSpent" value="51194000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -466,9 +410,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/assiment1/testing.java" />
-    <entry file="file://$PROJECT_DIR$/src/Company/Computer.java" />
-    <entry file="file://$PROJECT_DIR$/src/Company/Order.java" />
     <entry file="file://$PROJECT_DIR$/src/InfoFiles/Computer.java" />
     <entry file="file://$PROJECT_DIR$/src/Company/ComputerStore.java" />
     <entry file="file://$PROJECT_DIR$/src/Company/DeliveryPerson.java" />
@@ -538,20 +479,6 @@
     <entry file="file://$PROJECT_DIR$/res/Images/Ghosts/GhostGreen.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Food.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment3/StorageL/image_Loader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="123" selection-start-line="123" selection-end-line="132" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -562,31 +489,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/Images/Pickups/EnergyPills.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/Images/Pickups/NormalPill.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="65" column="25" lean-forward="true" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Blue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Red.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Yellow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="320">
+          <caret line="61" column="70" selection-start-line="61" selection-start-column="70" selection-end-line="61" selection-end-column="70" />
         </state>
       </provider>
     </entry>
@@ -597,10 +509,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/Images/Pickups/EnergyPills.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Yellow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/Images/Pickups/NormalPill.png">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Red.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Blue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/Images/Pickups/Pineapple.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Energe_Palet.java">
@@ -612,8 +542,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Yello_Palet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="88" selection-start-line="13" selection-start-column="88" selection-end-line="13" selection-end-column="88" />
+        <state relative-caret-position="119">
+          <caret line="9" column="59" lean-forward="true" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment3/StorageL/image_Loader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="123" selection-start-line="123" selection-end-line="132" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Food.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/PineApple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Strawberry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
         </state>
       </provider>
     </entry>

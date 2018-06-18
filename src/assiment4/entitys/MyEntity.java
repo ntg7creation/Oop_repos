@@ -11,7 +11,8 @@ import javax.imageio.ImageIO;
 
 public abstract class MyEntity implements Timer_Listener {
 
-    final protected int TPS = 25; // size of cell?
+    private final int pixelOfCell = 25;
+    final protected int TPS = 25;
     protected int X;
     protected int Y;
     protected int offsetX;
@@ -58,7 +59,7 @@ public abstract class MyEntity implements Timer_Listener {
 
             for (int i = 0; i < imagesPath.length; i++) {
                 BufferedImage src = ImageIO.read(new File(imagesPath[i]));
-                this.sprites[i] = resize(src, TPS, TPS);
+                this.sprites[i] = resize(src, pixelOfCell, pixelOfCell);
             }
 
             return true;
