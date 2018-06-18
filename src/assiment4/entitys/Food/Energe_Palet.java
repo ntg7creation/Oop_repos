@@ -6,6 +6,15 @@ import assiment4.entitys.Pac_mans.Pac_Man_Yellow;
 
 public class Energe_Palet extends Food {
 
+	private final String path = "res/Pickups/";
+	private final String[] imagesPath = {path + "EnergyPills.png"};
+
+	public Energe_Palet() {
+		if (!loadSprite(imagesPath)) {
+			throw new IllegalArgumentException("Error while loading energy pills sprite");
+		}
+	}
+
 	@Override
 	public void action() {
 		// TODO Auto-generated method stub

@@ -2,6 +2,7 @@ package assiment4.entitys.Pac_mans;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
 
 import assiment4.entitys.MyEntity;
 import assiment4.logic.Moving_Direction;
@@ -88,5 +89,4 @@ public abstract class Pac_Man extends MyEntity implements Visited, KeyListener {
 		}
 	}
 
-	
 }

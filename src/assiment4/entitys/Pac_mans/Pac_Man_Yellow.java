@@ -6,8 +6,13 @@ import assiment4.logic.Visitor;
 
 public class Pac_Man_Yellow extends Pac_Man {
 
+	private final String path = "res/Pacman/Yellow/";
+	private final String[] imagesPath = {path + "1.png", path + "2.png"};
+
 	public Pac_Man_Yellow() {
-		// TODO Auto-generated constructor stub
+		if (!loadSprite(imagesPath)) {
+			throw new IllegalArgumentException("Error while loading pacman-yellow sprite");
+		}
 	}
 	
 	@Override

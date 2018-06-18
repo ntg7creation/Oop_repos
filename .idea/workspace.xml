@@ -8,161 +8,14 @@
   <component name="ChangeListManager">
     <list default="true" id="bddf4f17-5d6d-48ed-8cce-3e4ce35a9f1e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Oop_repos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Oop_repos.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/boards.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_3x3/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_3x3/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_3x3/3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_3x3/4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_3x3/5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_3x3/6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_3x3/7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_3x3/8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_3x3/9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/11.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/12.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/13.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/14.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/15.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/16.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_4x4/9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/11.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/12.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/13.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/14.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/15.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/16.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/17.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/18.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/19.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/20.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/21.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/22.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/23.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/24.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/25.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cat/cat_5x5/9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_3x3/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_3x3/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_3x3/3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_3x3/4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_3x3/5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_3x3/6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_3x3/7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_3x3/8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_3x3/9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/11.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/12.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/13.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/14.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/15.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/16.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_4x4/9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/11.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/12.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/13.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/14.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/15.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/16.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/17.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/18.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/19.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/20.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/21.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/22.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/23.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/24.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/25.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/cyber/cyber_5x5/9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_3x3/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_3x3/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_3x3/3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_3x3/4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_3x3/5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_3x3/6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_3x3/7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_3x3/8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_3x3/9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/11.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/12.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/13.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/14.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/15.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/16.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_4x4/9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/11.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/12.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/13.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/14.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/15.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/16.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/17.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/18.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/19.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/20.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/21.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/22.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/23.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/24.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/25.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/sushi/sushi_5x5/9.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Food/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Food/Apple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Food/Energe_Palet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Food/Energe_Palet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Food/Yello_Palet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Food/Yello_Palet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Blue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Blue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Red.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Red.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Yellow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Yellow.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -173,7 +26,80 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="image_Loader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assiment3/StorageL/image_Loader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="439">
+              <caret line="123" selection-start-line="123" selection-end-line="132" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="65" column="25" lean-forward="true" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pac_Man_Blue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Blue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pac_Man_Red.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Red.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pac_Man_Yellow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Yellow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Apple.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Apple.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="8" selection-start-line="8" selection-end-line="15" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Energe_Palet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Energe_Palet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Yello_Palet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Yello_Palet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="13" column="88" selection-start-line="13" selection-start-column="88" selection-end-line="13" selection-end-column="88" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -231,6 +157,14 @@
         <option value="$PROJECT_DIR$/src/Resources/boards.csv" />
         <option value="$PROJECT_DIR$/src/StorageL/ResourceLoader.java" />
         <option value="$PROJECT_DIR$/src/StorageL/image_Loader.java" />
+        <option value="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man.java" />
+        <option value="$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java" />
+        <option value="$PROJECT_DIR$/src/assiment4/entitys/Food/Apple.java" />
+        <option value="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Yellow.java" />
+        <option value="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Red.java" />
+        <option value="$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Blue.java" />
+        <option value="$PROJECT_DIR$/src/assiment4/entitys/Food/Energe_Palet.java" />
+        <option value="$PROJECT_DIR$/src/assiment4/entitys/Food/Yello_Palet.java" />
       </list>
     </option>
   </component>
@@ -243,11 +177,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="243" />
-    <option name="y" value="33" />
-    <option name="width" value="977" />
-    <option name="height" value="1039" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="240" />
+    <option name="y" value="30" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -275,15 +209,58 @@
             <path>
               <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
               <item name="Ass01" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="Images" type="462c0819:PsiDirectoryNode" />
+              <item name="Pacman" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ass01" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="Images" type="462c0819:PsiDirectoryNode" />
+              <item name="Pickups" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ass01" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ass01" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assiment4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ass01" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assiment4" type="462c0819:PsiDirectoryNode" />
+              <item name="entitys" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ass01" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assiment4" type="462c0819:PsiDirectoryNode" />
+              <item name="entitys" type="462c0819:PsiDirectoryNode" />
+              <item name="Food" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ass01" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assiment4" type="462c0819:PsiDirectoryNode" />
+              <item name="entitys" type="462c0819:PsiDirectoryNode" />
+              <item name="Pac_mans" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -294,6 +271,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -425,14 +403,18 @@
       <workItem from="1526755960953" duration="561000" />
       <workItem from="1526975957547" duration="45000" />
       <workItem from="1529318069365" duration="123000" />
+      <workItem from="1529320125393" duration="490000" />
+      <workItem from="1529323605603" duration="771000" />
+      <workItem from="1529326404258" duration="1160000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48506000" />
+    <option name="totallyTimeSpent" value="50927000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="195" y="27" width="781" height="831" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -441,13 +423,13 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3325967" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32928178" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3011734" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15039062" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -484,18 +466,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/InfoFiles/Computer.java" />
-    <entry file="file://$PROJECT_DIR$/src/InfoFiles/Order.java" />
-    <entry file="file://$PROJECT_DIR$/src/other/Customer.java" />
-    <entry file="file://$PROJECT_DIR$/src/Company/ComputerStore.java" />
-    <entry file="file://$PROJECT_DIR$/src/assiment1/programeStart.java" />
-    <entry file="file://$PROJECT_DIR$/src/Company/ComputerStore.java" />
-    <entry file="file://$PROJECT_DIR$/src/InfoFiles/Computer.java" />
-    <entry file="file://$PROJECT_DIR$/src/InfoFiles/Order.java" />
-    <entry file="file://$PROJECT_DIR$/src/Company/Order.java" />
-    <entry file="file://$PROJECT_DIR$/src/assiment1/testing.java" />
-    <entry file="file://$PROJECT_DIR$/src/Company/Computer.java" />
-    <entry file="file://$PROJECT_DIR$/src/Company/Order.java" />
     <entry file="file://$PROJECT_DIR$/src/assiment1/testing.java" />
     <entry file="file://$PROJECT_DIR$/src/Company/Computer.java" />
     <entry file="file://$PROJECT_DIR$/src/Company/Order.java" />
@@ -567,6 +537,85 @@
     <entry file="file://$PROJECT_DIR$/src/StorageL/image_Loader.java" />
     <entry file="file://$PROJECT_DIR$/res/Images/Ghosts/GhostGreen.png">
       <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Food.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment3/StorageL/image_Loader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="123" selection-start-line="123" selection-end-line="132" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="method#move#0;class#Pac_Man#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="65" column="25" lean-forward="true" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Blue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Red.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pac_mans/Pac_Man_Yellow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Apple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" selection-start-line="8" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/Images/Pickups/EnergyPills.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/Images/Pickups/NormalPill.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Energe_Palet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Yello_Palet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="88" selection-start-line="13" selection-start-column="88" selection-end-line="13" selection-end-column="88" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

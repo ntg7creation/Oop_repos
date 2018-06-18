@@ -6,9 +6,15 @@ import assiment4.entitys.Pac_mans.Pac_Man_Yellow;
 
 public class Yello_Palet extends Food {
 
+	private final String path = "res/Pickups/";
+	private final String[] imagesPath = {path + "NormalPills.png"};
+
 	public Yello_Palet() {
-		// TODO Auto-generated constructor stub
+		if (!loadSprite(imagesPath)) {
+			throw new IllegalArgumentException("Error while loading normal pills sprite");
+		}
 	}
+
 	
 	
 	@Override
