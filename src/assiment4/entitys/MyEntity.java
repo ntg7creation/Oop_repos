@@ -7,18 +7,13 @@ import assiment4.logic.Timer_Listener;
 
 public abstract class MyEntity implements Timer_Listener {
 
-	private int TPS;
+	final protected int TPS = 25;
 	protected int X;
 	protected int Y;
 	protected int offsetX;
 	protected int offsetY;
 	private Image[] sprites;
 
-	@Override
-	public void set_TPS(int TPS) {
-
-		this.TPS = TPS;
-	}
 
 	@Override
 	public int get_TPS() {

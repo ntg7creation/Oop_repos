@@ -18,9 +18,14 @@ public abstract class Goust extends MyEntity implements Visitor {
 	}
 
 	protected void move() {
-		if (offsetX == 0 & offsetY == 0)
-			direc = path.pop();
-
+		if (offsetX == 0 & offsetY == 0) {
+			if (!path.isEmpty())
+				direc = path.pop();
+			else
+			{
+				//get more path
+			}
+		}
 		if (direc == null) {
 		}
 
