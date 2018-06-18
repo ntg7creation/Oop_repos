@@ -4,7 +4,6 @@ public interface Timer_Listener {
 	
 	
 	
-	public int get_TPS();
 	
 	public void action();	
 }

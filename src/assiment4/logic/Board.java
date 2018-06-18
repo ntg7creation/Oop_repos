@@ -13,7 +13,8 @@ import assiment4.entitys.Goust.Goust_Yellow;
 import assiment4.entitys.Pac_mans.Pac_Man;
 import assiment4.entitys.Pac_mans.Pac_Man_Yellow;
 
-public class Board {
+//this shold not implements timer Listener but its easyer to do it like this
+public class Board implements Timer_Listener {
 
 	final private int block_size = 25;
 
@@ -133,6 +134,16 @@ public class Board {
 
 	}
 
+	private void draw_yello_Plaets() {
+		board_yello_Palets = new BufferedImage(800, 800, BufferedImage.TYPE_INT_ARGB);
+		Graphics offGr = board_yello_Palets.getGraphics();
+		offGr.setColor(Color.yellow);
+		for (int y = 0; y < yello_Palets.length; y++)
+			for (int x = 0; x < yello_Palets[y].length; x++)
+				if (yello_Palets[y][x] != null)
+					offGr.fillOval(x * block_size + 6, y * block_size + 6, 12, 12);
+	}
+	
 	public int items_at(int x, int y) {
 		return 0;
 	}
@@ -148,14 +159,19 @@ public class Board {
 		return 0;
 	}
 
-	private void draw_yello_Plaets() {
-		board_yello_Palets = new BufferedImage(800, 800, BufferedImage.TYPE_INT_ARGB);
-		Graphics offGr = board_yello_Palets.getGraphics();
-		offGr.setColor(Color.yellow);
-		for (int y = 0; y < yello_Palets.length; y++)
-			for (int x = 0; x < yello_Palets[y].length; x++)
-				if (yello_Palets[y][x] != null)
-					offGr.fillOval(x * block_size + 6, y * block_size + 6, 12, 12);
+	public void start(myTimer timer)
+	{
+		timer.addTimerListener(pacMan);
+		timer.addTimerListener(Blinky);
+		timer.addTimerListener(Clyde);
+		timer.addTimerListener(Inky);
+		for (Yello_Palet[] array : yello_Palets) {
+			for (Yello_Palet yello_Palet : array) {
+				timer.addTimerListener(yello_Palet);
+			}
+		}
+		timer.start();
+		
 	}
 
 	public Boolean is_wall_at() {
@@ -164,6 +180,15 @@ public class Board {
 
 	public Image get_Board_image() {
 		return final_Board;
+	}
+
+
+	
+
+	@Override
+	public void action() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

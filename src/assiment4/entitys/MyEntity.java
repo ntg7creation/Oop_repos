@@ -14,14 +14,11 @@ public abstract class MyEntity implements Timer_Listener {
 	protected int offsetY;
 	private Image[] sprites;
 
+	
+	
 	public void set_start(int x, int y) {
 		X = x;
 		Y = y;
-	}
-
-	@Override
-	public int get_TPS() {
-		return TPS;
 	}
 
 	public void draw(Graphics g) {

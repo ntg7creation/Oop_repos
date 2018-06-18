@@ -17,14 +17,14 @@ public class game_Manu extends Custom_Frame implements Timer_Listener {
 		int[][] tempcsv = new int[][] {
 			{1,1,1,1,1,1,1,1,1,1,1,1},
 			{1,2,2,2,2,2,1,2,2,2,2,1},
-			{1,2,2,2,2,2,2,2,2,2,2,1},
+			{1,2,2,2,2,16,2,2,2,2,2,1},
 			{1,2,4,2,2,2,2,2,2,2,2,1},
 			{1,2,2,2,2,2,2,8,2,2,2,1},
 			{1,2,2,2,2,2,2,2,2,2,2,1},
 			{1,2,2,2,2,2,2,2,2,2,2,1},
 			{1,2,2,2,2,2,2,2,1,2,2,1},
 			{1,2,2,2,2,2,2,1,2,2,2,1},
-			{1,2,2,2,2,2,2,2,2,2,2,1},
+			{1,2,32,2,2,2,2,2,2,2,2,1},
 			{1,2,2,2,2,2,2,2,2,2,2,1},
 			{1,1,1,1,1,1,1,1,1,1,1,1},
 		};
@@ -41,12 +41,6 @@ public class game_Manu extends Custom_Frame implements Timer_Listener {
 
 	public static void main(String[] arg) {
 		game_Manu game = new game_Manu();
-	}
-
-	@Override
-	public int get_TPS() {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 	@Override
