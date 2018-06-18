@@ -22,6 +22,9 @@ public class Board {
 	private Image board_walls;
 	// this will change each time we eat a Yello_Palet
 	private Image board_yello_Palets;
+	// this will change each time pacman moves
+	private Image board_entity;
+
 	private int yello_Palets_Count;
 
 	private Pac_Man pacMan;
@@ -86,21 +89,47 @@ public class Board {
 				}
 			}
 		}
-		
-		board_yello_Palets = new BufferedImage(800, 800, BufferedImage.TYPE_INT_ARGB);
+
 		draw_yello_Plaets();
-		
+		draw_entitys();
 		final_Board = new BufferedImage(800, 800, BufferedImage.TYPE_INT_ARGB);
 		draw_my_self();
 	}
 
 	private void draw_my_self() {
+
 		Graphics offGr = final_Board.getGraphics();
+		offGr.setColor(Color.WHITE);
 		offGr.fillRect(0, 0, 800, 800);
 
 		offGr = final_Board.getGraphics();
 		offGr.drawImage(board_walls, 0, 0, null);
 		offGr.drawImage(board_yello_Palets, 0, 0, null);
+		offGr.drawImage(board_entity, 0, 0, null);
+
+	}
+
+	private void draw_entitys() {
+		board_entity = new BufferedImage(800, 800, BufferedImage.TYPE_INT_ARGB);
+		Graphics offGr = board_entity.getGraphics();
+
+		if (pacMan != null) {
+			offGr.setColor(Color.yellow);
+			// pacMan.draw(offGr);
+			offGr.fillRect(pacMan.get_X() * block_size, pacMan.get_Y() * block_size, block_size, block_size);
+		}
+		if (Blinky != null) {
+			offGr.setColor(Color.RED);
+			offGr.fillRect(Blinky.get_X() * block_size, Blinky.get_Y() * block_size, block_size, block_size);
+		}
+		if (Inky != null) {
+			offGr.setColor(Color.green);
+			offGr.fillRect(Inky.get_X() * block_size, Inky.get_Y() * block_size, block_size, block_size);
+		}
+		if (Clyde != null) {
+			offGr.setColor(Color.ORANGE);
+			offGr.fillRect(Clyde.get_X() * block_size, Clyde.get_Y() * block_size, block_size, block_size);
+		}
 
 	}
 
@@ -120,13 +149,13 @@ public class Board {
 	}
 
 	private void draw_yello_Plaets() {
+		board_yello_Palets = new BufferedImage(800, 800, BufferedImage.TYPE_INT_ARGB);
 		Graphics offGr = board_yello_Palets.getGraphics();
-		// offGr.fillRect(0, 0, 800, 800);
 		offGr.setColor(Color.yellow);
-		for(int y =0;y<yello_Palets.length;y++)
-			for(int x = 0; x<yello_Palets[y].length;x++)
-				if(yello_Palets[y][x]!=null)
-					offGr.fillOval(x * block_size+ 6, y * block_size + 6, 12, 12);
+		for (int y = 0; y < yello_Palets.length; y++)
+			for (int x = 0; x < yello_Palets[y].length; x++)
+				if (yello_Palets[y][x] != null)
+					offGr.fillOval(x * block_size + 6, y * block_size + 6, 12, 12);
 	}
 
 	public Boolean is_wall_at() {
