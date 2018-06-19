@@ -15,7 +15,7 @@ import assiment4.logic.Timer_Listener;
 
 public abstract class MyEntity implements Timer_Listener {
 
-	
+	private final int pixelOfCell = 25;
 	protected Moving_Direction direc = null;
 	final protected int TPS = 25;
 	protected int count_Ticks;
@@ -58,7 +58,7 @@ public abstract class MyEntity implements Timer_Listener {
 	}
 
 	public void draw(Graphics g) {
-		g.drawImage(sprites[spriteIdx], X * pixelOfCell + offsetX, Y * pixelOfCell + offsetY, null);
+		g.drawImage(getCurrentSprite(), X * pixelOfCell + offsetX, Y * pixelOfCell + offsetY, null);
 	}
 
 	public int get_X() {
@@ -81,8 +81,13 @@ public abstract class MyEntity implements Timer_Listener {
 		if (sprites == null) {
 			return null;
 		} else {
-			Image cur = sprites[spriteIdx];
-			spriteIdx = (spriteIdx + 1) % sprites.length;
+			int spriteDirIdx = 0;
+            if (direc != null) {
+                spriteDirIdx = direc.getSpriteindex();
+            }
+
+			Image cur = sprites[spriteDirIdx % sprites.length];
+//			spriteIdx = (spriteIdx + 1) % sprites.length;
 			return cur;
 		}
 	}

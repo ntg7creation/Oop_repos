@@ -7,33 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bddf4f17-5d6d-48ed-8cce-3e4ce35a9f1e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assiment4/Storage/ImageLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Images/Pacman/Blue/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Images/Pacman/Blue/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Images/Pacman/Blue/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Images/Pacman/Blue/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Images/Pacman/Red/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Images/Pacman/Red/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Images/Pacman/Red/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Images/Pacman/Red/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Images/Pacman/Yellow/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Images/Pacman/Yellow/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Images/Pacman/Yellow/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Images/Pacman/Yellow/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Attacks/Attack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Attacks/Attack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Attacks/Fire_Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Attacks/Fire_Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Attacks/Water_Splash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Attacks/Water_Splash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Food/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Food/Apple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Food/Energy_Palet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Food/Energy_Palet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Food/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Food/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Food/Pineapple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Food/Pineapple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Food/Strawberry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Food/Strawberry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Food/Yello_Palet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Food/Yello_Palet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost_Green.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost_Green.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost_Red.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost_Red.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost_Yellow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost_Yellow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman_Blue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman_Blue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman_Red.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman_Red.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman_Yellow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman_Yellow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/tester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assiment4/logic/Moving_Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/logic/Moving_Direction.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,13 +33,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyEntity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyEntity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="25" column="30" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="30" />
+            <state relative-caret-position="409">
+              <caret line="84" column="32" lean-forward="true" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#751#752#0" expanded="true" />
+                <element signature="e#771#772#0" expanded="true" />
+                <element signature="e#868#869#0" expanded="true" />
+                <element signature="e#893#894#0" expanded="true" />
+                <element signature="e#1355#1356#0" expanded="true" />
+                <element signature="e#1370#1371#0" expanded="true" />
+                <element signature="e#1393#1394#0" expanded="true" />
+                <element signature="e#1408#1409#0" expanded="true" />
+                <element signature="e#1434#1435#0" expanded="true" />
+                <element signature="e#1452#1453#0" expanded="true" />
+                <element signature="e#1478#1479#0" expanded="true" />
+                <element signature="e#1496#1497#0" expanded="true" />
+                <element signature="e#1722#1723#0" expanded="true" />
+                <element signature="e#1743#1744#0" expanded="true" />
+                <element signature="e#1774#1775#0" expanded="true" />
+                <element signature="e#1795#1796#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,13 +64,19 @@
       <file leaf-file-name="Moving_Direction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assiment4/logic/Moving_Direction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+            <state relative-caret-position="595">
+              <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+              <folding>
+                <element signature="e#347#348#0" expanded="true" />
+                <element signature="e#371#372#0" expanded="true" />
+                <element signature="e#669#670#0" expanded="true" />
+                <element signature="e#692#693#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Direction.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Direction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assiment3/LogicL/Direction.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
@@ -99,7 +97,7 @@
       <file leaf-file-name="Attack.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Attacks/Attack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
+            <state relative-caret-position="102">
               <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
@@ -108,7 +106,7 @@
       <file leaf-file-name="Pacman.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
+            <state relative-caret-position="85">
               <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
@@ -117,7 +115,7 @@
       <file leaf-file-name="Ghost.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
+            <state relative-caret-position="68">
               <caret line="9" column="65" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
             </state>
           </provider>
@@ -148,7 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/PresentationL/Main_Menu.java" />
         <option value="$PROJECT_DIR$/src/PresentationL/Game_Menu.java" />
         <option value="$PROJECT_DIR$/src/PresentationL/Custom_Frame.java" />
         <option value="$PROJECT_DIR$/src/PresentationL/gui_Game_Window.java" />
@@ -198,6 +195,7 @@
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Attacks/Attack.java" />
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost.java" />
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman.java" />
+        <option value="$PROJECT_DIR$/src/assiment4/logic/Moving_Direction.java" />
         <option value="$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java" />
       </list>
     </option>
@@ -225,9 +223,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -298,6 +296,13 @@
               <item name="Ass01" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="assiment4" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ass01" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assiment4" type="462c0819:PsiDirectoryNode" />
               <item name="Storage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -335,7 +340,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Image">
+  <component name="RunManager" selected="Application.Game">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -460,11 +465,12 @@
       <workItem from="1529416873909" duration="661000" />
       <workItem from="1529419598639" duration="1017000" />
       <workItem from="1529437942439" duration="435000" />
+      <workItem from="1529442359313" duration="1193000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63054000" />
+    <option name="totallyTimeSpent" value="64247000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -472,6 +478,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32827586" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
@@ -483,7 +490,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32928178" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15039062" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15039062" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -493,7 +500,6 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32827586" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -626,18 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Storage/ImageLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getInstance#0;class#ImageLoader#0" />
-            <element signature="n#!!doc;n#getRedPacman#0;n#ImageLoader#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Attacks/Water_Splash.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -718,16 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman_Blue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman_Red.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -740,7 +724,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Attacks/Attack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="102">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
@@ -754,22 +738,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="68">
           <caret line="9" column="65" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="85">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/Storage/ImageLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="30" />
+        <state relative-caret-position="643">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getInstance#0;class#ImageLoader#0" />
+            <element signature="n#!!doc;n#getRedPacman#0;n#ImageLoader#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment3/LogicL/Direction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman_Blue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -778,15 +781,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assiment4/logic/Moving_Direction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        <state relative-caret-position="595">
+          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+          <folding>
+            <element signature="e#347#348#0" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment3/LogicL/Direction.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        <state relative-caret-position="409">
+          <caret line="84" column="32" lean-forward="true" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#771#772#0" expanded="true" />
+            <element signature="e#868#869#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#1355#1356#0" expanded="true" />
+            <element signature="e#1370#1371#0" expanded="true" />
+            <element signature="e#1393#1394#0" expanded="true" />
+            <element signature="e#1408#1409#0" expanded="true" />
+            <element signature="e#1434#1435#0" expanded="true" />
+            <element signature="e#1452#1453#0" expanded="true" />
+            <element signature="e#1478#1479#0" expanded="true" />
+            <element signature="e#1496#1497#0" expanded="true" />
+            <element signature="e#1722#1723#0" expanded="true" />
+            <element signature="e#1743#1744#0" expanded="true" />
+            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1795#1796#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
