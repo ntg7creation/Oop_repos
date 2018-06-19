@@ -15,13 +15,15 @@ public class Pacman_Red extends Pacman {
 	@Override
 	public void action() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void accept(Visitor V) {
 		// TODO Auto-generated method stub
-		
+
 	}
+
+
 
 }

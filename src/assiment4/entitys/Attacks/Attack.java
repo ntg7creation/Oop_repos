@@ -6,6 +6,7 @@ import assiment4.logic.Visitor;
 
 public abstract class Attack extends MyEntity implements Visitor {
 
+	
 
 
 	protected void move() {

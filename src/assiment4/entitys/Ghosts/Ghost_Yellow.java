@@ -1,15 +1,14 @@
 package assiment4.entitys.Ghosts;
 
 import assiment4.Storage.ImageLoader;
+import assiment4.entitys.Pacmans.Pacman;
 import assiment4.entitys.Pacmans.Pacman_Blue;
 import assiment4.entitys.Pacmans.Pacman_Red;
 import assiment4.entitys.Pacmans.Pacman_Yellow;
 
-import java.awt.*;
-import java.awt.geom.AffineTransform;
-
 public class Ghost_Yellow extends Ghost {
 
+	private final int id = 16;
 
 	public Ghost_Yellow() {
 		sprites = ImageLoader.getInstance().getYellowGhost();
@@ -17,16 +16,12 @@ public class Ghost_Yellow extends Ghost {
 			System.out.println("Error while loading ghost_yellow sprite");
 		}
 	}
-
-	private int timecount;
-
 	
 	@Override
 	public void action() {
-		timecount++;
-		//time to move the number 20 need to change
-		//currently the Ghosts will move 1 picxle every 20 clock ticks
-		if (timecount == 20)
+
+			move();
+			move();
 			move();
 
 	}
@@ -47,6 +42,18 @@ public class Ghost_Yellow extends Ghost {
 	public void Visit(Pacman_Red p) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public int get_id() {
+		// TODO Auto-generated method stub
+		return 16;
+	}
+
+	@Override
+	public void Visit(Pacman p) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -9,6 +9,8 @@ import assiment4.logic.Visited;
 
 public abstract class Pacman extends MyEntity implements Visited, KeyListener {
 
+
+	protected final int id = 4;
 	
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -87,4 +89,9 @@ public abstract class Pacman extends MyEntity implements Visited, KeyListener {
 		}
 	}
 
+	@Override
+	public int get_id() {
+		// TODO Auto-generated method stub
+		return 4;
+	}
 }

@@ -5,6 +5,7 @@ import java.awt.Image;
 
 import assiment4.logic.Board;
 import assiment4.logic.Timer_Listener;
+import assiment4.logic.myTimer;
 
 public class game_Manu extends Custom_Frame implements Timer_Listener {
 
@@ -14,15 +15,17 @@ public class game_Manu extends Custom_Frame implements Timer_Listener {
 
 	public game_Manu() {
 		super(800, 800, 1, 1);
-		int[][] tempcsv = new int[][] { { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1 },
-				{ 1, 2, 2, 2, 2, 16, 2, 2, 2, 2, 2, 1 }, { 1, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 1 },
+		int[][] tempcsv = new int[][] { { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1 },
+				{ 1, 2, 2, 2, 2, 16, 2, 2, 2, 2, 2, 2 }, { 1, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 1 },
 				{ 1, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 1 }, { 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1 },
 				{ 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1 }, { 1, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 1 },
 				{ 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1 }, { 1, 2, 32, 2, 2, 2, 2, 2, 2, 2, 2, 1 },
 				{ 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1 }, { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, };
 		gameBoard = new Board(tempcsv); // will change with csv
 		repaint();
-
+		myTimer T = new myTimer();
+		T.addTimerListener(this);
+		gameBoard.start(T);
 	}
 
 	public void paint(Graphics g) {

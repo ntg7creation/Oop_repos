@@ -6,6 +6,7 @@ import assiment4.logic.Visitor;
 public class Pacman_Yellow extends Pacman {
 
 
+
 	public Pacman_Yellow() {
 		sprites = ImageLoader.getInstance().getYellowPacman();
 		if (sprites == null) {
@@ -24,6 +25,7 @@ public class Pacman_Yellow extends Pacman {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 
 

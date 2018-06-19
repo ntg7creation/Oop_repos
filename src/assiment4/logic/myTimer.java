@@ -32,7 +32,8 @@ public class myTimer implements ActionListener {
 	}
 
 	public void addTimerListener(Timer_Listener listener) {
-		listeners.add(listener);
+		if (listener != null)
+			listeners.add(listener);
 
 	}
 

@@ -1,6 +1,5 @@
 package assiment4.entitys;
 
-import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -9,33 +8,57 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 
+import assiment4.logic.Board_action_Listener;
 import assiment4.logic.Moving_Direction;
 import assiment4.logic.Timer_Listener;
 
 public abstract class MyEntity implements Timer_Listener {
 
+	
+	protected Moving_Direction direc = null;
 	final protected int TPS = 25;
+	protected int count_Ticks;
 	protected int X;
 	protected int Y;
+	protected int preX;
+	protected int preY;
 	protected int offsetX;
 	protected int offsetY;
 	protected Image[] sprites;
 	private int spriteIdx;
-	protected Moving_Direction direc = null;
+	protected Board_action_Listener board;
 
 	public MyEntity() {
 		spriteIdx = 0;
 	}
 
-	public void set_start(int x, int y) {
-		X = x;
-		Y = y;
+	public abstract int get_id();
+	
+	public void add_Board_Listener(Board_action_Listener board) {
+		this.board = board;
+	}
+
+	protected Boolean can_Move(int x, int y, Moving_Direction dirc) {
+		switch (dirc) {
+		case Right:
+			return !board.is_wall(x + 1, y);
+
+		case Left:
+			return !board.is_wall(x - 1, y);
+
+		case Up:
+
+			return !board.is_wall(x, y - 1);
+		case Down:
+
+			return !board.is_wall(x, y + 1);
+		}
+		return false;
 	}
 
 	public void draw(Graphics g) {
-		g.drawImage(getCurrentSprite(), X, Y, null);
+		g.drawImage(sprites[spriteIdx], X * pixelOfCell + offsetX, Y * pixelOfCell + offsetY, null);
 	}
 
 	public int get_X() {
@@ -46,22 +69,13 @@ public abstract class MyEntity implements Timer_Listener {
 		return Y;
 	}
 
-	public int getOffsetX() {
-		return offsetX;
+	public int get_preX() {
+		return preX;
 	}
 
-	public void setOffsetX(int offsetX) {
-		this.offsetX = offsetX;
+	public int get_preY() {
+		return preY;
 	}
-
-	public int getOffsetY() {
-		return offsetY;
-	}
-
-	public void setOffsetY(int offsetY) {
-		this.offsetY = offsetY;
-	}
-
 
 	private Image getCurrentSprite() {
 		if (sprites == null) {
@@ -72,4 +86,29 @@ public abstract class MyEntity implements Timer_Listener {
 			return cur;
 		}
 	}
+
+	protected int getOffsetX() {
+		return offsetX;
+	}
+
+	protected int getOffsetY() {
+		return offsetY;
+	}
+
+
+	public void set_start(int x, int y) {
+		X = x;
+		Y = y;
+		preX = X;
+		preY = Y;
+	}
+
+//	protected void setOffsetX(int offsetX) {
+//		this.offsetX = offsetX;
+//	}
+
+//	protected void setOffsetY(int offsetY) {
+//		this.offsetY = offsetY;
+//	}
+
 }
