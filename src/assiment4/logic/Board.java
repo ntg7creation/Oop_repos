@@ -7,11 +7,11 @@ import java.awt.image.BufferedImage;
 
 import assiment4.entitys.Food.Food;
 import assiment4.entitys.Food.Yello_Palet;
-import assiment4.entitys.Goust.Goust_Green;
-import assiment4.entitys.Goust.Goust_Red;
-import assiment4.entitys.Goust.Goust_Yellow;
-import assiment4.entitys.Pac_mans.Pac_Man;
-import assiment4.entitys.Pac_mans.Pac_Man_Yellow;
+import assiment4.entitys.Ghosts.Ghost_Green;
+import assiment4.entitys.Ghosts.Ghost_Red;
+import assiment4.entitys.Ghosts.Ghost_Yellow;
+import assiment4.entitys.Pacmans.Pacman;
+import assiment4.entitys.Pacmans.Pacman_Yellow;
 
 //this shold not implements timer Listener but its easyer to do it like this
 public class Board implements Timer_Listener {
@@ -28,13 +28,14 @@ public class Board implements Timer_Listener {
 
 	private int yello_Palets_Count;
 
-	private Pac_Man pacMan;
-	private Goust_Green Inky;
-	private Goust_Red Blinky;
-	private Goust_Yellow Clyde;
+	private Pacman pacMan;
+	private Ghost_Green Inky;
+	private Ghost_Red Blinky;
+	private Ghost_Yellow Clyde;
 	private Food[] food;
 
 	private int[][] board;
+
 	// its is better to keep the yello palets in here cus they are static and we
 	// have a lot of them
 	private Yello_Palet[][] yello_Palets;
@@ -67,19 +68,19 @@ public class Board implements Timer_Listener {
 					yello_Palets[y][x].set_start(x, y);
 					break;
 				case 4:
-					pacMan = new Pac_Man_Yellow();
+					pacMan = new Pacman_Yellow();
 					pacMan.set_start(x, y);
 					break;
 				case 8:
-					Inky = new Goust_Green();
+					Inky = new Ghost_Green();
 					Inky.set_start(x, y);
 					break;
 				case 16:
-					Clyde = new Goust_Yellow();
+					Clyde = new Ghost_Yellow();
 					Clyde.set_start(x, y);
 					break;
 				case 32:
-					Blinky = new Goust_Red();
+					Blinky = new Ghost_Red();
 					Blinky.set_start(x, y);
 					break;
 				case 512:
@@ -99,7 +100,7 @@ public class Board implements Timer_Listener {
 	private void draw_my_self() {
 
 		Graphics offGr = final_Board.getGraphics();
-		offGr.setColor(Color.black);
+		offGr.setColor(Color.WHITE);
 		offGr.fillRect(0, 0, 800, 800);
 
 		offGr = final_Board.getGraphics();
@@ -144,7 +145,7 @@ public class Board implements Timer_Listener {
 	}
 
 	public int items_at(int x, int y) {
-		return board[y][x];
+		return 0;
 	}
 
 	// return 10 if there is a palet at x y else return 0

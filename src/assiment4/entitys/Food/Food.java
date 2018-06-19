@@ -1,37 +1,38 @@
 package assiment4.entitys.Food;
 
 import assiment4.entitys.MyEntity;
-import assiment4.entitys.Pac_mans.Pac_Man;
-import assiment4.entitys.Pac_mans.Pac_Man_Blue;
-import assiment4.entitys.Pac_mans.Pac_Man_Red;
-import assiment4.entitys.Pac_mans.Pac_Man_Yellow;
+import assiment4.entitys.Pacmans.Pacman;
+import assiment4.entitys.Pacmans.Pacman_Blue;
+import assiment4.entitys.Pacmans.Pacman_Red;
+import assiment4.entitys.Pacmans.Pacman_Yellow;
 import assiment4.logic.Visitor;
 
 public abstract class Food extends MyEntity implements Visitor {
 
+	protected final String foodPath = path + "Food/";
 	private int score;
 	
 	public int eat_me;
 	
 	@Override
-	public void Visit(Pac_Man_Blue p) {
+	public void Visit(Pacman_Blue p) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void Visit(Pac_Man_Yellow p) {
+	public void Visit(Pacman_Yellow p) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void Visit(Pac_Man_Red p) {
+	public void Visit(Pacman_Red p) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	private void Visit(Pac_Man p) {
+	private void Visit(Pacman p) {
 		
 	}
 	

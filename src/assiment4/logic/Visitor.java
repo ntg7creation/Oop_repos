@@ -1,12 +1,12 @@
 package assiment4.logic;
 
-import assiment4.entitys.Pac_mans.Pac_Man_Blue;
-import assiment4.entitys.Pac_mans.Pac_Man_Red;
-import assiment4.entitys.Pac_mans.Pac_Man_Yellow;
+import assiment4.entitys.Pacmans.Pacman_Blue;
+import assiment4.entitys.Pacmans.Pacman_Red;
+import assiment4.entitys.Pacmans.Pacman_Yellow;
 
 public interface Visitor {
 
-	 public void Visit(Pac_Man_Blue p);
-	 public void Visit(Pac_Man_Yellow p);
-	 public void Visit(Pac_Man_Red p);
+	 public void Visit(Pacman_Blue p);
+	 public void Visit(Pacman_Yellow p);
+	 public void Visit(Pacman_Red p);
 }

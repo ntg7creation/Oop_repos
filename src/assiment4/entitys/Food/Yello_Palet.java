@@ -1,14 +1,19 @@
 package assiment4.entitys.Food;
 
-import assiment4.entitys.Pac_mans.Pac_Man_Blue;
-import assiment4.entitys.Pac_mans.Pac_Man_Red;
-import assiment4.entitys.Pac_mans.Pac_Man_Yellow;
+import assiment4.entitys.Pacmans.Pacman_Blue;
+import assiment4.entitys.Pacmans.Pacman_Red;
+import assiment4.entitys.Pacmans.Pacman_Yellow;
 
 public class Yello_Palet extends Food {
 
+	private final String[] imagesPath = {foodPath + "NormalPill.png"};
+
 	public Yello_Palet() {
-		// TODO Auto-generated constructor stub
+		if (!loadSprite(imagesPath)) {
+			System.out.println("Error while loading normal pills sprite");
+		}
 	}
+
 	
 	
 	@Override
@@ -18,19 +23,19 @@ public class Yello_Palet extends Food {
 	}
 
 	@Override
-	public void Visit(Pac_Man_Blue p) {
+	public void Visit(Pacman_Blue p) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void Visit(Pac_Man_Yellow p) {
+	public void Visit(Pacman_Yellow p) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void Visit(Pac_Man_Red p) {
+	public void Visit(Pacman_Red p) {
 		// TODO Auto-generated method stub
 		
 	}

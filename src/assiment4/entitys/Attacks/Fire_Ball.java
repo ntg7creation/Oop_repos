@@ -1,10 +1,18 @@
 package assiment4.entitys.Attacks;
 
-import assiment4.entitys.Pac_mans.Pac_Man_Blue;
-import assiment4.entitys.Pac_mans.Pac_Man_Red;
-import assiment4.entitys.Pac_mans.Pac_Man_Yellow;
+import assiment4.entitys.Pacmans.Pacman_Blue;
+import assiment4.entitys.Pacmans.Pacman_Red;
+import assiment4.entitys.Pacmans.Pacman_Yellow;
 
 public class Fire_Ball extends Attack {
+
+	private final String[] imagesPath = {attacksPath + "Fireball.png"};
+
+	public Fire_Ball() {
+		if (!loadSprite(imagesPath)) {
+			System.out.println("Error while loading fireball sprite");
+		}
+	}
 
 	@Override
 	public void action() {
@@ -13,19 +21,19 @@ public class Fire_Ball extends Attack {
 	}
 
 	@Override
-	public void Visit(Pac_Man_Blue p) {
+	public void Visit(Pacman_Blue p) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void Visit(Pac_Man_Yellow p) {
+	public void Visit(Pacman_Yellow p) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void Visit(Pac_Man_Red p) {
+	public void Visit(Pacman_Red p) {
 		// TODO Auto-generated method stub
 		
 	}

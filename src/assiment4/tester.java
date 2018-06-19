@@ -23,7 +23,7 @@ public class tester {
 		};
 		dirc = Moving_Direction.Up;
 		System.out.println(tempcsv[1][6]);
-		System.out.println(dirc.can_Move(tempcsv, 6, 1));
+		System.out.println(dirc.can_Move());
 	}
 
 }

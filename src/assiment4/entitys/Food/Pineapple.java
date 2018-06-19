@@ -4,13 +4,13 @@ import assiment4.entitys.Pacmans.Pacman_Blue;
 import assiment4.entitys.Pacmans.Pacman_Red;
 import assiment4.entitys.Pacmans.Pacman_Yellow;
 
-public class Apple extends Food{
+public class Pineapple extends Food {
 
-	private final String[] imagesPath = {foodPath + "Apple.png"};
+	private final String[] imagesPath = {foodPath + "Pineapple.png"};
 
-	public Apple() {
+	public Pineapple() {
 		if (!loadSprite(imagesPath)) {
-			throw new IllegalArgumentException("Error while loading apple sprite");
+			System.out.println("Error while loading pineapple sprite");
 		}
 	}
 

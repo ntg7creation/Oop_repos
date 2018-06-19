@@ -16,21 +16,9 @@ public enum Moving_Direction {
 	public Moving_Direction getOpposite() {
 		return opposite;
 	}
-
-	public Boolean can_Move(int Board[][], int x, int y) {
-		if (y > Board.length - 1 || x > Board[y].length - 1 | x < 1 | y < 1)
-			return false;
-		switch (this) {
-		case Right:
-			return (Board[y][x + 1] & 1) != 1;
-		case Left:
-			return (Board[y][x - 1] & 1) != 1;
-		case Down:
-			return (Board[y + 1][x] & 1) != 1;
-		case Up:
-			return (Board[y - 1][x] & 1) != 1;
-
-		}
-		return false;
+	
+	public Boolean can_Move()
+	{
+		return true;
 	}
 }
