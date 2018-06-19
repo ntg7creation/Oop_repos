@@ -9,14 +9,10 @@ import assiment4.logic.Visited;
 
 public abstract class Pacman extends MyEntity implements Visited, KeyListener {
 
-	public Pacman(int[][] board) {
-		super(board);
-		// TODO Auto-generated constructor stub
-	}
+
 
 	protected final String pacmanPath = path + "Pacman/";
 
-	Moving_Direction direc = Moving_Direction.Left;
 	
 	@Override
 	public void keyPressed(KeyEvent e) {

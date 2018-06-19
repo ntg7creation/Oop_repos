@@ -16,24 +16,4 @@ public enum Moving_Direction {
 	public Moving_Direction getOpposite() {
 		return opposite;
 	}
-
-	public Boolean can_Move(int[][] b, int x, int y) {
-		if (x < 1 || y < 1 || y > b.length - 1 || x > b[y].length - 1)
-			return false;
-		switch (this) {
-		case Right:
-			return (b[y][x + 1] & 1) != 1;
-		case Left:
-
-			break;
-		case Up:
-
-			break;
-		case Down:
-
-			break;
-		}
-
-		return true;
-	}
 }

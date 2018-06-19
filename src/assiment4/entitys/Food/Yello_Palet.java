@@ -8,8 +8,7 @@ public class Yello_Palet extends Food {
 
 	private final String[] imagesPath = {foodPath + "NormalPill.png"};
 
-	public Yello_Palet(int[][] board) {
-		super(board);
+	public Yello_Palet() {
 		if (!loadSprite(imagesPath)) {
 			System.out.println("Error while loading normal pills sprite");
 		}

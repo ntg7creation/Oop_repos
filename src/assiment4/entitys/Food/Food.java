@@ -9,10 +9,7 @@ import assiment4.logic.Visitor;
 
 public abstract class Food extends MyEntity implements Visitor {
 
-	public Food(int[][] board) {
-		super(board);
-		// TODO Auto-generated constructor stub
-	}
+
 
 	protected final String foodPath = path + "Food/";
 	private int score;

@@ -9,29 +9,49 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import assiment4.logic.Board_action_Listener;
+import assiment4.logic.Moving_Direction;
 import assiment4.logic.Timer_Listener;
 
 public abstract class MyEntity implements Timer_Listener {
 
+	protected Moving_Direction direc = null;
 	protected final String path = "res/Images/";
 	private final int pixelOfCell = 25;
 	final protected int TPS = 25;
+	protected int count_Ticks;
 	protected int X;
 	protected int Y;
 	protected int offsetX;
 	protected int offsetY;
 	private Image[] sprites;
 	private int spriteIdx;
-	protected int[][] board;
+	protected Board_action_Listener board;
 
-	public MyEntity(int[][] board) {
-		this.board = board;
+	public MyEntity() {
 		spriteIdx = 0;
 	}
 
-	public void set_start(int x, int y) {
-		X = x;
-		Y = y;
+	public void add_Board_Listener(Board_action_Listener board) {
+		this.board = board;
+	}
+
+	protected Boolean can_Move(int x, int y, Moving_Direction dirc) {
+		switch (dirc) {
+		case Right:
+			return !board.is_wall(x + 1, y);
+
+		case Left:
+			return !board.is_wall(x - 1, y);
+
+		case Up:
+
+			return !board.is_wall(x, y - 1);
+		case Down:
+
+			return !board.is_wall(x, y + 1);
+		}
+		return false;
 	}
 
 	public void draw(Graphics g) {
@@ -47,20 +67,22 @@ public abstract class MyEntity implements Timer_Listener {
 		return Y;
 	}
 
-	public int getOffsetX() {
+	private Image getCurrentSprite() {
+		if (sprites == null) {
+			return null;
+		} else {
+			Image cur = sprites[spriteIdx];
+			spriteIdx = (spriteIdx + 1) % sprites.length;
+			return cur;
+		}
+	}
+
+	protected int getOffsetX() {
 		return offsetX;
 	}
 
-	public void setOffsetX(int offsetX) {
-		this.offsetX = offsetX;
-	}
-
-	public int getOffsetY() {
+	protected int getOffsetY() {
 		return offsetY;
-	}
-
-	public void setOffsetY(int offsetY) {
-		this.offsetY = offsetY;
 	}
 
 	protected boolean loadSprite(String[] imagesPath) {
@@ -92,13 +114,17 @@ public abstract class MyEntity implements Timer_Listener {
 		return dimg;
 	}
 
-	private Image getCurrentSprite() {
-		if (sprites == null) {
-			return null;
-		} else {
-			Image cur = sprites[spriteIdx];
-			spriteIdx = (spriteIdx + 1) % sprites.length;
-			return cur;
-		}
+	public void set_start(int x, int y) {
+		X = x;
+		Y = y;
 	}
+
+	protected void setOffsetX(int offsetX) {
+		this.offsetX = offsetX;
+	}
+
+	protected void setOffsetY(int offsetY) {
+		this.offsetY = offsetY;
+	}
+
 }

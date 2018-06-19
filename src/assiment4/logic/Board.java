@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 
+import assiment4.entitys.MyEntity;
 import assiment4.entitys.Food.Food;
 import assiment4.entitys.Food.Yello_Palet;
 import assiment4.entitys.Ghosts.Ghost_Green;
@@ -14,7 +15,7 @@ import assiment4.entitys.Pacmans.Pacman;
 import assiment4.entitys.Pacmans.Pacman_Yellow;
 
 //this shold not implements timer Listener but its easyer to do it like this
-public class Board implements Timer_Listener {
+public class Board implements Timer_Listener, Board_action_Listener {
 
 	final private int block_size = 25;
 
@@ -64,23 +65,28 @@ public class Board implements Timer_Listener {
 					offGr.fillRect(x * block_size, y * block_size, block_size, block_size);
 					break;
 				case 2:
-					yello_Palets[y][x] = new Yello_Palet(board);
+					yello_Palets[y][x] = new Yello_Palet();
+					yello_Palets[y][x].add_Board_Listener(this);
 					yello_Palets[y][x].set_start(x, y);
 					break;
 				case 4:
-					pacMan = new Pacman_Yellow(board);
+					pacMan = new Pacman_Yellow();
+					pacMan.add_Board_Listener(this);
 					pacMan.set_start(x, y);
 					break;
 				case 8:
-					Inky = new Ghost_Green(board);
+					Inky = new Ghost_Green();
+					Inky.add_Board_Listener(this);
 					Inky.set_start(x, y);
 					break;
 				case 16:
-					Clyde = new Ghost_Yellow(board);
+					Clyde = new Ghost_Yellow();
+					Clyde.add_Board_Listener(this);
 					Clyde.set_start(x, y);
 					break;
 				case 32:
-					Blinky = new Ghost_Red(board);
+					Blinky = new Ghost_Red();
+					Blinky.add_Board_Listener(this);
 					Blinky.set_start(x, y);
 					break;
 				case 512:
@@ -197,5 +203,20 @@ public class Board implements Timer_Listener {
 		draw_my_self();
 
 	}
+	
+	@Override
+	public Boolean is_wall(int x, int y) {
+		if (x < 0 || y < 0 || y > board.length || x > board[y].length)
+			return false;
+		return (board[y][x] & 1) == 1;
+	}
+
+	@Override
+	public void I_just_Moved(MyEntity entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 
 }

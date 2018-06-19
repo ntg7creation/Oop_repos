@@ -8,15 +8,11 @@ public class Ghost_Yellow extends Ghost {
 
 	private final String[] imagesPath = {ghostPath + "GhostYellow.png"};
 
-	public Ghost_Yellow(int[][] board) {
-		super(board);
+	public Ghost_Yellow() {
 		if (!loadSprite(imagesPath)) {
 			System.out.println("Error while loading ghost_yellow sprite");
 		}
 	}
-
-	private int timecount;
-
 	
 	@Override
 	public void action() {

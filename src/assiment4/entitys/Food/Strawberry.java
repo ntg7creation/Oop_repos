@@ -8,8 +8,7 @@ public class Strawberry extends Food{
 
 	private final String[] imagesPath = {foodPath + "Strawberry.png"};
 
-	public Strawberry(int[][] board) {
-		super(board);
+	public Strawberry() {
 		if (!loadSprite(imagesPath)) {
 			System.out.println("Error while loading strawberry sprite");
 		}

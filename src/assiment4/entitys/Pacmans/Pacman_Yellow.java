@@ -7,8 +7,7 @@ public class Pacman_Yellow extends Pacman {
 	private final String yellowPath = "Yellow/";
 	private final String[] imagesPath = {yellowPath + "1.png", yellowPath + "2.png"};
 
-	public Pacman_Yellow(int[][] board) {
-		super(board);
+	public Pacman_Yellow() {
 		if (!loadSprite(imagesPath)) {
 			System.out.println("Error while loading pacman-yellow sprite");
 		}

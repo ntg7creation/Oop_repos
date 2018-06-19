@@ -15,7 +15,6 @@ public class tester {
 				{ 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1 }, { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, };
 		dirc = Moving_Direction.Up;
 		System.out.println(tempcsv[1][6]);
-		System.out.println(dirc.can_Move(tempcsv, 2, 8));
 	}
 
 }

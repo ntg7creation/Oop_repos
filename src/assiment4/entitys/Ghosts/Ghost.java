@@ -9,14 +9,9 @@ import assiment4.logic.Visitor;
 
 public abstract class Ghost extends MyEntity implements Visitor {
 
-	public Ghost(int[][] board) {
-		super(board);
-		// TODO Auto-generated constructor stub
-	}
+
 
 	protected final String ghostPath = super.path + "Ghosts/";
-
-	protected Moving_Direction direc = null;
 
 	protected Stack<Moving_Direction> path;
 
@@ -35,9 +30,7 @@ public abstract class Ghost extends MyEntity implements Visitor {
 		// }
 		direc = Moving_Direction.Right;
 
-		if (!(offsetX == 0 & offsetY == 0) || direc.can_Move(board, X, Y)) {
-			if (direc == null) {
-			}
+		if (direc != null && (!(offsetX == 0 & offsetY == 0) || can_Move(X, Y, direc))) {
 
 			switch (direc) {
 			case Right:
