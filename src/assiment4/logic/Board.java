@@ -216,8 +216,26 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		board[entity.get_preY()][entity.get_preX()] -= entity.get_id();
 		board[entity.get_Y()][entity.get_X()] += entity.get_id();
 		System.out.println(entity.toString() + "  moved to space " + entity.get_X() + "," + entity.get_Y());
-		if( entity instanceof Visitor && (board[entity.get_Y()][entity.get_X()] & pacMan.get_id()) == pacMan.get_id())
+		if (entity instanceof Visitor && (board[entity.get_Y()][entity.get_X()] & pacMan.get_id()) == pacMan.get_id())
 			((Visitor) entity).Visit(pacMan);
+		if (entity instanceof Pacman) {
+			Pacman p = (Pacman) entity;
+			int itemshere = board[entity.get_Y()][entity.get_X()];
+			if ((itemshere & 2) == 2)
+				yello_Palets[1][2].Visit(p);
+			if ((itemshere & 8) == 8)
+				Inky.Visit(p);
+			if ((itemshere & 16) == 16)
+				Clyde.Visit(p);
+			if ((itemshere & 32) == 32)
+				Blinky.Visit(p);
+			if ((itemshere & 256) == 256) {
+				// eat food
+			}
+			if ((itemshere & 128) == 128 | (itemshere & 64) == 64) {
+				// eat food
+			}
+		}
 	}
 
 }
