@@ -1,15 +1,15 @@
 package assiment4.entitys.Ghosts;
 
+import assiment4.Storage.ImageLoader;
 import assiment4.entitys.Pacmans.Pacman_Blue;
 import assiment4.entitys.Pacmans.Pacman_Red;
 import assiment4.entitys.Pacmans.Pacman_Yellow;
 
 public class Ghost_Red extends Ghost {
 
-	private final String[] imagesPath = {ghostPath + "GhostRed.png"};
-
 	public Ghost_Red() {
-		if (!loadSprite(imagesPath)) {
+		sprites = ImageLoader.getInstance().getRedGhost();
+		if (sprites == null) {
 			System.out.println("Error while loading ghost_red sprite");
 		}
 	}

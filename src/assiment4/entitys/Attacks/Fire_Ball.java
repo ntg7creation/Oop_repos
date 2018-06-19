@@ -1,17 +1,20 @@
 package assiment4.entitys.Attacks;
 
+import assiment4.Storage.ImageLoader;
 import assiment4.entitys.Pacmans.Pacman_Blue;
 import assiment4.entitys.Pacmans.Pacman_Red;
 import assiment4.entitys.Pacmans.Pacman_Yellow;
 
+import java.awt.geom.AffineTransform;
+
 public class Fire_Ball extends Attack {
 
-	private final String[] imagesPath = {attacksPath + "Fireball.png"};
-
 	public Fire_Ball() {
-		if (!loadSprite(imagesPath)) {
+		sprites = ImageLoader.getInstance().getFireBall();
+		if (sprites == null) {
 			System.out.println("Error while loading fireball sprite");
 		}
+
 	}
 
 	@Override

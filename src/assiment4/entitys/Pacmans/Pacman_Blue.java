@@ -1,16 +1,16 @@
 package assiment4.entitys.Pacmans;
 
+import assiment4.Storage.ImageLoader;
 import assiment4.logic.Visitor;
 
 public class Pacman_Blue extends Pacman {
 
-    private final String bluePath = "Blue/";
-    private final String[] imagesPath = {bluePath + "1.png", bluePath + "2.png"};
 
 	public Pacman_Blue() {
-	    if (!loadSprite(imagesPath)) {
-	        System.out.println("Error while loading pacman-blue sprite");
-        }
+		sprites = ImageLoader.getInstance().getBluePacman();
+		if (sprites == null) {
+			System.out.println("Error while loading blue_pacman sprite");
+		}
 	}
 
 

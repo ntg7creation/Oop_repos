@@ -1,16 +1,16 @@
 package assiment4.entitys.Food;
 
+import assiment4.Storage.ImageLoader;
 import assiment4.entitys.Pacmans.Pacman_Blue;
 import assiment4.entitys.Pacmans.Pacman_Red;
 import assiment4.entitys.Pacmans.Pacman_Yellow;
 
 public class Yello_Palet extends Food {
 
-	private final String[] imagesPath = {foodPath + "NormalPill.png"};
-
 	public Yello_Palet() {
-		if (!loadSprite(imagesPath)) {
-			System.out.println("Error while loading normal pills sprite");
+		sprites = ImageLoader.getInstance().getYellowPalet();
+		if (sprites == null) {
+			System.out.println("Error while loading yellow-palet sprite");
 		}
 	}
 

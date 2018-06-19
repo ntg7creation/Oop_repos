@@ -1,15 +1,16 @@
 package assiment4.entitys.Food;
 
+import assiment4.Storage.ImageLoader;
 import assiment4.entitys.Pacmans.Pacman_Blue;
 import assiment4.entitys.Pacmans.Pacman_Red;
 import assiment4.entitys.Pacmans.Pacman_Yellow;
 
 public class Strawberry extends Food{
 
-	private final String[] imagesPath = {foodPath + "Strawberry.png"};
 
 	public Strawberry() {
-		if (!loadSprite(imagesPath)) {
+		sprites = ImageLoader.getInstance().getStrawberry();
+		if (sprites == null) {
 			System.out.println("Error while loading strawberry sprite");
 		}
 	}

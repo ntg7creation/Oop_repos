@@ -6,9 +6,7 @@ import assiment4.logic.Visitor;
 
 public abstract class Attack extends MyEntity implements Visitor {
 
-	protected final String attacksPath = path + "Attacks/";
 
-	protected Moving_Direction direc = null;
 
 	protected void move() {
 

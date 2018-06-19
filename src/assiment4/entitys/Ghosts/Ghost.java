@@ -9,10 +9,6 @@ import assiment4.logic.Visitor;
 
 public abstract class Ghost extends MyEntity implements Visitor {
 
-	protected final String ghostPath = super.path + "Ghosts/";
-
-	protected Moving_Direction direc = null;
-
 	protected Stack<Moving_Direction> path;
 
 	static public Stack<Moving_Direction> DSF_to(int X, int Y, Board board) {

@@ -11,19 +11,19 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+import assiment4.logic.Moving_Direction;
 import assiment4.logic.Timer_Listener;
 
 public abstract class MyEntity implements Timer_Listener {
 
-	protected final String path = "res/Images/";
-	private final int pixelOfCell = 25;
 	final protected int TPS = 25;
 	protected int X;
 	protected int Y;
 	protected int offsetX;
 	protected int offsetY;
-	private Image[] sprites;
+	protected Image[] sprites;
 	private int spriteIdx;
+	protected Moving_Direction direc = null;
 
 	public MyEntity() {
 		spriteIdx = 0;
@@ -35,8 +35,7 @@ public abstract class MyEntity implements Timer_Listener {
 	}
 
 	public void draw(Graphics g) {
-		g.drawImage(sprites[spriteIdx], X, Y, null);
-		// getCurrentSprite().paintIcon(com, g, X, Y);
+		g.drawImage(getCurrentSprite(), X, Y, null);
 	}
 
 	public int get_X() {
@@ -63,34 +62,6 @@ public abstract class MyEntity implements Timer_Listener {
 		this.offsetY = offsetY;
 	}
 
-	protected boolean loadSprite(String[] imagesPath) {
-
-	    try {
-            this.sprites = new Image[imagesPath.length];
-
-            for (int i = 0; i < imagesPath.length; i++) {
-                BufferedImage src = ImageIO.read(new File(imagesPath[i]));
-
-                this.sprites[i] = resize(src, pixelOfCell, pixelOfCell);
-            }
-
-            return true;
-        } catch (IOException e) {
-            return false;
-        }
-
-    }
-
-	private Image resize(BufferedImage img, int newW, int newH) {
-		Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
-		BufferedImage dimg = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB);
-
-		Graphics2D g2d = dimg.createGraphics();
-		g2d.drawImage(tmp, 0, 0, null);
-		g2d.dispose();
-
-		return dimg;
-	}
 
 	private Image getCurrentSprite() {
 		if (sprites == null) {

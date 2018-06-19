@@ -9,7 +9,7 @@ import assiment4.logic.Visitor;
 
 public abstract class Food extends MyEntity implements Visitor {
 
-	protected final String foodPath = path + "Food/";
+
 	private int score;
 	
 	public int eat_me;

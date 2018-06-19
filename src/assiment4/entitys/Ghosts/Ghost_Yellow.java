@@ -1,15 +1,19 @@
 package assiment4.entitys.Ghosts;
 
+import assiment4.Storage.ImageLoader;
 import assiment4.entitys.Pacmans.Pacman_Blue;
 import assiment4.entitys.Pacmans.Pacman_Red;
 import assiment4.entitys.Pacmans.Pacman_Yellow;
 
+import java.awt.*;
+import java.awt.geom.AffineTransform;
+
 public class Ghost_Yellow extends Ghost {
 
-	private final String[] imagesPath = {ghostPath + "GhostYellow.png"};
 
 	public Ghost_Yellow() {
-		if (!loadSprite(imagesPath)) {
+		sprites = ImageLoader.getInstance().getYellowGhost();
+		if (sprites == null) {
 			System.out.println("Error while loading ghost_yellow sprite");
 		}
 	}

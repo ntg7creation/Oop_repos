@@ -1,15 +1,15 @@
 package assiment4.entitys.Attacks;
 
+import assiment4.Storage.ImageLoader;
 import assiment4.entitys.Pacmans.Pacman_Blue;
 import assiment4.entitys.Pacmans.Pacman_Red;
 import assiment4.entitys.Pacmans.Pacman_Yellow;
 
 public class Water_Splash extends Attack {
 
-	private final String[] imagesPath = {attacksPath + "WaterSplash.png"};
-
 	public Water_Splash() {
-		if (!loadSprite(imagesPath)) {
+		sprites = ImageLoader.getInstance().getWaterSplash();
+		if (sprites == null) {
 			System.out.println("Error while loading water-splash sprite");
 		}
 	}
