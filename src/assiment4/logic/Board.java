@@ -115,21 +115,24 @@ public class Board implements Timer_Listener {
 		Graphics offGr = board_entity.getGraphics();
 
 		if (pacMan != null) {
-			offGr.setColor(Color.yellow);
-			// pacMan.draw(offGr);
-			offGr.fillRect(pacMan.get_X() * block_size, pacMan.get_Y() * block_size, block_size, block_size);
+			pacMan.draw(offGr);
+		//	offGr.setColor(Color.yellow);
+		//	offGr.fillRect(pacMan.get_X() * block_size, pacMan.get_Y() * block_size, block_size, block_size);
 		}
 		if (Blinky != null) {
-			offGr.setColor(Color.RED);
-			offGr.fillRect(Blinky.get_X() * block_size, Blinky.get_Y() * block_size, block_size, block_size);
+			Blinky.draw(offGr);
+//			offGr.setColor(Color.RED);
+//			offGr.fillRect(Blinky.get_X() * block_size, Blinky.get_Y() * block_size, block_size, block_size);
 		}
 		if (Inky != null) {
-			offGr.setColor(Color.green);
-			offGr.fillRect(Inky.get_X() * block_size, Inky.get_Y() * block_size, block_size, block_size);
+			Inky.draw(offGr);
+//			offGr.setColor(Color.green);
+//			offGr.fillRect(Inky.get_X() * block_size, Inky.get_Y() * block_size, block_size, block_size);
 		}
 		if (Clyde != null) {
-			offGr.setColor(Color.ORANGE);
-			offGr.fillRect(Clyde.get_X() * block_size, Clyde.get_Y() * block_size, block_size, block_size);
+			Clyde.draw(offGr);
+//			offGr.setColor(Color.ORANGE);
+//			offGr.fillRect(Clyde.get_X() * block_size, Clyde.get_Y() * block_size, block_size, block_size);
 		}
 
 	}

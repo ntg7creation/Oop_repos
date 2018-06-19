@@ -69,7 +69,7 @@ public abstract class MyEntity implements Timer_Listener {
             this.sprites = new Image[imagesPath.length];
 
             for (int i = 0; i < imagesPath.length; i++) {
-                BufferedImage src = ImageIO.read(new File(path));
+                BufferedImage src = ImageIO.read(new File(imagesPath[i]));
 
                 this.sprites[i] = resize(src, pixelOfCell, pixelOfCell);
             }
