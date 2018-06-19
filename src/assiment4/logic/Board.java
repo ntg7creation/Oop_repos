@@ -35,7 +35,6 @@ public class Board implements Timer_Listener {
 	private Food[] food;
 
 	private int[][] board;
-
 	// its is better to keep the yello palets in here cus they are static and we
 	// have a lot of them
 	private Yello_Palet[][] yello_Palets;
@@ -100,7 +99,7 @@ public class Board implements Timer_Listener {
 	private void draw_my_self() {
 
 		Graphics offGr = final_Board.getGraphics();
-		offGr.setColor(Color.WHITE);
+		offGr.setColor(Color.black);
 		offGr.fillRect(0, 0, 800, 800);
 
 		offGr = final_Board.getGraphics();
@@ -145,7 +144,7 @@ public class Board implements Timer_Listener {
 	}
 
 	public int items_at(int x, int y) {
-		return 0;
+		return board[y][x];
 	}
 
 	// return 10 if there is a palet at x y else return 0

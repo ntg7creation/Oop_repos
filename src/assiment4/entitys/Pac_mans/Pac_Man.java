@@ -10,10 +10,10 @@ import assiment4.logic.Visited;
 public abstract class Pac_Man extends MyEntity implements Visited, KeyListener {
 
 	Moving_Direction direc = Moving_Direction.Left;
-	
+
 	@Override
 	public void keyPressed(KeyEvent e) {
-		
+
 		int keyCode = e.getKeyCode();
 
 		switch (keyCode) {
@@ -30,19 +30,19 @@ public abstract class Pac_Man extends MyEntity implements Visited, KeyListener {
 			direc = Moving_Direction.Right;
 			break;
 		}
-		
+
 	}
 
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void keyTyped(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	protected void move() {
@@ -88,5 +88,4 @@ public abstract class Pac_Man extends MyEntity implements Visited, KeyListener {
 		}
 	}
 
-	
 }
