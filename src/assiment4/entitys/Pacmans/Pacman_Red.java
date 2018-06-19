@@ -5,7 +5,7 @@ import assiment4.logic.Visitor;
 public class Pacman_Red extends Pacman {
 
 	private final String redPath = "Red/";
-	private final String[] imagesPath = {redPath + "1.png", redPath + "2.png"};
+	private final String[] imagesPath = { redPath + "1.png", redPath + "2.png" };
 
 	public Pacman_Red() {
 		if (!loadSprite(imagesPath)) {
@@ -16,13 +16,15 @@ public class Pacman_Red extends Pacman {
 	@Override
 	public void action() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void accept(Visitor V) {
 		// TODO Auto-generated method stub
-		
+
 	}
+
+
 
 }

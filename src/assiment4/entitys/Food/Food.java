@@ -10,11 +10,10 @@ import assiment4.logic.Visitor;
 public abstract class Food extends MyEntity implements Visitor {
 
 
-
+	protected final int id = 256;
 	protected final String foodPath = path + "Food/";
-	private int score;
-	
 	public int eat_me;
+	
 	
 	@Override
 	public void Visit(Pacman_Blue p) {
@@ -33,9 +32,18 @@ public abstract class Food extends MyEntity implements Visitor {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	private void Visit(Pacman p) {
+
+
+
+	@Override
+	public void Visit(Pacman p) {
+		// TODO Auto-generated method stub
 		
 	}
 	
+	@Override
+	public int get_id() {
+		// TODO Auto-generated method stub
+		return id;
+	}
 }

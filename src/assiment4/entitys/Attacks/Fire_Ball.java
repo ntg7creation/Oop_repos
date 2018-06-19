@@ -1,12 +1,15 @@
 package assiment4.entitys.Attacks;
 
+import assiment4.entitys.Pacmans.Pacman;
 import assiment4.entitys.Pacmans.Pacman_Blue;
 import assiment4.entitys.Pacmans.Pacman_Red;
 import assiment4.entitys.Pacmans.Pacman_Yellow;
 
 public class Fire_Ball extends Attack {
 
-	private final String[] imagesPath = {attacksPath + "Fireball.png"};
+	protected final int id = 64;
+
+	private final String[] imagesPath = { attacksPath + "Fireball.png" };
 
 	public Fire_Ball() {
 		if (!loadSprite(imagesPath)) {
@@ -17,23 +20,35 @@ public class Fire_Ball extends Attack {
 	@Override
 	public void action() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void Visit(Pacman_Blue p) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void Visit(Pacman_Yellow p) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void Visit(Pacman_Red p) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public int get_id() {
+		// TODO Auto-generated method stub
+		return id;
+	}
+
+	@Override
+	public void Visit(Pacman p) {
 		// TODO Auto-generated method stub
 		
 	}

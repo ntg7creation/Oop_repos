@@ -4,6 +4,7 @@ import assiment4.logic.Visitor;
 
 public class Pacman_Yellow extends Pacman {
 
+
 	private final String yellowPath = "Yellow/";
 	private final String[] imagesPath = {yellowPath + "1.png", yellowPath + "2.png"};
 
@@ -24,6 +25,7 @@ public class Pacman_Yellow extends Pacman {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 
 

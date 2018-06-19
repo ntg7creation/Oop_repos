@@ -1,11 +1,13 @@
 package assiment4.entitys.Ghosts;
 
+import assiment4.entitys.Pacmans.Pacman;
 import assiment4.entitys.Pacmans.Pacman_Blue;
 import assiment4.entitys.Pacmans.Pacman_Red;
 import assiment4.entitys.Pacmans.Pacman_Yellow;
  
 public class Ghost_Green extends Ghost {
 
+	private final int id = 8;
 	private final String[] imagesPath = {ghostPath + "GhostGreen.png"};
 
 	public Ghost_Green() {
@@ -33,6 +35,18 @@ public class Ghost_Green extends Ghost {
 
 	@Override
 	public void Visit(Pacman_Red p) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	@Override
+	public int get_id() {
+		return id;
+	}
+
+	@Override
+	public void Visit(Pacman p) {
 		// TODO Auto-generated method stub
 		
 	}

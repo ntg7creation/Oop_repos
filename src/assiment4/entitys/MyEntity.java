@@ -15,6 +15,7 @@ import assiment4.logic.Timer_Listener;
 
 public abstract class MyEntity implements Timer_Listener {
 
+	
 	protected Moving_Direction direc = null;
 	protected final String path = "res/Images/";
 	private final int pixelOfCell = 25;
@@ -22,6 +23,8 @@ public abstract class MyEntity implements Timer_Listener {
 	protected int count_Ticks;
 	protected int X;
 	protected int Y;
+	protected int preX;
+	protected int preY;
 	protected int offsetX;
 	protected int offsetY;
 	private Image[] sprites;
@@ -32,6 +35,8 @@ public abstract class MyEntity implements Timer_Listener {
 		spriteIdx = 0;
 	}
 
+	public abstract int get_id();
+	
 	public void add_Board_Listener(Board_action_Listener board) {
 		this.board = board;
 	}
@@ -65,6 +70,14 @@ public abstract class MyEntity implements Timer_Listener {
 
 	public int get_Y() {
 		return Y;
+	}
+
+	public int get_preX() {
+		return preX;
+	}
+
+	public int get_preY() {
+		return preY;
 	}
 
 	private Image getCurrentSprite() {
@@ -117,14 +130,16 @@ public abstract class MyEntity implements Timer_Listener {
 	public void set_start(int x, int y) {
 		X = x;
 		Y = y;
+		preX = X;
+		preY = Y;
 	}
 
-	protected void setOffsetX(int offsetX) {
-		this.offsetX = offsetX;
-	}
+//	protected void setOffsetX(int offsetX) {
+//		this.offsetX = offsetX;
+//	}
 
-	protected void setOffsetY(int offsetY) {
-		this.offsetY = offsetY;
-	}
+//	protected void setOffsetY(int offsetY) {
+//		this.offsetY = offsetY;
+//	}
 
 }

@@ -203,20 +203,21 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		draw_my_self();
 
 	}
-	
+
 	@Override
 	public Boolean is_wall(int x, int y) {
-		if (x < 0 || y < 0 || y > board.length || x > board[y].length)
-			return false;
+		if (x < 0 || y < 0 || y >= board.length || x >= board[y].length)
+			return true;
 		return (board[y][x] & 1) == 1;
 	}
 
 	@Override
 	public void I_just_Moved(MyEntity entity) {
-		// TODO Auto-generated method stub
-		
+		board[entity.get_preY()][entity.get_preX()] -= entity.get_id();
+		board[entity.get_Y()][entity.get_X()] += entity.get_id();
+		System.out.println(entity.toString() + "  moved to space " + entity.get_X() + "," + entity.get_Y());
+		if( entity instanceof Visitor && (board[entity.get_Y()][entity.get_X()] & pacMan.get_id()) == pacMan.get_id())
+			((Visitor) entity).Visit(pacMan);
 	}
-
-
 
 }

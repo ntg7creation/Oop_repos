@@ -10,7 +10,7 @@ import assiment4.logic.Visited;
 public abstract class Pacman extends MyEntity implements Visited, KeyListener {
 
 
-
+	protected final int id = 4;
 	protected final String pacmanPath = path + "Pacman/";
 
 	
@@ -91,4 +91,9 @@ public abstract class Pacman extends MyEntity implements Visited, KeyListener {
 		}
 	}
 
+	@Override
+	public int get_id() {
+		// TODO Auto-generated method stub
+		return 4;
+	}
 }
