@@ -5,7 +5,10 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 import assiment4.logic.Timer_Listener;
@@ -62,17 +65,21 @@ public abstract class MyEntity implements Timer_Listener {
 
 	protected boolean loadSprite(String[] imagesPath) {
 
-		this.sprites = new Image[imagesPath.length];
+	    try {
+            this.sprites = new Image[imagesPath.length];
 
-		for (int i = 0; i < imagesPath.length; i++) {
-			ImageIcon src = new ImageIcon(imagesPath[i]);
+            for (int i = 0; i < imagesPath.length; i++) {
+                BufferedImage src = ImageIO.read(new File(path));
 
-			// this.sprites[i] = resize(src, pixelOfCell, pixelOfCell);
-		}
+                this.sprites[i] = resize(src, pixelOfCell, pixelOfCell);
+            }
 
-		return true;
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
 
-	}
+    }
 
 	private Image resize(BufferedImage img, int newW, int newH) {
 		Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);

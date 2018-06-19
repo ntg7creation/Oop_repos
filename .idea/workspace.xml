@@ -7,19 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bddf4f17-5d6d-48ed-8cce-3e4ce35a9f1e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Images/Ghosts/GhostOrange.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Images/Ghosts/GhostYellow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Images/Weapon/Fireball.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Images/Attacks/Fireball.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Images/Weapon/WaterSplash.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Images/Attacks/WaterSplash.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/Entitys/Attacks/Attack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/Entitys/Attacks/Attack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/Entitys/Attacks/Fire_Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/Entitys/Attacks/Fire_Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/Entitys/Attacks/Water_Splash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/Entitys/Attacks/Water_Splash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost_Green.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost_Green.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost_Red.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost_Red.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost_Yellow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost_Yellow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/Entitys/MyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/Entitys/MyEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/Entitys/Pacmans/Pacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/Entitys/Pacmans/Pacman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,88 +20,35 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="MyEntity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/MyEntity.java">
+        <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="34" column="51" lean-forward="true" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+            <state relative-caret-position="-701">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
-                <element signature="e#571#572#0" expanded="true" />
-                <element signature="e#595#596#0" expanded="true" />
-                <element signature="e#748#749#0" expanded="true" />
-                <element signature="e#781#782#0" expanded="true" />
+                <element signature="e#569#570#0" expanded="true" />
+                <element signature="e#589#590#0" expanded="true" />
+                <element signature="e#805#806#0" expanded="true" />
+                <element signature="e#820#821#0" expanded="true" />
+                <element signature="e#843#844#0" expanded="true" />
+                <element signature="e#858#859#0" expanded="true" />
+                <element signature="e#886#887#0" expanded="true" />
+                <element signature="e#907#908#0" expanded="true" />
+                <element signature="e#947#948#0" expanded="true" />
+                <element signature="e#976#977#0" expanded="true" />
+                <element signature="e#1004#1005#0" expanded="true" />
+                <element signature="e#1025#1026#0" expanded="true" />
+                <element signature="e#1065#1066#0" expanded="true" />
+                <element signature="e#1094#1095#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ghost.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost.java">
+      <file leaf-file-name="image_Loader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assiment3/StorageL/image_Loader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pacman_Blue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Pacmans/Pacman_Blue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ghost_Green.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost_Green.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" selection-start-line="8" selection-end-line="14" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ghost_Red.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost_Red.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" selection-start-line="8" selection-end-line="14" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Fire_Ball.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Attacks/Fire_Ball.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" selection-start-line="8" selection-end-line="14" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Water_Splash.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Attacks/Water_Splash.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="643">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ghost_Yellow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost_Yellow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Attack.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Attacks/Attack.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+            <state relative-caret-position="340">
+              <caret line="36" column="12" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -170,7 +105,6 @@
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Food/Energe_Palet.java" />
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Food/Yello_Palet.java" />
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Food/Food.java" />
-        <option value="$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java" />
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Food/Apple.java" />
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Food/Energy_Palet.java" />
         <option value="$PROJECT_DIR$/src/assiment4/entitys/Food/PineApple.java" />
@@ -194,6 +128,7 @@
         <option value="$PROJECT_DIR$/src/assiment4/Entitys/Attacks/Fire_Ball.java" />
         <option value="$PROJECT_DIR$/src/assiment4/Entitys/Attacks/Water_Splash.java" />
         <option value="$PROJECT_DIR$/src/assiment4/Entitys/MyEntity.java" />
+        <option value="$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java" />
       </list>
     </option>
   </component>
@@ -217,9 +152,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,6 +189,19 @@
               <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
               <item name="Ass01" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assiment3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ass01" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assiment3" type="462c0819:PsiDirectoryNode" />
+              <item name="StorageL" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ass01" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="assiment4" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -261,38 +209,14 @@
               <item name="Ass01" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="assiment4" type="462c0819:PsiDirectoryNode" />
-              <item name="Entitys" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
               <item name="Ass01" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="assiment4" type="462c0819:PsiDirectoryNode" />
-              <item name="Entitys" type="462c0819:PsiDirectoryNode" />
-              <item name="Attacks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ass01" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assiment4" type="462c0819:PsiDirectoryNode" />
-              <item name="Entitys" type="462c0819:PsiDirectoryNode" />
-              <item name="Ghosts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ass01" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assiment4" type="462c0819:PsiDirectoryNode" />
-              <item name="Entitys" type="462c0819:PsiDirectoryNode" />
-              <item name="Pacmans" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Oop_repos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ass01" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assiment4" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
+              <item name="Storage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -451,7 +375,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55369000" />
+    <option name="totallyTimeSpent" value="55539000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -459,7 +383,6 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32928178" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
@@ -471,20 +394,42 @@
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32928178" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15039062" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15039062" />
       <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info id="Designer" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32928178" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3324138" />
+      <window_info id="Image Layers" order="6" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32928178" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15039062" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,7 +458,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/StorageL/csv_Reader.java" />
     <entry file="file://$PROJECT_DIR$/src/PresentationL/old_Menu_no_need_for_this.java" />
     <entry file="file://$PROJECT_DIR$/src/StorageL/action_History.java" />
     <entry file="uml://JAVA/LogicL.logic_Board">
@@ -569,23 +513,10 @@
     <entry file="file://$PROJECT_DIR$/res/Images/Ghosts/GhostGreen.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/Images/Pickups/EnergyPills.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/Images/Pickups/Pineapple.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment3/StorageL/image_Loader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1955">
-          <caret line="123" selection-start-line="123" selection-end-line="132" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/Images/Pickups/NormalPill.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Logic/Board.java">
+    <entry file="file://$PROJECT_DIR$/res/Images/Pickups/EnergyPills.png" />
+    <entry file="file://$PROJECT_DIR$/res/Images/Pickups/Pineapple.png" />
+    <entry file="file://$PROJECT_DIR$/res/Images/Pickups/NormalPill.png" />
+    <entry file="file://$PROJECT_DIR$/src/assiment4/logic/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
           <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
@@ -595,77 +526,77 @@
     <entry file="file://$PROJECT_DIR$/res/Images/Food/Pineapple.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Food/Yello_Palet.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Yello_Palet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Food/Apple.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Apple.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Food/Energy_Palet.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Energy_Palet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Food/Pineapple.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Pineapple.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Food/Strawberry.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Strawberry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Food/Food.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Food/Food.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
           <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Pacmans/Pacman_Red.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman_Red.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Pacmans/Pacman_Yellow.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman_Yellow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Logic/Logic.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/logic/Logic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
@@ -675,14 +606,14 @@
     <entry file="file://$PROJECT_DIR$/res/Images/Ghosts/GhostRed.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost_Green.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost_Green.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" selection-start-line="8" selection-end-line="14" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost_Yellow.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost_Yellow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
@@ -692,42 +623,42 @@
     <entry file="file://$PROJECT_DIR$/res/Images/Ghosts/GhostYellow.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Attacks/Attack.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Attacks/Attack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Pacmans/Pacman_Blue.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman_Blue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Ghosts/Ghost_Red.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Ghosts/Ghost_Red.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" selection-start-line="8" selection-end-line="14" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Attacks/Fire_Ball.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Attacks/Fire_Ball.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" selection-start-line="8" selection-end-line="14" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Attacks/Water_Splash.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Attacks/Water_Splash.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="643">
           <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/Pacmans/Pacman.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret lean-forward="true" />
@@ -737,15 +668,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Entitys/MyEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/assiment4/Storage/ResourceLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="34" column="51" lean-forward="true" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+        <state relative-caret-position="136">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment3/StorageL/image_Loader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="36" column="12" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/MyEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-701">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#748#749#0" expanded="true" />
-            <element signature="e#781#782#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#589#590#0" expanded="true" />
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#820#821#0" expanded="true" />
+            <element signature="e#843#844#0" expanded="true" />
+            <element signature="e#858#859#0" expanded="true" />
+            <element signature="e#886#887#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#976#977#0" expanded="true" />
+            <element signature="e#1004#1005#0" expanded="true" />
+            <element signature="e#1025#1026#0" expanded="true" />
+            <element signature="e#1065#1066#0" expanded="true" />
+            <element signature="e#1094#1095#0" expanded="true" />
           </folding>
         </state>
       </provider>
