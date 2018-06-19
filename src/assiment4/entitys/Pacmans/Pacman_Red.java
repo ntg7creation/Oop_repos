@@ -7,7 +7,8 @@ public class Pacman_Red extends Pacman {
 	private final String redPath = "Red/";
 	private final String[] imagesPath = {redPath + "1.png", redPath + "2.png"};
 
-	public Pacman_Red() {
+	public Pacman_Red(int[][] board) {
+		super(board);
 		if (!loadSprite(imagesPath)) {
 			System.out.println("Error while loading pacman-red sprite");
 		}

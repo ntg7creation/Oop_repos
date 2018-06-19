@@ -8,7 +8,8 @@ public class Ghost_Red extends Ghost {
 
 	private final String[] imagesPath = {ghostPath + "GhostRed.png"};
 
-	public Ghost_Red() {
+	public Ghost_Red(int[][] board) {
+		super(board);
 		if (!loadSprite(imagesPath)) {
 			System.out.println("Error while loading ghost_red sprite");
 		}

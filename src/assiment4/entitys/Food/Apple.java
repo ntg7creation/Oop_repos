@@ -8,7 +8,8 @@ public class Apple extends Food{
 
 	private final String[] imagesPath = {foodPath + "Apple.png"};
 
-	public Apple() {
+	public Apple(int[][] board) {
+		super(board);
 		if (!loadSprite(imagesPath)) {
 			throw new IllegalArgumentException("Error while loading apple sprite");
 		}

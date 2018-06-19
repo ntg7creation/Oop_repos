@@ -8,7 +8,8 @@ public class Energy_Palet extends Food {
 
 	private final String[] imagesPath = {foodPath + "EnergyPills.png"};
 
-	public Energy_Palet() {
+	public Energy_Palet(int[][] board) {
+		super(board);
 		if (!loadSprite(imagesPath)) {
 			System.out.println("Error while loading energy pills sprite");
 		}

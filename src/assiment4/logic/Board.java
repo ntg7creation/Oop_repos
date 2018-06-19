@@ -64,23 +64,23 @@ public class Board implements Timer_Listener {
 					offGr.fillRect(x * block_size, y * block_size, block_size, block_size);
 					break;
 				case 2:
-					yello_Palets[y][x] = new Yello_Palet();
+					yello_Palets[y][x] = new Yello_Palet(board);
 					yello_Palets[y][x].set_start(x, y);
 					break;
 				case 4:
-					pacMan = new Pacman_Yellow();
+					pacMan = new Pacman_Yellow(board);
 					pacMan.set_start(x, y);
 					break;
 				case 8:
-					Inky = new Ghost_Green();
+					Inky = new Ghost_Green(board);
 					Inky.set_start(x, y);
 					break;
 				case 16:
-					Clyde = new Ghost_Yellow();
+					Clyde = new Ghost_Yellow(board);
 					Clyde.set_start(x, y);
 					break;
 				case 32:
-					Blinky = new Ghost_Red();
+					Blinky = new Ghost_Red(board);
 					Blinky.set_start(x, y);
 					break;
 				case 512:
@@ -116,23 +116,27 @@ public class Board implements Timer_Listener {
 
 		if (pacMan != null) {
 			pacMan.draw(offGr);
-		//	offGr.setColor(Color.yellow);
-		//	offGr.fillRect(pacMan.get_X() * block_size, pacMan.get_Y() * block_size, block_size, block_size);
+			// offGr.setColor(Color.yellow);
+			// offGr.fillRect(pacMan.get_X() * block_size, pacMan.get_Y() * block_size,
+			// block_size, block_size);
 		}
 		if (Blinky != null) {
 			Blinky.draw(offGr);
-//			offGr.setColor(Color.RED);
-//			offGr.fillRect(Blinky.get_X() * block_size, Blinky.get_Y() * block_size, block_size, block_size);
+			// offGr.setColor(Color.RED);
+			// offGr.fillRect(Blinky.get_X() * block_size, Blinky.get_Y() * block_size,
+			// block_size, block_size);
 		}
 		if (Inky != null) {
 			Inky.draw(offGr);
-//			offGr.setColor(Color.green);
-//			offGr.fillRect(Inky.get_X() * block_size, Inky.get_Y() * block_size, block_size, block_size);
+			// offGr.setColor(Color.green);
+			// offGr.fillRect(Inky.get_X() * block_size, Inky.get_Y() * block_size,
+			// block_size, block_size);
 		}
 		if (Clyde != null) {
 			Clyde.draw(offGr);
-//			offGr.setColor(Color.ORANGE);
-//			offGr.fillRect(Clyde.get_X() * block_size, Clyde.get_Y() * block_size, block_size, block_size);
+			// offGr.setColor(Color.ORANGE);
+			// offGr.fillRect(Clyde.get_X() * block_size, Clyde.get_Y() * block_size,
+			// block_size, block_size);
 		}
 
 	}
@@ -169,9 +173,11 @@ public class Board implements Timer_Listener {
 		timer.addTimerListener(Inky);
 		for (Yello_Palet[] array : yello_Palets) {
 			for (Yello_Palet yello_Palet : array) {
-				timer.addTimerListener(yello_Palet);
+				if (yello_Palet != null)
+					timer.addTimerListener(yello_Palet);
 			}
 		}
+		timer.addTimerListener(this); // this will not be here
 		timer.start();
 
 	}

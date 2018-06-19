@@ -8,7 +8,8 @@ public class Pineapple extends Food {
 
 	private final String[] imagesPath = {foodPath + "Pineapple.png"};
 
-	public Pineapple() {
+	public Pineapple(int[][] board) {
+		super(board);
 		if (!loadSprite(imagesPath)) {
 			System.out.println("Error while loading pineapple sprite");
 		}

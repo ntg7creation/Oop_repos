@@ -9,6 +9,11 @@ import assiment4.logic.Visitor;
 
 public abstract class Ghost extends MyEntity implements Visitor {
 
+	public Ghost(int[][] board) {
+		super(board);
+		// TODO Auto-generated constructor stub
+	}
+
 	protected final String ghostPath = super.path + "Ghosts/";
 
 	protected Moving_Direction direc = null;
@@ -20,54 +25,58 @@ public abstract class Ghost extends MyEntity implements Visitor {
 	}
 
 	protected void move() {
-		if (offsetX == 0 & offsetY == 0) {
-			if (!path.isEmpty())
-				direc = path.pop();
-			else
-			{
-				//get more path
+		// if (offsetX == 0 & offsetY == 0) {
+		// if (!path.isEmpty())
+		// direc = path.pop();
+		// else
+		// {
+		// //get more path
+		// }
+		// }
+		direc = Moving_Direction.Right;
+
+		if (!(offsetX == 0 & offsetY == 0) || direc.can_Move(board, X, Y)) {
+			if (direc == null) {
 			}
-		}
-		if (direc == null) {
-		}
 
-		switch (direc) {
-		case Right:
-			offsetX++;
-			break;
-		case Left:
-			offsetX--;
-			break;
-		case Up:
-			offsetY--;
-			break;
-		case Down:
-			offsetY++;
-			break;
-		}
+			switch (direc) {
+			case Right:
+				offsetX++;
+				break;
+			case Left:
+				offsetX--;
+				break;
+			case Up:
+				offsetY--;
+				break;
+			case Down:
+				offsetY++;
+				break;
+			}
 
-		switch (offsetX) {
-		case 13:
-			offsetX = -12;
-			X++;
-			break;
-		case -13:
-			offsetX = 12;
-			X--;
-			break;
-		}
+			switch (offsetX) {
+			case 13:
+				offsetX = -12;
+				X++;
+				break;
+			case -13:
+				offsetX = 12;
+				X--;
+				break;
+			}
 
-		switch (offsetY) {
-		case 13:
-			offsetY = -12;
-			Y++;
-			break;
-		case -13:
-			offsetY = 12;
-			Y--;
-			break;
+			switch (offsetY) {
+			case 13:
+				offsetY = -12;
+				Y++;
+				break;
+			case -13:
+				offsetY = 12;
+				Y--;
+				break;
+			}
 		}
 	}
 
-	//test
+	// test
 }

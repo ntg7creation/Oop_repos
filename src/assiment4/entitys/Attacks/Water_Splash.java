@@ -8,7 +8,8 @@ public class Water_Splash extends Attack {
 
 	private final String[] imagesPath = {attacksPath + "WaterSplash.png"};
 
-	public Water_Splash() {
+	public Water_Splash(int[][] board) {
+		super(board);
 		if (!loadSprite(imagesPath)) {
 			System.out.println("Error while loading water-splash sprite");
 		}

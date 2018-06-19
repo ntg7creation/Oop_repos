@@ -8,7 +8,8 @@ public class Fire_Ball extends Attack {
 
 	private final String[] imagesPath = {attacksPath + "Fireball.png"};
 
-	public Fire_Ball() {
+	public Fire_Ball(int[][] board) {
+		super(board);
 		if (!loadSprite(imagesPath)) {
 			System.out.println("Error while loading fireball sprite");
 		}

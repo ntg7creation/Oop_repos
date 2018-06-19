@@ -22,8 +22,10 @@ public abstract class MyEntity implements Timer_Listener {
 	protected int offsetY;
 	private Image[] sprites;
 	private int spriteIdx;
+	protected int[][] board;
 
-	public MyEntity() {
+	public MyEntity(int[][] board) {
+		this.board = board;
 		spriteIdx = 0;
 	}
 
@@ -33,7 +35,7 @@ public abstract class MyEntity implements Timer_Listener {
 	}
 
 	public void draw(Graphics g) {
-		g.drawImage(sprites[spriteIdx], X, Y, null);
+		g.drawImage(sprites[spriteIdx], X * pixelOfCell + offsetX, Y * pixelOfCell + offsetY, null);
 		// getCurrentSprite().paintIcon(com, g, X, Y);
 	}
 
@@ -63,21 +65,21 @@ public abstract class MyEntity implements Timer_Listener {
 
 	protected boolean loadSprite(String[] imagesPath) {
 
-	    try {
-            this.sprites = new Image[imagesPath.length];
+		try {
+			this.sprites = new Image[imagesPath.length];
 
-            for (int i = 0; i < imagesPath.length; i++) {
-                BufferedImage src = ImageIO.read(new File(imagesPath[i]));
+			for (int i = 0; i < imagesPath.length; i++) {
+				BufferedImage src = ImageIO.read(new File(imagesPath[i]));
 
-                this.sprites[i] = resize(src, pixelOfCell, pixelOfCell);
-            }
+				this.sprites[i] = resize(src, pixelOfCell, pixelOfCell);
+			}
 
-            return true;
-        } catch (IOException e) {
-            return false;
-        }
+			return true;
+		} catch (IOException e) {
+			return false;
+		}
 
-    }
+	}
 
 	private Image resize(BufferedImage img, int newW, int newH) {
 		Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);

@@ -8,7 +8,8 @@ public class Ghost_Yellow extends Ghost {
 
 	private final String[] imagesPath = {ghostPath + "GhostYellow.png"};
 
-	public Ghost_Yellow() {
+	public Ghost_Yellow(int[][] board) {
+		super(board);
 		if (!loadSprite(imagesPath)) {
 			System.out.println("Error while loading ghost_yellow sprite");
 		}
@@ -19,10 +20,9 @@ public class Ghost_Yellow extends Ghost {
 	
 	@Override
 	public void action() {
-		timecount++;
-		//time to move the number 20 need to change
-		//currently the Ghosts will move 1 picxle every 20 clock ticks
-		if (timecount == 20)
+
+			move();
+			move();
 			move();
 
 	}

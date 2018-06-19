@@ -8,12 +8,12 @@ public class Ghost_Green extends Ghost {
 
 	private final String[] imagesPath = {ghostPath + "GhostGreen.png"};
 
-	public Ghost_Green() {
+	public Ghost_Green(int[][] board) {
+		super(board);
 		if (!loadSprite(imagesPath)) {
 			System.out.println("Error while loading ghost_green sprite");
 		}
 	}
-
 	
 	@Override
 	public void action() {
