@@ -17,7 +17,7 @@ public abstract class Ghost extends MyEntity implements Visitor {
 	}
 
 	protected void move() {
-		//direc = Moving_Direction.Right;
+		// direc = Moving_Direction.Right;
 		// this works really well beacus it knows for 100% that it can move if we are
 		// not at offset 0 0
 		if (direc != null && (!(offsetX == 0 & offsetY == 0) || can_Move(X, Y, direc))) {
@@ -36,27 +36,9 @@ public abstract class Ghost extends MyEntity implements Visitor {
 				offsetY++;
 				break;
 			}
+		} else {
+			direc = get_random_move(direc);
 		}
-		else
-		{
-			Random r = new Random();
-
-			switch (r.nextInt(3)) {
-			case 0:
-				direc = Moving_Direction.Right;
-				break;
-			case 1:
-				direc = Moving_Direction.Up;
-				break;
-			case 2:
-				direc = Moving_Direction.Down;
-				break;
-			case 3:
-				direc = Moving_Direction.Left;
-				break;
-			}
-		}
-
 
 		switch (offsetX) {
 		case 13:
@@ -90,5 +72,31 @@ public abstract class Ghost extends MyEntity implements Visitor {
 
 	}
 
-	// test
+	private Moving_Direction get_random_move(Moving_Direction direc) {
+		Random r = new Random();
+		Moving_Direction output = null;
+
+		if (direc == Moving_Direction.Up || direc == Moving_Direction.Down) {
+			switch (r.nextInt(2)) {
+			case 0:
+				output = Moving_Direction.Right;
+				break;
+			case 1:
+				output = Moving_Direction.Left;
+				break;
+			}
+		} else {
+			switch (r.nextInt(2)) {
+			case 0:
+				output = Moving_Direction.Up;
+				break;
+			case 1:
+				output = Moving_Direction.Down;
+				break;
+			}
+		}
+
+		return output;
+	}
 }
+// test
