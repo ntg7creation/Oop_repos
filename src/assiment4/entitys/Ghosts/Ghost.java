@@ -1,5 +1,6 @@
 package assiment4.entitys.Ghosts;
 
+import java.util.Random;
 import java.util.Stack;
 
 import assiment4.entitys.MyEntity;
@@ -16,7 +17,7 @@ public abstract class Ghost extends MyEntity implements Visitor {
 	}
 
 	protected void move() {
-		direc = Moving_Direction.Right;
+		//direc = Moving_Direction.Right;
 		// this works really well beacus it knows for 100% that it can move if we are
 		// not at offset 0 0
 		if (direc != null && (!(offsetX == 0 & offsetY == 0) || can_Move(X, Y, direc))) {
@@ -36,6 +37,26 @@ public abstract class Ghost extends MyEntity implements Visitor {
 				break;
 			}
 		}
+		else
+		{
+			Random r = new Random();
+
+			switch (r.nextInt(3)) {
+			case 0:
+				direc = Moving_Direction.Right;
+				break;
+			case 1:
+				direc = Moving_Direction.Up;
+				break;
+			case 2:
+				direc = Moving_Direction.Down;
+				break;
+			case 3:
+				direc = Moving_Direction.Left;
+				break;
+			}
+		}
+
 
 		switch (offsetX) {
 		case 13:

@@ -60,10 +60,12 @@ public abstract class Pacman extends MyEntity implements Visited {
 		case 13:
 			offsetX = -12;
 			X++;
+			board.I_just_Moved(this);
 			break;
 		case -13:
 			offsetX = 12;
 			X--;
+			board.I_just_Moved(this);
 			break;
 		}
 
@@ -71,10 +73,12 @@ public abstract class Pacman extends MyEntity implements Visited {
 		case 13:
 			offsetY = -12;
 			Y++;
+			board.I_just_Moved(this);
 			break;
 		case -13:
 			offsetY = 12;
 			Y--;
+			board.I_just_Moved(this);
 			break;
 		}
 
