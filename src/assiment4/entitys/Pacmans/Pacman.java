@@ -8,28 +8,30 @@ import assiment4.entitys.MyEntity;
 import assiment4.logic.Moving_Direction;
 import assiment4.logic.Visited;
 
-public abstract class Pacman extends MyEntity implements Visited  {
+public abstract class Pacman extends MyEntity implements Visited {
 
-    private int spriteIdx;
+	private int spriteIdx;
+	Moving_Direction next_direc;
 	protected final int id = 4;
 
 	public Pacman() {
-	    spriteIdx = 0;
-	    direc = Moving_Direction.Right;
-    }
-
-	public void change_direction(Moving_Direction the_way)
-	{
-		direc = the_way;
+		spriteIdx = 0;
+		direc = Moving_Direction.Right;
+		next_direc = direc;
 	}
-	
+
+	public void change_direction(Moving_Direction the_way) {
+		next_direc = the_way;
+	}
+
 	@Override
 	public void action() {
 		move();
-		
+		move();
+		move();
+		move();
+
 	}
-	
-	
 
 	protected void move() {
 
@@ -49,6 +51,9 @@ public abstract class Pacman extends MyEntity implements Visited  {
 		case Down:
 			offsetY++;
 			break;
+		}
+		if (offsetX == 0 & offsetY == 0) {
+			direc = next_direc;
 		}
 
 		switch (offsetX) {
@@ -72,6 +77,7 @@ public abstract class Pacman extends MyEntity implements Visited  {
 			Y--;
 			break;
 		}
+
 	}
 
 	@Override
@@ -82,17 +88,17 @@ public abstract class Pacman extends MyEntity implements Visited  {
 
 	@Override
 	protected Image getCurrentSprite() {
-        if (sprites == null) {
-            return null;
-        } else {
-            int spriteDirIdx = 0;
-            if (direc != null) {
-                spriteDirIdx = direc.getSpriteindex();
-            }
+		if (sprites == null) {
+			return null;
+		} else {
+			int spriteDirIdx = 0;
+			if (direc != null) {
+				spriteDirIdx = direc.getSpriteindex();
+			}
 
-            Image cur = sprites[spriteDirIdx + spriteIdx];
+			Image cur = sprites[spriteDirIdx + spriteIdx];
 			spriteIdx = (spriteIdx + 1) % 2;
-            return cur;
-        }
+			return cur;
+		}
 	}
 }
