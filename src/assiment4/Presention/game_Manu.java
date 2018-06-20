@@ -1,5 +1,6 @@
 package assiment4.Presention;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
@@ -30,6 +31,7 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 		T.addTimerListener(this);
 		this.setFocusable(true);
 		gameBoard.start(T);
+		
 		pack();
 		this.setFocusable(true);
 		this.requestFocusInWindow();
@@ -54,9 +56,6 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-
-		System.out.println("prees a key");
-
 		gameBoard.user_input(e);
 
 	}
@@ -64,16 +63,13 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 	@Override
 	public void keyReleased(KeyEvent e) {
 
-		System.out.println("prees a key");
-
-		gameBoard.user_input(e);
+		
+		
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
 
-		System.out.println("prees a key");
 
-		gameBoard.user_input(e);
 	}
 }

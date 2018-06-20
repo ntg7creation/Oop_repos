@@ -107,7 +107,7 @@ public class Board implements Timer_Listener, Board_action_Listener {
 	private void draw_my_self() {
 
 		Graphics offGr = final_Board.getGraphics();
-		offGr.setColor(Color.WHITE);
+		offGr.setColor(Color.black);
 		offGr.fillRect(0, 0, 800, 800);
 
 		offGr = final_Board.getGraphics();
