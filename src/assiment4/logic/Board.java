@@ -35,6 +35,7 @@ public class Board implements Timer_Listener, Board_action_Listener {
 	private Ghost_Red Blinky;
 	private Ghost_Yellow Clyde;
 	private Food[] food;
+	private int score = 0;
 
 	private int[][] board;
 
@@ -163,14 +164,14 @@ public class Board implements Timer_Listener, Board_action_Listener {
 	}
 
 	// return 10 if there is a palet at x y else return 0
-	public int eat_Palert_at(int x, int y) {
+	@Override
+	public void eat_food_at(int x, int y, int value) {
 		if (yello_Palets[y][x] != null) {
 			yello_Palets[y][x] = null;
+			score += value;
+			System.out.println(score);
 			draw_yello_Plaets();
-			return 10;
 		}
-
-		return 0;
 	}
 
 	public void start(myTimer timer) {
@@ -216,20 +217,25 @@ public class Board implements Timer_Listener, Board_action_Listener {
 	public void I_just_Moved(MyEntity entity) {
 		board[entity.get_preY()][entity.get_preX()] -= entity.get_id();
 		board[entity.get_Y()][entity.get_X()] += entity.get_id();
-		System.out.println(entity.toString() + "  moved to space " + entity.get_X() + "," + entity.get_Y());
+		// System.out.println(entity.toString() + " moved to space " + entity.get_X() +
+		// "," + entity.get_Y());
 		if (entity instanceof Visitor && (board[entity.get_Y()][entity.get_X()] & pacMan.get_id()) == pacMan.get_id())
-			((Visitor) entity).Visit(pacMan);
+			pacMan.accept((Visitor) entity);
 		if (entity instanceof Pacman) {
+			// System.out.println("pacman");
 			Pacman p = (Pacman) entity;
 			int itemshere = board[entity.get_Y()][entity.get_X()];
 			if ((itemshere & 2) == 2)
-				yello_Palets[1][2].Visit(p);
+				if (yello_Palets[p.get_Y()][p.get_X()] != null) {
+					System.out.println("ready to eat");
+					pacMan.accept(yello_Palets[p.get_Y()][p.get_X()]);
+				}
 			if ((itemshere & 8) == 8)
-				Inky.Visit(p);
+				pacMan.accept(Inky);
 			if ((itemshere & 16) == 16)
-				Clyde.Visit(p);
+				pacMan.accept(Clyde);
 			if ((itemshere & 32) == 32)
-				Blinky.Visit(p);
+				pacMan.accept(Blinky);
 			if ((itemshere & 256) == 256) {
 				// eat food
 			}
@@ -239,8 +245,7 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		}
 	}
 
-	public void user_input(KeyEvent e)
-	{
+	public void user_input(KeyEvent e) {
 		int keyCode = e.getKeyCode();
 
 		switch (keyCode) {

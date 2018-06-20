@@ -19,6 +19,8 @@ public class Ghost_Red extends Ghost {
 	@Override
 	public void action() {
 		move();
+		move();
+		move();
 	}
 	
 	@Override
@@ -45,10 +47,5 @@ public class Ghost_Red extends Ghost {
 		return id;
 	}
 
-	@Override
-	public void Visit(Pacman p) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 }

@@ -7,6 +7,7 @@ import java.awt.event.KeyListener;
 import assiment4.entitys.MyEntity;
 import assiment4.logic.Moving_Direction;
 import assiment4.logic.Visited;
+import assiment4.logic.Visitor;
 
 public abstract class Pacman extends MyEntity implements Visited {
 
@@ -35,22 +36,22 @@ public abstract class Pacman extends MyEntity implements Visited {
 
 	protected void move() {
 
-		if (direc == null) {
-		}
 
-		switch (direc) {
-		case Right:
-			offsetX++;
-			break;
-		case Left:
-			offsetX--;
-			break;
-		case Up:
-			offsetY--;
-			break;
-		case Down:
-			offsetY++;
-			break;
+		if (direc != null && (!(offsetX == 0 & offsetY == 0) || can_Move(X, Y, direc))) {
+			switch (direc) {
+			case Right:
+				offsetX++;
+				break;
+			case Left:
+				offsetX--;
+				break;
+			case Up:
+				offsetY--;
+				break;
+			case Down:
+				offsetY++;
+				break;
+			}
 		}
 		if (offsetX == 0 & offsetY == 0) {
 			direc = next_direc;
@@ -60,10 +61,12 @@ public abstract class Pacman extends MyEntity implements Visited {
 		case 13:
 			offsetX = -12;
 			X++;
+			board.I_just_Moved(this);
 			break;
 		case -13:
 			offsetX = 12;
 			X--;
+			board.I_just_Moved(this);
 			break;
 		}
 
@@ -71,10 +74,12 @@ public abstract class Pacman extends MyEntity implements Visited {
 		case 13:
 			offsetY = -12;
 			Y++;
+			board.I_just_Moved(this);
 			break;
 		case -13:
 			offsetY = 12;
 			Y--;
+			board.I_just_Moved(this);
 			break;
 		}
 
@@ -101,4 +106,8 @@ public abstract class Pacman extends MyEntity implements Visited {
 			return cur;
 		}
 	}
+	
+	
+
+	public abstract void accept(Visitor entity);
 }
