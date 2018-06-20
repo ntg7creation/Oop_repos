@@ -26,11 +26,10 @@ public abstract class MyEntity implements Timer_Listener {
 	protected int offsetX;
 	protected int offsetY;
 	protected Image[] sprites;
-	private int spriteIdx;
 	protected Board_action_Listener board;
 
 	public MyEntity() {
-		spriteIdx = 0;
+
 	}
 
 	public abstract int get_id();
@@ -77,7 +76,7 @@ public abstract class MyEntity implements Timer_Listener {
 		return preY;
 	}
 
-	private Image getCurrentSprite() {
+	protected Image getCurrentSprite() {
 		if (sprites == null) {
 			return null;
 		} else {

@@ -1,5 +1,6 @@
 package assiment4.entitys.Pacmans;
 
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -9,9 +10,13 @@ import assiment4.logic.Visited;
 
 public abstract class Pacman extends MyEntity implements Visited, KeyListener {
 
-
+    private int spriteIdx;
 	protected final int id = 4;
-	
+
+	public Pacman() {
+	    spriteIdx = 0;
+    }
+
 	@Override
 	public void keyPressed(KeyEvent e) {
 		
@@ -93,5 +98,21 @@ public abstract class Pacman extends MyEntity implements Visited, KeyListener {
 	public int get_id() {
 		// TODO Auto-generated method stub
 		return 4;
+	}
+
+	@Override
+	protected Image getCurrentSprite() {
+        if (sprites == null) {
+            return null;
+        } else {
+            int spriteDirIdx = 0;
+            if (direc != null) {
+                spriteDirIdx = direc.getSpriteindex();
+            }
+
+            Image cur = sprites[spriteDirIdx + spriteIdx];
+			spriteIdx = (spriteIdx + 1) % 2;
+            return cur;
+        }
 	}
 }
