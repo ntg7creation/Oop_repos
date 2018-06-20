@@ -19,6 +19,8 @@ public class Ghost_Red extends Ghost {
 	@Override
 	public void action() {
 		move();
+		move();
+		move();
 	}
 	
 	@Override

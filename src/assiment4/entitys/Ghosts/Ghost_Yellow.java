@@ -9,6 +9,7 @@ import assiment4.entitys.Pacmans.Pacman_Yellow;
 public class Ghost_Yellow extends Ghost {
 
 	private final int id = 16;
+	private int ticks = 0;
 
 	public Ghost_Yellow() {
 		sprites = ImageLoader.getInstance().getYellowGhost();
@@ -16,14 +17,15 @@ public class Ghost_Yellow extends Ghost {
 			System.out.println("Error while loading ghost_yellow sprite");
 		}
 	}
-	
+
 	@Override
 	public void action() {
 
+		move();
+		if (ticks++ % 2 == 0)
+		{
 			move();
-			move();
-			move();
-
+		}
 	}
 
 	@Override
@@ -53,7 +55,7 @@ public class Ghost_Yellow extends Ghost {
 	@Override
 	public void Visit(Pacman p) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

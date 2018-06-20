@@ -35,22 +35,22 @@ public abstract class Pacman extends MyEntity implements Visited {
 
 	protected void move() {
 
-		if (direc == null) {
-		}
 
-		switch (direc) {
-		case Right:
-			offsetX++;
-			break;
-		case Left:
-			offsetX--;
-			break;
-		case Up:
-			offsetY--;
-			break;
-		case Down:
-			offsetY++;
-			break;
+		if (direc != null && (!(offsetX == 0 & offsetY == 0) || can_Move(X, Y, direc))) {
+			switch (direc) {
+			case Right:
+				offsetX++;
+				break;
+			case Left:
+				offsetX--;
+				break;
+			case Up:
+				offsetY--;
+				break;
+			case Down:
+				offsetY++;
+				break;
+			}
 		}
 		if (offsetX == 0 & offsetY == 0) {
 			direc = next_direc;

@@ -35,37 +35,38 @@ public abstract class Ghost extends MyEntity implements Visitor {
 				offsetY++;
 				break;
 			}
-
-			switch (offsetX) {
-			case 13:
-				offsetX = -12;
-				preX = X;
-				X++;
-				board.I_just_Moved(this);
-				break;
-			case -13:
-				offsetX = 12;
-				preX = X;
-				X--;
-				board.I_just_Moved(this);
-				break;
-			}
-
-			switch (offsetY) {
-			case 13:
-				offsetY = -12;
-				preY = Y;
-				Y++;
-				board.I_just_Moved(this);
-				break;
-			case -13:
-				offsetY = 12;
-				preY = Y;
-				Y--;
-				board.I_just_Moved(this);
-				break;
-			}
 		}
+
+		switch (offsetX) {
+		case 13:
+			offsetX = -12;
+			preX = X;
+			X++;
+			board.I_just_Moved(this);
+			break;
+		case -13:
+			offsetX = 12;
+			preX = X;
+			X--;
+			board.I_just_Moved(this);
+			break;
+		}
+
+		switch (offsetY) {
+		case 13:
+			offsetY = -12;
+			preY = Y;
+			Y++;
+			board.I_just_Moved(this);
+			break;
+		case -13:
+			offsetY = 12;
+			preY = Y;
+			Y--;
+			board.I_just_Moved(this);
+			break;
+		}
+
 	}
 
 	// test
