@@ -3,6 +3,7 @@ package assiment4.logic;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
 import assiment4.entitys.MyEntity;
@@ -238,4 +239,23 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		}
 	}
 
+	public void user_input(KeyEvent e)
+	{
+		int keyCode = e.getKeyCode();
+
+		switch (keyCode) {
+		case KeyEvent.VK_UP:
+			pacMan.change_direction(Moving_Direction.Up);
+			break;
+		case KeyEvent.VK_DOWN:
+			pacMan.change_direction(Moving_Direction.Down);
+			break;
+		case KeyEvent.VK_LEFT:
+			pacMan.change_direction(Moving_Direction.Left);
+			break;
+		case KeyEvent.VK_RIGHT:
+			pacMan.change_direction(Moving_Direction.Right);
+			break;
+		}
+	}
 }

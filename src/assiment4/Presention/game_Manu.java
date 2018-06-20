@@ -2,12 +2,15 @@ package assiment4.Presention;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import assiment4.logic.Board;
+import assiment4.logic.Moving_Direction;
 import assiment4.logic.Timer_Listener;
 import assiment4.logic.myTimer;
 
-public class game_Manu extends Custom_Frame implements Timer_Listener {
+public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListener {
 
 	// private Image Board;
 	private Board gameBoard;
@@ -25,7 +28,12 @@ public class game_Manu extends Custom_Frame implements Timer_Listener {
 		repaint();
 		myTimer T = new myTimer();
 		T.addTimerListener(this);
+		this.setFocusable(true);
 		gameBoard.start(T);
+		pack();
+		this.setFocusable(true);
+		this.requestFocusInWindow();
+		addKeyListener(this);
 	}
 
 	public void paint(Graphics g) {
@@ -42,5 +50,30 @@ public class game_Manu extends Custom_Frame implements Timer_Listener {
 	@Override
 	public void action() {
 		repaint();
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+
+		System.out.println("prees a key");
+
+		gameBoard.user_input(e);
+
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+
+		System.out.println("prees a key");
+
+		gameBoard.user_input(e);
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+
+		System.out.println("prees a key");
+
+		gameBoard.user_input(e);
 	}
 }

@@ -14,11 +14,7 @@ public class Pacman_Yellow extends Pacman {
 		}
 	}
 	
-	@Override
-	public void action() {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 	@Override
 	public void accept(Visitor V) {
