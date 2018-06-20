@@ -5,7 +5,6 @@ import assiment4.logic.Visitor;
 
 public class Pacman_Blue extends Pacman {
 
-
 	public Pacman_Blue() {
 		sprites = ImageLoader.getInstance().getBluePacman();
 		if (sprites == null) {
@@ -13,10 +12,11 @@ public class Pacman_Blue extends Pacman {
 		}
 	}
 
-
 	@Override
 	public void accept(Visitor V) {
 		V.Visit(this);
 	}
+
+
 
 }

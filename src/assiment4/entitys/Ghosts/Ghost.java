@@ -11,7 +11,8 @@ import assiment4.logic.Visitor;
 public abstract class Ghost extends MyEntity implements Visitor {
 
 	protected Stack<Moving_Direction> path;
-
+	
+	
 	static public Stack<Moving_Direction> DSF_to(int X, int Y, Board board) {
 		return null;
 	}
@@ -44,12 +45,14 @@ public abstract class Ghost extends MyEntity implements Visitor {
 		case 13:
 			offsetX = -12;
 			preX = X;
+			preY = Y;
 			X++;
 			board.I_just_Moved(this);
 			break;
 		case -13:
 			offsetX = 12;
 			preX = X;
+			preY = Y;
 			X--;
 			board.I_just_Moved(this);
 			break;
@@ -58,12 +61,14 @@ public abstract class Ghost extends MyEntity implements Visitor {
 		switch (offsetY) {
 		case 13:
 			offsetY = -12;
+			preX = X;
 			preY = Y;
 			Y++;
 			board.I_just_Moved(this);
 			break;
 		case -13:
 			offsetY = 12;
+			preX = X;
 			preY = Y;
 			Y--;
 			board.I_just_Moved(this);

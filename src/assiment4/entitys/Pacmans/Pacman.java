@@ -27,15 +27,17 @@ public abstract class Pacman extends MyEntity implements Visited {
 
 	@Override
 	public void action() {
-		move();
-		move();
-		move();
-		move();
+		if (dealyTime >= 0) {
+			move();
+			move();
+			move();
+			move();
+		} else
+			dealyTime++;
 
 	}
 
 	protected void move() {
-
 
 		if (direc != null && (!(offsetX == 0 & offsetY == 0) || can_Move(X, Y, direc))) {
 			switch (direc) {
@@ -60,11 +62,15 @@ public abstract class Pacman extends MyEntity implements Visited {
 		switch (offsetX) {
 		case 13:
 			offsetX = -12;
+			preX = X;
+			preY = Y;
 			X++;
 			board.I_just_Moved(this);
 			break;
 		case -13:
 			offsetX = 12;
+			preX = X;
+			preY = Y;
 			X--;
 			board.I_just_Moved(this);
 			break;
@@ -73,11 +79,15 @@ public abstract class Pacman extends MyEntity implements Visited {
 		switch (offsetY) {
 		case 13:
 			offsetY = -12;
+			preX = X;
+			preY = Y;
 			Y++;
 			board.I_just_Moved(this);
 			break;
 		case -13:
 			offsetY = 12;
+			preX = X;
+			preY = Y;
 			Y--;
 			board.I_just_Moved(this);
 			break;
@@ -106,8 +116,10 @@ public abstract class Pacman extends MyEntity implements Visited {
 			return cur;
 		}
 	}
-	
-	
 
+	public void set_delay(int i) {
+		dealyTime = -i * 25;
+	}
+	
 	public abstract void accept(Visitor entity);
 }

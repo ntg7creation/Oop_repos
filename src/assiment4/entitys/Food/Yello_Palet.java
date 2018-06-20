@@ -8,27 +8,25 @@ import assiment4.entitys.Pacmans.Pacman_Yellow;
 
 public class Yello_Palet extends Food {
 
+	
 	public Yello_Palet() {
 		sprites = ImageLoader.getInstance().getYellowPalet();
 		if (sprites == null) {
 			System.out.println("Error while loading yellow-palet sprite");
 		}
 		points = 10;
+		id = 2;
 	}
 
-	
-
-
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return "Yello";
 	}
 
 	@Override
 	public void action() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

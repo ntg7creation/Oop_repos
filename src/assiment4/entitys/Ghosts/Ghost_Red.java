@@ -25,20 +25,17 @@ public class Ghost_Red extends Ghost {
 	
 	@Override
 	public void Visit(Pacman_Blue p) {
-		// TODO Auto-generated method stub
-		
+		board.Death();
 	}
 
 	@Override
 	public void Visit(Pacman_Yellow p) {
-		// TODO Auto-generated method stub
-		
+		board.Death();
 	}
 
 	@Override
 	public void Visit(Pacman_Red p) {
-		// TODO Auto-generated method stub
-		
+		board.Death();
 	}
 
 	@Override

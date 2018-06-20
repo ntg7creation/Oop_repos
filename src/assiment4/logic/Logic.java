@@ -3,7 +3,7 @@ package assiment4.logic;
 import assiment4.Storage.csv_Reader;
 import assiment4.entitys.Pacmans.Pacman;
 
-public class Logic {
+public class Logic implements Logic_Listener {
 
 	private Board board1;
 	private Board board2;
@@ -17,15 +17,15 @@ public class Logic {
 	final private String path4 = "";
 	final private String path5 = "";
 
-	private int level;
-	private int score;
-	private int lifes;
+	private int level = 1;
+	private int score = 0;
+	private int lifes = 3;
 
 	private Pacman[] pacmans;
 
 	public Logic() {
-		int[][] b1 = csv_Reader.Load_Board(System.getProperty("user.dir") +"\\"+ path1);
-		board1 = new Board(b1);
+		int[][] b1 = csv_Reader.Load_Board(System.getProperty("user.dir") + "\\" + path1);
+		board1 = new Board(b1, this);
 		currentBoard = board1;
 	}
 
@@ -47,6 +47,17 @@ public class Logic {
 
 	public Board get_Current_Board() {
 		return currentBoard;
+	}
+
+	@Override
+	public void Death() {
+		lifes--;
+	}
+
+	@Override
+	public void mapEnd(int score) {
+		this.score += score;
+
 	}
 
 }

@@ -36,16 +36,16 @@ public class Board implements Timer_Listener, Board_action_Listener {
 	private Ghost_Yellow Clyde;
 	private Food[] food;
 	private int score = 0;
-
+	private Logic_Listener logic;
 	private int[][] board;
 
 	// its is better to keep the yello palets in here cus they are static and we
 	// have a lot of them
 	private Yello_Palet[][] yello_Palets;
 
-	public Board(int[][] csv) {
-
-		board = csv;
+	public Board(int[][] board, Logic_Listener logic) {
+		this.logic = logic;
+		this.board = board;
 
 		yello_Palets = new Yello_Palet[32][];
 		for (int y = 0; y < yello_Palets.length; y++) {
@@ -56,8 +56,8 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		Graphics offGr;
 
 		for (int y = 0; y < board.length; y++) {
-			for (int x = 0; x < board[y].length; x++) {
-				switch (board[y][x]) {
+			for (int x = 0; x < this.board[y].length; x++) {
+				switch (this.board[y][x]) {
 				case 0:
 
 					break;
@@ -165,11 +165,12 @@ public class Board implements Timer_Listener, Board_action_Listener {
 
 	// return 10 if there is a palet at x y else return 0
 	@Override
-	public void eat_food_at(int x, int y, int value) {
-		if (yello_Palets[y][x] != null) {
-			yello_Palets[y][x] = null;
-			score += value;
-			System.out.println(score);
+	public void eat_food_at(Food food) {
+		if (yello_Palets[food.get_Y()][food.get_preX()] != null) {
+			yello_Palets[food.get_Y()][food.get_preX()] = null;
+			score += food.get_points();
+			board[food.get_Y()][food.get_preX()] -= food.get_id();
+			// System.out.println(score);
 			draw_yello_Plaets();
 		}
 	}
@@ -215,19 +216,29 @@ public class Board implements Timer_Listener, Board_action_Listener {
 
 	@Override
 	public void I_just_Moved(MyEntity entity) {
-		board[entity.get_preY()][entity.get_preX()] -= entity.get_id();
-		board[entity.get_Y()][entity.get_X()] += entity.get_id();
+		entity_move(entity);
+
 		// System.out.println(entity.toString() + " moved to space " + entity.get_X() +
 		// "," + entity.get_Y());
-		if (entity instanceof Visitor && (board[entity.get_Y()][entity.get_X()] & pacMan.get_id()) == pacMan.get_id())
+		if(entity instanceof Ghost_Green)
+		{
+			System.out.println("inky moved");
+		}
+		
+		if (entity instanceof Visitor && (board[entity.get_Y()][entity.get_X()] & pacMan.get_id()) == pacMan.get_id()) {
+			System.out.println(entity.get_preX() + "," + entity.get_preY() + " Inky");
+			System.out.println("-------------");
 			pacMan.accept((Visitor) entity);
+
+		}
 		if (entity instanceof Pacman) {
+			System.out.println(entity.get_preX() + "," + entity.get_preY() + " pacman");
+			System.out.println("-------------");
 			// System.out.println("pacman");
 			Pacman p = (Pacman) entity;
 			int itemshere = board[entity.get_Y()][entity.get_X()];
 			if ((itemshere & 2) == 2)
 				if (yello_Palets[p.get_Y()][p.get_X()] != null) {
-					System.out.println("ready to eat");
 					pacMan.accept(yello_Palets[p.get_Y()][p.get_X()]);
 				}
 			if ((itemshere & 8) == 8)
@@ -262,5 +273,24 @@ public class Board implements Timer_Listener, Board_action_Listener {
 			pacMan.change_direction(Moving_Direction.Right);
 			break;
 		}
+	}
+
+	private void entity_move(MyEntity entity) {
+		board[entity.get_preY()][entity.get_preX()] -= entity.get_id();
+		board[entity.get_Y()][entity.get_X()] += entity.get_id();
+	}
+
+	@Override
+	public void Death() {
+		pacMan.reSet();
+		Blinky.reSet();
+		Clyde.reSet();
+		Inky.reSet();
+		logic.Death();
+		entity_move(pacMan);
+		entity_move(Blinky);
+		entity_move(Clyde);
+		entity_move(Inky);
+
 	}
 }

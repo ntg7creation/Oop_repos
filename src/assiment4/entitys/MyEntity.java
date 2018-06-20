@@ -18,11 +18,14 @@ public abstract class MyEntity implements Timer_Listener {
 	private final int pixelOfCell = 25;
 	protected Moving_Direction direc = null;
 	final protected int TPS = 25;
+	protected int dealyTime = 0;
 	protected int count_Ticks;
 	protected int X;
 	protected int Y;
 	protected int preX;
 	protected int preY;
+	protected int startX;
+	protected int startY;
 	protected int offsetX;
 	protected int offsetY;
 	protected Image[] sprites;
@@ -105,8 +108,20 @@ public abstract class MyEntity implements Timer_Listener {
 		Y = y;
 		preX = X;
 		preY = Y;
+		startX = X;
+		startY = Y;
 	}
 
+	public void reSet()
+	{
+		preX = X;
+		preY = Y;		
+		X = startX;
+		Y = startY;
+		offsetX = 0;
+		offsetY = 0;
+	}
+	
 //	protected void setOffsetX(int offsetX) {
 //		this.offsetX = offsetX;
 //	}

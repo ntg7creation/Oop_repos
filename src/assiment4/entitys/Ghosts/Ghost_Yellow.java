@@ -21,29 +21,28 @@ public class Ghost_Yellow extends Ghost {
 	@Override
 	public void action() {
 
-		move();
-		if (ticks++ % 2 == 0)
-		{
+		if (dealyTime >= 0) {
 			move();
-		}
+			if (ticks++ % 2 == 0) {
+				move();
+			}
+		} else
+			dealyTime++;
 	}
 
 	@Override
 	public void Visit(Pacman_Blue p) {
-		// TODO Auto-generated method stub
-
+		p.set_delay(3);
 	}
 
 	@Override
 	public void Visit(Pacman_Yellow p) {
-		// TODO Auto-generated method stub
-
+		board.Death();
 	}
 
 	@Override
 	public void Visit(Pacman_Red p) {
-		// TODO Auto-generated method stub
-
+		dealyTime = -5 * 25;
 	}
 
 	@Override
@@ -52,5 +51,4 @@ public class Ghost_Yellow extends Ghost {
 		return 16;
 	}
 
-	
 }

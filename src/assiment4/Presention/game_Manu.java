@@ -18,7 +18,7 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 	private Logic logic;
 	// private Board gameBoard;
 	final private int window_offset = 30;
-//merge
+	
 	public game_Manu() {
 		super(800, 700, 1, 1);
 		int[][] tempcsv = new int[][] { { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 1 },
