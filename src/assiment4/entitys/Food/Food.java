@@ -9,38 +9,31 @@ import assiment4.logic.Visitor;
 
 public abstract class Food extends MyEntity implements Visitor {
 
-
 	protected final int id = 256;
-	
+	protected int points = 0;
 	public int eat_me;
-	
-	
+
 	@Override
 	public void Visit(Pacman_Blue p) {
-		// TODO Auto-generated method stub
-		
+		board.eat_food_at(X, Y, points);
 	}
 
 	@Override
 	public void Visit(Pacman_Yellow p) {
-		// TODO Auto-generated method stub
-		
+		System.out.println(X + "  " + Y);
+		board.eat_food_at(X, Y, points);
 	}
 
 	@Override
 	public void Visit(Pacman_Red p) {
-		// TODO Auto-generated method stub
-		
+		board.eat_food_at(X, Y, points);
 	}
 
+	//
+	// @Override
+	// public void Visit(Pacman p) {
+	// }
 
-
-	@Override
-	public void Visit(Pacman p) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	@Override
 	public int get_id() {
 		// TODO Auto-generated method stub

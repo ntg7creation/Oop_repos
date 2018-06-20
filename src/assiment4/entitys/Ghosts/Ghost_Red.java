@@ -47,10 +47,5 @@ public class Ghost_Red extends Ghost {
 		return id;
 	}
 
-	@Override
-	public void Visit(Pacman p) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 }

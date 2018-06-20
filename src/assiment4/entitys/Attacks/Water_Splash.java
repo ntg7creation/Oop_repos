@@ -47,10 +47,5 @@ public class Water_Splash extends Attack {
 		return id;
 	}
 
-	@Override
-	public void Visit(Pacman p) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 }

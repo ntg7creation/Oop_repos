@@ -7,6 +7,7 @@ import java.awt.event.KeyListener;
 import assiment4.entitys.MyEntity;
 import assiment4.logic.Moving_Direction;
 import assiment4.logic.Visited;
+import assiment4.logic.Visitor;
 
 public abstract class Pacman extends MyEntity implements Visited {
 
@@ -105,4 +106,8 @@ public abstract class Pacman extends MyEntity implements Visited {
 			return cur;
 		}
 	}
+	
+	
+
+	public abstract void accept(Visitor entity);
 }

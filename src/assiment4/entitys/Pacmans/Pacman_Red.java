@@ -15,8 +15,7 @@ public class Pacman_Red extends Pacman {
 	
 	@Override
 	public void accept(Visitor V) {
-		// TODO Auto-generated method stub
-
+		V.Visit(this);
 	}
 
 

@@ -39,10 +39,5 @@ public class Pineapple extends Food {
 		
 	}
 
-	@Override
-	public void Visit(Pacman p) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

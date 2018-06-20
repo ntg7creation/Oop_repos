@@ -13,6 +13,7 @@ public class Yello_Palet extends Food {
 		if (sprites == null) {
 			System.out.println("Error while loading yellow-palet sprite");
 		}
+		points = 10;
 	}
 
 	
@@ -20,9 +21,12 @@ public class Yello_Palet extends Food {
 	@Override
 	public void action() {
 		// TODO Auto-generated method stub
-		
 	}
 
-
+	@Override
+	public String toString()
+	{
+		return "Yello";
+	}
 
 }

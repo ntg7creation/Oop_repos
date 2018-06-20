@@ -49,10 +49,6 @@ public class Fire_Ball extends Attack {
 		return id;
 	}
 
-	@Override
-	public void Visit(Pacman p) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }

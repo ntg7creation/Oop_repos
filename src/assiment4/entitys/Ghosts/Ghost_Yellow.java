@@ -52,10 +52,5 @@ public class Ghost_Yellow extends Ghost {
 		return 16;
 	}
 
-	@Override
-	public void Visit(Pacman p) {
-		// TODO Auto-generated method stub
-
-	}
-
+	
 }
