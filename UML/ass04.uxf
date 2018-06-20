@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>242</x>
+      <y>77</y>
+      <w>407</w>
+      <h>528</h>
+    </coordinates>
+    <panel_attributes>/MyEntity/
+--
+-pixelOfCell = 25: int
+#direc = null: Moving_Direction
+#TPS = 25: int
+#count_Ticks: int
+#X: int
+#Y: int
+#preX: int
+#preY: int
+#offsetX: int
+#offsetY: int
+#sprites: Image[]
+#board: Board_action_Listener
+--
++MyEntity(): ctor
++get_id(): int
++add_Board_Listener(Board_action_Listener board): void
+#can_Move(int x, int y, Moving_Direction dirc): Boolean
++draw(Graphics g): void
++get_X(): int
++get_Y(): int
++get_preX(): int
++get_preY(): int
+#getCurrentSprite(): Image
+#getOffsetX(): int
+#getOffsetY(): int
++set_start(int x, int y): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>704</x>
+      <y>66</y>
+      <w>275</w>
+      <h>231</h>
+    </coordinates>
+    <panel_attributes>/Pacman/
+--
+-spriteIdx: int
+#id = 4: int
+--
++Pacman(): ctor
++keyPressed(KeyEvent e): void
++keyReleased(KeyEvent arg0): void
++keyTyped(KeyEvent arg0): void
+#move(): void
++get_id(): int
+#getCurrentSprite(): Image
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>737</x>
+      <y>374</y>
+      <w>429</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>/Ghost/
+--
+#path: Stack&lt;Moving_Direction&gt;
+--
++DSF_to(int X, int Y, Board board): Stack&lt;Moving_Direction&gt;
+#move(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>759</x>
+      <y>539</y>
+      <w>231</w>
+      <h>187</h>
+    </coordinates>
+    <panel_attributes>/Food/
+--
+#id = 256: int
++eat_me: int
+--
++Visit(Pacman_Blue p): void
++Visit(Pacman_Yellow p): void
++Visit(Pacman_Red p): void
++Visit(Pacman p): void
++get_id(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>429</x>
+      <y>649</y>
+      <w>253</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>/Attack/
+--
+--
+#move(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>638</x>
+      <y>66</y>
+      <w>88</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>638</x>
+      <y>308</y>
+      <w>121</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>638</x>
+      <y>506</y>
+      <w>143</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>594</y>
+      <w>110</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1023</x>
+      <y>264</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Pacman Impl..
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>825</y>
+      <w>418</w>
+      <h>242</h>
+    </coordinates>
+    <panel_attributes>ImageLoader &lt;&lt;Singleton&gt;&gt;
+--
+-pixelOfCell = 25: int
+- for every entity : Image[]
+-path = "res/Images/": String
+-instance = null: ImageLoader
+--
+-ImageLoader(): ctor
+-generateSprite(String imagePath): Image[]
+-generateSprite(String folderPath, int numOfPics): Image[]
+-loadImage(String imagePath): Image
+-resize(BufferedImage img, int newW, int newH): Image
++getInstance(): ImageLoader
++getters for every field: Image[]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1012</x>
+      <y>275</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1001</x>
+      <y>286</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>308</x>
+      <y>770</y>
+      <w>451</w>
+      <h>385</h>
+    </coordinates>
+    <panel_attributes>Storage
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>968</x>
+      <y>198</y>
+      <w>77</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1045</x>
+      <y>550</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Ghost Impl..
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1034</x>
+      <y>561</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1023</x>
+      <y>572</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>990</x>
+      <y>484</y>
+      <w>77</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1034</x>
+      <y>638</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Food Impl..
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1023</x>
+      <y>649</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1012</x>
+      <y>660</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>979</x>
+      <y>572</y>
+      <w>77</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>264</x>
+      <y>660</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Attack Impl..
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>253</x>
+      <y>671</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>242</x>
+      <y>682</y>
+      <w>110</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>363</x>
+      <y>649</y>
+      <w>88</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>176</x>
+      <y>22</y>
+      <w>1023</w>
+      <h>726</h>
+    </coordinates>
+    <panel_attributes>Entities
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
