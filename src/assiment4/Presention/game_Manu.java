@@ -6,13 +6,15 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import assiment4.logic.Board;
+import assiment4.logic.Logic;
 import assiment4.logic.Timer_Listener;
 import assiment4.logic.myTimer;
 
 public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListener {
 
 	// private Image Board;
-	private Board gameBoard;
+	private Logic logic;
+//	private Board gameBoard;
 	final private int window_offset = 30;
 
 	public game_Manu() {
@@ -30,12 +32,15 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 				{ 1, 2, 32, 2, 2, 2, 2, 2, 2, 2, 2, 1},
 				{ 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1 }, 
 				{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, };
-		gameBoard = new Board(tempcsv); // will change with csv
+		//gameBoard = new Board(tempcsv); // will change with csv
 		repaint();
 		myTimer T = new myTimer();
 		T.addTimerListener(this);
 		this.setFocusable(true);
-		gameBoard.start(T);
+		logic = new Logic();
+		Board temp = logic.get_Current_Board();
+		temp.start(T);
+		//gameBoard.start(T);
 
 		pack();
 		this.setFocusable(true);
@@ -46,7 +51,7 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 	public void paint(Graphics g) {
 		// super.paint(g);
 
-		Image offIm = gameBoard.get_Board_image();
+		Image offIm = logic.get_Current_Board().get_Board_image();
 
 		g.drawImage(offIm, 0, window_offset, null);
 	}
@@ -62,7 +67,7 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		gameBoard.user_input(e);
+		logic.get_Current_Board().user_input(e);
 
 	}
 
