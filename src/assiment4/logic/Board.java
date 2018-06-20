@@ -20,7 +20,7 @@ public class Board implements Timer_Listener, Board_action_Listener {
 
 	final private int block_size = 25;
 
-	private Image final_Board;
+	private BufferedImage final_Board;
 	// this will be made 1 time and not change
 	private Image board_walls;
 	// this will change each time we eat a Yello_Palet
@@ -194,7 +194,7 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		return (board[y][x] & 1) == 1;
 	}
 
-	public Image get_Board_image() {
+	public BufferedImage get_Board_image() {
 		return final_Board;
 	}
 

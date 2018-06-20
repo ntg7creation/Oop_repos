@@ -1,9 +1,11 @@
 package assiment4.Presention;
 
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
 
 import assiment4.logic.Board;
 import assiment4.logic.Logic;
@@ -14,25 +16,18 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 
 	// private Image Board;
 	private Logic logic;
-//	private Board gameBoard;
+	// private Board gameBoard;
 	final private int window_offset = 30;
 
 	public game_Manu() {
-		super(800, 800, 1, 1);
-		int[][] tempcsv = new int[][] { 
-				{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-				{ 1, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 1 },
-				{ 1, 1, 2, 2, 2, 16, 2, 2, 2, 1, 2, 1}, 
-				{ 1, 2, 4, 2, 2, 1, 2, 2, 2, 2, 2, 1 },
-				{ 1, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 1 }, 
-				{ 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 1, 1 },
-				{ 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1 }, 
-				{ 1, 1, 2, 2, 1, 2, 2, 2, 1, 2, 2, 1 },
-				{ 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1 }, 
-				{ 1, 2, 32, 2, 2, 2, 2, 2, 2, 2, 2, 1},
-				{ 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1 }, 
-				{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, };
-		//gameBoard = new Board(tempcsv); // will change with csv
+		super(800, 700, 1, 1);
+		int[][] tempcsv = new int[][] { { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 1 },
+				{ 1, 1, 2, 2, 2, 16, 2, 2, 2, 1, 2, 1 }, { 1, 2, 4, 2, 2, 1, 2, 2, 2, 2, 2, 1 },
+				{ 1, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 1 }, { 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 1, 1 },
+				{ 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1 }, { 1, 1, 2, 2, 1, 2, 2, 2, 1, 2, 2, 1 },
+				{ 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1 }, { 1, 2, 32, 2, 2, 2, 2, 2, 2, 2, 2, 1 },
+				{ 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1 }, { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, };
+		// gameBoard = new Board(tempcsv); // will change with csv
 		repaint();
 		myTimer T = new myTimer();
 		T.addTimerListener(this);
@@ -40,7 +35,7 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 		logic = new Logic();
 		Board temp = logic.get_Current_Board();
 		temp.start(T);
-		//gameBoard.start(T);
+		// gameBoard.start(T);
 
 		pack();
 		this.setFocusable(true);
@@ -51,9 +46,17 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 	public void paint(Graphics g) {
 		// super.paint(g);
 
-		Image offIm = logic.get_Current_Board().get_Board_image();
+		BufferedImage offIm = logic.get_Current_Board().get_Board_image();
 
-		g.drawImage(offIm, 0, window_offset, null);
+		// creates output image
+		BufferedImage outputImage = new BufferedImage(700, 700, offIm.getType());
+
+		// scales the input image to the output image
+		Graphics2D g2d = outputImage.createGraphics();
+		g2d.drawImage(offIm, 0, 0, 700, 700, null);
+		g2d.dispose();
+
+		g.drawImage(outputImage, 0, window_offset, null);
 	}
 
 	public static void main(String[] arg) {
