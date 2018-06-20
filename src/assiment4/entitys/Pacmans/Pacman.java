@@ -96,7 +96,7 @@ public abstract class Pacman extends MyEntity implements Visited {
 				spriteDirIdx = direc.getSpriteindex();
 			}
 
-			Image cur = sprites[spriteDirIdx + spriteIdx];
+			Image cur = sprites[(spriteDirIdx * 2) + spriteIdx];
 			spriteIdx = (spriteIdx + 1) % 2;
 			return cur;
 		}
