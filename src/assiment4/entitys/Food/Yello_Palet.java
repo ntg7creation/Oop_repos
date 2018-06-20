@@ -17,16 +17,18 @@ public class Yello_Palet extends Food {
 	}
 
 	
-	
-	@Override
-	public void action() {
-		// TODO Auto-generated method stub
-	}
+
 
 	@Override
 	public String toString()
 	{
 		return "Yello";
+	}
+
+	@Override
+	public void action() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
