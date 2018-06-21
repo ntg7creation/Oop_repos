@@ -12,6 +12,7 @@ import java.awt.image.BufferedImage;
 import java.util.Random;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 import assiment4.logic.Board;
 import assiment4.logic.Logic;
@@ -22,6 +23,8 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 
 	// private Image Board;
 	private Logic logic;
+	private int score = 0;
+	//private JLabel Jscore;
 	// private Board gameBoard;
 	final private int window_offset = 30;
 
@@ -46,16 +49,16 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 	}
 
 	public void paint(Graphics g) {
-		// super.paint(g);
+		//super.paint(g);
 
 		if (logic.get_Current_Board() == null) {
 			System.out.println();
 		}
+
 		BufferedImage offIm = logic.get_Current_Board().get_Board_image();
 
 		// creates output image
 		BufferedImage outputImage = new BufferedImage(700, 700, offIm.getType());
-
 		// scales the input image to the output image
 		Graphics2D g2d = outputImage.createGraphics();
 		g2d.drawImage(offIm, 0, 0, 700, 700, null);
@@ -70,6 +73,7 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 
 	@Override
 	public void action() {
+		score = logic.getScore();
 		repaint();
 	}
 
@@ -86,6 +90,7 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 		speed1.setFocusable(false);
 		speed1.setVisible(true);
 
+
 		JButton speed2 = new JButton();
 		Creat_Button_at(speed2, "X2", 7, 1);
 		speed2.addActionListener(new ActionListener() {
@@ -99,7 +104,7 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 		speed2.setVisible(true);
 
 		JButton speed3 = new JButton();
-		Creat_Button_at(speed3, "X3", 7, 2);
+		//Creat_Button_at(speed3, "X3", 7, 2);
 		speed3.addActionListener(new ActionListener() {
 
 			@Override
@@ -109,6 +114,11 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 		});
 		speed3.setFocusable(false);
 		speed3.setVisible(true);
+		//
+		// Jscore = new JLabel();
+		// Creat_Label_at(Jscore, "your score\n" + score, 7, 3);
+		// Jscore.setFocusable(false);
+		// Jscore.setVisible(true);
 
 	}
 
@@ -131,7 +141,7 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 	@Override
 	public void set_Component_Postion(Component com, int X, int Y) {
 		// com.setLocation(X - com.getWidth() / 2, Y - com.getHeight() / 2);
-		com.setLocation(X-5, Y);
+		com.setLocation(X - 5, Y);
 
 	}
 }

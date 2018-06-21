@@ -13,7 +13,7 @@ public class Logic implements Logic_Listener {
 	private Board currentBoard;
 	final private String path1 = "res\\Boards\\0.csv";
 	final private String path2 = "res\\Boards\\1.csv";
-	final private String path3 = "";
+	final private String path3 = "res\\Boards\\2.csv";
 	final private String path4 = "";
 	final private String path5 = "";
 
@@ -83,7 +83,7 @@ public class Logic implements Logic_Listener {
 	 * @return the score
 	 */
 	public int getScore() {
-		return score;
+		return score + currentBoard.get_score();
 	}
 
 	@Override

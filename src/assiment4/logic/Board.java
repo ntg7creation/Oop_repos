@@ -299,4 +299,8 @@ public class Board implements Timer_Listener, Board_action_Listener {
 	}
 	// -----------------------------
 
+	public int get_score() {
+		return score;
+	}
+
 }
