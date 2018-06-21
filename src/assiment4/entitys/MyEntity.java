@@ -19,7 +19,7 @@ public abstract class MyEntity implements Timer_Listener {
 	protected Moving_Direction direc = null;
 	final protected int TPS = 25;
 	protected int dealyTime = 0;
-	protected int count_Ticks;
+	protected int count_Ticks = 0;
 	protected int X;
 	protected int Y;
 	protected int preX;

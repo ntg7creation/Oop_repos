@@ -13,6 +13,7 @@ public class Energy_Palet extends Food {
 			System.out.println("Error while loading energy-palet sprite");
 		}
 		id = 2048;
+		points = 50;
 	}
 
 	@Override

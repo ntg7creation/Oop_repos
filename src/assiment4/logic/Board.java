@@ -7,6 +7,8 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
 import assiment4.entitys.MyEntity;
+import assiment4.entitys.Attacks.Fire_Ball;
+import assiment4.entitys.Attacks.Water_Splash;
 import assiment4.entitys.Food.Energy_Palet;
 import assiment4.entitys.Food.Food;
 import assiment4.entitys.Food.Yello_Palet;
@@ -42,6 +44,8 @@ public class Board implements Timer_Listener, Board_action_Listener {
 	// its is better to keep the yello palets in here cus they are static and we
 	// have a lot of them
 	private Food[][] Food;
+	private Fire_Ball my_fire;
+	private Water_Splash my_water;
 
 	public Board(int[][] board, Logic_Listener logic) {
 		this.logic = logic;
@@ -104,7 +108,6 @@ public class Board implements Timer_Listener, Board_action_Listener {
 				}
 			}
 		}
-		System.out.println(yello_Palets_Count);
 		draw_yello_Plaets();
 		draw_entitys();
 		final_Board = new BufferedImage(800, 800, BufferedImage.TYPE_INT_ARGB);
@@ -226,7 +229,6 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		if (Food[food.get_Y()][food.get_preX()] != null) {
 			Food[food.get_Y()][food.get_preX()] = null;
 			score += food.get_points();
-			System.out.println(food.get_id());
 			board[food.get_Y()][food.get_preX()] -= food.get_id();
 			if (food.get_id() == 2)
 				yello_Palets_Count--;

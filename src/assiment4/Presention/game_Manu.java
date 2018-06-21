@@ -22,7 +22,10 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 	// private Image Board;
 	private Logic logic;
 	private int score = 0;
-	private JLabel Jscore;
+	private JButton speed1;
+	private JButton speed2;
+	private JButton speed3;
+	private JButton Jscore;
 	// private Board gameBoard;
 	final private int window_offset = 30;
 	private Boolean first_paint = true;
@@ -30,7 +33,8 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 	public game_Manu() {
 		super(800, 700, 8, 6);
 
-		repaint();
+		creat_buttons();
+		//repaint();
 		myTimer T = myTimer.getInstance();
 		T.addTimerListenerImportent(this);
 		this.setFocusable(true);
@@ -44,17 +48,13 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 		this.setFocusable(true);
 		this.requestFocusInWindow();
 		addKeyListener(this);
-		creat_buttons();
+
 	}
 
 	public void paint(Graphics g) {
-		if (first_paint) {
-			super.paint(g);
-			first_paint = false;
-		}
-		if (logic.get_Current_Board() == null) {
-			System.out.println();
-		}
+
+		// super.paint(g);
+		Jscore.setText("score " + score);
 
 		BufferedImage offIm = logic.get_Current_Board().get_Board_image();
 
@@ -75,11 +75,12 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 	@Override
 	public void action() {
 		score = logic.getScore();
+		System.out.println(score);
 		repaint();
 	}
 
 	private void creat_buttons() {
-		JButton speed1 = new JButton();
+		 speed1 = new JButton();
 		Creat_Button_at(speed1, "X1", 7, 0);
 		speed1.addActionListener(new ActionListener() {
 
@@ -89,10 +90,10 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 				myTimer.getInstance().set_speed(1);
 			}
 		});
-		speed1.setFocusable(false);
-		speed1.setVisible(true);
+//		speed1.setFocusable(false);
+//		speed1.setVisible(true);
 
-		JButton speed2 = new JButton();
+		 speed2 = new JButton();
 		Creat_Button_at(speed2, "X2", 7, 1);
 		speed2.addActionListener(new ActionListener() {
 
@@ -101,10 +102,10 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 				myTimer.getInstance().set_speed(2);
 			}
 		});
-		speed2.setFocusable(false);
-		speed2.setVisible(true);
+//		speed2.setFocusable(false);
+//		speed2.setVisible(true);
 
-		JButton speed3 = new JButton();
+		 speed3 = new JButton();
 		Creat_Button_at(speed3, "X3", 7, 2);
 		speed3.addActionListener(new ActionListener() {
 
@@ -113,13 +114,13 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 				myTimer.getInstance().set_speed(3);
 			}
 		});
-		speed3.setFocusable(false);
-		speed3.setVisible(true);
-		//
-		// Jscore = new JLabel();
-		// Creat_Label_at(Jscore, "your score\n" + score, 7, 3);
-		// Jscore.setFocusable(false);
-		// Jscore.setVisible(true);
+//		speed3.setFocusable(false);
+//		speed3.setVisible(true);
+
+
+		Jscore = new JButton();
+		// Jscore = new JButton();
+		Creat_Button_at(Jscore, "score  " + score, 7, 3);
 
 	}
 
