@@ -18,24 +18,19 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 	private Logic logic;
 	// private Board gameBoard;
 	final private int window_offset = 30;
-	
+
 	public game_Manu() {
 		super(800, 700, 1, 1);
-		int[][] tempcsv = new int[][] { { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 1 },
-				{ 1, 1, 2, 2, 2, 16, 2, 2, 2, 1, 2, 1 }, { 1, 2, 4, 2, 2, 1, 2, 2, 2, 2, 2, 1 },
-				{ 1, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 1 }, { 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 1, 1 },
-				{ 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1 }, { 1, 1, 2, 2, 1, 2, 2, 2, 1, 2, 2, 1 },
-				{ 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1 }, { 1, 2, 32, 2, 2, 2, 2, 2, 2, 2, 2, 1 },
-				{ 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1 }, { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, };
-		// gameBoard = new Board(tempcsv); // will change with csv
+
 		repaint();
-		myTimer T = new myTimer();
+		myTimer T = myTimer.getInstance();
 		T.addTimerListener(this);
 		this.setFocusable(true);
 		logic = new Logic();
 		Board temp = logic.get_Current_Board();
-		temp.start(T);
-		// gameBoard.start(T);
+		T.set_speed(20);
+		if (temp != null)
+			temp.start(T);
 
 		pack();
 		this.setFocusable(true);
@@ -46,6 +41,10 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 	public void paint(Graphics g) {
 		// super.paint(g);
 
+		if(logic.get_Current_Board() == null)
+		{
+			System.out.println();
+		}
 		BufferedImage offIm = logic.get_Current_Board().get_Board_image();
 
 		// creates output image

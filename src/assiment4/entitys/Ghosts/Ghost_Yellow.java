@@ -1,7 +1,6 @@
 package assiment4.entitys.Ghosts;
 
 import assiment4.Storage.ImageLoader;
-import assiment4.entitys.Pacmans.Pacman;
 import assiment4.entitys.Pacmans.Pacman_Blue;
 import assiment4.entitys.Pacmans.Pacman_Red;
 import assiment4.entitys.Pacmans.Pacman_Yellow;
@@ -48,7 +47,7 @@ public class Ghost_Yellow extends Ghost {
 	@Override
 	public int get_id() {
 		// TODO Auto-generated method stub
-		return 16;
+		return id;
 	}
 
 }

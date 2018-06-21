@@ -28,7 +28,7 @@ public class Board implements Timer_Listener, Board_action_Listener {
 	// this will change each time pacman moves
 	private Image board_entity;
 
-	private int yello_Palets_Count;
+	private int yello_Palets_Count = 10;
 
 	private Pacman pacMan;
 	private Ghost_Green Inky;
@@ -38,15 +38,14 @@ public class Board implements Timer_Listener, Board_action_Listener {
 	private int score = 0;
 	private Logic_Listener logic;
 	private int[][] board;
-
+	private int tick_count = 0;
 	// its is better to keep the yello palets in here cus they are static and we
 	// have a lot of them
-	private Yello_Palet[][] yello_Palets;
+	private Food[][] yello_Palets;
 
 	public Board(int[][] board, Logic_Listener logic) {
 		this.logic = logic;
 		this.board = board;
-
 		yello_Palets = new Yello_Palet[32][];
 		for (int y = 0; y < yello_Palets.length; y++) {
 			yello_Palets[y] = new Yello_Palet[32];
@@ -70,6 +69,7 @@ public class Board implements Timer_Listener, Board_action_Listener {
 					yello_Palets[y][x] = new Yello_Palet();
 					yello_Palets[y][x].add_Board_Listener(this);
 					yello_Palets[y][x].set_start(x, y);
+					// yello_Palets_Count++;
 					break;
 				case 4:
 					pacMan = new Pacman_Yellow();
@@ -105,6 +105,7 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		draw_my_self();
 	}
 
+	// -------------- private functions
 	private void draw_my_self() {
 
 		Graphics offGr = final_Board.getGraphics();
@@ -153,35 +154,27 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		board_yello_Palets = new BufferedImage(800, 800, BufferedImage.TYPE_INT_ARGB);
 		Graphics offGr = board_yello_Palets.getGraphics();
 		offGr.setColor(Color.yellow);
-		for (int y = 0; y < yello_Palets.length; y++)
-			for (int x = 0; x < yello_Palets[y].length; x++)
-				if (yello_Palets[y][x] != null)
-					offGr.fillOval(x * block_size + 6, y * block_size + 6, 12, 12);
-	}
-
-	public int items_at(int x, int y) {
-		return 0;
-	}
-
-	// return 10 if there is a palet at x y else return 0
-	@Override
-	public void eat_food_at(Food food) {
-		if (yello_Palets[food.get_Y()][food.get_preX()] != null) {
-			yello_Palets[food.get_Y()][food.get_preX()] = null;
-			score += food.get_points();
-			board[food.get_Y()][food.get_preX()] -= food.get_id();
-			// System.out.println(score);
-			draw_yello_Plaets();
+		if (true) {// tick_count%(9*25) <= 8 * 25) {
+			for (int y = 0; y < yello_Palets.length; y++)
+				for (int x = 0; x < yello_Palets[y].length; x++)
+					if (yello_Palets[y][x] != null)
+						yello_Palets[y][x].draw(offGr);
 		}
 	}
 
+	private void entity_move(MyEntity entity) {
+		board[entity.get_preY()][entity.get_preX()] -= entity.get_id();
+		board[entity.get_Y()][entity.get_X()] += entity.get_id();
+	}
+
+	// ---------------------public functions
 	public void start(myTimer timer) {
 		timer.addTimerListener(pacMan);
 		timer.addTimerListener(Blinky);
 		timer.addTimerListener(Clyde);
 		timer.addTimerListener(Inky);
-		for (Yello_Palet[] array : yello_Palets) {
-			for (Yello_Palet yello_Palet : array) {
+		for (Food[] array : yello_Palets) {
+			for (Food yello_Palet : array) {
 				if (yello_Palet != null)
 					timer.addTimerListener(yello_Palet);
 			}
@@ -191,69 +184,8 @@ public class Board implements Timer_Listener, Board_action_Listener {
 
 	}
 
-	public Boolean is_wall_at(int x, int y) {
-		return (board[y][x] & 1) == 1;
-	}
-
 	public BufferedImage get_Board_image() {
 		return final_Board;
-	}
-
-	@Override
-	public void action() {
-		draw_yello_Plaets();
-		draw_entitys();
-		draw_my_self();
-
-	}
-
-	@Override
-	public Boolean is_wall(int x, int y) {
-		if (x < 0 || y < 0 || y >= board.length || x >= board[y].length)
-			return true;
-		return (board[y][x] & 1) == 1;
-	}
-
-	@Override
-	public void I_just_Moved(MyEntity entity) {
-		entity_move(entity);
-
-		// System.out.println(entity.toString() + " moved to space " + entity.get_X() +
-		// "," + entity.get_Y());
-		if(entity instanceof Ghost_Green)
-		{
-			System.out.println("inky moved");
-		}
-		
-		if (entity instanceof Visitor && (board[entity.get_Y()][entity.get_X()] & pacMan.get_id()) == pacMan.get_id()) {
-			System.out.println(entity.get_preX() + "," + entity.get_preY() + " Inky");
-			System.out.println("-------------");
-			pacMan.accept((Visitor) entity);
-
-		}
-		if (entity instanceof Pacman) {
-			System.out.println(entity.get_preX() + "," + entity.get_preY() + " pacman");
-			System.out.println("-------------");
-			// System.out.println("pacman");
-			Pacman p = (Pacman) entity;
-			int itemshere = board[entity.get_Y()][entity.get_X()];
-			if ((itemshere & 2) == 2)
-				if (yello_Palets[p.get_Y()][p.get_X()] != null) {
-					pacMan.accept(yello_Palets[p.get_Y()][p.get_X()]);
-				}
-			if ((itemshere & 8) == 8)
-				pacMan.accept(Inky);
-			if ((itemshere & 16) == 16)
-				pacMan.accept(Clyde);
-			if ((itemshere & 32) == 32)
-				pacMan.accept(Blinky);
-			if ((itemshere & 256) == 256) {
-				// eat food
-			}
-			if ((itemshere & 128) == 128 | (itemshere & 64) == 64) {
-				// eat food
-			}
-		}
 	}
 
 	public void user_input(KeyEvent e) {
@@ -275,9 +207,70 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		}
 	}
 
-	private void entity_move(MyEntity entity) {
-		board[entity.get_preY()][entity.get_preX()] -= entity.get_id();
-		board[entity.get_Y()][entity.get_X()] += entity.get_id();
+	// -----------------------------Listener functions
+	@Override
+	public Boolean is_wall(int x, int y) {
+		if (x < 0 || y < 0 || y >= board.length || x >= board[y].length)
+			return true;
+		return (board[y][x] & 1) == 1;
+	}
+
+	@Override
+	public void eat_food_at(Food food) {
+		if (yello_Palets[food.get_Y()][food.get_preX()] != null) {
+			yello_Palets[food.get_Y()][food.get_preX()] = null;
+			score += food.get_points();
+			board[food.get_Y()][food.get_preX()] -= food.get_id();
+			if (food.get_id() == 2)
+				yello_Palets_Count--;
+
+		}
+	}
+
+	@Override
+	public void action() {
+		if (yello_Palets_Count > 0) {
+			tick_count++;
+			draw_yello_Plaets();
+			draw_entitys();
+			draw_my_self();
+		}
+		else
+		{
+			
+			logic.mapEnd(score);
+		}
+
+	}
+
+	@Override
+	public void I_just_Moved(MyEntity entity) {
+		entity_move(entity);
+
+		if (entity instanceof Visitor && (board[entity.get_Y()][entity.get_X()] & pacMan.get_id()) == pacMan.get_id()) {
+			pacMan.accept((Visitor) entity);
+		}
+
+		if (entity instanceof Pacman) {
+			Pacman p = (Pacman) entity;
+			int itemshere = board[entity.get_Y()][entity.get_X()];
+			if ((itemshere & 2) == 2)
+				if (yello_Palets[p.get_Y()][p.get_X()] != null) {
+					pacMan.accept(yello_Palets[p.get_Y()][p.get_X()]);
+				}
+			if ((itemshere & 8) == 8)
+				pacMan.accept(Inky);
+			if ((itemshere & 16) == 16)
+				pacMan.accept(Clyde);
+			if ((itemshere & 32) == 32)
+				pacMan.accept(Blinky);
+			if ((itemshere & 256) == 256) {
+				// eat food
+			}
+			if ((itemshere & 128) == 128 | (itemshere & 64) == 64) {
+
+			}
+		}
 	}
 
 	@Override
@@ -293,4 +286,6 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		entity_move(Inky);
 
 	}
+	// -----------------------------
+
 }

@@ -1,7 +1,6 @@
 package assiment4.entitys.Ghosts;
 
 import assiment4.Storage.ImageLoader;
-import assiment4.entitys.Pacmans.Pacman;
 import assiment4.entitys.Pacmans.Pacman_Blue;
 import assiment4.entitys.Pacmans.Pacman_Red;
 import assiment4.entitys.Pacmans.Pacman_Yellow;
@@ -9,6 +8,7 @@ import assiment4.entitys.Pacmans.Pacman_Yellow;
 public class Ghost_Red extends Ghost {
 
 	private final int id = 32;
+
 	public Ghost_Red() {
 		sprites = ImageLoader.getInstance().getRedGhost();
 		if (sprites == null) {
@@ -18,11 +18,15 @@ public class Ghost_Red extends Ghost {
 
 	@Override
 	public void action() {
-		move();
-		move();
-		move();
+		if (dealyTime >= 0) {
+			move();
+			move();
+			move();
+		} else {
+			dealyTime++;
+		}
 	}
-	
+
 	@Override
 	public void Visit(Pacman_Blue p) {
 		board.Death();
@@ -44,5 +48,4 @@ public class Ghost_Red extends Ghost {
 		return id;
 	}
 
-	
 }

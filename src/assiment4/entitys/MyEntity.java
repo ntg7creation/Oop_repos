@@ -36,7 +36,7 @@ public abstract class MyEntity implements Timer_Listener {
 	}
 
 	public abstract int get_id();
-	
+
 	public void add_Board_Listener(Board_action_Listener board) {
 		this.board = board;
 	}
@@ -84,12 +84,12 @@ public abstract class MyEntity implements Timer_Listener {
 			return null;
 		} else {
 			int spriteDirIdx = 0;
-            if (direc != null) {
-                spriteDirIdx = direc.getSpriteindex();
-            }
+			if (direc != null) {
+				spriteDirIdx = direc.getSpriteindex();
+			}
 
 			Image cur = sprites[spriteDirIdx % sprites.length];
-//			spriteIdx = (spriteIdx + 1) % sprites.length;
+			// spriteIdx = (spriteIdx + 1) % sprites.length;
 			return cur;
 		}
 	}
@@ -102,8 +102,8 @@ public abstract class MyEntity implements Timer_Listener {
 		return offsetY;
 	}
 
-
 	public void set_start(int x, int y) {
+		dealyTime = -1 * 25;
 		X = x;
 		Y = y;
 		preX = X;
@@ -112,22 +112,14 @@ public abstract class MyEntity implements Timer_Listener {
 		startY = Y;
 	}
 
-	public void reSet()
-	{
+	public void reSet() {
+		dealyTime = -1 * 25;
 		preX = X;
-		preY = Y;		
+		preY = Y;
 		X = startX;
 		Y = startY;
 		offsetX = 0;
 		offsetY = 0;
 	}
-	
-//	protected void setOffsetX(int offsetX) {
-//		this.offsetX = offsetX;
-//	}
-
-//	protected void setOffsetY(int offsetY) {
-//		this.offsetY = offsetY;
-//	}
 
 }

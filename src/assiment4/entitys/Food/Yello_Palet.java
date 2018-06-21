@@ -1,15 +1,15 @@
 package assiment4.entitys.Food;
 
 import assiment4.Storage.ImageLoader;
-import assiment4.entitys.Pacmans.Pacman;
-import assiment4.entitys.Pacmans.Pacman_Blue;
-import assiment4.entitys.Pacmans.Pacman_Red;
-import assiment4.entitys.Pacmans.Pacman_Yellow;
 
 public class Yello_Palet extends Food {
 
-	
+//	private int tick_counter = 0;
+//	Image[] temp;
+
 	public Yello_Palet() {
+
+		//temp = ImageLoader.getInstance().getYellowPalet();
 		sprites = ImageLoader.getInstance().getYellowPalet();
 		if (sprites == null) {
 			System.out.println("Error while loading yellow-palet sprite");
@@ -25,8 +25,13 @@ public class Yello_Palet extends Food {
 
 	@Override
 	public void action() {
-		// TODO Auto-generated method stub
+//		tick_counter++;
+//		if (tick_counter >= 3 * 25)
+//			sprites = null;
+//		else
+//			sprites = temp;
+//		
+//		tick_counter %= 80;
 
 	}
-
 }

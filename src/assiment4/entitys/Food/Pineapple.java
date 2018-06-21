@@ -1,7 +1,6 @@
 package assiment4.entitys.Food;
 
 import assiment4.Storage.ImageLoader;
-import assiment4.entitys.Pacmans.Pacman;
 import assiment4.entitys.Pacmans.Pacman_Blue;
 import assiment4.entitys.Pacmans.Pacman_Red;
 import assiment4.entitys.Pacmans.Pacman_Yellow;
@@ -15,11 +14,7 @@ public class Pineapple extends Food {
 		}
 	}
 
-	@Override
-	public void action() {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 	@Override
 	public void Visit(Pacman_Blue p) {

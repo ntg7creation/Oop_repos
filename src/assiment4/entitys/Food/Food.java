@@ -1,7 +1,6 @@
 package assiment4.entitys.Food;
 
 import assiment4.entitys.MyEntity;
-import assiment4.entitys.Pacmans.Pacman;
 import assiment4.entitys.Pacmans.Pacman_Blue;
 import assiment4.entitys.Pacmans.Pacman_Red;
 import assiment4.entitys.Pacmans.Pacman_Yellow;
@@ -28,10 +27,11 @@ public abstract class Food extends MyEntity implements Visitor {
 		board.eat_food_at(this);
 	}
 
-	//
-	// @Override
-	// public void Visit(Pacman p) {
-	// }
+	@Override
+	public void action() {
+		// TODO Auto-generated method stub
+		
+	}
 
 	public int get_points() {
 		return points;
