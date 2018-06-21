@@ -1,19 +1,33 @@
 package assiment4;
 
+import assiment4.Presention.Score_Board;
+import assiment4.Storage.ResourceReader;
 import assiment4.entitys.MyEntity;
 import assiment4.logic.Moving_Direction;
 import assiment4.entitys.Attacks.*;
 import assiment4.entitys.Pacmans.*;
 import assiment4.entitys.Ghosts.*;
 import assiment4.entitys.Food.*;
+import javafx.util.Pair;
 
 import java.awt.*;
 import java.awt.image.ImageObserver;
 import java.text.AttributedCharacterIterator;
+import java.util.List;
 
 public class tester {
 
 	public static void main(String[] arg) {
+        ResourceReader.addPlayer(200,"Hello");
+        ResourceReader.addPlayer(250,"Hello");
+        ResourceReader.addPlayer(120,"Hello");
+        ResourceReader.addPlayer(300,"Hello");
+        List<Pair<Integer, String>> list = ResourceReader.readScoreboard();
+        for (Pair<Integer, String> pair:list) {
+            System.out.printf("%d--%s", pair.getKey(),pair.getValue());
+            System.out.println();
+        }
+        new Score_Board();
 		MyEntity fireball = new Fire_Ball();
 		MyEntity waterSplash = new Water_Splash();
 		MyEntity apple = new Apple();

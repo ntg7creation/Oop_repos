@@ -1,6 +1,6 @@
 package assiment4.logic;
 
-import assiment4.Storage.csv_Reader;
+import assiment4.Storage.ResourceReader;
 import assiment4.entitys.Pacmans.Pacman;
 
 public class Logic implements Logic_Listener {
@@ -24,11 +24,11 @@ public class Logic implements Logic_Listener {
 	private Pacman[] pacmans;
 
 	public Logic() {
-		int[][] b1 = csv_Reader.Load_Board(System.getProperty("user.dir") + "\\" + path1);
-		int[][] b2 = csv_Reader.Load_Board(System.getProperty("user.dir") + "\\" + path2);
-		int[][] b3 = csv_Reader.Load_Board(System.getProperty("user.dir") + "\\" + path3);
-		int[][] b4 = csv_Reader.Load_Board(System.getProperty("user.dir") + "\\" + path4);
-		int[][] b5 = csv_Reader.Load_Board(System.getProperty("user.dir") + "\\" + path5);
+		int[][] b1 = ResourceReader.Load_Board(System.getProperty("user.dir") + "\\" + path1);
+		int[][] b2 = ResourceReader.Load_Board(System.getProperty("user.dir") + "\\" + path2);
+		int[][] b3 = ResourceReader.Load_Board(System.getProperty("user.dir") + "\\" + path3);
+		int[][] b4 = ResourceReader.Load_Board(System.getProperty("user.dir") + "\\" + path4);
+		int[][] b5 = ResourceReader.Load_Board(System.getProperty("user.dir") + "\\" + path5);
 		if (b1 != null)
 			board1 = new Board(b1, this);
 		if (b2 != null)
