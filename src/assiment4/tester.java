@@ -1,5 +1,6 @@
 package assiment4;
 
+import assiment4.Presention.MainMenu;
 import assiment4.Presention.Score_Board;
 import assiment4.Storage.ResourceReader;
 import assiment4.entitys.MyEntity;
@@ -27,7 +28,7 @@ public class tester {
             System.out.printf("%d--%s", pair.getKey(),pair.getValue());
             System.out.println();
         }
-        new Score_Board();
+        new MainMenu();
 		MyEntity fireball = new Fire_Ball();
 		MyEntity waterSplash = new Water_Splash();
 		MyEntity apple = new Apple();

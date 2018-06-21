@@ -5,16 +5,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class main_Manu extends JFrame {
+public class MainMenu extends JFrame {
 
 
 
-    public main_Manu() {
+    public MainMenu() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setMinimumSize(new Dimension(500,500));
         Panel panel = new Panel();
         panel.setSize(500, 500);
-        ImageIcon start = new ImageIcon("res/Images/Game/StartScreen.png");
-        start.paintIcon(panel, panel.getGraphics(),100,100);
+
 
         JButton scoringBoard = new JButton("Score Board");
         scoringBoard.addActionListener(new ActionListener() {
@@ -30,6 +30,17 @@ public class main_Manu extends JFrame {
 
         panel.add(scoringBoard);
         panel.setVisible(true);
+
+        pack();
         this.add(panel);
+        this.setVisible(true);
+        repaint();
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        ImageIcon start = new ImageIcon("res/Images/Game/StartScreen.png");
+        start.paintIcon(this, g,100,100);
     }
 }
