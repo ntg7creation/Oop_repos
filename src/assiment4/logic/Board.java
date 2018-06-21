@@ -226,6 +226,7 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		if (Food[food.get_Y()][food.get_preX()] != null) {
 			Food[food.get_Y()][food.get_preX()] = null;
 			score += food.get_points();
+			System.out.println(food.get_id());
 			board[food.get_Y()][food.get_preX()] -= food.get_id();
 			if (food.get_id() == 2)
 				yello_Palets_Count--;
