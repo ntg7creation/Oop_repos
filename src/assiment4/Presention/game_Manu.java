@@ -3,13 +3,11 @@ package assiment4.Presention;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
-import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -24,9 +22,10 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 	// private Image Board;
 	private Logic logic;
 	private int score = 0;
-	//private JLabel Jscore;
+	private JLabel Jscore;
 	// private Board gameBoard;
 	final private int window_offset = 30;
+	private Boolean first_paint = true;
 
 	public game_Manu() {
 		super(800, 700, 8, 6);
@@ -49,8 +48,10 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 	}
 
 	public void paint(Graphics g) {
-		//super.paint(g);
-
+		if (first_paint) {
+			super.paint(g);
+			first_paint = false;
+		}
 		if (logic.get_Current_Board() == null) {
 			System.out.println();
 		}
@@ -84,12 +85,12 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				// System.out.println("test 1");
 				myTimer.getInstance().set_speed(1);
 			}
 		});
 		speed1.setFocusable(false);
 		speed1.setVisible(true);
-
 
 		JButton speed2 = new JButton();
 		Creat_Button_at(speed2, "X2", 7, 1);
@@ -104,7 +105,7 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 		speed2.setVisible(true);
 
 		JButton speed3 = new JButton();
-		//Creat_Button_at(speed3, "X3", 7, 2);
+		Creat_Button_at(speed3, "X3", 7, 2);
 		speed3.addActionListener(new ActionListener() {
 
 			@Override
