@@ -10,7 +10,7 @@ public class Ghost_Red extends Ghost {
 
 
 	private final int id = 32;
-
+//temp
 
 	public Ghost_Red() {
 		sprites = ImageLoader.getInstance().getRedGhost();
