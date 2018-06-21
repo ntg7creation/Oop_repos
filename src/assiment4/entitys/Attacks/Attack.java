@@ -1,12 +1,30 @@
 package assiment4.entitys.Attacks;
 
 import assiment4.entitys.MyEntity;
-import assiment4.logic.Moving_Direction;
+import assiment4.entitys.Pacmans.Pacman_Blue;
+import assiment4.entitys.Pacmans.Pacman_Red;
+import assiment4.entitys.Pacmans.Pacman_Yellow;
 import assiment4.logic.Visitor;
 
 public abstract class Attack extends MyEntity implements Visitor {
 
-	
+	@Override
+	public void Visit(Pacman_Blue p) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void Visit(Pacman_Yellow p) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void Visit(Pacman_Red p) {
+		// TODO Auto-generated method stub
+
+	}
 
 
 	protected void move() {

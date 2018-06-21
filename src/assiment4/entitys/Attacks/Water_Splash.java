@@ -23,24 +23,7 @@ public class Water_Splash extends Attack {
 		
 	}
 
-	@Override
-	public void Visit(Pacman_Blue p) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void Visit(Pacman_Yellow p) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void Visit(Pacman_Red p) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	@Override
 	public int get_id() {
 		// TODO Auto-generated method stub

@@ -44,17 +44,17 @@ public abstract class MyEntity implements Timer_Listener {
 	protected Boolean can_Move(int x, int y, Moving_Direction dirc) {
 		switch (dirc) {
 		case Right:
-			return !board.is_wall(x + 1, y);
+			return !board.is_of_type(x + 1, y, 1);
 
 		case Left:
-			return !board.is_wall(x - 1, y);
+			return !board.is_of_type(x - 1, y, 1);
 
 		case Up:
 
-			return !board.is_wall(x, y - 1);
+			return !board.is_of_type(x, y - 1, 1);
 		case Down:
 
-			return !board.is_wall(x, y + 1);
+			return !board.is_of_type(x, y + 1, 1);
 		}
 		return false;
 	}

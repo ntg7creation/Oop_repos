@@ -11,7 +11,7 @@ import assiment4.Presention.game_Manu;
 public class myTimer implements ActionListener {
 
 	private Timer timer;
-	private int delay = 40; // 1000 = 1 sec
+	private final int delay = 40; // 1000 = 1 sec
 	private LinkedList<Timer_Listener> listeners;
 	private LinkedList<Timer_Listener> Importent_listeners;
 	private int tickCount = 0;
@@ -32,9 +32,8 @@ public class myTimer implements ActionListener {
 		timer = new Timer(delay, this);
 	}
 
-	public void set_speed(int ms_per_tick) {
-		delay = ms_per_tick;
-		timer.setDelay(ms_per_tick);
+	public void set_speed(int speed) {
+		timer.setDelay(delay / speed);
 	}
 
 	@Override
@@ -45,6 +44,9 @@ public class myTimer implements ActionListener {
 			secCount++;
 		}
 		for (Timer_Listener timer_Listener : listeners) {
+			timer_Listener.action();
+		}
+		for (Timer_Listener timer_Listener : Importent_listeners) {
 			timer_Listener.action();
 		}
 	}

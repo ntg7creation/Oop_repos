@@ -120,4 +120,23 @@ public abstract class Pacman extends MyEntity implements Visited {
 	}
 	
 	public abstract void accept(Visitor entity);
+	
+	@Override
+	protected Boolean can_Move(int x, int y, Moving_Direction dirc) {
+		switch (dirc) {
+		case Right:
+			return !board.is_of_type(x + 1, y, 513);
+
+		case Left:
+			return !board.is_of_type(x - 1, y, 513);
+
+		case Up:
+
+			return !board.is_of_type(x, y - 1, 513);
+		case Down:
+
+			return !board.is_of_type(x, y + 1, 513);
+		}
+		return false;
+	}
 }

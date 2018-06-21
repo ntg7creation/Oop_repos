@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
 import assiment4.entitys.MyEntity;
+import assiment4.entitys.Food.Energy_Palet;
 import assiment4.entitys.Food.Food;
 import assiment4.entitys.Food.Yello_Palet;
 import assiment4.entitys.Ghosts.Ghost_Green;
@@ -28,27 +29,26 @@ public class Board implements Timer_Listener, Board_action_Listener {
 	// this will change each time pacman moves
 	private Image board_entity;
 
-	private int yello_Palets_Count = 10;
+	private int yello_Palets_Count = 0;
 
 	private Pacman pacMan;
 	private Ghost_Green Inky;
 	private Ghost_Red Blinky;
 	private Ghost_Yellow Clyde;
-	private Food[] food;
 	private int score = 0;
 	private Logic_Listener logic;
 	private int[][] board;
 	private int tick_count = 0;
 	// its is better to keep the yello palets in here cus they are static and we
 	// have a lot of them
-	private Food[][] yello_Palets;
+	private Food[][] Food;
 
 	public Board(int[][] board, Logic_Listener logic) {
 		this.logic = logic;
 		this.board = board;
-		yello_Palets = new Yello_Palet[32][];
-		for (int y = 0; y < yello_Palets.length; y++) {
-			yello_Palets[y] = new Yello_Palet[32];
+		Food = new Food[32][];
+		for (int y = 0; y < Food.length; y++) {
+			Food[y] = new Food[32];
 		}
 
 		board_walls = new BufferedImage(block_size * 32, block_size * 32, BufferedImage.TYPE_INT_ARGB);
@@ -66,10 +66,10 @@ public class Board implements Timer_Listener, Board_action_Listener {
 					offGr.fillRect(x * block_size, y * block_size, block_size, block_size);
 					break;
 				case 2:
-					yello_Palets[y][x] = new Yello_Palet();
-					yello_Palets[y][x].add_Board_Listener(this);
-					yello_Palets[y][x].set_start(x, y);
-					// yello_Palets_Count++;
+					Food[y][x] = new Yello_Palet();
+					Food[y][x].add_Board_Listener(this);
+					Food[y][x].set_start(x, y);
+					yello_Palets_Count++;
 					break;
 				case 4:
 					pacMan = new Pacman_Yellow();
@@ -92,13 +92,19 @@ public class Board implements Timer_Listener, Board_action_Listener {
 					Blinky.set_start(x, y);
 					break;
 				case 512:
-
+					offGr = board_walls.getGraphics();
+					offGr.setColor(Color.gray);
+					offGr.fillRect(x * block_size, y * block_size, block_size, block_size);
 					break;
-
+				case 2048:
+					Food[y][x] = new Energy_Palet();
+					Food[y][x].add_Board_Listener(this);
+					Food[y][x].set_start(x, y);
+					break;
 				}
 			}
 		}
-
+		System.out.println(yello_Palets_Count);
 		draw_yello_Plaets();
 		draw_entitys();
 		final_Board = new BufferedImage(800, 800, BufferedImage.TYPE_INT_ARGB);
@@ -155,10 +161,10 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		Graphics offGr = board_yello_Palets.getGraphics();
 		offGr.setColor(Color.yellow);
 		if (true) {// tick_count%(9*25) <= 8 * 25) {
-			for (int y = 0; y < yello_Palets.length; y++)
-				for (int x = 0; x < yello_Palets[y].length; x++)
-					if (yello_Palets[y][x] != null)
-						yello_Palets[y][x].draw(offGr);
+			for (int y = 0; y < Food.length; y++)
+				for (int x = 0; x < Food[y].length; x++)
+					if (Food[y][x] != null)
+						Food[y][x].draw(offGr);
 		}
 	}
 
@@ -173,7 +179,7 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		timer.addTimerListener(Blinky);
 		timer.addTimerListener(Clyde);
 		timer.addTimerListener(Inky);
-		for (Food[] array : yello_Palets) {
+		for (Food[] array : Food) {
 			for (Food yello_Palet : array) {
 				if (yello_Palet != null)
 					timer.addTimerListener(yello_Palet);
@@ -209,16 +215,16 @@ public class Board implements Timer_Listener, Board_action_Listener {
 
 	// -----------------------------Listener functions
 	@Override
-	public Boolean is_wall(int x, int y) {
+	public Boolean is_of_type(int x, int y, int type) {
 		if (x < 0 || y < 0 || y >= board.length || x >= board[y].length)
 			return true;
-		return (board[y][x] & 1) == 1;
+		return (board[y][x] & type) != 0;
 	}
 
 	@Override
 	public void eat_food_at(Food food) {
-		if (yello_Palets[food.get_Y()][food.get_preX()] != null) {
-			yello_Palets[food.get_Y()][food.get_preX()] = null;
+		if (Food[food.get_Y()][food.get_preX()] != null) {
+			Food[food.get_Y()][food.get_preX()] = null;
 			score += food.get_points();
 			board[food.get_Y()][food.get_preX()] -= food.get_id();
 			if (food.get_id() == 2)
@@ -234,10 +240,8 @@ public class Board implements Timer_Listener, Board_action_Listener {
 			draw_yello_Plaets();
 			draw_entitys();
 			draw_my_self();
-		}
-		else
-		{
-			
+		} else {
+
 			logic.mapEnd(score);
 		}
 
@@ -255,8 +259,8 @@ public class Board implements Timer_Listener, Board_action_Listener {
 			Pacman p = (Pacman) entity;
 			int itemshere = board[entity.get_Y()][entity.get_X()];
 			if ((itemshere & 2) == 2)
-				if (yello_Palets[p.get_Y()][p.get_X()] != null) {
-					pacMan.accept(yello_Palets[p.get_Y()][p.get_X()]);
+				if (Food[p.get_Y()][p.get_X()] != null) {
+					pacMan.accept(Food[p.get_Y()][p.get_X()]);
 				}
 			if ((itemshere & 8) == 8)
 				pacMan.accept(Inky);
@@ -265,10 +269,17 @@ public class Board implements Timer_Listener, Board_action_Listener {
 			if ((itemshere & 32) == 32)
 				pacMan.accept(Blinky);
 			if ((itemshere & 256) == 256) {
-				// eat food
+				if (Food[p.get_Y()][p.get_X()] != null) {
+					pacMan.accept(Food[p.get_Y()][p.get_X()]);
+				}
 			}
 			if ((itemshere & 128) == 128 | (itemshere & 64) == 64) {
 
+			}
+			if ((itemshere & 2048) == 2048) {
+				if (Food[p.get_Y()][p.get_X()] != null) {
+					pacMan.accept(Food[p.get_Y()][p.get_X()]);
+				}
 			}
 		}
 	}

@@ -5,11 +5,11 @@ import assiment4.entitys.Food.Food;
 
 public interface Board_action_Listener {
 
-	public Boolean is_wall(int x, int y);
+	public Boolean is_of_type(int x, int y, int type);
 
 	public void I_just_Moved(MyEntity entity);
-	
+
 	public void eat_food_at(Food food);
-	
+
 	public void Death();
 }

@@ -94,6 +94,7 @@ public class Logic implements Logic_Listener {
 	}
 
 	private void next_Level() {
+		myTimer.getInstance().Clear();
 		switch (level) {
 		case 1:
 			currentBoard = board1;
@@ -101,13 +102,14 @@ public class Logic implements Logic_Listener {
 		case 2:
 			currentBoard = board2;
 			break;
-		case 3:
-			currentBoard = board5;
-			break;
 		case 4:
+			currentBoard = board1;
+			break;
+		case 3:
 			Game_End();
 			break;
 		}
+		currentBoard.start(myTimer.getInstance());
 	}
 
 	private void Game_End() {

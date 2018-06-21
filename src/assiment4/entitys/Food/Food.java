@@ -30,7 +30,7 @@ public abstract class Food extends MyEntity implements Visitor {
 	@Override
 	public void action() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public int get_points() {
