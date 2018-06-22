@@ -38,9 +38,5 @@ public class Score_Board extends JFrame {
 		setMinimumSize(new Dimension(500, 500));
 		setVisible(true);
 	}
-	
-	public void add_high_score(int score)
-	{
-		
-	}
+
 }
