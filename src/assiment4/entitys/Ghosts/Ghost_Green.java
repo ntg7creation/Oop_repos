@@ -14,7 +14,7 @@ public class Ghost_Green extends Ghost {
 		if (sprites == null) {
 			System.out.println("Error while loading ghost_green sprite");
 		}
-		dealyTime -=10;
+		startdealyTime -=10;
 		}
 	
 

@@ -19,6 +19,7 @@ public abstract class MyEntity implements Timer_Listener {
 	protected Moving_Direction direc = null;
 	final protected int TPS = 25;
 	protected int dealyTime = 0;
+	protected int startdealyTime = 0;
 	protected int count_Ticks = 0;
 	protected int X;
 	protected int Y;
@@ -103,7 +104,7 @@ public abstract class MyEntity implements Timer_Listener {
 	}
 
 	public void set_start(int x, int y) {
-		dealyTime = -1 * 25;
+		dealyTime += startdealyTime -1 * 25;
 		X = x;
 		Y = y;
 		preX = X;
@@ -113,7 +114,7 @@ public abstract class MyEntity implements Timer_Listener {
 	}
 
 	public void reSet() {
-		dealyTime = -1 * 25;
+		dealyTime =startdealyTime -1 * 25;
 		preX = X;
 		preY = Y;
 		X = startX;

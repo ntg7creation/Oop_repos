@@ -4,7 +4,7 @@ import assiment4.Storage.ImageLoader;
 
 public class Strawberry extends Food {
 
-	//test
+
 	public Strawberry() {
 		sprites = ImageLoader.getInstance().getStrawberry();
 		if (sprites == null) {

@@ -19,7 +19,7 @@ public class Ghost_Red extends Ghost {
 			System.out.println("Error while loading ghost_red sprite");
 		}
 		fire = null;
-		dealyTime -= (5 * 25);
+		startdealyTime -= (5 * 25);
 	}
 	
 	public Fire_Ball get_fire()
