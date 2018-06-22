@@ -2,6 +2,7 @@ package assiment4;
 
 import assiment4.Presention.MainMenu;
 import assiment4.Presention.Score_Board;
+import assiment4.Presention.Summary;
 import assiment4.Storage.ResourceReader;
 import assiment4.entitys.MyEntity;
 import assiment4.logic.Moving_Direction;
@@ -19,16 +20,14 @@ import java.util.List;
 public class tester {
 
 	public static void main(String[] arg) {
-        ResourceReader.addPlayer(200,"Hello");
-        ResourceReader.addPlayer(250,"Hello");
-        ResourceReader.addPlayer(120,"Hello");
-        ResourceReader.addPlayer(300,"Hello");
+        new Summary(new int[]{1,5,3},600);
+
         List<Pair<Integer, String>> list = ResourceReader.readScoreboard();
         for (Pair<Integer, String> pair:list) {
             System.out.printf("%d--%s", pair.getKey(),pair.getValue());
             System.out.println();
         }
-        new MainMenu();
+
 		MyEntity fireball = new Fire_Ball();
 		MyEntity waterSplash = new Water_Splash();
 		MyEntity apple = new Apple();

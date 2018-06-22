@@ -9,9 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 import assiment4.logic.Logic;
 
@@ -26,6 +24,7 @@ public class MainMenu extends JFrame {
 		Panel panel = new Panel();
 		panel.setLayout(null);
 		panel.setSize(500, 500);
+
 		logic = new Logic();
 		BufferedImage img;
 		ImageIcon icon;
@@ -35,7 +34,6 @@ public class MainMenu extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new Score_Board();
-				dispose();
 			}
 		});
 		scoringBoard.setLocation(175, 70);
@@ -95,13 +93,6 @@ public class MainMenu extends JFrame {
 		this.add(panel);
 		this.setVisible(true);
 		repaint();
-	}
-
-	@Override
-	public void paint(Graphics g) {
-		super.paint(g);
-		ImageIcon start = new ImageIcon("res/Images/Game/StartScreen.png");
-		start.paintIcon(this, g, 100, 100);
 	}
 
 	public void start_at_board(int num) {

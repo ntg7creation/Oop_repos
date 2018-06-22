@@ -50,7 +50,7 @@ public class Board implements Timer_Listener, Board_action_Listener {
 	private Food[][] Food;
 	private Food[] to_be_food;
 	private Fire_Ball my_fire;
-	private Water_Splash my_water;
+	private boolean[] eatenFood = {false, false, false};
 
 	public Board(int[][] board, Logic_Listener logic) {
 		this.logic = logic;
@@ -258,6 +258,15 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		if (Food[food.get_Y()][food.get_X()] != null) {
 			Food[food.get_Y()][food.get_X()] = null;
 			score += food.get_points();
+			if (food instanceof Apple) {
+				eatenFood[0] = true;
+			}
+			if (food instanceof Strawberry) {
+				eatenFood[1] = true;
+			}
+			if (food instanceof Pineapple) {
+				eatenFood[2] = true;
+			}
 			board[food.get_Y()][food.get_X()] -= food.get_id();
 			if (food.get_id() == 2)
 				yello_Palets_Count--;
@@ -372,5 +381,9 @@ public class Board implements Timer_Listener, Board_action_Listener {
 
 	public int get_score() {
 		return score;
+	}
+
+	public boolean[] getEatenFood() {
+		return eatenFood;
 	}
 }

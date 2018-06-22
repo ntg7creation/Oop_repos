@@ -119,6 +119,20 @@ public class Logic implements Logic_Listener {
 		return score + currentBoard.get_score();
 	}
 
+	public int[] getEatenFood() {
+		int[] eatenFood = {0, 0, 0};
+		for (int i = 1; i <= 5 ; i++) {
+			boolean[] eaten = get_Board(i).getEatenFood();
+			for (int j = 0; j < 3; j++) {
+				if (eaten[j]) {
+					eatenFood[j]++;
+				}
+			}
+		}
+
+		return eatenFood;
+	}
+
 	@Override
 	public void mapEnd(int score) {
 		this.score += score;
