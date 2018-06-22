@@ -9,6 +9,9 @@ public class Strawberry extends Food {
 		if (sprites == null) {
 			System.out.println("Error while loading strawberry sprite");
 		}
+		
+		points = 300;
+		
 	}
 
 }

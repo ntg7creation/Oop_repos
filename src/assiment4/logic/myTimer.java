@@ -10,6 +10,7 @@ public class myTimer implements ActionListener {
 
 	private Timer timer;
 	private final int delay = 40; // 1000 = 1 sec
+	private LinkedList<Timer_Listener> listeners_to_add;
 	private LinkedList<Timer_Listener> listeners;
 	private LinkedList<Timer_Listener> Importent_listeners;
 	private int current_delay = delay;
@@ -26,25 +27,32 @@ public class myTimer implements ActionListener {
 	}
 
 	private myTimer() {
+		listeners_to_add = new LinkedList<Timer_Listener>();
 		listeners = new LinkedList<Timer_Listener>();
 		Importent_listeners = new LinkedList<Timer_Listener>();
 		timer = new Timer(delay, this);
 	}
 
 	public void set_speed(int speed) {
-		current_delay=delay / speed;
+		current_delay = delay / speed;
 		timer.setDelay(current_delay);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		tickCount++;
-		if (tickCount >= 1000/current_delay) {
+		if (tickCount >= 1000 / current_delay) {
 			tickCount = 0;
 			secCount++;
 		}
+		for (Timer_Listener timer_Listener : listeners_to_add) {
+			listeners.add(timer_Listener);
+		}
+		listeners_to_add = new LinkedList<Timer_Listener>();
+		
 		for (Timer_Listener timer_Listener : listeners) {
-			timer_Listener.action();
+			if (timer_Listener != null)
+				timer_Listener.action();
 		}
 		for (Timer_Listener timer_Listener : Importent_listeners) {
 			timer_Listener.action();
@@ -53,7 +61,7 @@ public class myTimer implements ActionListener {
 
 	public void addTimerListener(Timer_Listener listener) {
 		if (listener != null)
-			listeners.add(listener);
+			listeners_to_add.add(listener);
 
 	}
 
@@ -72,14 +80,12 @@ public class myTimer implements ActionListener {
 
 	}
 
-	
 	public int getTime_Pass() {
 		return secCount;
 	}
 
-
 	public void stop() {
 		timer.stop();
-		
+
 	}
 }

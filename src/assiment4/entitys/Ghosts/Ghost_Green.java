@@ -14,13 +14,17 @@ public class Ghost_Green extends Ghost {
 		if (sprites == null) {
 			System.out.println("Error while loading ghost_green sprite");
 		}
-	}
+		dealyTime -=10;
+		}
+	
 
 	@Override
 	public void action() {
-		if (dealyTime >= 0)
+		if (dealyTime >= 0) {
 			move();
-		else
+			move();
+			move();
+		} else
 			dealyTime++;
 
 	}

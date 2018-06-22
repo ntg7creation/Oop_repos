@@ -19,8 +19,10 @@ public class Water_Splash extends Attack {
 
 	@Override
 	public void action() {
-		// TODO Auto-generated method stub
-		
+		move();
+		move();
+		move();
+		move();
 	}
 
 	

@@ -21,7 +21,13 @@ public class Fire_Ball extends Attack {
 
 	@Override
 	public void action() {
-		// TODO Auto-generated method stub
+		System.out.println("fire tick");
+		move();
+		move();
+		move();
+		move();
+		move();
+		
 
 	}
 

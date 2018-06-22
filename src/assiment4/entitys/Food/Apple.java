@@ -12,6 +12,7 @@ public class Apple extends Food {
 		if (sprites == null) {
 			System.out.println("Error while loading apple sprite");
 		}
+		points = 200;
 	}
 
 }

@@ -12,6 +12,7 @@ public class Pineapple extends Food {
 		if (sprites == null) {
 			System.out.println("Error while loading pineapple sprite");
 		}
+		points = 100;
 	}
 
 

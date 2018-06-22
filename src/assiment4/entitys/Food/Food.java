@@ -34,7 +34,6 @@ public abstract class Food extends MyEntity implements Visitor {
 	public void action() {
 
 		if (!has_place && count_Ticks++%(5 * 25) ==  0) {
-			System.out.println("tick");
 			Random r = new Random();
 			int x = r.nextInt(31);
 			int y = r.nextInt(31);

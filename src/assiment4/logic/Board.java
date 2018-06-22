@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
 import assiment4.entitys.MyEntity;
+import assiment4.entitys.Attacks.Attack;
 import assiment4.entitys.Attacks.Fire_Ball;
 import assiment4.entitys.Attacks.Water_Splash;
 import assiment4.entitys.Food.Energy_Palet;
@@ -110,7 +111,8 @@ public class Board implements Timer_Listener, Board_action_Listener {
 				}
 			}
 		}
-		to_be_food = new Food[] {  new Strawberry() };
+
+		to_be_food = new Food[] { new Strawberry() };
 		for (Food food : to_be_food) {
 			food.add_Board_Listener(this);
 		}
@@ -119,7 +121,7 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		draw_entitys();
 		final_Board = new BufferedImage(800, 800, BufferedImage.TYPE_INT_ARGB);
 		draw_my_self();
-		yello_Palets_Count = 20;
+
 	}
 
 	// -------------- private functions
@@ -148,6 +150,8 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		}
 		if (Blinky != null) {
 			Blinky.draw(offGr);
+			if (Blinky.get_fire() != null)
+				Blinky.get_fire().draw(offGr);
 			// offGr.setColor(Color.RED);
 			// offGr.fillRect(Blinky.get_X() * block_size, Blinky.get_Y() * block_size,
 			// block_size, block_size);
@@ -160,6 +164,8 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		}
 		if (Clyde != null) {
 			Clyde.draw(offGr);
+			if (Clyde.get_water() != null)
+				Clyde.get_water().draw(offGr);
 			// offGr.setColor(Color.ORANGE);
 			// offGr.fillRect(Clyde.get_X() * block_size, Clyde.get_Y() * block_size,
 			// block_size, block_size);
@@ -178,9 +184,8 @@ public class Board implements Timer_Listener, Board_action_Listener {
 	}
 
 	private void entity_move(MyEntity entity) {
-		if (entity.get_id() == 2048)
-			System.out.println("big error");
-		board[entity.get_preY()][entity.get_preX()] -= entity.get_id();
+		if (is_of_type(entity.get_preX(), entity.get_preY(), entity.get_id()))
+			board[entity.get_preY()][entity.get_preX()] -= entity.get_id();
 		board[entity.get_Y()][entity.get_X()] += entity.get_id();
 	}
 
@@ -268,13 +273,24 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		} else {
 			myTimer.getInstance().Clear();
 			logic.mapEnd(score);
-			
+
 		}
 
 	}
 
 	@Override
 	public void I_just_Moved(MyEntity entity) {
+
+		if (entity instanceof Fire_Ball) {
+			if (entity.get_Y() > 31 | entity.get_Y() < 1 | entity.get_X() > 31 | entity.get_X() < 1) {
+				return;
+			}
+		}
+		if (entity instanceof Water_Splash) {
+			if (entity.get_Y() > 31 | entity.get_Y() < 1 | entity.get_X() > 31 | entity.get_X() < 1) {
+				return;
+			}
+		}
 		entity_move(entity);
 
 		if (entity instanceof Visitor && (board[entity.get_Y()][entity.get_X()] & pacMan.get_id()) == pacMan.get_id()) {
@@ -299,8 +315,13 @@ public class Board implements Timer_Listener, Board_action_Listener {
 					pacMan.accept(Food[p.get_Y()][p.get_X()]);
 				}
 			}
-			if ((itemshere & 128) == 128 | (itemshere & 64) == 64) {
-
+			if ((itemshere & 64) == 64) {
+				printboard();
+				pacMan.accept(Blinky.get_fire());
+			}
+			if ((itemshere & 128) == 128) {
+				printboard();
+				pacMan.accept(Clyde.get_water());
 			}
 			if ((itemshere & 2048) == 2048) {
 				if (Food[p.get_Y()][p.get_X()] != null) {
@@ -327,14 +348,26 @@ public class Board implements Timer_Listener, Board_action_Listener {
 	@Override
 	public void add_Food(Food f) {
 		System.out.println(board[f.get_Y()][f.get_X()]);
-		 board[f.get_Y()][f.get_X()] += f.get_id();
-		 System.out.println(board[f.get_Y()][f.get_X()]);
+		board[f.get_Y()][f.get_X()] += f.get_id();
+		System.out.println(board[f.get_Y()][f.get_X()]);
 		Food[f.get_Y()][f.get_X()] = f;
+	}
+
+	private void printboard()
+	{
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		for (int[] is : board) {
+			for (int i : is) {
+				System.out.print(i+",");
+			}
+			System.out.println();
+		}
 	}
 	// -----------------------------
 
 	public int get_score() {
 		return score;
 	}
-
 }
