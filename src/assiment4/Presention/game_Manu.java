@@ -44,7 +44,7 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 		Board temp = logic.get_Current_Board();
 		T.set_speed(1);
 		if (temp != null)
-			temp.start(T);
+			temp.start();
 
 		pack();
 		this.setFocusable(true);

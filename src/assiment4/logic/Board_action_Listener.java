@@ -12,4 +12,7 @@ public interface Board_action_Listener {
 	public void eat_food_at(Food food);
 
 	public void Death();
+	
+	public void add_Food(Food food);
+	
 }

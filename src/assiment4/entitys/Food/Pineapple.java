@@ -16,23 +16,5 @@ public class Pineapple extends Food {
 
 
 
-	@Override
-	public void Visit(Pacman_Blue p) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void Visit(Pacman_Yellow p) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void Visit(Pacman_Red p) {
-		// TODO Auto-generated method stub
-		
-	}
-
 
 }

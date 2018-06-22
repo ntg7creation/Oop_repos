@@ -1,7 +1,12 @@
 package assiment4.logic;
 
 import assiment4.Storage.ResourceReader;
+import assiment4.entitys.Food.Food;
+import assiment4.entitys.Food.Strawberry;
 import assiment4.entitys.Pacmans.Pacman;
+import assiment4.entitys.Pacmans.Pacman_Blue;
+import assiment4.entitys.Pacmans.Pacman_Red;
+import assiment4.entitys.Pacmans.Pacman_Yellow;
 
 public class Logic implements Logic_Listener {
 
@@ -29,17 +34,25 @@ public class Logic implements Logic_Listener {
 		int[][] b3 = ResourceReader.Load_Board(System.getProperty("user.dir") + "\\" + path3);
 		int[][] b4 = ResourceReader.Load_Board(System.getProperty("user.dir") + "\\" + path4);
 		int[][] b5 = ResourceReader.Load_Board(System.getProperty("user.dir") + "\\" + path5);
-		if (b1 != null)
+		if (b1 != null) {
 			board1 = new Board(b1, this);
-		if (b2 != null)
+			board1.change_pac_man(new Pacman_Yellow());
+		}
+		if (b2 != null) {
 			board2 = new Board(b2, this);
-		if (b3 != null)
+		}
+		if (b3 != null) {
 			board3 = new Board(b3, this);
-		if (b4 != null)
+		}
+		if (b4 != null) {
 			board4 = new Board(b4, this);
-		if (b5 != null)
+			board4.change_pac_man(new Pacman_Blue());
+		}
+		if (b5 != null) {
 			board5 = new Board(b5, this);
-		currentBoard = board1;
+			board5.change_pac_man(new Pacman_Red());
+		}
+		currentBoard = null;
 	}
 
 	public Board get_Board(int board_number) {
@@ -66,14 +79,19 @@ public class Logic implements Logic_Listener {
 		switch (number) {
 		case 1:
 			currentBoard = board1;
+			break;
 		case 2:
 			currentBoard = board2;
+			break;
 		case 3:
 			currentBoard = board3;
+			break;
 		case 4:
 			currentBoard = board4;
+			break;
 		case 5:
 			currentBoard = board5;
+			break;
 		}
 
 	}
@@ -124,7 +142,7 @@ public class Logic implements Logic_Listener {
 			Game_End();
 			break;
 		}
-		currentBoard.start(myTimer.getInstance());
+		currentBoard.start();
 	}
 
 	private void Game_End() {

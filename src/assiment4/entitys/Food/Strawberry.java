@@ -2,8 +2,7 @@ package assiment4.entitys.Food;
 
 import assiment4.Storage.ImageLoader;
 
-public class Strawberry extends Food{
-
+public class Strawberry extends Food {
 
 	public Strawberry() {
 		sprites = ImageLoader.getInstance().getStrawberry();
@@ -11,6 +10,5 @@ public class Strawberry extends Food{
 			System.out.println("Error while loading strawberry sprite");
 		}
 	}
-
 
 }
