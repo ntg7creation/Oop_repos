@@ -30,12 +30,13 @@ public class Ghost_Yellow extends Ghost {
 			if (ticks++ % 2 == 0) {
 				move();
 			}
-			if(water != null)
-			{
-				water.move();
-				water.move();
-				water.move();
-				water.move();
+			if (water != null) {
+				if (!board.is_of_type(water.get_X(), water.get_Y(), 1)) {
+					water.move();
+					water.move();
+					water.move();
+					water.move();
+				}
 			}
 			if (++count_Ticks % (5 * 25) == 0) {
 				water = new Water_Splash();

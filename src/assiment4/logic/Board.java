@@ -10,8 +10,10 @@ import assiment4.entitys.MyEntity;
 import assiment4.entitys.Attacks.Attack;
 import assiment4.entitys.Attacks.Fire_Ball;
 import assiment4.entitys.Attacks.Water_Splash;
+import assiment4.entitys.Food.Apple;
 import assiment4.entitys.Food.Energy_Palet;
 import assiment4.entitys.Food.Food;
+import assiment4.entitys.Food.Pineapple;
 import assiment4.entitys.Food.Strawberry;
 import assiment4.entitys.Food.Yello_Palet;
 import assiment4.entitys.Ghosts.Ghost_Green;
@@ -112,7 +114,7 @@ public class Board implements Timer_Listener, Board_action_Listener {
 			}
 		}
 
-		to_be_food = new Food[] { new Strawberry() };
+		to_be_food = new Food[] { new Strawberry(), new Pineapple(), new Apple() };
 		for (Food food : to_be_food) {
 			food.add_Board_Listener(this);
 		}
@@ -317,10 +319,12 @@ public class Board implements Timer_Listener, Board_action_Listener {
 			}
 			if ((itemshere & 64) == 64) {
 				printboard();
+				if(Blinky.get_fire().get_X()== pacMan.get_X() && Blinky.get_fire().get_Y()== pacMan.get_Y()  )
 				pacMan.accept(Blinky.get_fire());
 			}
 			if ((itemshere & 128) == 128) {
 				printboard();
+				if(Clyde.get_water().get_X()== pacMan.get_X() && Clyde.get_water().get_Y()== pacMan.get_Y()  )
 				pacMan.accept(Clyde.get_water());
 			}
 			if ((itemshere & 2048) == 2048) {
@@ -353,14 +357,13 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		Food[f.get_Y()][f.get_X()] = f;
 	}
 
-	private void printboard()
-	{
+	private void printboard() {
 		System.out.println();
 		System.out.println();
 		System.out.println();
 		for (int[] is : board) {
 			for (int i : is) {
-				System.out.print(i+",");
+				System.out.print(i + ",");
 			}
 			System.out.println();
 		}
