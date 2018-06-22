@@ -12,6 +12,7 @@ import java.util.Vector;
 
 public class Score_Board extends JFrame {
 	public Score_Board() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Vector<String> printableList = new Vector<>();
 		List<Pair<Integer, String>> list = ResourceReader.readScoreboard();
 		int i = 1;
