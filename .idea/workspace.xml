@@ -7,11 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bddf4f17-5d6d-48ed-8cce-3e4ce35a9f1e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assiment4/Presention/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/ScoreBoard.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/ScoreBoard.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/Presention/main_Manu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assiment4/tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/tester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assiment4/Presention/Score_Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/Presention/Score_Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assiment4/Presention/game_Manu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assiment4/Presention/game_Manu.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,7 +54,7 @@
       <file leaf-file-name="Pacman.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="1479">
               <caret line="94" selection-start-line="94" selection-end-line="94" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -69,22 +67,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game_Manu.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="game_Manu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assiment4/Presention/game_Manu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="290">
+              <caret line="98" column="51" selection-start-line="98" selection-start-column="51" selection-end-line="98" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assiment4/Presention/MainMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+            <state relative-caret-position="1748">
+              <caret line="115" column="5" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1260#1261#0" expanded="true" />
+                <element signature="e#1288#1289#0" expanded="true" />
+                <element signature="e#1699#1700#0" expanded="true" />
+                <element signature="e#1727#1728#0" expanded="true" />
+                <element signature="e#2139#2140#0" expanded="true" />
+                <element signature="e#2167#2168#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,8 +97,8 @@
       <file leaf-file-name="Score_Board.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assiment4/Presention/Score_Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="541">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,7 +109,7 @@
       <file leaf-file-name="Custom_Frame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assiment4/Presention/Custom_Frame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="1292">
               <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
             </state>
           </provider>
@@ -114,7 +118,7 @@
       <file leaf-file-name="tester.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assiment4/tester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
+            <state relative-caret-position="272">
               <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -148,8 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/LogicL/Direction.java" />
-        <option value="$PROJECT_DIR$/src/LogicL/Move.java" />
         <option value="$PROJECT_DIR$/src/LogicL/logic_Board.java" />
         <option value="$PROJECT_DIR$/src/Resources/boards.csv" />
         <option value="$PROJECT_DIR$/src/StorageL/ResourceLoader.java" />
@@ -195,10 +197,12 @@
         <option value="$PROJECT_DIR$/src/assiment4/Presention/Custom_Frame.java" />
         <option value="$PROJECT_DIR$/src/assiment4/Storage/csv_Reader.java" />
         <option value="$PROJECT_DIR$/src/assiment4/Storage/ResourceReader.java" />
-        <option value="$PROJECT_DIR$/src/assiment4/Presention/Score_Board.java" />
         <option value="$PROJECT_DIR$/src/assiment4/Presention/main_Manu.java" />
         <option value="$PROJECT_DIR$/src/assiment4/tester.java" />
         <option value="$PROJECT_DIR$/src/assiment4/Presention/MainMenu.java" />
+        <option value="$PROJECT_DIR$/src/assiment4/Presention/Score_Board.java" />
+        <option value="$PROJECT_DIR$/res/ScoreBoard.txt" />
+        <option value="$PROJECT_DIR$/src/assiment4/Presention/game_Manu.java" />
       </list>
     </option>
   </component>
@@ -225,8 +229,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -308,7 +311,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -340,7 +344,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Image">
+  <component name="RunManager" selected="Application.Game">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -350,7 +354,7 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
     <configuration name="Game" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="assiment4.Presention.game_Manu" />
+      <option name="MAIN_CLASS_NAME" value="assiment4.Presention.MainMenu" />
       <module name="Oop_repos" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
@@ -475,11 +479,12 @@
       <workItem from="1529569939122" duration="1797000" />
       <workItem from="1529592193331" duration="4300000" />
       <workItem from="1529604010377" duration="1137000" />
+      <workItem from="1529649210660" duration="1377000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72578000" />
+    <option name="totallyTimeSpent" value="73955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -542,12 +547,17 @@
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assiment4/Presention/game_Manu.java</url>
+          <line>98</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/PresentationL/Main_Menu.java" />
     <entry file="file://$PROJECT_DIR$/src/Resources/boards.csv" />
     <entry file="file://$PROJECT_DIR$/src/StorageL/Boards.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/src.zip!/javax/imageio/ImageIO.java">
@@ -691,9 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -781,17 +788,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="48" column="72" selection-start-line="48" selection-start-column="72" selection-end-line="48" selection-end-column="72" />
-          <folding>
-            <element signature="e#2670#2671#0" expanded="true" />
-            <element signature="e#2716#2717#0" expanded="true" />
-            <element signature="e#596#619#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assiment4/entitys/Pacmans/Pacman.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="1479">
           <caret line="94" selection-start-line="94" selection-end-line="94" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -800,13 +802,6 @@
             <element signature="e#1926#1927#0" expanded="true" />
             <element signature="e#1952#1953#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Presention/game_Manu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
@@ -824,26 +819,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assiment4/Presention/Score_Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assiment4/Presention/Custom_Frame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="1292">
           <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assiment4/tester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
+        <state relative-caret-position="272">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -853,11 +838,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assiment4/Presention/MainMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+        <state relative-caret-position="1748">
+          <caret line="115" column="5" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1260#1261#0" expanded="true" />
+            <element signature="e#1288#1289#0" expanded="true" />
+            <element signature="e#1699#1700#0" expanded="true" />
+            <element signature="e#1727#1728#0" expanded="true" />
+            <element signature="e#2139#2140#0" expanded="true" />
+            <element signature="e#2167#2168#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/Presention/Score_Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/ScoreBoard.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assiment4/Presention/game_Manu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="98" column="51" selection-start-line="98" selection-start-column="51" selection-end-line="98" selection-end-column="51" />
         </state>
       </provider>
     </entry>

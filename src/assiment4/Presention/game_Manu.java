@@ -9,8 +9,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
-import javax.swing.JButton;
+import javax.swing.*;
 
+import assiment4.Storage.ResourceReader;
 import assiment4.logic.Board;
 import assiment4.logic.Logic;
 import assiment4.logic.Timer_Listener;
@@ -87,8 +88,17 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 		lifes = logic.get_lifes();
 		if (lifes <= 0) {
 			myTimer.getInstance().stop();
+			String s = (String)JOptionPane.showInputDialog(
+					this,
+					"Please enter your name to enter the scoreboard",
+					"Username Dialog",
+					JOptionPane.QUESTION_MESSAGE,
+					null,null, "");
+
+			if ((s != null) && (s.length() > 0)) {
+				ResourceReader.addPlayer(score, s);
+			}
 			Score_Board next_window = new Score_Board();
-			next_window.add_high_score(score);
 			this.dispose();
 		}
 		// System.out.println(score);
