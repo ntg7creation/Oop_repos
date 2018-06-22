@@ -10,7 +10,6 @@ import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
 
 import assiment4.logic.Board;
 import assiment4.logic.Logic;
@@ -22,23 +21,26 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 	// private Image Board;
 	private Logic logic;
 	private int score = 0;
+	private int lifes = 0;
 	private JButton speed1;
 	private JButton speed2;
 	private JButton speed3;
 	private JButton Jscore;
+	private JButton Jlife;
+	private JButton Jtime;
+	private int tclick = 0;
 	// private Board gameBoard;
 	final private int window_offset = 30;
-	private Boolean first_paint = true;
 
-	public game_Manu() {
+	public game_Manu(Logic logi) {
 		super(800, 700, 8, 6);
-
+		this.logic = logi;
 		creat_buttons();
-		//repaint();
+		// repaint();
 		myTimer T = myTimer.getInstance();
 		T.addTimerListenerImportent(this);
 		this.setFocusable(true);
-		logic = new Logic();
+
 		Board temp = logic.get_Current_Board();
 		T.set_speed(1);
 		if (temp != null)
@@ -54,7 +56,18 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 	public void paint(Graphics g) {
 
 		// super.paint(g);
+		/// ------------------ ignore this fixs a bug that the button dont show up at
+		// start
+		speed1.setText("X" + tclick);
+		speed2.setText("X" + tclick);
+		speed3.setText("X" + tclick);
+		speed1.setText("X1");
+		speed2.setText("X2");
+		speed3.setText("X3");
+		/// -----------------
 		Jscore.setText("score " + score);
+		Jlife.setText("lifes " + lifes);
+		Jtime.setText("time:" + myTimer.getInstance().getTime_Pass());
 
 		BufferedImage offIm = logic.get_Current_Board().get_Board_image();
 
@@ -68,20 +81,23 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 		g.drawImage(outputImage, 0, window_offset, null);
 	}
 
-	public static void main(String[] arg) {
-		game_Manu game = new game_Manu();
-	}
-
 	@Override
 	public void action() {
 		score = logic.getScore();
-		System.out.println(score);
+		lifes = logic.get_lifes();
+		if (lifes <= 0) {
+			myTimer.getInstance().stop();
+			Score_Board next_window = new Score_Board();
+			next_window.add_high_score(score);
+			this.dispose();
+		}
+		// System.out.println(score);
 		repaint();
 	}
 
 	private void creat_buttons() {
-		 speed1 = new JButton();
-		Creat_Button_at(speed1, "X1", 7, 0);
+		speed1 = new JButton();
+
 		speed1.addActionListener(new ActionListener() {
 
 			@Override
@@ -90,10 +106,11 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 				myTimer.getInstance().set_speed(1);
 			}
 		});
-//		speed1.setFocusable(false);
-//		speed1.setVisible(true);
+		Creat_Button_at(speed1, "X1", 7, 0);
+		// speed1.setFocusable(false);
+		// speed1.setVisible(true);
 
-		 speed2 = new JButton();
+		speed2 = new JButton();
 		Creat_Button_at(speed2, "X2", 7, 1);
 		speed2.addActionListener(new ActionListener() {
 
@@ -102,10 +119,10 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 				myTimer.getInstance().set_speed(2);
 			}
 		});
-//		speed2.setFocusable(false);
-//		speed2.setVisible(true);
+		// speed2.setFocusable(false);
+		// speed2.setVisible(true);
 
-		 speed3 = new JButton();
+		speed3 = new JButton();
 		Creat_Button_at(speed3, "X3", 7, 2);
 		speed3.addActionListener(new ActionListener() {
 
@@ -114,13 +131,20 @@ public class game_Manu extends Custom_Frame implements Timer_Listener, KeyListen
 				myTimer.getInstance().set_speed(3);
 			}
 		});
-//		speed3.setFocusable(false);
-//		speed3.setVisible(true);
-
+		// speed3.setFocusable(false);
+		// speed3.setVisible(true);
 
 		Jscore = new JButton();
 		// Jscore = new JButton();
 		Creat_Button_at(Jscore, "score  " + score, 7, 3);
+
+		Jlife = new JButton();
+		// Jscore = new JButton();
+		Creat_Button_at(Jlife, "life  " + lifes, 7, 4);
+
+		Jtime = new JButton();
+		// Jscore = new JButton();
+		Creat_Button_at(Jtime, "time :" + myTimer.getInstance().getTime_Pass(), 7, 5);
 
 	}
 

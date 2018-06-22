@@ -17,7 +17,7 @@ public class Custom_Frame extends JFrame {
 	 * A frame with built in grid
 	 */
 	private static final long serialVersionUID = 1L;
-	protected Image_Panel Panel;
+	protected Image_Panel myPanel;
 	private int _width;
 	private int _height;
 	private int Xblocks = 2;
@@ -82,11 +82,11 @@ public class Custom_Frame extends JFrame {
 	 * Adding main Panel
 	 */
 	private void creat_Panel() {
-		Panel = new Image_Panel(_width, _height);
-		Panel.setBackground(Color.WHITE);
-		this.add(Panel);
-		Panel.setLayout(null);
-		Panel.setVisible(true);
+		myPanel = new Image_Panel(_width, _height);
+		myPanel.setBackground(Color.WHITE);
+		this.add(myPanel);
+		myPanel.setLayout(null);
+		myPanel.setVisible(true);
 
 	}
 
@@ -103,7 +103,7 @@ public class Custom_Frame extends JFrame {
 		setComponentSize(button);
 		set_Component_Postion(button, locationsX[X], locationsY[Y]);
 		button.setFocusable(false);
-		Panel.add(button);
+		myPanel.add(button);
 	}
 
 	/**
@@ -123,7 +123,7 @@ public class Custom_Frame extends JFrame {
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		// label.setBorder(BorderFactory.createLineBorder(Color.black));
 		set_Component_Postion(label, locationsX[X], locationsY[Y]);
-		Panel.add(label);
+		myPanel.add(label);
 	}
 
 	/**

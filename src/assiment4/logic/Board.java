@@ -44,6 +44,7 @@ public class Board implements Timer_Listener, Board_action_Listener {
 	// its is better to keep the yello palets in here cus they are static and we
 	// have a lot of them
 	private Food[][] Food;
+	//private Food[] to_be_food;
 	private Fire_Ball my_fire;
 	private Water_Splash my_water;
 
@@ -216,6 +217,22 @@ public class Board implements Timer_Listener, Board_action_Listener {
 		}
 	}
 
+	public void add_Fruts(Food[] food)
+	{
+		for (Food fruits : food) {
+			fruits.add_Board_Listener(this);
+		}
+	}
+	
+	public void change_pac_man(Pacman p)
+	{
+		int x = pacMan.get_X();
+		int y = pacMan.get_preY();
+		pacMan = p;
+		pacMan.add_Board_Listener(this);
+		pacMan.set_start(x, y);
+	}
+	
 	// -----------------------------Listener functions
 	@Override
 	public Boolean is_of_type(int x, int y, int type) {

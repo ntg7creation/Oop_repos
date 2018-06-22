@@ -14,8 +14,8 @@ public class Logic implements Logic_Listener {
 	final private String path1 = "res\\Boards\\0.csv";
 	final private String path2 = "res\\Boards\\1.csv";
 	final private String path3 = "res\\Boards\\2.csv";
-	final private String path4 = "";
-	final private String path5 = "";
+	final private String path4 = "res\\Boards\\3.csv";
+	final private String path5 = "res\\Boards\\4.csv";
 
 	private int level = 1;
 	private int score = 0;
@@ -62,10 +62,25 @@ public class Logic implements Logic_Listener {
 		return currentBoard;
 	}
 
+	public void set_Current_Board(int number) {
+		switch (number) {
+		case 1:
+			currentBoard = board1;
+		case 2:
+			currentBoard = board2;
+		case 3:
+			currentBoard = board3;
+		case 4:
+			currentBoard = board4;
+		case 5:
+			currentBoard = board5;
+		}
+
+	}
+
 	@Override
 	public void Death() {
 		lifes--;
-
 	}
 
 	public int get_lifes() {
@@ -100,12 +115,12 @@ public class Logic implements Logic_Listener {
 			currentBoard = board1;
 			break;
 		case 2:
-			currentBoard = board2;
-			break;
-		case 4:
-			currentBoard = board1;
+			currentBoard = board4;
 			break;
 		case 3:
+			currentBoard = board5;
+			break;
+		case 4:
 			Game_End();
 			break;
 		}
@@ -113,6 +128,6 @@ public class Logic implements Logic_Listener {
 	}
 
 	private void Game_End() {
-
+		lifes = 0;
 	}
 }

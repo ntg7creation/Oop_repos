@@ -12,6 +12,7 @@ public class myTimer implements ActionListener {
 	private final int delay = 40; // 1000 = 1 sec
 	private LinkedList<Timer_Listener> listeners;
 	private LinkedList<Timer_Listener> Importent_listeners;
+	private int current_delay = delay;
 	private int tickCount = 0;
 	private int secCount = 0;
 
@@ -31,13 +32,14 @@ public class myTimer implements ActionListener {
 	}
 
 	public void set_speed(int speed) {
-		timer.setDelay(delay / speed);
+		current_delay=delay / speed;
+		timer.setDelay(current_delay);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		tickCount++;
-		if (tickCount >= 25) {
+		if (tickCount >= 1000/current_delay) {
 			tickCount = 0;
 			secCount++;
 		}
@@ -68,5 +70,16 @@ public class myTimer implements ActionListener {
 		if (listener != null)
 			Importent_listeners.add(listener);
 
+	}
+
+	
+	public int getTime_Pass() {
+		return secCount;
+	}
+
+
+	public void stop() {
+		timer.stop();
+		
 	}
 }

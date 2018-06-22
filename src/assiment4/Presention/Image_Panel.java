@@ -1,5 +1,6 @@
 package assiment4.Presention;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -27,6 +28,7 @@ public class Image_Panel extends JPanel {
 
 	public void changeImage(BufferedImage image) {
 		this.image = image;
+		this.setBackground(Color.WHITE);
 		paint(getGraphics());
 	}
 
@@ -35,6 +37,7 @@ public class Image_Panel extends JPanel {
 		super.paintComponent(g);
 		if (image != null) {
 			Nimage = image.getScaledInstance(Width, Hight, Image.SCALE_DEFAULT);
+
 			g.drawImage(Nimage, 0, 0, this); // see javadoc for more info on the parameters
 		}
 	}
